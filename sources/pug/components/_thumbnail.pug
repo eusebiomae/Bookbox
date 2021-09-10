@@ -1,0 +1,24 @@
+mixin thumbnail-classic( obj )
+	// Thumbnail Classic
+	article.thumbnail-classic&attributes( attributes )
+		if( obj.price )
+			.thumbnail-classic-figure: +img( obj.img )
+		else
+			a.thumbnail-classic-figure( href='images/' + obj.imgOriginal + '.jpg', data-lightgallery='item' ): +img( obj.img )
+
+		.thumbnail-classic-caption: div
+			h5.thumbnail-classic-title: a( href= links.product )= obj.title
+			if( obj.price )
+				.thumbnail-classic-price= '$' + obj.price + '.99'
+				.thumbnail-classic-button-wrap
+					.thumbnail-classic-button: a.button.button-gray-6.button-zakaria.fl-bigmug-line-search74( href='images/' + obj.imgOriginal + '.jpg', data-lightgallery='item' ): +img( obj.img )
+					.thumbnail-classic-button: a.button.button-primary.button-zakaria.fl-bigmug-line-shopping202( href='#' )
+			else if( obj.tag )
+				.thumbnail-classic-tag= obj.tag
+
+mixin thumbnail-modern( obj )
+	// Thumbnail Classic
+	article.thumbnail-modern&attributes( attributes )
+		a.thumbnail-modern-figure( href='images/' + obj.imgOriginal + '.jpg', data-lightgallery='item' ): +img( obj.img )
+		.thumbnail-modern-caption: div
+			h4.thumbnail-modern-title: a( href= links.product )= obj.title

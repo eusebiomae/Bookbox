@@ -27,9 +27,9 @@ class CreateCourseCategoryTable extends Migration
 				$table->timestamps();
 				$table->softDeletes();
 
-				$table->foreign('user_id')
-					->references('id')
-					->on('user');
+				// $table->foreign('user_id')
+				// 	->references('id')
+				// 	->on('user');
 			});
 		}
 	}

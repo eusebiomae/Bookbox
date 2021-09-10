@@ -55,14 +55,6 @@ class CreateLeadsTable extends Migration
 			$table->integer('deleted_by')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-
-			$table->foreign('course_id')
-				->references('id')
-				->on('course');
-
-			$table->foreign('course_category_id')
-				->references('id')
-				->on('course_category');
 		});
 	}
 

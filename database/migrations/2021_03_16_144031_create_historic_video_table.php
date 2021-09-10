@@ -12,7 +12,7 @@ class CreateHistoricVideoTable extends Migration
 		if (!Schema::hasTable('historic_video')) {
 			Schema::create('historic_video', function (Blueprint $table) {
 				$table->id();
-				$table->foreignId('order_id')->references('id')->on('order')->onDelete('cascade')->nullable();
+				// $table->foreignId('order_id')->references('id')->on('order')->onDelete('cascade')->nullable();
 				$table->foreignId('student_id')->references('id')->on('student')->onDelete('cascade')->nullable();
 				$table->foreignId('course_id')->references('id')->on('course')->onDelete('cascade')->nullable();
 				$table->foreignId('class_id')->references('id')->on('class')->onDelete('cascade')->nullable();

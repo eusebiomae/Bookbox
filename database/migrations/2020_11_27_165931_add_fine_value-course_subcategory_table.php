@@ -13,9 +13,9 @@ class AddFineValueCourseSubcategoryTable extends Migration
 	*/
 	public function up()
 	{
-		Schema::table('course_subcategory', function (Blueprint $table) {
-			$table->double('fine_value', 11, 2);
-		});
+		// Schema::table('course_subcategory', function (Blueprint $table) {
+		// 	$table->double('fine_value', 11, 2);
+		// });
 	}
 
 	/**

@@ -1,0 +1,22 @@
+extends  ../_skeleton
+
+block variables
+	- pageName = '404 Page'
+
+block title
+	title=pageName
+
+block page
+	section.section.section-single.context-dark.bg-image( style='background-image: url(images/bg-404.jpg);' )
+		.section-single-inner
+			//-Page Header
+			include ../sections/_section-header-base-transparent
+
+			//- Page Main
+			.section-single-main: .container
+				.title-modern 404
+				h3.font-weight-light.text-spacing-100 Page Not Found
+				a.button.button-lg.button-secondary.button-zakaria( href='index.html' ) Go to home page
+
+			//-Page Footer
+			include ../sections/_section-footer-base-transparent

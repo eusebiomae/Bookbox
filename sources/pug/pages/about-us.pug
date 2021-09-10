@@ -1,0 +1,212 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-creative
+include ../components/_team
+include ../components/_counters
+include ../components/_quote
+include ../sections/_footer-modern
+
+block variables
+	- pageName = 'About Us'
+
+block page  
+	// Page Header
+	+header-creative.rd-navbar-creative-2
+
+	//+breadcrumbs
+
+	+breadcrumbs({
+		img: 'bg-about',
+		text: 'We are industry-leading organic farm delivering the best products <br class="d-none d-md-block">that boost your daily life energy and potential.'
+	})
+
+	// Section About
+	section.section.section-xl.bg-default.text-md-left
+		.container: .row.row-40.row-md-60.justify-content-center.align-items-xl-center
+			.col-md-11.col-lg-6.col-xl-5
+				+quote-classic-big({
+					text: 'Fresh & organic drinks for you'
+				}).inset-xl-right-30
+				// Bootstrap tabs
+				#tabs-1.tabs-custom.tabs-horizontal.tabs-line
+					// Nav tabs
+					.nav-tabs-wrap: ul.nav.nav-tabs
+						li.nav-item( role='presentation' ): a.nav-link.active( href='#tabs-1-1', data-toggle='tab' ) About
+						li.nav-item( role='presentation' ): a.nav-link( href='#tabs-1-2', data-toggle='tab' ) Our mission
+						li.nav-item( role='presentation' ): a.nav-link( href='#tabs-1-3', data-toggle='tab' ) Our goals
+
+					// Tab panes
+					.tab-content
+						div#tabs-1-1.tab-pane.fade.show.active
+							p Cum nomen prarere, omnes peses amor pius, rusticus racanaes. Ubi est mirabilis gemna? Cum gabalium velum, omnes fugaes
+							p Ubi est peritus devatio? A falsis, adelphis peritus apolloniates. Est raptus clabulare, cesaris. Cum pulchritudine manducare, omnes genetrixes captis bassus
+
+						div#tabs-1-2.tab-pane.fade
+							p Vae. Dexter fiscina aliquando vitares animalis est. Nunquam convertam bulla. Cum pars prarere, omnes seculaes
+							p Navis dexter historia est. Luba, homo, et indictio. Emeritis eposs ducunt ad animalis. Cum solem assimilant, omnes byssuses vitare clemens, secundus nixuses.
+
+						div#tabs-1-3.tab-pane.fade
+							p A falsis, historia primus gallus. Est bassus tabes, cesaris. Gallus de mirabilis agripeta, locus mens! Primus ratione
+							p Cur eleates accelerare? Heu. Ecce, superbus onus! Demolitione secundus homo est. Cum cacula congregabo, omnes coordinataees acquirere dexter, flavum galataees.
+
+				a.button.button-lg.button-shadow-2.button-primary.button-zakaria( href='#' ) Read more
+
+			.col-md-11.col-lg-6.col-xl-7
+				.slick-slider-1.inset-xl-left-35
+					// Slick Carousel
+					#carousel-parent.slick-slider.carousel-parent.slick-nav-1.slick-nav-2( data-items='1', data-autoplay='true', data-slide-effect='true', data-child='#child-carousel', data-for='#child-carousel', data-arrows='true' )
+						.item: +img( 'about-1-634x373' )
+						.item: +img( 'about-2-634x373' )
+						.item: +img( 'about-3-634x373' )
+						.item: +img( 'about-4-634x373' )
+
+					#child-carousel.slick-slider.child-carousel( data-items='3', data-sm-items='4', data-md-items='4', data-lg-items='4', data-xl-items='4', data-xxl-items='4', data-for='#carousel-parent' )
+						.item: +img( 'about-1-143x114' )
+						.item: +img( 'about-2-143x114' )
+						.item: +img( 'about-3-143x114' )
+						.item: +img( 'about-4-143x114' )
+
+
+	// Section History
+	section.section.section-fluid.section-xl.section-bottom-0.bg-image-2.section-relative.context-dark
+		.container-fluid
+			h2.text-transform-capitalize Our History
+			.slick-history 
+				// Slick Carousel
+				#carousel-parent-2.slick-slider.carousel-parent( data-items='1', data-sm-items='2', data-md-items='2', data-lg-items='3', data-xl-items='3', data-xxl-items='4', data-autoplay='false', data-loop='false' )
+					.item: .box-info-classic
+						h4.box-info-classic-title Establishment
+						p.box-info-classic-text Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin facilisis, velit non fringilla pharetra, elit odio
+					.item: .box-info-classic
+						h4.box-info-classic-title First Success
+						p.box-info-classic-text Mirabilis fraticinida patienter imperiums luna est. Ecce, mensa! Eleatess crescere, tanquam grandis valebat. Dexter, ferox accolas
+					.item: .box-info-classic
+						h4.box-info-classic-title New Technologies
+						p.box-info-classic-text Est primus usus, cesaris. Azureus, fortis coordinataes sapienter magicae de raptus, germanus bursa. Peritus, nobilis buxums sed
+					.item: .box-info-classic
+						h4.box-info-classic-title National Recognition
+						p.box-info-classic-text Barbatus fortiss ducunt ad poeta. Orexis dexter domus est. Glos, fermium, et demissio. Altus, germanus sectams tandem experientia
+					.item: .box-info-classic
+						h4.box-info-classic-title Partnership
+						p.box-info-classic-text Guttuss sunt sagas de pius ionicis tormento. Sunt capioes acquirere brevis, mirabilis fluctuses. Regius, alter lapsuss semper
+
+				.slick-slider.child-carousel( data-items='1', data-sm-items='2', data-md-items='2', data-lg-items='3', data-xl-items='3', data-xxl-items='4', data-arrows='true', data-for='#carousel-parent-2', data-loop='false', data-focus-select='false' )
+					.item: .heading-5.box-info-classic-year 1999
+					.item: .heading-5.box-info-classic-year 2003
+					.item: .heading-5.box-info-classic-year 2007
+					.item: .heading-5.box-info-classic-year 2015
+					.item: .heading-5.box-info-classic-year 2020
+
+
+	// Our team
+	section.section.section-xl.bg-default
+		.container
+			h2.text-transform-capitalize Our team
+			.owl-carousel.owl-style-9( data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-margin='30', data-dots='true', data-mouse-drag='false' )
+				+team-modern({
+					img: 'team-4-270x227',
+					name: 'Rebecca Martinez',
+					text: 'Rebecca is the Founder and CEO of Livedrink'
+				}).box-sm.wow.slideInUp
+				+team-modern({
+					img: 'team-5-270x227',
+					name: 'Peter McMillan',
+					text: 'Peter is the Head of Livedrink’s Supply Chain'
+				}).box-sm.wow.slideInUp( data-wow-delay='.1s' )
+				+team-modern({
+					img: 'team-6-270x227',
+					name: 'Jane Smith',
+					text: 'Jane Smith is our leading Customer Care specialist.'
+				}).box-sm.wow.slideInUp( data-wow-delay='.2s' )
+				+team-modern({
+					img: 'team-7-270x227',
+					name: 'Sam Williams',
+					text: 'Sam is our #1 expert in domestic Sales Management.'
+				}).box-sm.wow.slideInUp( data-wow-delay='.3s' )
+
+
+	// Counter Modern
+	+parallax({
+		img: 'parallax-2',
+		innerClass: 'section-xxl context-dark'
+	})
+		.container: .row.row-30.justify-content-center
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '245',
+					title: 'Vegetables<br class="d-none d-sm-block"> and fruits'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '382',
+					title: 'Reliable<br class="d-none d-sm-block"> partners'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '1267',
+					title: 'Satisfied<br class="d-none d-sm-block"> customers'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '474',
+					title: 'New blog<br class="d-none d-sm-block"> articles'
+				})
+
+
+	// Testimonials
+	section.section.section-xl.bg-image-1
+		.container
+			h2.text-transform-capitalize Testimonials
+			// Owl Carousel
+			.owl-carousel.owl-style-1( data-items='1', data-sm-items='2', data-margin='30', data-dots='true', data-autoplay='true' )
+				+quote-modern({
+					img: 'user-10-62x62',
+					author: 'Patrick Goodman',
+					status: 'Client',
+					text: 'Classis de salvus cursus, convertam galatae! Terror peregrinationes, tanquam audax cedrium. Cum luna prarere, omnes cannabises resuscitabo'
+				})
+				+quote-modern({
+					img: 'user-11-62x62',
+					author: 'Jane Lee',
+					status: 'Client',
+					text: 'Genetrixs sunt urbss de flavum navis. Magnum paluss ducunt ad urbs. Cum secula favere, omnes assimilatioes tractare regius, emeritis caculaes.'
+				})
+				+quote-modern({
+					img: 'user-5-62x62',
+					author: 'James Peterson',
+					status: 'Client',
+					text: 'Zirbus velums, tanquam camerarius byssus. Pol, extum! Abactus varius ausus est. Cum elogium ortum, omnes ignigenaes acquirere altus, pius.'
+				})
+				+quote-modern({
+					img: 'user-6-62x62',
+					author: 'Ann McMillan',
+					status: 'Client',
+					text: 'Caculas ortum in peritus virundum! Congregabo callide ducunt ad flavum glos. Cum pes mori, omnes caculaes attrahendam rusticus, bi-color.'
+				})
+
+	// Page Footer
+	+footer-modern({
+		bodyMod: 'context-dark', 
+		gallery: [
+			{img: 'grid-gallery-1-93x93', imgOriginal: 'grid-gallery-footer-1-1200x800-original'},
+			{img: 'grid-gallery-2-93x93', imgOriginal: 'masonry-gallery-4-1200x800-original'},
+			{img: 'grid-gallery-3-93x93', imgOriginal: 'grid-gallery-2-1200x800-original'},
+			{img: 'grid-gallery-4-93x93', imgOriginal: 'grid-gallery-1-1200x800-original'},
+			{img: 'grid-gallery-5-93x93', imgOriginal: 'grid-gallery-footer-5-1200x800-original'},
+			{img: 'grid-gallery-6-93x93', imgOriginal: 'grid-gallery-4-1200x800-original'}
+		],
+		list: [
+			{text: 'Our Team', link: 'our-team.html'},
+			{text: 'New Products', link: 'grid-shop.html'},
+			{text: 'Blog', link: 'blog-list.html'},
+			{text: 'About Us', link: 'about-us.html'},
+			{text: 'FAQ', link: '#'},
+			{text: 'Contact Us', link: 'contact-us.html'},
+			{text: 'Smoothies', link: '#'},
+			{text: 'Energy Bowls', link: '#'},
+			{text: 'Juices', link: '#'},
+			{text: 'Ingredients', link: '#'},
+			{text: 'Delivery', link: '#'}
+		]
+	}).footer-modern-2

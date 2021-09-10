@@ -1,0 +1,87 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-creative
+include ../components/_posts
+include ../components/_pagination
+include ../sections/_footer-modern
+
+block variables
+	- pageName = 'Blog'
+
+block page 
+	// Page Header
+	+header-creative.rd-navbar-creative-2
+
+	+breadcrumbs({
+		img: 'bg-about',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius <br class="d-none d-md-block">mod tempor incididunt ut labore et dolore magna aliqua.'
+	})
+
+	// Section Shop
+	section.section.section-xl.bg-default.text-md-left
+		.container: .row.row-50.row-md-60
+			.col-lg-8.col-xl-9: .inset-xl-right-70
+				.row.row-50.row-md-60.row-lg-80.row-xl-100
+					.col-12
+						+post-modern({
+							tag: 'News',
+							time: {
+								datetime: '2020-08-09',
+								datetext: 'August 9, 2020'
+							},
+							title: 'Can a Smoothie Supercharge Your Day?',
+							img: 'post-7-800x394'
+						})
+					.col-12
+						+post-modern({
+							tag: 'News',
+							time: {
+								datetime: '2020-08-09',
+								datetext: 'August 9, 2020'
+							},
+							title: 'How to Make Your Breakfast Easy and Yummy',
+							img: 'post-8-800x394',
+							text : 'Cur abaculus ire? Exsul secundus historia est. Hilotaes persuadere! Est teres exemplar, cesaris. Altus hydras ducunt ad repressor. Pol, animalis! Rationes sunt abactors de ferox ignigena. Nunquam imperium cannabis. Hercle, magister audax!, hibrida! Accentors studere, tanquam mirabilis tumultumque. Vae, barbatus detrius!'
+						})
+					.col-12
+						+post-modern({
+							tag: 'News',
+							time: {
+								datetime: '2020-08-09',
+								datetext: 'August 9, 2020'
+							},
+							title: 'Tips from Our Team: Making Yoghurts with Fresh Fruits',
+							img: 'post-9-800x394',
+							text : 'Capios persuadere in oenipons! Hercle, sensorem peritus!, bassus poeta! Solem de bi-color competition, gratia resistentia! Ubi est gratis silva? Nunquam transferre ignigena. Verpa noceres, tanquam festus zirbus. A falsis, barcas peritus calcaria. Humani generiss messis! Eheu, noster bubo! Cum musa credere, omnes lacteaes'
+						})
+				.pagination-wrap: +pagination-bootstrap(null, 1, 3)
+
+			.col-lg-4.col-xl-3: include ../includes/_aside-blog
+
+
+	// Page Footer
+	+footer-modern({
+		bodyMod: 'context-dark',
+		gallery: [
+			{img: 'grid-gallery-1-93x93', imgOriginal: 'grid-gallery-footer-1-1200x800-original'},
+			{img: 'grid-gallery-2-93x93', imgOriginal: 'masonry-gallery-4-1200x800-original'},
+			{img: 'grid-gallery-3-93x93', imgOriginal: 'grid-gallery-2-1200x800-original'},
+			{img: 'grid-gallery-4-93x93', imgOriginal: 'grid-gallery-1-1200x800-original'},
+			{img: 'grid-gallery-5-93x93', imgOriginal: 'grid-gallery-footer-5-1200x800-original'},
+			{img: 'grid-gallery-6-93x93', imgOriginal: 'grid-gallery-4-1200x800-original'}
+		],
+		list: [
+			{text: 'Our Team', link: 'our-team.html'},
+			{text: 'New Products', link: 'grid-shop.html'},
+			{text: 'Blog', link: 'blog-list.html'},
+			{text: 'About Us', link: 'about-us.html'},
+			{text: 'FAQ', link: '#'},
+			{text: 'Contact Us', link: 'contact-us.html'},
+			{text: 'Smoothies', link: '#'},
+			{text: 'Energy Bowls', link: '#'},
+			{text: 'Juices', link: '#'},
+			{text: 'Ingredients', link: '#'},
+			{text: 'Delivery', link: '#'}
+		]
+	}).footer-modern-2

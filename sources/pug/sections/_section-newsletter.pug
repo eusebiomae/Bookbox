@@ -1,0 +1,16 @@
+// Subscribe to Our Newsletter
++parallax({
+	img: 'parallax-4',
+	innerClass: 'section-xxl context-dark text-md-left'
+})
+	.container: .row.row-30.justify-content-center.align-items-center.align-items-md-end
+		.col-lg-3
+			h3.text-spacing-100.wow.fadeInLeft Stay
+				=' '
+				span.font-weight-light connected
+			p.wow.fadeInLeft( data-wow-delay='.1s' ) Subscribe to our newsletter
+
+		.col-lg-8.col-xl-9.inset-lg-bottom-10
+			+inline-subscribe-form({
+				button: 'button-lg button-primary'
+			}).form-lg.rd-form-text-center

@@ -56,27 +56,7 @@ class CreateRegistryTable extends Migration
 			$table->integer('deleted_by')->nullable();
 			$table->timestamps();
             $table->softDeletes();
-            
-            $table->foreign('leads_id')
-			->references('id')
-            ->on('leads');
-            
-            $table->foreign('course_id')
-			->references('id')
-            ->on('course');
-            
-            $table->foreign('class_id')
-			->references('id')
-            ->on('class');
-            
-            $table->foreign('city_id')
-			->references('id')
-            ->on('city');
-            
-            $table->foreign('consultant')
-			->references('id')
-            ->on('user');
-            
+
 
 		});
 	}

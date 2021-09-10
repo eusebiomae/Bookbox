@@ -13,10 +13,10 @@ class AddScoreCategoryIdQuestionTable extends Migration
      */
     public function up()
     {
-        Schema::table('question', function (Blueprint $table) {
-			$table->double('score', 11, 2)->default(1);
-            $table->foreignId('category_id')->nullable()->references('id')->on('course_category')->onDelete('cascade');
-		});
+        // Schema::table('question', function (Blueprint $table) {
+		// 	$table->double('score', 11, 2)->default(1);
+        //     $table->foreignId('category_id')->nullable()->references('id')->on('course_category')->onDelete('cascade');
+		// });
     }
 
     /**

@@ -1,0 +1,104 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-creative
+include ../components/_thumbnail
+include ../sections/_footer-modern
+
+block variables
+	- pageName = 'Gallery'
+
+block page  
+	// Page Header
+	+header-creative.rd-navbar-creative-2
+
+	+breadcrumbs({
+		img: 'bg-about',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius <br class="d-none d-md-block">mod tempor incididunt ut labore et dolore magna aliqua.'
+	})
+
+	// Grid Gallery
+	section.section.section-xl.bg-default
+		.container.isotope-wrap
+			.isotope-filters
+				//- Isotope Filters
+				button.isotope-filters-toggle.button.button-sm.button-icon.button-icon-right.button-default-outline( data-custom-toggle='.isotope-filters-list', data-custom-toggle-disable-on-blur='true', data-custom-toggle-hide-on-blur='true' )
+					span.icon.mdi.mdi-chevron-down
+					| Filter
+
+				.isotope-filters-list-wrap
+					ul.isotope-filters-list
+						li: a.active( href='#', data-isotope-filter='*' ) View All
+						li: a( href='#', data-isotope-filter='Type 1' ) Smoothies
+						li: a( href='#', data-isotope-filter='Type 2' ) Mixes
+
+			.row.row-30.isotope( data-lightgallery='group' )
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 1' )
+					+thumbnail-classic({
+						img: 'grid-gallery-1-370x315',
+						imgOriginal: 'grid-gallery-1-1200x800-original',
+						title: 'watermelon energy bowl',
+						price: '10'
+					}).block-1
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 1' )
+					+thumbnail-classic({
+						img: 'grid-gallery-2-370x315',
+						imgOriginal: 'grid-gallery-2-1200x800-original',
+						title: 'avocado & coconut smoothie',
+						price: '13'
+					}).block-1
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 1' )
+					+thumbnail-classic({
+						img: 'grid-gallery-3-370x315',
+						imgOriginal: 'grid-gallery-3-800x800-original',
+						title: 'Grapefruit smoothie',
+						price: '10'
+					}).block-1
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 1' )
+					+thumbnail-classic({
+						img: 'grid-gallery-4-370x315',
+						imgOriginal: 'grid-gallery-4-1200x800-original',
+						title: 'mint & raspberry smoothie',
+						price: '8'
+					}).block-1
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 2' )
+					+thumbnail-classic({
+						img: 'grid-gallery-5-370x315',
+						imgOriginal: 'grid-gallery-5-1200x800-original',
+						title: 'Green fruit mix',
+						price: '16'
+					}).block-1
+				.col-sm-6.col-lg-4.isotope-item( data-filter='Type 2' )
+					+thumbnail-classic({
+						img: 'grid-gallery-6-370x315',
+						imgOriginal: 'grid-gallery-6-1200x800-original',
+						title: 'kiwi & avocado mix',
+						price: '14'
+					}).block-1
+
+
+	// Page Footer
+	+footer-modern({
+		bodyMod: 'context-dark',
+		gallery: [
+			{img: 'grid-gallery-1-93x93', imgOriginal: 'grid-gallery-footer-1-1200x800-original'},
+			{img: 'grid-gallery-2-93x93', imgOriginal: 'masonry-gallery-4-1200x800-original'},
+			{img: 'grid-gallery-3-93x93', imgOriginal: 'grid-gallery-2-1200x800-original'},
+			{img: 'grid-gallery-4-93x93', imgOriginal: 'grid-gallery-1-1200x800-original'},
+			{img: 'grid-gallery-5-93x93', imgOriginal: 'grid-gallery-footer-5-1200x800-original'},
+			{img: 'grid-gallery-6-93x93', imgOriginal: 'grid-gallery-4-1200x800-original'}
+		],
+		list: [
+			{text: 'Our Team', link: 'our-team.html'},
+			{text: 'New Products', link: 'grid-shop.html'},
+			{text: 'Blog', link: 'blog-list.html'},
+			{text: 'About Us', link: 'about-us.html'},
+			{text: 'FAQ', link: '#'},
+			{text: 'Contact Us', link: 'contact-us.html'},
+			{text: 'Smoothies', link: '#'},
+			{text: 'Energy Bowls', link: '#'},
+			{text: 'Juices', link: '#'},
+			{text: 'Ingredients', link: '#'},
+			{text: 'Delivery', link: '#'}
+		]
+	}).footer-modern-2

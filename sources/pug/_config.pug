@@ -1,0 +1,71 @@
+-
+	var
+		htmlClass = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700",
+		checkoutFormCounter = 0,
+		subscribeFormCounter = 0,
+		logo = {
+			default: 'logo-default-3-314x70.png',
+			inverse: 'logo-inverse-3-314x70.png',
+			name: 'Livedrink'
+		},
+		links = {
+			about: 'about-us.html', 
+			post: 'blog-post.html',
+			shop: 'grid-shop.html',
+			product: 'single-product.html',
+			service: '#',
+			team: '#',
+			getTemplate:'#get-template'
+		},
+		colors = {
+			primary: '#b6c062',
+			secondary: '#b6c062'
+		},
+		menu = [
+			{
+				title: 'Home',  
+				link: 'index.html'
+			},
+			{
+				title: 'Pages', 
+				link: '#',
+				dropdown: [
+					{ title: 'About Us' },
+					{ title: 'What We Offer' },
+					{ title: 'Our Team' },
+					{ title: 'Pricing List' },
+					{ title: '404 Page' },
+					{ title: 'Coming Soon' },
+					{ title: 'Privacy Policy' },
+					{ title: 'Search Results' }
+				]
+			}, 
+			{
+				title: 'Blog',
+				link: 'blog-list.html',
+				dropdown: [
+					{ title: 'Blog Post' }
+				]
+			},
+			{
+				title: 'Gallery',  
+				link: 'grid-gallery.html'
+			},
+			{
+				title: 'Shop',
+				link: links.shop,
+				dropdown: [
+					{ title: 'Grid Shop' }, 
+					{ title: 'Single Product' }
+				]
+			},
+			{
+				title: 'Contact Us' 
+			}
+		],
+
+		// Predefined variables
+		breadcrumbs = [],
+		pageName = 'Farm',
+		style = false;

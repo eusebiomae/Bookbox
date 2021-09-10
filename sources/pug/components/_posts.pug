@@ -1,0 +1,62 @@
+mixin post-classic( obj )
+	// Post Classic
+	article.post.post-classic.box-md&attributes( attributes )
+		a.post-classic-figure( href= links.post ): +img( obj.img )
+		.post-classic-content
+			.post-classic-time: time( datetime= obj.time.datetime )= obj.time.datetext
+			h5.post-classic-title: a( href= links.post )= obj.title
+			p.post-classic-text= obj.text ? obj.text : 'A fridge full of organic vegetables purchased or harvested with the best of intentions, and then life gets busy'
+
+mixin post-modern( obj )
+	// Post Modern
+	article.post.post-modern.box-xxl&attributes( attributes )
+		.post-modern-panel
+			div: a.post-modern-tag( href='#' )= obj.tag
+			div: time.post-modern-time( datetime= obj.time.datetime )= obj.time.datetext
+		h3.post-modern-title: a( href= links.post )= obj.title
+		a.post-modern-figure( href= links.post ): +img( obj.img )
+		p.post-modern-text= obj.text ? obj.text : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet'
+		a.post-modern-link( href= links.post ) Read more
+
+mixin post-creative( obj )
+	// Post Creative
+	article.post.post-creative&attributes( attributes )
+		a.post-creative-figure( href= links.post ): +img( obj.img )
+		.post-creative-content
+			h5.post-creative-title: a( href= links.post )!= obj.title
+			.post-creative-time: time( datetime= obj.time.datetime )= obj.time.datetext
+
+mixin post-lisa( obj )
+	// Post Creative
+	article.post.post-lisa&attributes( attributes )
+		.post-lisa-content
+			a.post-lisa-tag( href='#' )= obj.tag
+			h4.post-lisa-title: a( href= links.post )= obj.title
+			.post-lisa-time: time( datetime= obj.time.datetime )= obj.time.datetext
+		a.post-lisa-figure( href= links.post ): +img( obj.img )
+
+mixin post-minimal( obj )
+	// Post Minimal
+	article.post.post-minimal&attributes( attributes )
+		.unit.unit-spacing-sm( class= obj.unit )
+			.unit-left: a.post-minimal-figure( href= links.post ): +img( obj.img )
+			.unit-body
+				p.post-minimal-title: a( href= links.post )= obj.title
+				.post-minimal-time: time( datetime= obj.time.datetime )= obj.time.datetext
+
+mixin post-nikki( obj )
+	// Post Nikki
+	article.post.post-nikki&attributes( attributes )
+		.unit.unit-spacing-lg( class= obj.unit )
+			.unit-left: a.post-nikki-figure( href= links.post ): +img( obj.img )
+			.unit-body
+				.post-nikki-time: time( datetime= obj.time.datetime )= obj.time.datetext
+				.post-nikki-title: a( href= links.post )= obj.title
+
+mixin post-nikki-2( obj )
+	// Post Nikki 2
+	article.post.post-nikki.post-nikki-2&attributes( attributes )
+		.post-nikki-figure: +img( obj.img )
+		.post-nikki-body: div
+			.post-nikki-time: time( datetime= obj.time.datetime )= obj.time.datetext
+			.post-nikki-title: a( href= links.post )= obj.title

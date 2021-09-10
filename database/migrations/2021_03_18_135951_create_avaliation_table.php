@@ -31,7 +31,7 @@ class CreateAvaliationTable extends Migration
 				$table->integer('updated_by')->nullable();
 				$table->integer('deleted_by')->nullable();
 
-				$table->foreign('avaliation_type_id')->references('id')->on('avaliation_type');
+				// $table->foreign('avaliation_type_id')->references('id')->on('avaliation_type');
 				$table->foreign('slide_id')->references('id')->on('slide');
 				$table->foreign('category_id')->references('id')->on('course_category');
 				$table->foreign('avaliation_id')->references('id')->on('avaliation');

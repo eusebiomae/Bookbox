@@ -1,0 +1,36 @@
+//- box icon
+
+mixin counter-classic( obj )
+	.counter-classic&attributes( attributes )
+		h1.counter-classic-number
+			span.counter=obj.number
+			if( obj.symbol )
+				span.symbol=obj.symbol
+		.counter-classic-decor
+		h5.counter-classic-title!= obj.title
+
+mixin counter-modern( obj )
+	.counter-modern&attributes( attributes )
+		h2.counter-modern-number
+			span.counter=obj.number
+			if( obj.symbol )
+				span.symbol=obj.symbol
+		.counter-modern-decor
+		h5.counter-modern-title!= obj.title
+
+mixin counter-creative( obj )
+	.counter-creative&attributes( attributes )
+		h3.counter-creative-number
+			span.counter=obj.number
+			if( obj.symbol )
+				span.symbol=obj.symbol
+		h6.counter-creative-title= obj.title
+
+mixin counter-aria( obj )
+	.counter-aria&attributes( attributes )
+		h1.counter-aria-number
+			span.counter=obj.number
+			if( obj.symbol )
+				span.symbol=obj.symbol
+		.counter-aria-title= obj.title
+		+img( 'decor-1-175x116.png' ).counter-aria-decor

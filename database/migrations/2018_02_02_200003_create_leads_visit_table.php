@@ -36,22 +36,6 @@ class CreateLeadsVisitTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 
-			$table->foreign('leads_id')
-			->references('id')
-			->on('leads');
-
-			$table->foreign('city_id')
-			->references('id')
-			->on('city');
-
-			$table->foreign('course_id')
-			->references('id')
-			->on('course');
-			
-			$table->foreign('consultant')
-			->references('id')
-			->on('user');
-
 		});
 	}
 

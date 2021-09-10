@@ -26,17 +26,17 @@ class CreateBankAccountTable extends Migration
 				$table->timestamps();
 				$table->softDeletes();
 
-				$table->foreign('bank_id')
-					->references('id')
-					->on('bank');
+				// $table->foreign('bank_id')
+				// 	->references('id')
+				// 	->on('bank');
 
-				$table->foreign('bank_account_type_id')
-					->references('id')
-					->on('bank_account_type');
+				// $table->foreign('bank_account_type_id')
+				// 	->references('id')
+				// 	->on('bank_account_type');
 
-				$table->foreign('form_payment_id')
-				->references('id')
-				->on('form_payment');
+				// $table->foreign('form_payment_id')
+				// ->references('id')
+				// ->on('form_payment');
 
 			});
 		}

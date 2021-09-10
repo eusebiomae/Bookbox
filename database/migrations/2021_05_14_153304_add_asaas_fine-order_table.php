@@ -13,9 +13,9 @@ class AddAsaasFineOrderTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::table('order', function (Blueprint $table) {
-			$table->text('asaas_fine')->nullable();
-		});
+		// Schema::table('order', function (Blueprint $table) {
+		// 	$table->text('asaas_fine')->nullable();
+		// });
 	}
 
 	/**

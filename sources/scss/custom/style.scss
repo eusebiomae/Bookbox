@@ -1,0 +1,10 @@
+// Import main styles
+@import "main";
+
+// Specific theme styles
+
+// SVG Icon Gradient
+.box-icon-modern-svg [id*='SVGID'] {
+	--color-stop-1: #f9e95e;
+	--color-stop-2: #76aa6f;  
+}

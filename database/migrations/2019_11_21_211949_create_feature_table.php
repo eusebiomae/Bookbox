@@ -27,10 +27,6 @@ class CreateFeatureTable extends Migration
 				$table->integer('deleted_by')->nullable();
 				$table->timestamps();
 				$table->softDeletes();
-
-				$table->foreign('content_page_id')
-					->references('id')
-					->on('content_page');
 			});
 		}
 	}

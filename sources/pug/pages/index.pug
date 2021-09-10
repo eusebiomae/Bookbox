@@ -1,0 +1,415 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-creative
+include ../components/_box-icon
+include ../svg-icons/_svg-icons
+include ../components/_product
+include ../components/_counters
+include ../components/_card
+include ../components/_thumbnail
+include ../components/_inline-subscribe-form
+include ../components/_team
+include ../components/_posts
+include ../sections/_footer-modern
+
+block variables
+	-
+		var
+			pageName = 'Home';
+
+block page
+	// Page Header
+	+header-creative({
+		mod: 'header-creative-wrap context-dark'
+	}).rd-navbar-creative-2
+
+	// Swiper
+	section.section.swiper-container.swiper-slider.swiper-slider-4( data-loop='true' )
+		.swiper-wrapper.context-dark
+			.swiper-slide.swiper-slide-1( data-slide-bg='images/slide-1.jpg' )
+				.swiper-slide-caption.section-md.text-sm-left: .container: .row: .col-sm-8.col-md-7
+					h2.swiper-title-1( data-caption-animate='fadeInLeft', data-caption-delay='100' ) Tasty Way
+						=' '
+						br
+						| to Healthier Life
+					h5.swiper-title-2.text-width-medium( data-caption-animate='fadeInLeft', data-caption-delay='250' ) Our organic drinks contain all necessary elements and vitamins for your health.
+					.button-wrap( data-caption-animate='fadeInLeft', data-caption-delay='400' )
+						a.button.button-lg.button-shadow-4.button-secondary-2.button-zakaria( href= links.shop ) Shop now
+
+			.swiper-slide.swiper-slide-2( data-slide-bg='images/slide-2.jpg' )
+				.swiper-slide-caption.section-md.text-center: .container
+					h2.swiper-title-1( data-caption-animate='fadeInLeft', data-caption-delay='100' ) New Drink, New Day
+					h5.swiper-title-2( data-caption-animate='fadeInRight', data-caption-delay='250' ) With our wide variety of smoothies and healthy drinks, we are sure
+						=' '
+						br.d-none.d-md-block
+						| to help you make the right choice to start your day.
+					.button-wrap( data-caption-animate='fadeInUp', data-caption-delay='400' )
+						a.button.button-lg.button-shadow-4.button-secondary-2.button-zakaria( href= links.shop ) Shop now
+
+		// Swiper Pagination
+		.swiper-pagination
+
+		// Swiper Navigation
+		.swiper-button-prev
+		.swiper-button-next
+
+
+	// Services
+	section.section.section-xxl.bg-image-1
+		.container: .row.row-xl.row-30.row-md-40.row-lg-50.align-items-center
+			.col-md-5.col-xl-4: .row.row-30.row-md-40.row-lg-50.bordered-2
+				.col-sm-6.col-md-12
+					+box-icon-classic({
+						unit: 'flex-column flex-lg-row-reverse',
+						title: '100% organic',
+						text: 'We make our products from 100% organic and fresh ingredients full of vitamins and nutrients.'
+					}).box-icon-nancy-right.text-center.text-lg-right.wow.fadeInLeft
+						+svg-icon-8
+				.col-sm-6.col-md-12
+					+box-icon-classic({
+						unit: 'flex-column flex-lg-row-reverse',
+						title: 'Good for health',
+						text: 'Our drinks are exceptionally good for boosting your health and increasing your energy level.'
+					}).box-icon-nancy-right.text-center.text-lg-right.wow.fadeInLeft( data-wow-delay='.1s' )
+						+svg-icon-9
+			.col-md-2.col-xl-4.d-none.d-md-block.wow.fadeScale: +img( 'index-1-399x407.png' )
+			.col-md-5.col-xl-4: .row.row-30.row-md-40.row-lg-50.bordered-2
+				.col-sm-6.col-md-12
+					+box-icon-classic({
+						unit: 'flex-column flex-lg-row',
+						title: 'No additives',
+						text: 'Our smoothies, healthy drinks, and energy bowls contain no artificial additives, only vital elements.'
+					}).box-icon-nancy-left.text-center.text-lg-left.wow.fadeInRigth
+						+svg-icon-6
+				.col-sm-6.col-md-12
+					+box-icon-classic({
+						unit: 'flex-column flex-lg-row',
+						title: 'A lot of energy',
+						text: 'We designed our products as the universal organic energetics that can quench your thirst.'
+					}).box-icon-nancy-left.text-center.text-lg-left.wow.fadeInRight( data-wow-delay='.1s' )
+						+svg-icon-7
+
+
+	// New Flavors
+	section.section.section-xxl.bg-default
+		.container
+			h2.text-transform-capitalize.wow.fadeScale New Flavors
+			.row.row-lg.row-30.row-lg-50
+				.col-sm-6.col-md-4.col-lg-3
+					+product({
+						img: 'product-1-95x175.png',
+						title: 'Mango',
+						price: '23.00',
+						priceOld: '30.00'
+					}).wow.fadeInRight
+				.col-sm-6.col-md-4.col-lg-3
+					+product({
+						img: 'product-2-95x175.png',
+						title: 'Strawberry',
+						price: '13.00',
+						new: true
+					}).wow.fadeInRight( data-wow-delay='.1s' )
+				.col-sm-6.col-md-4.col-lg-3
+					+product({
+						img: 'product-3-95x175.png',
+						title: 'Apple',
+						price: '16.99'
+					}).wow.fadeInRight( data-wow-delay='.2s' )
+				
+				.col-sm-6.col-md-4.col-lg-3
+					+product({
+						img: 'product-4-95x175.png',
+						title: 'Guava',
+						price: '12.00',
+						new: true
+					}).wow.fadeInLeft( data-wow-delay='.3s' )
+				.col-sm-6.col-md-4.col-lg-3
+					+product({
+						img: 'product-5-95x175.png',
+						title: 'Grapes',
+						price: '11.00',
+						new: true
+					}).wow.fadeInLeft( data-wow-delay='.2s' )
+				.col-sm-6.col-md-4.col-lg-3
+					+product({
+						img: 'product-6-95x175.png',
+						title: 'Bananas',
+						price: '15.99'
+					}).wow.fadeInLeft( data-wow-delay='.1s' )
+				.col-sm-6.col-md-4.col-lg-3
+					+product({
+						img: 'product-7-95x175.png',
+						title: 'Carrots',
+						price: '24.00',
+						priceOld: '33.00'
+					}).wow.fadeInRight( data-wow-delay='.3s' )
+				
+				
+				.col-sm-6.col-md-4.col-lg-3
+					+product({
+						img: 'product-8-95x175.png',
+						title: 'Orange',
+						price: '14.99'
+					}).wow.fadeInLeft
+
+
+	// Counter Modern
+	+parallax({
+		img: 'parallax-2',
+		innerClass: 'section-xxl context-dark'
+	})
+		.container: .row.row-30.justify-content-center
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '245',
+					title: 'New drinks and<br class="d-none d-sm-block"> smoothies'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '182',
+					title: 'Special<br class="d-none d-sm-block"> offers'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '1267',
+					title: 'Satisfied<br class="d-none d-sm-block"> clients'
+				})
+			.col-6.col-sm-3
+				+counter-modern({
+					number: '47',
+					title: 'Partners throughout<br class="d-none d-sm-block"> the USA'
+				})
+
+
+	// Section Product and Clients
+	section.section.section-xxl.bg-default.text-md-left
+		.container: .row.row-30.row-md-60.row-lg-70.justify-content-center.align-items-md-center
+			.col-sm-8.col-md-5.col-xl-6
+				.inset-xl-right-20: .product-wrap-1.bg-image-1.block-1
+					// Owl Carousel
+					.owl-carousel.owl-style-5( data-items='1', data-margin='30', data-dots='true', data-autoplay='true' )
+						article.product-creative
+							.product-figure: +img( 'product-big-1-470x324.png' )
+							h4.product-creative-title: a( href= links.product ) Aurore Grape
+							.product-creative-price-wrap
+								.product-creative-price.product-creative-price-old $20.00
+								.product-creative-price $15.00
+
+						article.product-creative
+							.product-figure: +img( 'product-big-2-470x324.png' )
+							h4.product-creative-title: a( href= links.product ) Banana Berry
+							.product-creative-price-wrap
+								.product-creative-price.product-creative-price-old $18.00
+								.product-creative-price $13.00
+
+						article.product-creative
+							.product-figure: +img( 'product-big-3-470x324.png' )
+							h4.product-creative-title: a( href= links.product ) Chili Mango
+							.product-creative-price-wrap
+								.product-creative-price.product-creative-price-old $30.00
+								.product-creative-price $23.00
+
+			.col-md-7.col-xl-6
+				h2.text-transform-capitalize.wow.fadeInRight Why Organic?
+				// Bootstrap collapse
+				#accordion1.card-group-custom.card-group-corporate( role='tablist', aria-multiselectable='false' )
+					+card({
+						show: true,
+						parentId: 'accordion1',
+						number: '1',
+						title: 'Organic drinks contain more antioxidants.'
+					}).card-corporate.wow.fadeInRight( data-wow-delay='.1s' )
+						p There are many substances that can act as antioxidants; chief among them are vitamins A and C, as well as beta-carotene and manganese. A lack of antioxidant-rich foods can lead to a greater risk of atherosclerosis.
+
+					+card({
+						parentId: 'accordion1',
+						number: '2',
+						title: 'Organic drinks are better for the environment.'
+					}).card-corporate.wow.fadeInRight( data-wow-delay='.2s' )
+						p While you’re helping yourself be as healthy as can be, how about helping the environment and your fellow humans? Organic farming practices help conserve water and improve soil quality. Given the droughts we see occurring every year and the dire reports from environmental experts, these are no small reasons to go organic.
+
+					+card({
+						parentId: 'accordion1',
+						number: '3',
+						title: 'They’re higher in nutrients.'
+					}).card-corporate.wow.fadeInRight( data-wow-delay='.3s' )
+						p Along with fewer pesticides, this is probably the No. 1 reason folks decide to eat organic. Studies have shown that organic drinks are often higher in vitamin C, iron, magnesium, and phosphorous than their non-organic counterparts.
+
+			.col-xl-12: .row.row-30
+				.col-sm-6.col-lg-4.wow.fadeInLeft( data-wow-delay='.2s' )
+					+box-icon-creative({
+						unit: 'flex-column flex-md-row flex-lg-column flex-xl-row align-items-md-center align-items-lg-start align-items-xl-center',
+						icon: 'fl-bigmug-line-big104',
+						title: 'Free Shipping',
+						text: 'Enjoy our fast & free delivery'
+					})
+
+				.col-sm-6.col-lg-4.wow.fadeInLeft( data-wow-delay='.1s' )
+					+box-icon-creative({
+						unit: 'flex-column flex-md-row flex-lg-column flex-xl-row align-items-md-center align-items-lg-start align-items-xl-center',
+						icon: 'fl-bigmug-line-chat55',
+						title: 'Customer care',
+						text: 'Always ready to help you'
+					})
+
+				.col-sm-6.col-lg-4.wow.fadeInLeft
+					+box-icon-creative({
+						unit: 'flex-column flex-md-row flex-lg-column flex-xl-row align-items-md-center align-items-lg-start align-items-xl-center',
+						icon: 'fl-bigmug-line-like51',
+						title: 'Healthy & energetic',
+						text: 'Our drinks are very nutritious.'
+					})
+
+
+	// What People Say
+	section.section.section-xxl.bg-image-1
+		.container
+			h2.text-transform-capitalize.wow.fadeScale What People Say
+			.row.row-sm.row-30.justify-content-center: .col-xl-9
+				.slick-quote
+					// Slick Carousel
+					#carousel-parent.slick-slider.carousel-parent( data-autoplay='true', data-swipe='true', data-items='1', data-child='#child-carousel', data-for='#child-carousel' )
+						.item: p.quote-minimal-text I’m very grateful to you for introducing me and my whole family to your extensive range of smoothies and organic juices. We are true fans and regular customers of your store!
+						.item: p.quote-minimal-text I am amazed and extremely satisfied by your smoothies, their taste, and the customer service you provide to unexperienced clients who know nothing about organic drinks.
+						.item: p.quote-minimal-text Your healthy drinks have a wonderful taste and the amazing selection of their flavors is what really attracts me in your store. Thank you for fast delivery and your fresh drinks!
+					.slick-quote-nav
+						#child-carousel.slick-slider.child-carousel( data-arrows='true', data-for='#carousel-parent', data-items='1', data-sm-items='1', data-md-items='3', data-lg-items='3', data-xl-items='3', data-xxl-items='3' )
+							.item
+								.quote-minimal-figure: +img( 'user-7-87x87' )
+								.quote-minimal-author Patrick Goodman
+								.quote-minimal-status Client
+							.item
+								.quote-minimal-figure: +img( 'user-8-87x87' )
+								.quote-minimal-author Kate Smith
+								.quote-minimal-status Client
+							.item
+								.quote-minimal-figure: +img( 'user-9-87x87' )
+								.quote-minimal-author Sam Wilson
+								.quote-minimal-status Client
+
+
+	// Masonry Gallery
+	section.section.section-xxl.bg-default
+		.container
+			h2.text-transform-capitalize.wow.fadeScale Our Gallery
+			include ../includes/_masonry-gallery
+
+
+	// Subscribe to Our Newsletter
+	+parallax({
+		img: 'parallax-4',
+		innerClass: 'section-xxl context-dark text-md-left'
+	})
+		.container: .row.row-30.justify-content-center.align-items-center.align-items-md-end
+			.col-lg-3
+				h3.text-spacing-100.wow.fadeInLeft Stay
+					=' '
+					span.font-weight-light connected
+				p.wow.fadeInLeft( data-wow-delay='.1s' ) Subscribe to our newsletter
+
+			.col-lg-9.inset-lg-bottom-10
+				+inline-subscribe-form({
+					button: 'button-lg button-primary'
+				}).form-lg.rd-form-text-center
+
+
+	// Our Team
+	section.section.section-xxl.bg-default
+		.container
+			h2.text-transform-capitalize.wow.fadeScale Our Team
+			// Owl Carousel
+			.owl-carousel.owl-style-9( data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-margin='30', data-dots='true', data-mouse-drag='false' )
+				+team-modern({
+					img: 'team-4-270x227',
+					name: 'Rebecca Martinez',
+					text: 'Rebecca is the Founder and CEO of Livedrink'
+				}).box-sm.wow.slideInUp
+				+team-modern({
+					img: 'team-5-270x227',
+					name: 'Peter McMillan',
+					text: 'Peter is the Head of Livedrink’s Supply Chain'
+				}).box-sm.wow.slideInUp( data-wow-delay='.1s' )
+				+team-modern({
+					img: 'team-6-270x227',
+					name: 'Jane Smith',
+					text: 'Jane Smith is our leading Customer Care specialist.'
+				}).box-sm.wow.slideInUp( data-wow-delay='.2s' )
+				+team-modern({
+					img: 'team-7-270x227',
+					name: 'Sam Williams',
+					text: 'Sam is our #1 expert in domestic Sales Management.'
+				}).box-sm.wow.slideInUp( data-wow-delay='.3s' )
+
+
+	// Section Clients
+	section.section.section-xxl.bg-image-1
+		.container
+			h2.text-transform-capitalize.wow.fadeScale Blog Posts
+			// Owl Carousel
+			.owl-carousel( data-items='1', data-sm-items='2', data-lg-items='3', data-margin='30', data-dots='true', data-mouse-drag='false' )
+				+post-classic({
+					img: 'post-1-370x239',
+					time: {
+						datetime: '2020-08-09',
+						datetext: 'August 9, 2020'
+					},
+					title: 'Can a Smoothie Supercharge Your Day?',
+					text: 'Most of us would agree – mornings are hectic. Getting yourself and possibly others ready for the day ahead may...'
+				}).wow.slideInDown
+				+post-classic({
+					img: 'post-2-370x239',
+					time: {
+						datetime: '2020-08-09',
+						datetext: 'August 9, 2020'
+					},
+					title: 'How to Make Your Breakfast Easy and Yummy',
+					text: 'Overloading your breakfast with calories may not be the best idea but when you need a boost for the upcoming...'
+				}).wow.slideInUp
+				+post-classic({
+					img: 'post-3-370x239',
+					time: {
+						datetime: '2020-08-09',
+						datetext: 'August 9, 2020'
+					},
+					title: 'Tips from Our Team: Making Yoghurts with Fresh Fruits',
+					text: 'Combining milk and fruits is the best solution for your daily meal, whether it’s breakfast, lunch, or any other...'
+				}).wow.slideInDown
+
+
+	// Section Clients
+	section.section.section-lg.bg-default
+		.container
+			.owl-carousel.owl-style-2( data-items='2', data-sm-items='3', data-md-items='4', data-lg-items='5', data-margin='30', data-dots='true' )
+				a.clients-classic( href='#' ): +img( 'clients-1-120x114.png' )
+				a.clients-classic( href='#' ): +img( 'clients-2-105x118.png' )
+				a.clients-classic( href='#' ): +img( 'clients-3-111x98.png' )
+				a.clients-classic( href='#' ): +img( 'clients-4-122x92.png' )
+				a.clients-classic( href='#' ): +img( 'clients-5-112x112.png' )
+
+
+	// Page Footer
+	+footer-modern({
+		bodyMod: 'context-dark',
+		gallery: [
+			{ img: 'grid-gallery-1-93x93', imgOriginal: 'grid-gallery-footer-1-1200x800-original' },
+			{ img: 'grid-gallery-2-93x93', imgOriginal: 'masonry-gallery-4-1200x800-original' },
+			{ img: 'grid-gallery-3-93x93', imgOriginal: 'grid-gallery-2-1200x800-original' },
+			{ img: 'grid-gallery-4-93x93', imgOriginal: 'grid-gallery-1-1200x800-original' },
+			{ img: 'grid-gallery-5-93x93', imgOriginal: 'grid-gallery-footer-5-1200x800-original' },
+			{ img: 'grid-gallery-6-93x93', imgOriginal: 'grid-gallery-4-1200x800-original' }
+		],
+		list: [
+			{ text: 'Our Team', link: 'our-team.html' },
+			{ text: 'New Products', link: 'grid-shop.html' },
+			{ text: 'Blog', link: 'blog-list.html' },
+			{ text: 'About Us', link: 'about-us.html' },
+			{ text: 'FAQ', link: '#' },
+			{ text: 'Contact Us', link: 'contact-us.html' },
+			{ text: 'Smoothies', link: '#' },
+			{ text: 'Energy Bowls', link: '#' },
+			{ text: 'Juices', link: '#' },
+			{ text: 'Ingredients', link: '#' },
+			{ text: 'Delivery', link: '#' }
+		]
+	}).footer-modern-2

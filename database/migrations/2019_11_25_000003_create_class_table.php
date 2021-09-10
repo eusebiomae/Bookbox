@@ -44,25 +44,25 @@ class CreateClassTable extends Migration
 				$table->timestamps();
 				$table->softDeletes();
 
-				$table->foreign('course_id')
-					->references('id')
-					->on('course');
+				// $table->foreign('course_id')
+				// 	->references('id')
+				// 	->on('course');
 
-				$table->foreign('city_id')
-					->references('id')
-					->on('city');
+				// $table->foreign('city_id')
+				// 	->references('id')
+				// 	->on('city');
 
-				$table->foreign('place_id')
-					->references('id')
-					->on('place');
+				// $table->foreign('place_id')
+				// 	->references('id')
+				// 	->on('place');
 
-				$table->foreign('pteam_id')
-					->references('id')
-					->on('team');
+				// $table->foreign('pteam_id')
+				// 	->references('id')
+				// 	->on('team');
 
-				$table->foreign('contract_id')
-					->references('id')
-					->on('contract');
+				// $table->foreign('contract_id')
+				// 	->references('id')
+				// 	->on('contract');
 			});
 		}
 	}

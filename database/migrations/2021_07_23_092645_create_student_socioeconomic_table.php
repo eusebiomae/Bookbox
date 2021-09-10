@@ -16,7 +16,7 @@ class CreateStudentSocioeconomicTable extends Migration
 		if (!Schema::hasTable('student_socioeconomic')) {
 			Schema::create('student_socioeconomic', function (Blueprint $table) {
 				$table->id();
-				$table->foreignId('student_id')->nullable()->references('id')->on('student')->onDelete('cascade');
+				// $table->foreignId('student_id')->nullable()->references('id')->on('student')->onDelete('cascade');
 				$table->integer('marital_status')->nullable();
 				$table->string('profession', 125)->nullable();
 				$table->double('salary')->nullable();

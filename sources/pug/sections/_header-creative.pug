@@ -1,0 +1,66 @@
+mixin header-creative( obj )
+	- obj = obj || {};
+
+	header.section.page-header( class= obj.mod )
+		// RD Navbar
+		.rd-navbar-wrap
+			nav.rd-navbar.rd-navbar-creative(
+			data-layout=                'rd-navbar-fixed'
+			data-sm-layout=             'rd-navbar-fixed'
+			data-md-layout=             'rd-navbar-fixed'
+			data-md-device-layout=      'rd-navbar-fixed'
+			data-lg-layout=             'rd-navbar-static'
+			data-lg-device-layout=      'rd-navbar-fixed'
+			data-xl-layout=             'rd-navbar-static'
+			data-xl-device-layout=      'rd-navbar-static'
+			data-xxl-layout=            'rd-navbar-static'
+			data-xxl-device-layout=     'rd-navbar-static'
+			data-lg-stick-up-offset=    '100px'
+			data-xl-stick-up-offset=    '112px'
+			data-xxl-stick-up-offset=   '132px'
+			data-lg-stick-up=           'true'
+			data-xl-stick-up=           'true'
+			data-xxl-stick-up=          'true'
+			)&attributes( attributes )
+				.rd-navbar-collapse-toggle.rd-navbar-fixed-element-1( data-rd-navbar-toggle='.rd-navbar-collapse' ): span
+				.rd-navbar-aside-outer: .rd-navbar-aside
+					.rd-navbar-collapse
+						ul.contacts-classic
+							li
+								span.contacts-classic-title Call us:
+								=' '
+								a( href='tel:#' ) +1 (844) 123 456 78
+							li: a( href='mailto:#' ) info@demolink.org
+						a.rd-navbar-basket.rd-navbar-basket-mobile.fl-bigmug-line-shopping202( href='#' ): span 2
+
+					// RD Navbar Panel
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle( data-rd-navbar-toggle='.rd-navbar-nav-wrap' ): span
+
+						// RD Navbar Brand
+						.rd-navbar-brand
+							+logo
+								if( obj.logoFixed )
+									+img( obj.logoFixed, { retina: true } ).brand-logo-fixed
+
+					.rd-navbar-aside-element
+						// RD Navbar Search
+						.rd-navbar-search.rd-navbar-search-2
+							button.rd-navbar-search-toggle.rd-navbar-fixed-element-3( data-rd-navbar-toggle='.rd-navbar-search' ): span
+							form.rd-search( action='search-results.html', data-search-live='rd-search-results-live', method='GET' )
+								.form-wrap
+									input.rd-navbar-search-form-input.form-input( id='rd-navbar-search-form-input', type='text', name='s', autocomplete='off' )
+									label.form-label( for='rd-navbar-search-form-input' ) Search...
+									#rd-search-results-live.rd-search-results-live
+									button.rd-search-form-submit.fl-bigmug-line-search74( type='submit' )
+						// RD Navbar Basket
+						include ../includes/_header-cart
+
+						.rd-navbar-fixed-element-2.select-inline
+							select( data-dropdown-class='select-inline-dropdown' )
+								option( value='en' ) en
+								option( value='fr' ) fr
+								option( value='es' ) es
+
+				.rd-navbar-main-outer: .rd-navbar-main: .rd-navbar-nav-wrap: +navigation( menu )

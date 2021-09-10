@@ -1,0 +1,125 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-creative
+include ../components/_product
+include ../components/_pagination
+include ../sections/_footer-modern
+
+block variables
+	- pageName = 'Shop'
+
+block page 
+	// Page Header
+	+header-creative.rd-navbar-creative-2
+
+	+breadcrumbs({
+		img: 'bg-about',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius <br class="d-none d-md-block">mod tempor incididunt ut labore et dolore magna aliqua.'
+	})
+
+	// Section Shop
+	section.section.section-xxl.bg-default.text-md-left
+		.container: .row.row-50
+			.col-lg-4.col-xl-3: include ../includes/_aside-product
+			.col-lg-8.col-xl-9
+				.product-top-panel.group-md
+					p.product-top-panel-title Showing 1–9 of 28 results
+					div: .group-sm.group-middle
+						.product-top-panel-sorting
+							select
+								option( value='1' ) Sort by newness
+								option( value='2' ) Sort by popularity
+								option( value='3' ) Sort by alphabet
+
+						.product-view-toggle
+							a.mdi.mdi-apps.product-view-link.product-view-grid.active( href= links.shop )
+							a.mdi.mdi-format-list-bulleted.product-view-link.product-view-list( href='#' )
+
+				.row.row-30.row-lg-50
+					.col-sm-6.col-md-4.col-lg-6.col-xl-4
+						+product({
+							img: 'product-1-95x175.png',
+							title: 'Mango',
+							price: '23.00',
+							priceOld: '30.00'
+						})
+					.col-sm-6.col-md-4.col-lg-6.col-xl-4
+						+product({
+							img: 'product-2-95x175.png',
+							title: 'Strawberry',
+							price: '13.00',
+							new: true
+						})
+					.col-sm-6.col-md-4.col-lg-6.col-xl-4
+						+product({
+							img: 'product-3-95x175.png',
+							title: 'Apple',
+							price: '16.99'
+						})
+					.col-sm-6.col-md-4.col-lg-6.col-xl-4
+						+product({
+							img: 'product-5-95x175.png',
+							title: 'Grapes',
+							price: '11.00'
+						})
+					.col-sm-6.col-md-4.col-lg-6.col-xl-4
+						+product({
+							img: 'product-6-95x175.png',
+							title: 'Bananas',
+							price: '15.99'
+						})
+					.col-sm-6.col-md-4.col-lg-6.col-xl-4
+						+product({
+							img: 'product-7-95x175.png',
+							title: 'Carrots',
+							price: '24.00',
+							priceOld: '33.00'
+						})
+					.col-sm-6.col-md-4.col-lg-6.col-xl-4
+						+product({
+							img: 'product-8-95x175.png',
+							title: 'Orange',
+							price: '14.99'
+						})
+					.col-sm-6.col-md-4.col-lg-6.col-xl-4
+						+product({
+							img: 'product-4-95x175.png',
+							title: 'Guava',
+							price: '12.00',
+							new: true
+						})
+					.col-sm-6.col-md-4.col-lg-6.col-xl-4
+						+product({
+							img: 'product-9-95x175.png',
+							title: 'Forest berry',
+							price: '18.00'
+						})
+				.pagination-wrap: +pagination-bootstrap(null, 1, 3)
+
+
+	// Page Footer
+	+footer-modern({
+		bodyMod: 'context-dark',
+		gallery: [
+			{img: 'grid-gallery-1-93x93', imgOriginal: 'grid-gallery-footer-1-1200x800-original'},
+			{img: 'grid-gallery-2-93x93', imgOriginal: 'masonry-gallery-4-1200x800-original'},
+			{img: 'grid-gallery-3-93x93', imgOriginal: 'grid-gallery-2-1200x800-original'},
+			{img: 'grid-gallery-4-93x93', imgOriginal: 'grid-gallery-1-1200x800-original'},
+			{img: 'grid-gallery-5-93x93', imgOriginal: 'grid-gallery-footer-5-1200x800-original'},
+			{img: 'grid-gallery-6-93x93', imgOriginal: 'grid-gallery-4-1200x800-original'}
+		],
+		list: [
+			{text: 'Our Team', link: 'our-team.html'},
+			{text: 'New Products', link: 'grid-shop.html'},
+			{text: 'Blog', link: 'blog-list.html'},
+			{text: 'About Us', link: 'about-us.html'},
+			{text: 'FAQ', link: '#'},
+			{text: 'Contact Us', link: 'contact-us.html'},
+			{text: 'Smoothies', link: '#'},
+			{text: 'Energy Bowls', link: '#'},
+			{text: 'Juices', link: '#'},
+			{text: 'Ingredients', link: '#'},
+			{text: 'Delivery', link: '#'}
+		]
+	}).footer-modern-2

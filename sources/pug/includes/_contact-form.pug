@@ -1,0 +1,52 @@
+mixin contact-form( obj )
+	-
+		obj = obj || {}
+
+	// RD Mailform
+	form.rd-form.rd-mailform( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+		.form-wrap
+			input.form-input( id='contact-name', type='text', name='name', data-constraints='@Required' )
+			label.form-label( for='contact-name' ) Your Name
+
+		.form-wrap
+			input.form-input( id='contact-email', type='email', name='email', data-constraints='@Email @Required' )
+			label.form-label( for='contact-email' ) E-mail
+
+		.form-wrap
+			label.form-label( for='contact-message' ) Message
+			textarea.form-input( id='contact-message', name='message', data-constraints='@Required' )
+
+		if( block )
+			block
+		else
+			button.button.button-lg.button-primary.button-zakaria( type='submit' ) Send
+
+
+mixin contact-form-2( obj )
+	-
+		obj = obj || {}
+
+	form.rd-form.rd-mailform( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+		.row.row-20.row-md-30
+			.col-lg-8: .row.row-20.row-md-30
+				.col-sm-6: .form-wrap
+					input.form-input( id='contact-first-name-2', type='text', name='name', data-constraints='@Required' )
+					label.form-label( for='contact-first-name-2' ) First Name
+
+				.col-sm-6: .form-wrap
+					input.form-input( id='contact-last-name-2', type='text', name='name', data-constraints='@Required' )
+					label.form-label( for='contact-last-name-2' ) Last Name
+
+				.col-sm-6: .form-wrap
+					input.form-input( id='contact-email-2', type='email', name='email', data-constraints='@Email @Required' )
+					label.form-label( for='contact-email-2' ) E-mail
+
+				.col-sm-6: .form-wrap
+					input.form-input( id='contact-phone-2', type='text', name='phone', data-constraints='@Numeric' )
+					label.form-label( for='contact-phone-2' ) Phone
+
+			.col-lg-4: .form-wrap
+				label.form-label( for='contact-message-2' ) Message
+				textarea.form-input.textarea-lg( id='contact-message-2', name='phone', data-constraints='@Required' )
+
+		button.button.button-lg.button-primary.button-zakaria( type='submit' )= obj.buttonText ? obj.buttonText : 'Send Message'

@@ -13,20 +13,20 @@ class AlterInvisibleCategoryTypeSubcategoryTable extends Migration
      */
     public function up()
     {
-        Schema::table('course_category', function (Blueprint $table) {
-            $table->boolean('invisible')->nullable();
-            $table->boolean('invisible_connected')->nullable()->comment('Valor = 1 ? Bolsas e cursos com tal categoria ficarão invisíveis');
-        });
+        // Schema::table('course_category', function (Blueprint $table) {
+        //     $table->boolean('invisible')->nullable();
+        //     $table->boolean('invisible_connected')->nullable()->comment('Valor = 1 ? Bolsas e cursos com tal categoria ficarão invisíveis');
+        // });
 
-        Schema::table('course_category_type', function (Blueprint $table) {
-            $table->boolean('invisible')->nullable();
-            $table->boolean('invisible_connected')->nullable()->comment('Valor = 1 ? Bolsas e cursos com tal tipo de categoria ficarão invisíveis');
-        });
+        // Schema::table('course_category_type', function (Blueprint $table) {
+        //     $table->boolean('invisible')->nullable();
+        //     $table->boolean('invisible_connected')->nullable()->comment('Valor = 1 ? Bolsas e cursos com tal tipo de categoria ficarão invisíveis');
+        // });
 
-        Schema::table('course_subcategory', function (Blueprint $table) {
-            $table->boolean('invisible')->nullable();
-            $table->boolean('invisible_connected')->nullable()->comment('Valor = 1 ? Bolsas e cursos com tal subcategoria ficarão invisíveis');
-        });
+        // Schema::table('course_subcategory', function (Blueprint $table) {
+        //     $table->boolean('invisible')->nullable();
+        //     $table->boolean('invisible_connected')->nullable()->comment('Valor = 1 ? Bolsas e cursos com tal subcategoria ficarão invisíveis');
+        // });
     }
 
     /**

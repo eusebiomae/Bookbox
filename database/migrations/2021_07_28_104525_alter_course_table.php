@@ -13,12 +13,12 @@ class AlterCourseTable extends Migration
      */
     public function up()
     {
-        Schema::table('course', function (Blueprint $table) {
-			$table->boolean('show_title')->nullable()->after('show_home');
-			$table->string('cta', 15)->nullable()->after('description_es');
-			$table->string('additional_information', 50)->nullable();
-      $table->boolean('school_clinic')->nullable();
-		});
+    //     Schema::table('course', function (Blueprint $table) {
+		// 	$table->boolean('show_title')->nullable()->after('show_home');
+		// 	$table->string('cta', 15)->nullable()->after('description_es');
+		// 	$table->string('additional_information', 50)->nullable();
+    //   $table->boolean('school_clinic')->nullable();
+		// });
     }
 
     /**

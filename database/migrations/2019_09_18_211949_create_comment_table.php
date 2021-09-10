@@ -30,26 +30,6 @@ class CreateCommentTable extends Migration
 			$table->integer('deleted_by')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-
-			$table->foreign('blog_id')
-				->references('id')
-				->on('blog');
-
-			$table->foreign('user_id')
-				->references('id')
-				->on('user');
-
-			$table->foreign('approved_by')
-				->references('id')
-				->on('user');
-
-			$table->foreign('approved_by')
-				->references('id')
-				->on('user');
-
-			$table->foreign('answer_from')
-				->references('id')
-				->on('comment');
 		});
 	}
 

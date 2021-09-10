@@ -8,12 +8,12 @@ class AddCourseInformationsAvaliationTable extends Migration
 {
     public function up()
     {
-        Schema::table('avaliation', function (Blueprint $table) {
-            $table->foreignId('course_category_type_id')->references('id')->on('course_category_type')->onDelete('cascade')->nullable();
-            $table->foreignId('course_subcategory_id')->references('id')->on('course_subcategory')->onDelete('cascade')->nullable();
-            $table->foreignId('course_id')->references('id')->on('course')->onDelete('cascade')->nullable();
-            $table->foreignId('class_id')->references('id')->on('class')->onDelete('cascade')->nullable();
-		});
+        // Schema::table('avaliation', function (Blueprint $table) {
+        //     $table->foreignId('course_category_type_id')->references('id')->on('course_category_type')->onDelete('cascade')->nullable();
+        //     $table->foreignId('course_subcategory_id')->references('id')->on('course_subcategory')->onDelete('cascade')->nullable();
+        //     $table->foreignId('course_id')->references('id')->on('course')->onDelete('cascade')->nullable();
+        //     $table->foreignId('class_id')->references('id')->on('class')->onDelete('cascade')->nullable();
+		// });
     }
 
     public function down()

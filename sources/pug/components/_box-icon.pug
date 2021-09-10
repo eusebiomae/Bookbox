@@ -1,0 +1,58 @@
+//- box icon
+
+mixin box-icon-classic( obj )
+	article.box-icon-classic&attributes( attributes )
+		.unit( class= obj.unit )
+			.unit-left
+				if( obj.icon )
+					.box-icon-classic-icon( class=obj.icon )
+				else
+					.box-icon-classic-svg: block
+
+			.unit-body
+				h4.box-icon-classic-title: a( href= links.service )= obj.title
+				p.box-icon-classic-text= obj.text ? obj.text : 'Cur tantas regiones barbarorum peat dibus obiit, tregiones barbarorum peat dibus obiit, tot mariata'
+
+mixin box-icon-modern( obj )
+	article.box-icon-modern&attributes( attributes )
+		.box-icon-modern-header
+			.box-icon-modern-count.box-ordered-item
+			if( obj.icon )
+				.box-icon-modern-icon( class=obj.icon )
+			else
+				.box-icon-modern-svg: block
+		h4.box-icon-modern-title: a( href= links.service )= obj.title
+		p.box-icon-modern-text= obj.text ? obj.text : 'Cur tantas regiones barbarorum peat dibus obiit, tregiones barbarorum peat dibus obiit, tot mariata'
+
+mixin box-icon-creative( obj )
+	article.box-icon-creative&attributes( attributes )
+		.unit( class= obj.unit )
+			.unit-left: .box-icon-creative-icon( class=obj.icon )
+			.unit-body
+				h5.box-icon-creative-title: a( href= links.service )= obj.title
+				p.box-icon-creative-text= obj.text
+
+mixin box-icon-nancy( obj )
+	article.box-icon-nancy&attributes( attributes )
+		.unit( class= obj.unit )
+			.unit-left
+				if( obj.icon )
+					.box-icon-nancy-icon( class=obj.icon )
+				else
+					.box-icon-nancy-svg
+						svg.svg-bg( width='77.06', height='71.94', viewBox='0 0 77.06 71.94' )
+							path( d='M1220.63,3358.07c8.86-19.66,32.66-7.87,38.1,13a39.053,39.053,0,0,1-27.91,47.63c-20.85,5.44-43.52-6.76-47.59-27.93C1179.83,3373.1,1210.55,3380.43,1220.63,3358.07Z', transform='translate(-1182.94 -3348.03)' )
+						block
+
+			.unit-body
+				h4.box-icon-nancy-title: a( href= links.service )= obj.title
+				p.box-icon-nancy-text= obj.text ? obj.text : 'Cur tantas regiones barbarorum peat dibus obiit, tregiones barbarorum peat dibus obiit, tot mariata'
+
+mixin box-icon-kelly( obj )
+	article.box-icon-kelly&attributes( attributes )
+		.unit( class= obj.unit )
+			.unit-left
+				.box-icon-kelly-svg: block
+			.unit-body
+				h4.box-icon-kelly-title: a( href= links.service )= obj.title
+				p.box-icon-kelly-text= obj.text

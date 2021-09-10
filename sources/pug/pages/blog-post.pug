@@ -1,0 +1,156 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-creative
+include ../components/_posts
+include ../components/_quote
+include ../components/_box-comment
+include ../sections/_footer-modern
+
+block variables
+	- pageName = 'Blog Post'
+
+block page 
+	// Page Header
+	+header-creative.rd-navbar-creative-2
+
+	+breadcrumbs({
+		img: 'bg-about',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius <br class="d-none d-md-block">mod tempor incididunt ut labore et dolore magna aliqua.'
+	})
+
+	// Section Shop
+	section.section.section-xl.bg-default.text-md-left
+		.container: .row.row-50.row-md-60
+			.col-lg-8.col-xl-9: .inset-xl-right-100
+				.row.row-50.row-md-60.row-lg-80
+					.col-12
+						article.post.post-modern-1.box-xxl
+							.post-modern-panel
+								div: a.post-modern-tag( href='#' ) News
+								div: time.post-modern-time( datetime='2020-09-08' ) August 9, 2020
+							h3.post-modern-title How Can Salmon be Raised Organically in Fish Farms?
+							.post-modern-figure: +img( 'post-7-800x394' )
+							p.post-modern-text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+							p.post-modern-text At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est
+						+quote-classic({
+							text: 'There are a few ways to raise an organic salmon at a fish farm and they proved to be successful.'
+						}).quote-classic-2
+
+						p Cum bulla messis, omnes mineralises gratia camerarius, emeritis apolloniateses. Equiso de bi-color burgus, examinare lapsus! Accola gratis usus est. Speciess sunt equisos de emeritis calceus. Vae. Vortexs mori in tubinga! Sunt quadraes amor bi-color, fatalis medicinaes. Cum scutum resistere, omnes imberes locus
+
+						.single-post-bottom-panel
+							.group-sm.group-justify
+								div: .group-sm.group-tags
+									a.link-tag( href='#' ) Fruits
+									a.link-tag( href='#' ) Vegetables
+									a.link-tag( href='#' ) Drinks
+								div: .group-xs.group-middle
+									span.list-social-title Share
+									div: +widget-list( [], '', 'list-social list-inline-sm' )
+
+					.col-12
+						h6.single-post-title Related Posts
+						.row.row-30
+							.col-sm-6
+								+post-classic({
+									img: 'post-1-370x239',
+									time: {
+										datetime: '2020-09-08',
+										datetext: 'August 9, 2020'
+									},
+									title: 'Top 5 Easy and Cheap Organic Breakfast Recipes',
+									text: 'Est velox nuptia, cesaris. Est dexter turpis, cesaris. Cum nixus persuadere, omnes fluctuies promissio flavum'
+								})
+							.col-sm-6
+								+post-classic({
+									img: 'post-2-370x239',
+									time: {
+										datetime: '2020-09-08',
+										datetext: 'August 9, 2020'
+									},
+									title: 'Everyday Dinner Choices for a Healthier, Happier You',
+									text: 'Sensorems peregrinatione in rugensis civitas! Ubi est bi-color byssus? Velox, teres ollas recte aperto de castus'
+								})
+
+					.col-12
+						h6.single-post-title 3 Comments
+						+box-comment({
+							unit: 'unit-spacing-md',
+							img: 'user-1-119x119',
+							author: 'Jane Doe',
+							text: 'Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique cum te.',
+							time: {
+								datetime: '2020-08-30',
+								datetext: 'Aug 30, 2020'
+							}
+						})
+
+							+box-comment({
+								unit: 'unit-spacing-md',
+								img: 'user-2-119x119',
+								author: 'Jessica Brown',
+								text: 'Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus',
+								time: {
+									datetime: '2020-08-30',
+									datetext: 'Aug 30, 2020'
+								}
+							})
+
+						+box-comment({
+							unit: 'unit-spacing-md',
+							img: 'user-3-119x119',
+							author: 'Nick Stevens',
+							text: 'Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique cum te.',
+							time: {
+								datetime: '2020-08-30',
+								datetext: 'Aug 30, 2020'
+							}
+						})
+
+					.col-12
+						h6.single-post-title Leave a comment
+						form.rd-form.rd-mailform( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+							.row.row-20.row-md-30
+								.col-sm-6: .form-wrap
+									input.form-input( id='contact-first-name-2' type='text', name='name', data-constraints='@Required' )
+									label.form-label( for='contact-first-name-2' ) First Name
+
+								.col-sm-6: .form-wrap
+									input.form-input( id='contact-last-name-2' type='text', name='name', data-constraints='@Required' )
+									label.form-label( for='contact-last-name-2' ) Last Name
+
+								.col-12: .form-wrap
+									label.form-label( for='contact-message-2' ) Message
+									textarea.form-input.textarea-lg( id='contact-message-2', name='phone', data-constraints='@Required' )
+
+							button.button.button-lg.button-secondary.button-zakaria( type='submit' ) Submit
+
+			.col-lg-4.col-xl-3: include ../includes/_aside-blog
+
+
+	// Page Footer
+	+footer-modern({
+		bodyMod: 'context-dark',
+		gallery: [
+			{img: 'grid-gallery-1-93x93', imgOriginal: 'grid-gallery-footer-1-1200x800-original'},
+			{img: 'grid-gallery-2-93x93', imgOriginal: 'masonry-gallery-4-1200x800-original'},
+			{img: 'grid-gallery-3-93x93', imgOriginal: 'grid-gallery-2-1200x800-original'},
+			{img: 'grid-gallery-4-93x93', imgOriginal: 'grid-gallery-1-1200x800-original'},
+			{img: 'grid-gallery-5-93x93', imgOriginal: 'grid-gallery-footer-5-1200x800-original'},
+			{img: 'grid-gallery-6-93x93', imgOriginal: 'grid-gallery-4-1200x800-original'}
+		],
+		list: [
+			{text: 'Our Team', link: 'our-team.html'},
+			{text: 'New Products', link: 'grid-shop.html'},
+			{text: 'Blog', link: 'blog-list.html'},
+			{text: 'About Us', link: 'about-us.html'},
+			{text: 'FAQ', link: '#'},
+			{text: 'Contact Us', link: 'contact-us.html'},
+			{text: 'Smoothies', link: '#'},
+			{text: 'Energy Bowls', link: '#'},
+			{text: 'Juices', link: '#'},
+			{text: 'Ingredients', link: '#'},
+			{text: 'Delivery', link: '#'}
+		]
+	}).footer-modern-2

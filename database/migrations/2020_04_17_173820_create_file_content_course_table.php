@@ -20,13 +20,13 @@ class CreateFileContentCourseTable extends Migration
 				$table->timestamps();
 				$table->softDeletes();
 
-				$table->foreign('file_id')
-					->references('id')
-					->on('files');
+				// $table->foreign('file_id')
+				// 	->references('id')
+				// 	->on('files');
 
-				$table->foreign('content_course_id')
-					->references('id')
-					->on('content_course');
+				// $table->foreign('content_course_id')
+				// 	->references('id')
+				// 	->on('content_course');
 			});
 		}
 	}
