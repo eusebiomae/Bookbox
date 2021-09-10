@@ -1,0 +1,35 @@
+<?php
+
+return [
+
+    'title'             => 'TRABALHE CONOSCO',
+    'subtitle'          => 'Preencha o formulário e faça parte de nossa equipe',
+    'name'              => 'Nome',
+    'lastName'          => 'Sobrenome',
+    'genre'             => 'Gênero',
+    'dateBirth'         => 'Data de Nascimento',
+    'profession'        => 'Profissão',
+    'graduation'        => 'Graduação',
+    'function'          => 'Função',
+    'office'            => 'Cargo Desejado',
+    'englishLevel'      => 'Nível de Inglês',
+    'address'           => 'Endereço',
+    'number'            => 'Nº',
+    'complement'        => 'Complemento',
+    'neighborhood'      => 'Bairro',
+    'city'              => 'Cidade',
+    'uf'                => 'UF',
+    'cep'               => 'CEP',
+    'phone'            => 'Telefone',
+    'cellPhone'         => 'Celular',
+    'email'             => 'E-mail',
+    'textPt'            => 'Por que gostaria de trabalhar conosco?',
+    'textEn'            => 'Why would you like to work with us?',
+    'answerPt'          => 'Responda em Português',
+    'answerEn'          => 'Answer in English',
+    'cancel'            => 'Cancelar',
+    'submit'            => 'Enviar Currículum',
+    'attach'            => 'Anexe o seu currículo',
+    'attachVideo'       => 'Deixe seu currículo em destaque, envie um vídeo curto explicando, em inglês, porque você gostaria de trabalhar na Bee Happy!',
+    
+];

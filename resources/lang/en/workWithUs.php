@@ -1,0 +1,35 @@
+<?php
+
+return [
+
+    'title'             => 'WORK WITH US',
+    'subtitle'          => 'Fill out the form and be part of our team',
+    'name'              => 'Name',
+    'lastName'          => 'Last name',
+    'genre'             => 'Genre',
+    'dateBirth'         => 'Date of birth',
+    'profession'        => 'Profession',
+    'graduation'        => 'University graduate',
+    'function'          => 'Function',
+    'office'            => 'Desired Job Title',
+    'englishLevel'      => 'English level',
+    'address'           => 'Address',
+    'number'            => 'Nº',
+    'complement'        => 'Complement',
+    'neighborhood'      => 'Neighborhood',
+    'city'              => 'City',
+    'uf'                => 'UF',
+    'cep'               => 'CEP',
+    'phone'            => 'Telephone',
+    'cellPhone'         => 'Cell phone',
+    'email'             => 'Email',
+    'textPt'            => 'Why would you like to work with us?',
+    'textEn'            => 'Why would you like to work with us?',
+    'answerPt'          => 'Answer in Portuguese',
+    'answerEn'          => 'Answer in English',
+    'cancel'            => 'Cancel',
+    'submit'            => 'Submit Resume',
+    'attach'            => 'Attach your resume',
+    'attachVideo'       => 'Let your resume stand out, send a short video explaining why you would like to work at Bee Happy!',
+    
+];

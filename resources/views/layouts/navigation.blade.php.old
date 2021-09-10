@@ -1,0 +1,558 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+
+		<ul class="nav metismenu" id="side-menu">
+			<li class="nav-header">
+				<div class="dropdown profile-element">
+					<span>
+						<a href="{{ url('/admin/') }}">
+							<img alt="image" class="img-circle" src="{!! asset(Session::get('company')->image) !!}" style="width: 100%;" />
+						</a>
+					</span>
+					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+						<span class="block m-t-xs">
+							<strong class="font-bold">{{ (Session::get('company')->name) }}</strong>
+						</span>
+					</a>
+				</div>
+
+				<div class="logo-element">
+					CETCC
+				</div>
+			</li>
+
+			<li class="{{ isActiveRoute('admin.dashboard') }}">
+				<a href="{{ url('/admin/') }}"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
+			</li>
+
+			@if (enableMenuItemAdmin('admin.prospection'))
+			<li class="{{ isActiveRoute([
+				'admin.prospection.dashboard',
+				'admin.prospection.prospect',
+				'admin.prospection.client',
+				'admin.prospection.former_client',
+				'admin.prospection.guestbook',
+				'admin.prospection.visitSchedule',
+				'admin.configuration.city',
+				]) }}">
+				<a href="#">
+					<i class="fa fa-address-book"></i>
+					<span class="nav-label">Gestão Cliente</span>
+					<span class="fa arrow"></span>
+				</a>
+
+				<ul class="nav nav-second-level collapse">
+					<li class="{{ isActiveRoute('admin.prospection.dashboard') }}">
+						<a href="{{ url('/admin/prospection/dashboard') }}">Dashboard</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.student_registration') }}">
+						<a href="{{ url('/admin/student_registration') }}">Inscrição do aluno</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.prospection.prospect_hot') }}">
+						<a href="{{ url('/admin/prospection/prospect_hot') }}">Leads quentes</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.prospection.prospect') }}">
+						<a href="{{ url('/admin/prospection/prospect') }}">Leads</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.prospection.client') }}">
+						<a href="{{ url('/admin/prospection/client') }}">Cliente</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.prospection.former_client') }}">
+						<a href="{{ url('/admin/prospection/former_client') }}">Ex cliente</a>
+					</li>
+					{{-- <li class="{{ isActiveRoute('admin.prospection.guestbook') }}">
+						<a href="{{ url('/admin/prospection/guestbook') }}">Livro de Visita</a>
+					</li> --}}
+					{{-- <li class="{{ isActiveRoute('admin.prospection.visitSchedule') }}">
+						<a href="{{ url('/admin/prospection/visitSchedule') }}">
+							<span class="nav-label">Agenda de visita</span>
+						</a>
+					</li> --}}
+					<li class="{{ isActiveRoute('admin.configuration.city') }}">
+						<a href="#">Configurações<span class="fa arrow"></span>
+						</a>
+						<ul class="nav nav-third-level">
+							<li class="{{ isActiveRoute('admin.configuration.city') }}">
+								<a href="{{ url('/admin/configuration/city') }}">Cidades de Atuação</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.routineManagement'))
+			<li class="{{ isActiveRoute('admin.routine_management.dashboard') }} {{ isActiveRoute('admin.routine_management.dashboard') }} {{ isActiveRoute('admin.routine_management.goal_pcx') }} {{ isActiveRoute('admin.routine_management.goal_pcx.full') }} {{ isActiveRoute('admin.routine_management.report_goal_pcx') }} {{ isActiveRoute('admin.routine_management.productivity') }} {{ isActiveRoute('admin.routine_management.activities') }}">
+				<a href="#">
+					<i class="fa fa-bullseye"></i>
+					<span class="nav-label">Gestão Rotina</span>
+					<span class="fa arrow"></span>
+				</a>
+
+				<ul class="nav nav-second-level collapse">
+					<li class="{{ isActiveRoute('admin.routine_management.dashboard') }}">
+						<a href="{{ url('/admin/routine_management/dashboard') }}">Dashboard</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.routine_management.goal_pcx') }} {{ isActiveRoute('admin.routine_management.goal_pcx.full') }}">
+						<a href="{{ url('/admin/routine_management/goal_pcx') }}">Meta PCX</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.routine_management.report_goal_pcx') }}">
+						<a href="{{ url('/admin/routine_management/report_goal_pcx') }}">Relatórios PCX</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.routine_management.productivity') }}">
+						<a href="{{ url('/admin/routine_management/productivity') }}">Produtividade</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.routine_management.activities') }}">
+						<a href="#">Configurações<span class="fa arrow"></span>
+						</a>
+						<ul class="nav nav-third-level">
+							<li class="{{ isActiveRoute('admin.routine_management.activities') }}">
+								<a href="{{ url('/admin/routine_management/activities') }}">Atividades</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.courseManagement'))
+			<li class="{{ isActiveRoute([
+				'admin.course_management.course_category_type',
+				'admin.course_management.course_category',
+				'admin.course_management.course_subcategory',
+				'admin.course_management.course',
+				'admin.course_management.class',
+				'admin.course_management.course_supervision',
+				'admin.course_management.content_course',
+				'admin.course_management.bonus_course',
+				'admin.course_management.file',
+				'admin.course_management.video',
+				'admin.course_management.place',
+				'admin.additional',
+				'admin.question',
+				]) }}" >
+				<a href="#"><i class="fa fa-book"></i> <span class="nav-label">Gestão Cursos</span> <span class="fa arrow"></span> </a>
+				<ul class="nav nav-second-level collapse" class="{{ isActiveRoute('admin.prospection') }}">
+					<li class="{{ isActiveRoute('admin.course_management.course_category_type') }}">
+						<a href="{{ url('/admin/prospection/course_category_type') }}">Tipo de Curso</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.course_category') }}">
+						<a href="{{ url('/admin/prospection/course_category') }}">Categoria de Curso</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.course_subcategory') }}">
+						<a href="{{ url('/admin/prospection/course_subcategory') }}">Subcategoria de Curso</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.course') }}">
+						<a href="{{ url('/admin/prospection/course') }}">Cursos</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.class') }}">
+						<a href="{{ url('/admin/prospection/class') }}">Turmas</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.course_supervision') }}">
+						<a href="{{ url('/admin/course_supervision') }}">Supervisão</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.content_course') }}">
+						<a href="{{ url('/admin/prospection/content_course') }}">Módulos</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.bonus_course') }}">
+						<a href="{{ url('/admin/prospection/bonus_course') }}">Vantagens do Curso</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.included_items') }}">
+						<a href="{{ url('/admin/prospection/included_items') }}">Itens Inclusos</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.file') }}">
+						<a href="{{ url('/admin/prospection/file') }}">Arquivos Diversos</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.video') }}">
+						<a href="{{ url('/admin/prospection/video') }}">Vídeo Aulas</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.course_management.place') }}">
+						<a href="{{ url('/admin/place') }}">Local</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.additional') }}">
+						<a href="{{ url('admin/additional') }}">Adicionais</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.other_inf') }}">
+						<a href="{{ url('admin/other_inf') }}">Outras Informações</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.other_inf_type') }}">
+						<a href="{{ url('admin/other_inf_type') }}">Tipo de Outras Informações</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.question') }}">
+						<a href="{{ url('/admin/question') }}">Questões</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.avaliation') }}">
+						<a href="{{ url('/admin/avaliation') }}">Avaliações</a>
+					</li>
+				</ul>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.studentManagement'))
+			<li class="{{ isActiveRoute('admin.student_management.student') }} {{ isActiveRoute('admin.course_management.registration') }} {{ isActiveRoute('admin.course_management.make_student_registration') }} {{ isActiveRoute('admin.student_management.class_student_registration') }} {{ isActiveRoute('admin.student_management.student.supervision') }} {{ isActiveRoute('admin.student_management.class_release') }}">
+				<a href="#"><i class="fa fa-graduation-cap"></i> <span class="nav-label">Gestão Aluno</span> <span class="fa arrow"></span> </a>
+				<ul class="nav nav-second-level collapse" class="{{ isActiveRoute('admin.prospection') }}">
+					<li class="{{ isActiveRoute('admin.student_management.student') }}">
+						<a href="{{ url('/admin/prospection/student') }}">Inscrições Cursos</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.student_management.registration') }}">
+						<a href="{{ url('/admin/prospection/registration') }}">Matrículas</a>
+					</li>
+					{{-- <li class="{{ isActiveRoute('admin.student_management.make_student_registration') }}">
+						<a href="{{ url('/admin/make_student_registration') }}">Aluno vs. Turmas </a>
+					</li> --}}
+					{{-- <li class="{{ isActiveRoute('admin.student_management.class_student_registration') }}">
+						<a href="{{ url('/admin/class_student_registration') }}">Lista de Alunos</a>
+					</li> --}}
+					<li class="{{ isActiveRoute('admin.student_management.student.supervision') }}">
+						<a href="{{ url('/admin/prospection/student/supervision') }}">Inscrições Supervisões</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.student_management.class_release') }}">
+						<a href="{{ url('/admin/class_release') }}">Liberação de Aulas</a>
+					</li>
+				</ul>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.financeManagement'))
+			<li class="{{ isActiveRoute([
+				'admin.finance_management.introduction',
+				'admin.configuration.bank',
+				'admin.finance_management.bank_account',
+				'admin.finance_management.contract',
+				'admin.finance_management.form_payment',
+				'admin.finance_management.type_payment',
+				]) }}">
+
+				<a href="#"><i class="fa fa-dollar"></i> <span class="nav-label">Gestão Financeiro</span> <span class="fa arrow"></span> </a>
+				<ul class="nav nav-second-level collapse">
+					<li class="{{ isActiveRoute('admin.finance_management.contract') }}">
+						<a href="{{ url('/admin/contract') }}">Contratos</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.discount') }}">
+						<a href="{{ url('/admin/discount') }}">Cupom de desconto</a>
+					</li>
+
+					<li class="{{ isActiveRoute([
+						'admin.finance_management.introduction',
+						'admin.configuration.bank',
+						'admin.finance_management.bank_account',
+						'admin.finance_management.form_payment',
+						'admin.finance_management.type_payment',
+						]) }}">
+						<a href="#">Configurações<span class="fa arrow"></span>
+						</a>
+						<ul class="nav nav-third-level">
+							<li class="{{ isActiveRoute('admin.finance_management.introduction') }}">
+								<a href="{{ url('/admin/introduction') }}">Instruções diversas</a>
+							</li>
+							<li class="{{ isActiveRoute('admin.configuration.bank') }}">
+								<a href="{{ url('/admin/configuration/bank') }}">Banco</a>
+							</li>
+							<li class="{{ isActiveRoute('admin.finance_management.bank_account') }}">
+								<a href="{{ url('/admin/bank_account') }}">Contas</a>
+							</li>
+							<li class="{{ isActiveRoute('admin.finance_management.form_payment') }}">
+								<a href="{{ url('/admin/form_payment') }}">Forma de pagamento</a>
+							</li>
+							<li class="{{ isActiveRoute('admin.finance_management.type_payment') }}">
+								<a href="{{ url('/admin/type_payment') }}">Tipo de pagamento</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			@endif
+
+			{{-- <li class="{{ isActiveRoute('admin.student_management.registry') }} {{ isActiveRoute('admin.student_management.class_list') }}">
+				<a href="#">
+					<i class="fa fa-graduation-cap"></i>
+					<span class="nav-label">Turmas</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level collapse">
+
+					<li class="{{ isActiveRoute('admin.student_management.registry') }}">
+						<a href="{{ url('/admin/prospection/registry') }}">Registro de Matricula</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.student_management.class_list') }}">
+						<a href="{{ url('/admin/prospection/class_list') }}">Lista Alunos</a>
+					</li>
+				</ul>
+			</li> --}}
+
+			{{--  <li class="{{ isActiveRoute('admin.prospection.course') }}">
+				<a href="#"><i class="fas fa-archive"></i> <span class="nav-label">Arquivos *CONF*</span> <span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse" class="{{ isActiveRoute('admin.prospection') }}">
+					<li class="{{ isActiveRoute('admin.prospection.file') }}"><a href="{{ url('/admin/prospection/file') }}">Upload</a></li>
+					<li class="{{ isActiveRoute('admin.prospection.file_download') }}"><a href="{{ url('/admin/prospection/file_download') }}">Download</a></li>
+				</ul>
+			</li> 	--}}
+
+			@if (enableMenuItemAdmin('admin.schoolinformation'))
+			<li class="{{ isActiveRoute('admin.schoolinformation') }}">
+				<a href="{{ url('/admin/schoolinformation') }}">
+					<i class="fa fa-university"></i>
+					<span class="nav-label">Dados da Empresa</span>
+				</a>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.user'))
+			<li class="{{ isActiveRoute('admin.user') }}">
+				<a href="{{ url('/admin/user') }}">
+					<i class="fa fa-user"></i>
+					<span class="nav-label">Usuários</span>
+				</a>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.profile'))
+			<li class="{{ isActiveRoute('admin.profile') }}">
+				<a href="{{ url('/admin/profile') }}">
+					<i class="fas fa-id-card"></i>
+					<span class="nav-label">Perfil do Usuário</span>
+				</a>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.system_screen'))
+			<li class="{{ isActiveRoute('admin.system_screen') }}">
+				<a href="{{ url('/admin/system_screen') }}">
+					<i class="fas fa-desktop"></i>
+					<span class="nav-label">Tela do Sistema</span>
+				</a>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.blog'))
+			<li class="{{ isActiveRoute('admin.blog.post') }} {{ isActiveRoute('admin.blog.category') }} {{ isActiveRoute('admin.blog.tags') }}">
+				<a href="#">
+					<i class="fa fa-bold"></i>
+					<span class="nav-label">Blog/Artigo</span>
+					<span class="fa arrow"></span>
+				</a>
+
+				<ul class="nav nav-second-level collapse" class="{{ isActiveRoute('admin.blog.post') }}">
+					<li class="{{ isActiveRoute('admin.blog.post') }}">
+						<a href="{{ url('/admin/blog') }}">Posts</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.blog.category') }}">
+						<a href="{{ url('/admin/configuration/blog/category') }}">Categoria</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.blog.tags') }}">
+						<a href="{{ url('/admin/configuration/blog/tags') }}">Tags</a>
+					</li>
+				</ul>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.clinic'))
+			<li class="{{ isActiveRoute('admin.clinic.patient') }} {{ isActiveRoute('admin.clinic.psychologist') }}">
+				<a href="#">
+					<i class="fa fa-puzzle-piece"></i>
+					<span class="nav-label">Clínica CETCC</span>
+					<span class="fa arrow"></span>
+				</a>
+
+				<ul class="nav nav-second-level collapse" class="{{ isActiveRoute('admin.blog') }}">
+					<li class="{{ isActiveRoute('admin.clinic.patient') }}">
+						<a href="{{ url('/admin/patient') }}">Paciente </a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.clinic.psychologist') }}">
+						<a href="{{ url('/admin/psychologist') }}">Psicólogo</a>
+					</li>
+
+				</ul>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.testemonial'))
+			<li class="{{ isActiveRoute('admin.testemonial') }}">
+				<a href="{{ url('/admin/testemonial') }}">
+					<i class="fas fa-comments"></i>
+					<span class="nav-label">Depoimentos</span>
+				</a>
+			</li>
+			@endif
+
+			@if (enableMenuItemAdmin('admin.newsletter'))
+			<li class="{{ isActiveRoute('admin.newsletter') }}">
+				<a href="{{ url('/admin/newsletter') }}">
+					<i class="fas fa-book"></i>
+					<span class="nav-label">Newsletters</span>
+				</a>
+			</li>
+			@endif
+
+			{{-- <li class="{{ isActiveRoute('admin.event') }}">
+				<a href="{{ url('/admin/event') }}"><i class="fa fa-calendar"></i> <span class="nav-label">Eventos</span></a>
+			</li> --}}
+
+			@if (enableMenuItemAdmin('admin.faq'))
+			<li class="{{ isActiveRoute('admin.faq') }} {{ isActiveRoute('admin.configuration.question') }}">
+				<a href="{{ url('/admin/faq') }}"><i class="fa fa-question-circle"></i> <span class="nav-label">FAQ</span><span class="fa arrow"></span></a>
+
+				<ul class="nav nav-second-level collapse" class="{{ isActiveRoute('admin.faq') }} {{ isActiveRoute('admin.configuration.question') }}">
+					<li class="{{ isActiveRoute('admin.faq') }}">
+						<a href="{{ url('/admin/faq') }}">Perguntas Frequentes</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.configuration.question') }}">
+						<a href="#">Configurações<span class="fa arrow"></span>
+						</a>
+						<ul class="nav nav-third-level">
+							<li class="{{ isActiveRoute('admin.configuration.question') }}">
+								<a href="{{ url('/admin/configuration/question') }}">Perguntas</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			@endif
+
+			{{-- NÃO VAI SER UTILIZADO NESTE PROJETO --}}
+			{{-- <li class="{{ isActiveRoute('admin.alimentation') }}">
+				<a href="{{ url('/admin/alimentation') }}"><i class="fas fa-utensils"></i> <span class="nav-label">Alimentação</span></a>
+			</li> --}}
+
+			{{-- <li class="{{ isActiveRoute('admin.construction') }}">
+				<a href="{{ url('/admin/construction') }}"><i class="fas fa-building"></i> <span class="nav-label">Estrutura</span></a>
+			</li> --}}
+
+			@if (enableMenuItemAdmin('admin.configurationTeam'))
+			<li class="{{ isActiveRoute('admin.configurationTeam.team') }} {{ isActiveRoute('admin.configurationTeam.office') }} {{ isActiveRoute('admin.configurationTeam.graduation') }} {{ isActiveRoute('admin.configurationTeam.function') }}">
+				<a href="#">
+					<i class="fas fa-users"></i>
+					<span class="nav-label">Equipe</span>
+					<span class="fa arrow"></span>
+				</a>
+
+				<ul class="nav nav-second-level collapse" class="{{ isActiveRoute('admin.configurationTeam') }}">
+					<li class="{{ isActiveRoute('admin.configurationTeam.team') }}">
+						<a href="{{ url('/admin/configurationTeam/team') }}">Pessoas</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.configurationTeam.office') }} {{ isActiveRoute('admin.configurationTeam.graduation') }} {{ isActiveRoute('admin.configurationTeam.function') }}">
+						<a href="#">Configurações<span class="fa arrow"></span>
+						</a>
+						<ul class="nav nav-third-level">
+							<li class="{{ isActiveRoute('admin.configurationTeam.office') }}">
+								<a href="{{ url('/admin/configuration/office') }}">Cargo</a>
+							</li>
+							<li class="{{ isActiveRoute('admin.configurationTeam.graduation') }}">
+								<a href="{{ url('/admin/configurationTeam/graduation') }}">Graduação</a>
+							</li>
+							<li class="{{ isActiveRoute('admin.configurationTeam.function') }}">
+								<a href="{{ url('/admin/configurationTeam/function') }}">Função</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			@endif
+
+			{{-- <li class="{{ isActiveRoute('admin.work') }}">
+				<a href="{{ url('/admin/work') }}"><i class="fa fa-user-plus"></i> <span class="nav-label">Trabalhe	Conosco</span></a>
+			</li> --}}
+
+			@if (enableMenuItemAdmin('admin.configurationPage'))
+			<li class="{{ isActiveRoute('admin.configuration_page.contentpage') }} {{ isActiveRoute('admin.configuration_page.contentsection') }} {{ isActiveRoute('admin.configuration_page.content') }} {{ isActiveRoute('admin.configuration_page.slide') }} {{ isActiveRoute('admin.configuration_page.feature') }} {{ isActiveRoute('admin.configuration_page.galery') }} {{ isActiveRoute('admin.configuration_page.link_footer') }} {{ isActiveRoute('admin.configuration.phrase') }} {{ isActiveRoute('admin.configuration.phrase') }}">
+				<a href="#">
+					<i class="fas fa-users"></i>
+					<span class="nav-label">Site</span>
+					<span class="fa arrow"></span>
+				</a>
+
+				<ul class="nav nav-second-level collapse">
+					<li class="{{ isActiveRoute('admin.configuration_page.contentpage') }}">
+						<a href="{{ url('/admin/configuration/contentpage') }}">Página</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.configuration_page.contentsection') }}">
+						<a href="{{ url('/admin/configuration/contentsection') }}">Seção de Página</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.configuration_page.content') }}">
+						<a href="{{ url('/admin/content') }}">Conteúdo</a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.configuration_page.slide') }}">
+						<a href="{{ url('/admin/slide') }}"><i class="fa fa-image"></i> <span class="nav-label">Banner</span></a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.configuration_page.feature') }}">
+						<a href="{{ url('/admin/feature') }}"><i class="fa fa-image"></i> <span class="nav-label">Feature</span></a>
+					</li>
+
+					<li class="{{ isActiveRoute('admin.configuration_page.galery') }}">
+						<a href="{{ url('/admin/galery') }}"><i class="fa fa-images"></i> <span class="nav-label">Galeria</span></a>
+					</li>
+					<li class="{{ isActiveRoute('admin.configuration_page.link_footer') }}">
+						<a href="{{ url('/admin/link_footer') }}"><i class="fa fa-link"></i> <span class="nav-label">Link Footer</span></a>
+					</li>
+					<li class="{{ isActiveRoute('admin.configuration.phrase') }}">
+						<a href="{{ url('/admin/configuration/phrase') }}">Frase</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.configuration_page.certification') }}">
+						<a href="{{ url('/admin/certification') }}">Certificação</a>
+					</li>
+				</ul>
+			</li>
+			@endif
+
+			{{-- <li class="{{ isActiveRoute('admin.configuration.alimentationcategory') }} {{ isActiveRoute('admin.configuration.alimentationtype') }} {{ isActiveRoute('admin.configuration.constructioncategory') }} {{ isActiveRoute('admin.configuration.englishlevel') }}">
+
+				<a href="#">
+					<i class="fas fa-cogs"></i>
+					<span class="nav-label">Configurações</span>
+					<span class="fa arrow"></span>
+				</a>
+
+				<ul class="nav nav-second-level collapse" class="{{ isActiveRoute('admin.configuration') }}">
+
+					@if (Auth::user()->admin === 'S' || Auth::user()->consultant === 'S')
+					<!--NÃO VAI SER UTILIZADO NESTE PROJETO -->
+					<li class="{{ isActiveRoute('admin.configuration.alimentationcategory') }}">
+						<a href="{{ url('/admin/configuration/alimentationcategory') }}">Categoria Alimentação</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.configuration.alimentationtype') }}">
+						<a href="{{ url('/admin/configuration/alimentationtype') }}">Tipo Alimentação</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.configuration.constructioncategory') }}">
+						<a href="{{ url('/admin/configuration/constructioncategory') }}">Categoria Estrutura</a>
+					</li>
+					<li class="{{ isActiveRoute('admin.configuration.englishlevel') }}">
+						<a href="{{ url('/admin/configuration/englishlevel') }}">Nível de Inglês</a>
+					</li>
+					@endif
+				</ul>
+			</li> --}}
+
+		</ul>
+
+	</div>
+</nav>
