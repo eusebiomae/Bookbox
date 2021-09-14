@@ -98,7 +98,7 @@ class BlogController extends Controller
 			'flgType' => $flgPage,
 		]);
 
-		return view('site/cetcc/pages/blog')
+		return view('site/cetcc/pages/blog_post')
 			->with('title', BlogCategoryModel::labelFlgType($flgPage))
 			->with('flgPage', $flgPage)
 			->with('params', $request->all())

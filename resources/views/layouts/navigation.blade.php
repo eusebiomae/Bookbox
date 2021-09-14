@@ -6,12 +6,12 @@
 				<div class="dropdown profile-element">
 					<span>
 						<a href="{{ url('/student_area/') }}">
-							<img alt="image" class="img" src="{!! asset(Session::get('company')->image) !!}" />
+							<img alt="image" class="img" src="{!! asset(Session::get('company')->image ?? '') !!}" />
 						</a>
 					</span>
 					<a data-toggle="dropdown" class="dropdown-toggle" href="{{ url('/student_area/') }}">
 						<span class="block m-t-xs" style="margin-top: 15px; font-size: 11px; text-align: center;">
-							<strong class="font-bold">{{ Session::get('company')->name }}</strong>
+							<strong class="font-bold">{{ Session::get('company')->name ?? '' }}</strong>
 						</span>
 					</a>
 				</div>

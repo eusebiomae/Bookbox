@@ -1,4 +1,5 @@
 <ul id="grid_home" class="clearfix">
+	@isset($contentsSection)
 	@foreach($contentsSection->content as $content)
 	<li class="img_container">
 		<img src="{{ $content->image_bg }}" alt="{{ $content->title_pt }}">
@@ -28,4 +29,5 @@
 		</div>
 	</li>
 	@endforeach
+	@endisset
 </ul>

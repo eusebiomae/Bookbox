@@ -18,7 +18,7 @@ class CreateScholarshipTable extends Migration
 				$table->id();
 				$table->string('title', 64)->nullable();
 				$table->string('description', 400)->nullable();
-				$table->foreignId('course_category_type_id')->nullable()->references('id')->on('course_category_type')->onDelete('cascade');
+				// $table->foreignId('course_category_type_id')->nullable()->references('id')->on('course_category_type')->onDelete('cascade');
 				$table->foreignId('course_category_id')->nullable()->references('id')->on('course_category')->onDelete('cascade');
 				$table->foreignId('course_subcategory_id')->nullable()->references('id')->on('course_subcategory')->onDelete('cascade');
 				$table->foreignId('course_id')->nullable()->references('id')->on('course')->onDelete('cascade');

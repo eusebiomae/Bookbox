@@ -16,7 +16,7 @@ class CreateScholarshipStudentTable extends Migration
 		if (!Schema::hasTable('scholarship_student')) {
 			Schema::create('scholarship_student', function (Blueprint $table) {
 				$table->id();
-				$table->foreignId('student_id')->nullable()->references('id')->on('student');
+				// $table->foreignId('student_id')->nullable()->references('id')->on('student');
 				$table->foreignId('scholarship_id')->nullable()->references('id')->on('scholarship');
 				$table->foreignId('scholarship_student_status_id')->nullable()->references('id')->on('scholarship_student_status');
 				$table->foreignId('student_socioeconomic_id')->nullable()->references('id')->on('student_socioeconomic');

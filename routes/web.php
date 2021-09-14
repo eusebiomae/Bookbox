@@ -15,6 +15,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'site\cetcc\HomeController@index')->middleware(['injectFlgPage:home']);
+
+
 Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
 Route::post('/contact/save', 'site\cetcc\ContactController@save')->middleware(['injectFlgPage:contact']);
 Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
@@ -39,7 +41,8 @@ Route::get('/recommendation', 'site\cetcc\RecommendationController@index')->midd
 Route::get('/faq', 'site\cetcc\FaqController@index')->middleware(['injectFlgPage:faq']);
 Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:shopping_journey']);
 
-Route::get('/blog', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog']);
+Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
+
 Route::get('/article', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:article']);
 
 Route::get('/blog/{id}/{title?}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:blog']);
