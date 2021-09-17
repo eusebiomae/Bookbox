@@ -1222,7 +1222,7 @@ a[href*='mailto'] {
 
 @media (min-width: 1200px) {
     .box-icon-creative {
-        padding: 42px;
+        /* padding: 42px; */
     }
     .box-icon-creative-icon {
         font-size: 48px;
@@ -7191,11 +7191,11 @@ textarea.textarea-lg {
 }
 
 .product-badge-new {
-    background: #93a6ab;
+    background: #f96666;
 }
 
 .product-badge-sale {
-    background: #f96666;
+    background: #97cd9b;
 }
 
 .product-button-wrap {
