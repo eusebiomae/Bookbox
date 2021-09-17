@@ -370,7 +370,8 @@
                                 <article
                                     class="box-icon-classic box-icon-nancy-right text-center text-lg-right wow fadeInLeft">
                                     <div class="unit flex-column flex-lg-row-reverse">
-                                        <div class="unit-left">
+                                        <img src="{{ url ('assets/images/site/saudeFisica.png')}}"  width="120px" alt="" class="">
+                                        {{-- <div class="unit-left">
                                             <div class="box-icon-classic-svg">
                                                 <svg class="svg-icon" x="0px" y="0px" width="53px" height="50px"
                                                     viewBox="0 0 53 50" enable-background="new 0 0 53 50">
@@ -426,11 +427,10 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="unit-body">
-                                            <h4 class="box-icon-classic-title"><a href="#">100% organic</a></h4>
-                                            <p class="box-icon-classic-text">We make our products from 100% organic and
-                                                fresh ingredients full of vitamins and nutrients.</p>
+                                            <h4 class="box-icon-classic-title"><a href="#">Saúde Física</a></h4>
+                                            <p class="box-icon-classic-text">Escrito por médicos, especialistas e profissionais que têm experiências para compartilhar.</p>
                                         </div>
                                     </div>
                                 </article>
@@ -440,7 +440,8 @@
                                     class="box-icon-classic box-icon-nancy-right text-center text-lg-right wow fadeInLeft"
                                     data-wow-delay=".1s">
                                     <div class="unit flex-column flex-lg-row-reverse">
-                                        <div class="unit-left">
+                                        <img src="{{ url ('assets/images/site/saudeMetal.png')}}"  width="120px" alt="" class="">
+                                        {{-- <div class="unit-left">
                                             <div class="box-icon-classic-svg">
                                                 <svg class="svg-icon" x="0px" y="0px" width="55px" height="55px"
                                                     viewBox="0 0 55 55" enable-background="new 0 0 55 55">
@@ -535,11 +536,10 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="unit-body">
-                                            <h4 class="box-icon-classic-title"><a href="#">Good for health</a></h4>
-                                            <p class="box-icon-classic-text">Our drinks are exceptionally good for
-                                                boosting your health and increasing your energy level.</p>
+                                            <h4 class="box-icon-classic-title"><a href="#">Saúde Mental</a></h4>
+                                            <p class="box-icon-classic-text">Escrito por psiccólogos, psiquiatras e profissionais que tem muito para contribuir.</p>
                                         </div>
                                     </div>
                                 </article>
@@ -547,15 +547,16 @@
                         </div>
                     </div>
                     <div class="col-md-2 col-xl-4 d-none d-md-block wow fadeScale"><img
-                            src="{{ url('assets/images/index-1-399x407.png') }}" alt="" width="399" height="407" />
+                            src="{{ url('assets/images/site/01.png') }}" alt="" width="400" height="600" />
                     </div>
                     <div class="col-md-5 col-xl-4">
                         <div class="row row-30 row-md-40 row-lg-50 bordered-2">
                             <div class="col-sm-6 col-md-12">
                                 <article
-                                    class="box-icon-classic box-icon-nancy-left text-center text-lg-left wow fadeInRigth">
+                                    class="box-icon-classic box-icon-nancy-left text-center text-lg-left wow fadeInRigth" style="margin-top: 70px;">
                                     <div class="unit flex-column flex-lg-row">
-                                        <div class="unit-left">
+                                        <img src="{{ url ('assets/images/site/saudeEspiritual.png')}}"  width="115px;" height="150px;" alt="" class="">
+                                        {{-- <div class="unit-left">
                                             <div class="box-icon-classic-svg">
                                                 <svg class="svg-icon" x="0px" y="0px" width="54px" height="58px"
                                                     viewBox="0 0 54 58" enable-background="new 0 0 54 58">
@@ -635,11 +636,10 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="unit-body">
-                                            <h4 class="box-icon-classic-title"><a href="#">No additives</a></h4>
-                                            <p class="box-icon-classic-text">Our smoothies, healthy drinks, and energy
-                                                bowls contain no artificial additives, only vital elements.</p>
+                                            <h4 class="box-icon-classic-title"><a href="#"> Saúde espiritual</a></h4>
+                                            <p class="box-icon-classic-text">Escrito por naturopatas, coaches e profissionais focados em alta performance com equilíbrio.</p>
                                         </div>
                                     </div>
                                 </article>
@@ -649,7 +649,8 @@
                                     class="box-icon-classic box-icon-nancy-left text-center text-lg-left wow fadeInRight"
                                     data-wow-delay=".1s">
                                     <div class="unit flex-column flex-lg-row">
-                                        <div class="unit-left">
+                                        <img src="{{ url ('assets/images/site/saudeFinanceira.png')}}" style="width: 115px; height: 120px;"  alt="" class="">
+                                        {{-- <div class="unit-left">
                                             <div class="box-icon-classic-svg">
                                                 <svg class="svg-icon" x="0px" y="0px" width="54px" height="52px"
                                                     viewBox="0 0 54 52" enable-background="new 0 0 54 52">
@@ -744,11 +745,10 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="unit-body">
-                                            <h4 class="box-icon-classic-title"><a href="#">A lot of energy</a></h4>
-                                            <p class="box-icon-classic-text">We designed our products as the universal
-                                                organic energetics that can quench your thirst.</p>
+                                            <h4 class="box-icon-classic-title"><a href="#">Saúde Financeira</a></h4>
+                                            <p class="box-icon-classic-text">Escrito por consultores, administradores de empresaas, advogados e gestores focados no sucesso e na liberdade financeira.</p>
                                         </div>
                                     </div>
                                 </article>
@@ -761,85 +761,105 @@
         <!-- New Flavors-->
         <section class="section section-xxl bg-default">
             <div class="container">
-                <h2 class="text-transform-capitalize wow fadeScale">New Flavors</h2>
+                <h3 class="text-transform-capitalize wow fadeScale">Você merece una vida plena</h3>
+                <h5 class="">Escolha o plano ideal</h5>
                 <div class="row row-lg row-30 row-lg-50">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-sm-6 col-md-4 col-lg-4">
                         <!-- Product-->
                         <article class="product wow fadeInRight">
                             <div class="product-body">
-                                <div class="product-figure"><img
-                                        src="{{ url('assets/images/product-1-95x175.png') }}" alt="" width="95"
-                                        height="175" />
-                                </div>
-                                <h5 class="product-title"><a href="single-product.html">Mango</a></h5>
+                                <img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
+                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">eBook</a></h3>
                                 <div class="product-price-wrap">
-                                    <div class="product-price product-price-old">$30.00</div>
-                                    <div class="product-price">$23.00</div>
+                                    {{-- <div class="product-price product-price-old">R$30.00</div> --}}
+                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 39.90/mês</h6></div>
+                                    <div class="product-price">Receba um link para download em seu</div>
+                                    <div class="product-price"> e-mail.</div>
                                 </div>
-                            </div><span class="product-badge product-badge-sale">Sale</span>
-                            <div class="product-button-wrap">
-                                <div class="product-button">
+                                <div class="" style="margin-top: 15px;">
+                                    <p class="">- Sem fidelidade: você pode cancelar sem multa.</p>
+                                    <p class="">- Boleto bancário ou cartão de crédito.</p>
+                                    <p class="">- Receba a versão digital dos dois livros, esta oção não contempla os brindes.</p>
+                                </div>
+                            </div><span class="product-badge product-badge-sale">Novo</span>
+                            <div class="product-button-wrap" style="margin-top: 50px;">
+                                {{-- <div class="product-button">
                                     <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
                                         href="single-product.html"></a>
-                                </div>
-                                <div class="product-button">
+                                </div> --}}
+                                {{-- <div class="product-button">
                                     <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="#"></a>
-                                </div>
+                                        href="grid-shop.html"> Assine </a>
+                                    </div> --}}
+                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
+                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+                                        href="grid-shop.html">Assine Agora</a></div>
                             </div>
                         </article>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-sm-6 col-md-4 col-lg-4">
                         <!-- Product-->
-                        <article class="product wow fadeInRight" data-wow-delay=".1s">
+                        <article class="product wow fadeInRight">
                             <div class="product-body">
-                                <div class="product-figure"><img
-                                        src="{{ url('assets/images/product-2-95x175.png') }}" alt="" width="95"
-                                        height="175" />
-                                </div>
-                                <h5 class="product-title"><a href="single-product.html">Strawberry</a></h5>
+                                <img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
+                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">Anual</a></h3>
                                 <div class="product-price-wrap">
-                                    <div class="product-price">$13.00</div>
+                                    {{-- <div class="product-price product-price-old">R$30.00</div> --}}
+                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 76.90/mês</h6></div>
+                                    <div class="product-price">Receba o seu box em casa.</div>
                                 </div>
-                            </div><span class="product-badge product-badge-new">New</span>
-                            <div class="product-button-wrap">
-                                <div class="product-button">
+                                <div class="" style="margin-top: 15px;">
+                                    <p class="">- Com fidelidade: 12 meses.</p>
+                                    <p class="">- Cartão de crédito.</p>
+                                </div>
+                            </div><span class="product-badge product-badge-sale">Venda</span>
+                            <div class="product-button-wrap" style="margin-top: 50px;">
+                                {{-- <div class="product-button">
                                     <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
                                         href="single-product.html"></a>
-                                </div>
-                                <div class="product-button">
+                                </div> --}}
+                                {{-- <div class="product-button">
                                     <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="#"></a>
-                                </div>
+                                        href="grid-shop.html"> Assine </a>
+                                    </div> --}}
+                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
+                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+                                        href="grid-shop.html">Assine Agora</a></div>
                             </div>
                         </article>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-sm-6 col-md-4 col-lg-4">
                         <!-- Product-->
-                        <article class="product wow fadeInRight" data-wow-delay=".2s">
+                        <article class="product wow fadeInRight">
                             <div class="product-body">
-                                <div class="product-figure"><img
-                                        src="{{ url('assest/images/product-3-95x175.png') }}" alt="" width="95"
-                                        height="175" />
-                                </div>
-                                <h5 class="product-title"><a href="single-product.html">Apple</a></h5>
+                                <img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
+                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">Semestral</a></h3>
                                 <div class="product-price-wrap">
-                                    <div class="product-price">$16.99</div>
+                                    {{-- <div class="product-price product-price-old">R$30.00</div> --}}
+                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 79.90/mês</h6></div>
+                                    <div class="product-price">Receba o seu box em casa.</div>
                                 </div>
-                            </div>
-                            <div class="product-button-wrap">
-                                <div class="product-button">
+                                <div class="" style="margin-top: 15px;">
+                                    <p class="">- Com fidelidade: 6 meses.</p>
+                                    <p class="">- Cartão de crédito.</p>
+                                </div>
+                            </div><span class="product-badge product-badge-sale">Venda</span>
+                            <div class="product-button-wrap" style="margin-top: 50px;">
+                                {{-- <div class="product-button">
                                     <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
                                         href="single-product.html"></a>
-                                </div>
-                                <div class="product-button">
+                                </div> --}}
+                                {{-- <div class="product-button">
                                     <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="#"></a>
-                                </div>
+                                        href="grid-shop.html"> Assine </a>
+                                    </div> --}}
+                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
+                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+                                        href="grid-shop.html">Assine Agora</a></div>
                             </div>
                         </article>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+                    {{-- <div class="col-sm-6 col-md-4 col-lg-3">
                         <!-- Product-->
                         <article class="product wow fadeInLeft" data-wow-delay=".3s">
                             <div class="product-body">
@@ -964,8 +984,13 @@
                                 </div>
                             </div>
                         </article>
-                    </div>
+                    </div> --}}
                 </div>
+                <h4 class="text-transform-none wow fadeScale" style="margin-top: 65px; color: #97cd9b;">Transformações de impacto no seu dua a dia.</h4>
+                <h4 class="text-transform-none wow fadeScale" style="color: #97cd9b;">Sua felicidade depende da sua saúde e vitalidade.</h4>
+                <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
+                    class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+                    href="grid-shop.html">Experimente adquirir o Box Avulso</a></div>
             </div>
         </section>
         <!-- Counter Modern-->
