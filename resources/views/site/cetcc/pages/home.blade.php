@@ -168,7 +168,7 @@
                             </div>
                             <div class="rd-navbar-aside-element">
                                 <!-- RD Navbar Search-->
-                                <div class="rd-navbar-search rd-navbar-search-2">
+                                {{-- <div class="rd-navbar-search rd-navbar-search-2">
                                     <button class="rd-navbar-search-toggle rd-navbar-fixed-element-3"
                                         data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
                                     <form class="rd-search" action="search-results.html"
@@ -184,9 +184,9 @@
                                                 type="submit"></button>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
                                 <!-- RD Navbar Basket-->
-                                <div class="rd-navbar-basket-wrap">
+                                {{-- <div class="rd-navbar-basket-wrap">
                                     <button class="rd-navbar-basket fl-bigmug-line-shopping202"
                                         data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
                                     <div class="cart-inline">
@@ -249,15 +249,15 @@
                                                     href="#">Checkout</a></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="rd-navbar-fixed-element-2 select-inline"><a class="rd-nav-link"
+                                </div> --}}
+                                {{-- <div class="rd-navbar-fixed-element-2 select-inline"><a class="rd-nav-link"
                                         href="login.html">Login</a>
                                     <!-- <select data-dropdown-class="select-inline-dropdown">
-                      <option value="en">en</option>
-                      <option value="fr">fr</option>
-                      <option value="es">es</option>
-                    </select> -->
-                                </div>
+                                                                        <option value="en">en</option>
+                                                             <option value="fr">fr</option>
+                                                                        <option value="es">es</option>
+                                                                </select> -->
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -309,7 +309,7 @@
                                             href="privacy-policy.html">Termos e Condições</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="pricing-list.html"
-                                            target="blank" style="color: #552b79;">Assinar</a>
+                                            target="blank" style="color: #552b79;">Assine já</a>
                                     </li>
                                 </ul>
                             </div>
@@ -318,38 +318,40 @@
                 </nav>
             </div>
         </header>
-        <!-- Swiper-->
+
         <section class="section swiper-container swiper-slider swiper-slider-4" data-loop="true">
             <div class="swiper-wrapper context-dark">
-                <div class="swiper-slide swiper-slide-1" data-slide-bg="{{ url ('assets/images/site/banner_bookbox.png')}}">
+                <div class="swiper-slide swiper-slide-1" data-slide-bg="{{ url ('assets/images/site/slide-1.png')}}">
                     <div class="swiper-slide-caption section-md text-sm-left">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-8 col-md-7">
-                                    <h2 class="swiper-title-1" data-caption-animate="fadeInLeft"
-                                        data-caption-delay="100"> <br>
-                                    </h2>
-                                    <h5 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft"
-                                        data-caption-delay="250"></h5>
+                                    <h4 class="swiper-title-1 text-uppercase" data-caption-animate="fadeInLeft"
+                                        data-caption-delay="100">O Box da prevenção, autocuidado e saúde, para você viver bem todos os dias! <br>
+                                    </h4>
+                                    <h6 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft"
+                                        data-caption-delay="250"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." </h6>
                                     <div class="button-wrap" data-caption-animate="fadeInLeft"
                                         data-caption-delay="400"><a
                                             class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-                                            href="grid-shop.html">Assine</a></div>
+                                            href="grid-shop.html">Assine Agora</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide swiper-slide-2" data-slide-bg="{{ url ('assets/images/site/banner_bookbox.png')}}">
+                <div class="swiper-slide swiper-slide-2" data-slide-bg="{{ url ('assets/images/site/slide-2.png')}}">
                     <div class="swiper-slide-caption section-md text-center">
                         <div class="container">
-                            <h2 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100"></h2>
-                            <h5 class="swiper-title-2" data-caption-animate="fadeInRight" data-caption-delay="250"><br
+                            <h4 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100"> O Box da prevenção, autocuidado e saúde, para você viver bem todos os dias!</h4>
+                            <h6 class="swiper-title-2" data-caption-animate="fadeInRight" data-caption-delay="250"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." <br
                                     class="d-none d-md-block">
-                            </h5>
+                            </h6>
                             <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
                                     class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-                                    href="grid-shop.html">Assine</a></div>
+                                    href="grid-shop.html">Assine Agora</a></div>
                         </div>
                     </div>
                 </div>
@@ -428,339 +430,39 @@
                 </div>
             </div>
         </section>
-        <!-- New Flavors-->
-        <section class="section section-xxl bg-default">
-            <div class="container">
-                <h3 class="text-transform-capitalize wow fadeScale">Você merece una vida plena</h3>
-                <h5 class="">Escolha o plano ideal</h5>
-                <div class="row row-lg row-30 row-lg-50">
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <!-- Product-->
-                        <article class="product wow fadeInRight">
-                            <div class="product-body">
-                                <img src="{{ url('assets/images/site/LogoMini Estilizada.png') }}" alt="" class="" style="width: 250px; margin-top: 16px;">
-                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">eBook</a></h3>
-                                <div class="product-price-wrap">
-                                    {{-- <div class="product-price product-price-old">R$30.00</div> --}}
-                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 39.90/mês</h6></div>
-                                    <div class="product-price">Receba um link para download em seu</div>
-                                    <div class="product-price"> e-mail.</div>
-                                </div>
-                                <div class="" style="margin-top: 15px;">
-                                    <p class="">- Sem fidelidade: você pode cancelar sem multa.</p>
-                                    <p class="">- Boleto bancário ou cartão de crédito.</p>
-                                    <p class="">- Receba a versão digital dos dois livros, esta oção não contempla os brindes.</p>
-                                </div>
-                            </div><span class="product-badge product-badge-new">Novo</span>
-                            <div class="product-button-wrap" style="margin-top: 50px;">
-                                {{-- <div class="product-button">
-                                    <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
-                                        href="single-product.html"></a>
-                                </div> --}}
-                                {{-- <div class="product-button">
-                                    <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="grid-shop.html"> Assine </a>
-                                    </div> --}}
-                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
-                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-                                        href="grid-shop.html">Assine Agora</a></div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <!-- Product-->
-                        <article class="product wow fadeInRight">
-                            <div class="product-body">
-                                <img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
-                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">Anual</a></h3>
-                                <div class="product-price-wrap">
-                                    {{-- <div class="product-price product-price-old">R$30.00</div> --}}
-                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 76.90/mês</h6></div>
-                                    <div class="product-price">Receba o seu box em casa.</div>
-                                </div>
-                                <div class="" style="margin-top: 15px;">
-                                    <p class="">- Com fidelidade: 12 meses.</p>
-                                    <p class="">- Cartão de crédito.</p>
-                                </div>
-                            </div><span class="product-badge product-badge-sale">Box</span>
-                            <div class="product-button-wrap" style="margin-top: 50px;">
-                                {{-- <div class="product-button">
-                                    <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
-                                        href="single-product.html"></a>
-                                </div> --}}
-                                {{-- <div class="product-button">
-                                    <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="grid-shop.html"> Assine </a>
-                                    </div> --}}
-                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
-                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-                                        href="grid-shop.html">Assine Agora</a></div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <!-- Product-->
-                        <article class="product wow fadeInRight">
-                            <div class="product-body">
-                                <img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
-                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">Semestral</a></h3>
-                                <div class="product-price-wrap">
-                                    {{-- <div class="product-price product-price-old">R$30.00</div> --}}
-                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 79.90/mês</h6></div>
-                                    <div class="product-price">Receba o seu box em casa.</div>
-                                </div>
-                                <div class="" style="margin-top: 15px;">
-                                    <p class="">- Com fidelidade: 6 meses.</p>
-                                    <p class="">- Cartão de crédito.</p>
-                                </div>
-                            </div><span class="product-badge product-badge-sale">Box</span>
-                            <div class="product-button-wrap" style="margin-top: 50px;">
-                                {{-- <div class="product-button">
-                                    <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
-                                        href="single-product.html"></a>
-                                </div> --}}
-                                {{-- <div class="product-button">
-                                    <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="grid-shop.html"> Assine </a>
-                                    </div> --}}
-                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
-                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-                                        href="grid-shop.html">Assine Agora</a></div>
-                            </div>
-                        </article>
-                    </div>
-                    {{-- <div class="col-sm-6 col-md-4 col-lg-3">
-                        <!-- Product-->
-                        <article class="product wow fadeInLeft" data-wow-delay=".3s">
-                            <div class="product-body">
-                                <div class="product-figure"><img
-                                        src="{{ url('assest/images/product-4-95x175.png') }}" alt="" width="95"
-                                        height="175" />
-                                </div>
-                                <h5 class="product-title"><a href="single-product.html">Guava</a></h5>
-                                <div class="product-price-wrap">
-                                    <div class="product-price">$12.00</div>
-                                </div>
-                            </div><span class="product-badge product-badge-new">New</span>
-                            <div class="product-button-wrap">
-                                <div class="product-button">
-                                    <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
-                                        href="single-product.html"></a>
-                                </div>
-                                <div class="product-button">
-                                    <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="#"></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <!-- Product-->
-                        <article class="product wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="product-body">
-                                <div class="product-figure"><img
-                                        src="{{ url('assets/images/product-5-95x175.png') }}" alt="" width="95"
-                                        height="175" />
-                                </div>
-                                <h5 class="product-title"><a href="single-product.html">Grapes</a></h5>
-                                <div class="product-price-wrap">
-                                    <div class="product-price">$11.00</div>
-                                </div>
-                            </div><span class="product-badge product-badge-new">New</span>
-                            <div class="product-button-wrap">
-                                <div class="product-button">
-                                    <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
-                                        href="single-product.html"></a>
-                                </div>
-                                <div class="product-button">
-                                    <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="#"></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <!-- Product-->
-                        <article class="product wow fadeInLeft" data-wow-delay=".1s">
-                            <div class="product-body">
-                                <div class="product-figure"><img
-                                        src="{{ url('assets/images/product-6-95x175.png') }}" alt="" width="95"
-                                        height="175" />
-                                </div>
-                                <h5 class="product-title"><a href="single-product.html">Bananas</a></h5>
-                                <div class="product-price-wrap">
-                                    <div class="product-price">$15.99</div>
-                                </div>
-                            </div>
-                            <div class="product-button-wrap">
-                                <div class="product-button">
-                                    <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
-                                        href="single-product.html"></a>
-                                </div>
-                                <div class="product-button">
-                                    <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="#"></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <!-- Product-->
-                        <article class="product wow fadeInRight" data-wow-delay=".3s">
-                            <div class="product-body">
-                                <div class="product-figure"><img
-                                        src="{{ url('assets/images/product-7-95x175.png') }}" alt="" width="95"
-                                        height="175" />
-                                </div>
-                                <h5 class="product-title"><a href="single-product.html">Carrots</a></h5>
-                                <div class="product-price-wrap">
-                                    <div class="product-price product-price-old">$33.00</div>
-                                    <div class="product-price">$24.00</div>
-                                </div>
-                            </div><span class="product-badge product-badge-sale">Sale</span>
-                            <div class="product-button-wrap">
-                                <div class="product-button">
-                                    <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
-                                        href="single-product.html"></a>
-                                </div>
-                                <div class="product-button">
-                                    <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="#"></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <!-- Product-->
-                        <article class="product wow fadeInLeft">
-                            <div class="product-body">
-                                <div class="product-figure"><img
-                                        src="{{ url('assets/images/product-8-95x175.png') }}" alt="" width="95"
-                                        height="175" />
-                                </div>
-                                <h5 class="product-title"><a href="single-product.html">Orange</a></h5>
-                                <div class="product-price-wrap">
-                                    <div class="product-price">$14.99</div>
-                                </div>
-                            </div>
-                            <div class="product-button-wrap">
-                                <div class="product-button">
-                                    <a class="button button-secondary button-zakaria fl-bigmug-line-search74"
-                                        href="single-product.html"></a>
-                                </div>
-                                <div class="product-button">
-                                    <a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-                                        href="#"></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div> --}}
-                </div>
-                <h4 class="text-transform-none wow fadeScale" style="margin-top: 65px; color: #97cd9b;">Transformações de impacto no seu dia a dia.</h4>
-                <h4 class="text-transform-none wow fadeScale" style="color: #97cd9b;">Sua felicidade depende da sua saúde e vitalidade.</h4>
-                <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
-                    class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-                    href="grid-shop.html">Experimente adquirir o Box Avulso</a></div>
-            </div>
-        </section>
-        <!-- Counter Modern-->
-        <section class="section section-xxl bg-image-1">
+
+        <section class="section section-xxl" style="background-color: #f7af69">
             <div class="container">
                 <div class="banner">
-                    <h3 class="text-transform-none wow fadeScale">O que vem no seu box</h3>
-                    <img  src="{{ url ('assets/images/site/bannerBox.webp')}}" alt="" class="">
+                    <h3 class="text-transform-uppercase wow fadeScale" style="color: #fff">Call to action</h3> <br/>
+                    <h5 class="" style="color: #fff">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</h5>
+                    {{-- <img  src="{{ url ('assets/images/site/bannerBox.webp')}}" alt="" class=""> --}}
                 </div>
             </div>
         </section>
-        {{-- <section class="container" data-img="{{ url ('assets/images/site/bannerBox.webp')}}">
-            <div class="parallax-content section-xxl context-dark">
-                <div class="container">
-                    <div class="row row-30 justify-content-center">
-                        <div class="col-6 col-sm-3">
-                            <div class="counter-modern">
-                                <h2 class="counter-modern-number"><span class="counter">245</span>
-                                </h2>
-                                <div class="counter-modern-decor"></div>
-                                <h5 class="counter-modern-title">New drinks and<br class="d-none d-sm-block">
-                                    smoothies</h5>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="counter-modern">
-                                <h2 class="counter-modern-number"><span class="counter">182</span>
-                                </h2>
-                                <div class="counter-modern-decor"></div>
-                                <h5 class="counter-modern-title">Special<br class="d-none d-sm-block"> offers</h5>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="counter-modern">
-                                <h2 class="counter-modern-number"><span class="counter">1267</span>
-                                </h2>
-                                <div class="counter-modern-decor"></div>
-                                <h5 class="counter-modern-title">Satisfied<br class="d-none d-sm-block"> clients</h5>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="counter-modern">
-                                <h2 class="counter-modern-number"><span class="counter">47</span>
-                                </h2>
-                                <div class="counter-modern-decor"></div>
-                                <h5 class="counter-modern-title">Partners throughout<br class="d-none d-sm-block"> the
-                                    USA</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-        <!-- Section Product and Clients-->
-        <section class="section section-xxl bg-default text-md-left">
+
+        <section class="section section-xxl bg-image-1">
             <div class="container">
                 <div class="row row-30 row-md-60 row-lg-70 justify-content-center align-items-md-center">
                     <div class="col-sm-8 col-md-5 col-xl-6">
                         <div class="inset-xl-right-20">
-                            <div class="product-wrap-1 bg-image-1 block-1">
-                                <!-- Owl Carousel-->
-                                <div class="owl-carousel owl-style-5" data-items="1" data-margin="30" data-dots="true"
-                                    data-autoplay="true">
-                                    <article class="product-creative">
-                                        <div class="product-figure"><img
-                                            src="{{ url('assets/images/site/LogoMini Estilizada.png') }}" alt="" class=""
-                                                width="470" height="324" />
-                                        </div>
-                                        <h4 class="product-creative-title"><a href="single-product.html">eBook</a></h4>
-                                        <div class="product-creative-price-wrap">
-                                            {{-- <div class="product-creative-price product-creative-price-old">$20.00</div> --}}
-                                            <div class="product-creative-price">R$39.90/mês</div>
-                                        </div>
-                                    </article>
-                                    <article class="product-creative">
-                                        <div class="product-figure"><img
-                                            src="{{ url('assets/images/site/01.png') }}" alt=""
-                                                width="470" height="324" />
-                                        </div>
-                                        <h4 class="product-creative-title"><a href="single-product.html">Anual</a></h4>
-                                        <div class="product-creative-price-wrap">
-                                            <div class="product-creative-price">R$76.90</div>
-                                        </div>
-                                    </article>
-                                    <article class="product-creative">
-                                        <div class="product-figure"><img
-                                            src="{{ url('assets/images/site/01.png') }}" alt=""
-                                                width="470" height="324" />
-                                        </div>
-                                        <h4 class="product-creative-title"><a href="single-product.html">Semestral</a></h4>
-                                        <div class="product-creative-price-wrap">
-                                            <div class="product-creative-price">R$79.90</div>
-                                        </div>
-                                    </article>
+                            <article class="product-creative">
+                                <div class="product-figure"><img
+                                    src="{{ url('assets/images/site/oQueVem.png') }}" alt="" class=""
+                                        width="470" height="324" />
                                 </div>
-                            </div>
+                                {{-- <h4 class="product-creative-title"><a href="single-product.html">eBook</a></h4> --}}
+                                <div class="product-creative-price-wrap">
+                                    {{-- <div class="product-creative-price product-creative-price-old">$20.00</div> --}}
+                                    {{-- <div class="product-creative-price">R$39.90/mês</div> --}}
+                                </div>
+                            </article>
                         </div>
                     </div>
+
                     <div class="col-md-7 col-xl-6">
-                        <h3 class="text-transform-none wow text-align-center">Para quem são os box?</h3>
+                        <h3 class="text-transform-none wow text-align-center">O que vem na sua box?</h3>
                         <!-- Bootstrap collapse-->
                         <div class="card-group-custom card-group-corporate" id="accordion1" role="tablist"
                             aria-multiselectable="false">
@@ -771,7 +473,7 @@
                                             data-toggle="collapse" data-parent="#accordion1"
                                             href="#accordion1-card-body-unqfdlnh"
                                             aria-controls="accordion1-card-body-unqfdlnh" aria-expanded="true"
-                                            role="button">Pessoas determinadas.
+                                            role="button">Lorem ipsum.
                                             <div class="card-arrow">
                                                 <div class="icon"></div>
                                             </div>
@@ -781,7 +483,7 @@
                                     aria-labelledby="accordion1-card-head-qteehppu" data-parent="#accordion1"
                                     role="tabpanel">
                                     <div class="card-body">
-                                        <p>Para todas as pessoas que desejam ter mais saude e uma vida equilibrada, aprendendo a organizar seus pilares e seu dia a dia.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                                     </div>
                                 </div>
                             </article>
@@ -792,7 +494,7 @@
                                             id="accordion1-card-head-iebkfbxx" data-toggle="collapse"
                                             data-parent="#accordion1" href="#accordion1-card-body-eephkkca"
                                             aria-controls="accordion1-card-body-eephkkca" aria-expanded="false"
-                                            role="button">Profissionais da saúde.
+                                            role="button">Ipsum ipsum.
                                             <div class="card-arrow">
                                                 <div class="icon"></div>
                                             </div>
@@ -802,7 +504,7 @@
                                     aria-labelledby="accordion1-card-head-iebkfbxx" data-parent="#accordion1"
                                     role="tabpanel">
                                     <div class="card-body">
-                                        <p>Para os profissionais que desejam potencializar os resultados de seus serviços de forma descomplicada e acessível. É como se fosse um curso novo todo mês na sua casa.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                                     </div>
                                 </div>
                             </article>
@@ -813,7 +515,7 @@
                                             id="accordion1-card-head-crpnkjpm" data-toggle="collapse"
                                             data-parent="#accordion1" href="#accordion1-card-body-qbvvnoxx"
                                             aria-controls="accordion1-card-body-qbvvnoxx" aria-expanded="false"
-                                            role="button">Pessoas que querem viver bem todos os dias.
+                                            role="button">Ipsum Lorem ipsum
                                             <div class="card-arrow">
                                                 <div class="icon"></div>
                                             </div>
@@ -823,15 +525,28 @@
                                     aria-labelledby="accordion1-card-head-crpnkjpm" data-parent="#accordion1"
                                     role="tabpanel">
                                     <div class="card-body">
-                                        <p>Para as pessoas que procuram um estilo e modo de vida saudáveis, em armonía com as energías terrenas e espirituais.
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                         </p>
                                     </div>
                                 </div>
                             </article>
                         </div>
                     </div>
+                </div>
+                {{-- <div class="banner">
+                    <h3 class="text-transform-none wow fadeScale">O que vem na sua box</h3>
+                    <img  src="{{ url ('assets/images/site/bannerBox.webp')}}" alt="" class="">
+                </div> --}}
+            </div>
+        </section>
+
+        {{-- How works --}}
+        <section class="section section-xxl bg-default text-md-left">
+            <div class="container">
+                <div class="row row-30 row-md-60 row-lg-70 justify-content-center align-items-md-center">
                     <div class="col-xl-12">
-                        <h4 class="text-transform-none wow" style="text-align: center;">Como funciona?</h4>
+                        <h3 class="text-transform-none wow" style="text-align: center;">Cómo funciona?</h3>
+                        {{-- <h4 class="text-transform-none wow" style="text-align: center;">Como funciona?</h4> --}}
                         <div class="row row-30">
                             <div class="col-sm-6 col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
                                 <article class="box-icon-creative">
@@ -841,7 +556,6 @@
                                             <div class="box-icon-creative-icon fl-bigmug-line-big104"></div>
                                         </div>
                                         <div class="unit-body">
-                                            {{-- <h5 class="box-icon-creative-title"><a href="#">Free Shipping</a></h5> --}}
                                             <p class="box-icon-creative-text">As assinaturas são feitas até o último dia de cada mês, ou seja, para receber a caixa de março, você deve assinar até o último dia de fevereiro.</p>
                                         </div>
                                     </div>
@@ -855,7 +569,6 @@
                                             <div class="box-icon-creative-icon fl-bigmug-line-chat55"></div>
                                         </div>
                                         <div class="unit-body">
-                                            {{-- <h5 class="box-icon-creative-title"><a href="#">Customer care</a></h5> --}}
                                             <p class="box-icon-creative-text">A primeira cobrança é efetudada no dia da assinatura. A partir do mês seguinte, a cobrança será efetuada todo dia 15, e você receberá as informações dp pagamento por e-mail.</p>
                                         </div>
                                     </div>
@@ -864,26 +577,124 @@
                             <div class="banner">
                                 <img  src="{{ url ('assets/images/site/linhaTempoBox.webp')}}" alt="" class="">
                             </div>
-                            {{-- <div class="col-sm-6 col-lg-4 wow fadeInLeft">
-                                <article class="box-icon-creative">
-                                    <div
-                                        class="unit flex-column flex-md-row flex-lg-column flex-xl-row align-items-md-center align-items-lg-start align-items-xl-center">
-                                        <div class="unit-left">
-                                            <div class="box-icon-creative-icon fl-bigmug-line-like51"></div>
-                                        </div>
-                                        <div class="unit-body">
-                                            <h5 class="box-icon-creative-title"><a href="#">Healthy &amp; energetic</a>
-                                            </h5>
-                                            <p class="box-icon-creative-text">Our drinks are very nutritious.</p>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        {{-- End How Works  --}}
+
+        <!-- New Flavors-->
+        <section class="section section-xxl bg-default" style="background-color: #f7af69;">
+            <div class="container">
+                <h3 class="text-transform-capitalize wow fadeScale">Você merece uma vida plena</h3>
+                <h5 class="text-transform-uppercase">Escolha o plano ideal para você</h5>
+                <div class="row row-lg row-30 row-lg-50">
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <!-- Product-->
+                        <article class="product wow fadeInRight">
+                            <div class="product-body">
+                                <img src="{{ url('assets/images/site/LogoMini Estilizada.png') }}" alt="" class="" style="width: 250px; margin-top: 16px;">
+                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">Sou digital</a></h3>
+                                <div class="product-price-wrap">
+                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 39.90/mês</h6></div>
+                                    <div class="product-price">Receba um link para download em seu</div>
+                                    <div class="product-price"> e-mail.</div>
+                                </div>
+                                <div class="" style="margin-top: 15px;">
+                                    <p class="">- Sem fidelidade: você pode cancelar sem multa.</p>
+                                    <p class="">- Boleto bancário ou cartão de crédito.</p>
+                                    <p class="">- Receba a versão digital dos dois livros, esta oção não contempla os brindes.</p>
+                                </div>
+                            </div><span class="product-badge product-badge-new">Novo</span>
+                            <div class="product-button-wrap" style="margin-top: 50px;">
+                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
+                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+                                        href="grid-shop.html">Assine Agora</a></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <!-- Product-->
+                        <article class="product wow fadeInRight">
+                            <div class="product-body">
+                                <img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
+                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">Amo o cheirinho de livro</a></h3>
+                                <div class="product-price-wrap">
+                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 89.90/mês</h6></div>
+                                    <div class="product-price">Receba o seu box em casa.</div>
+                                </div>
+                                <div class="" style="margin-top: 15px;">
+                                    <p class="">- Sem fidelidade: você pode cancelar sem multa.</p>
+                                    <p class="">- Boleto bancário ou cartão de crédito.</p>
+                                </div>
+                            </div><span class="product-badge product-badge-sale">Box</span>
+                            <div class="product-button-wrap" style="margin-top: 50px;">
+                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
+                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+                                        href="grid-shop.html">Assine Agora</a></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <!-- Product-->
+                        <article class="product wow fadeInRight">
+                            <div class="product-body">
+                                <img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
+                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">Quero todos os meses</a></h3>
+                                <div class="product-price-wrap">
+                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 79.90/mês</h6></div>
+                                    <div class="product-price">Receba o seu box em casa.</div>
+                                </div>
+                                <div class="" style="margin-top: 15px;">
+                                    <p class="">- Com fidelidade: 6 meses.</p>
+                                    <p class="">- Cartão de crédito.</p>
+                                </div>
+                            </div><span class="product-badge product-badge-sale">Box</span>
+                            <div class="product-button-wrap" style="margin-top: 50px;">
+                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
+                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+                                        href="grid-shop.html">Assine Agora</a></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <!-- Product-->
+                        <article class="product wow fadeInRight">
+                            <div class="product-body">
+                                <img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
+                                <h3 class="product-title" style="margin-top: 15px;"><a href="single-product.html">Quero o ano todo</a></h3>
+                                <div class="product-price-wrap">
+                                    <div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 69.90/mês</h6></div>
+                                    <div class="product-price">Receba o seu box em casa.</div>
+                                </div>
+                                <div class="" style="margin-top: 15px;">
+                                    <p class="">- Com fidelidade: 6 meses.</p>
+                                    <p class="">- Cartão de crédito.</p>
+                                </div>
+                            </div><span class="product-badge product-badge-sale">Box</span>
+                            <div class="product-button-wrap" style="margin-top: 50px;">
+                                    <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
+                                        class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+                                        href="grid-shop.html">Assine Agora</a></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-xxl bg-default">
+            <div class="container">
+            <h4 class="text-transform-none wow fadeScale" style="margin-top: 25px; color: #97cd9b;">Transformações de impacto no seu dia a dia.</h4>
+                <h4 class="text-transform-none wow fadeScale" style="color: #97cd9b;">Sua felicidade depende da sua saúde e vitalidade.</h4>
+                <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
+                    class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+                    href="grid-shop.html">Experimente adquirir o Box Avulso</a></div>
+            </div>
+        </section>
+
+
         <!-- What People Say-->
         <section class="section section-xxl bg-image-1">
             <div class="container">
@@ -1808,45 +1619,43 @@
                 <div class="container">
                     <div class="row row-40 row-md-50 justify-content-xl-between">
                         <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
-                            <h5 class="footer-modern-title">Contato</h5>
+                            <h5 class="footer-modern-title">Contato: </h5>
+                            <h6 class="footer-modern-title">Bookbox - Saúde Integrada </h6>
                             <ul class="contacts-creative">
                                 <li>
-                                    <div class="unit unit-spacing-sm flex-column flex-md-row">
-                                        <div class="unit-left"><span class="icon mdi mdi-map-marker"></span>
+                                        <div class="unit unit-spacing-sm flex-column flex-md-row">
+                                            <a href="#" target="_blank"><img src="{{ url ('assets/images/site/logoFooter.png')}}" style="width: 100%; max-width: 240px" /></a>
                                         </div>
-                                        <div class="unit-body"><a href="#">523 Sylvan Ave, 5th Floor<br />Mountain
-                                                View, CA 94041 USA</a></div>
-                                    </div>
                                 </li>
                                 <li>
                                     <div class="unit unit-spacing-sm flex-column flex-md-row">
                                         <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                                        <div class="unit-body"><a href="tel:#">+1 (844) 123 456 78</a></div>
+                                        <div class="unit-body"><a href="tel:+55-11-97681-6349">(11) 97681-6349</a></div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="unit unit-spacing-sm flex-column flex-md-row">
                                         <div class="unit-left"><span class="icon mdi mdi-email-outline"></span>
                                         </div>
-                                        <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                                        <div class="unit-body"><a href="mailto:atendimento@bookbox.com.br?subject=Informação sobre a Bookbox">atendimento@bookbox.com.br</a></div>
                                     </div>
                                 </li>
                             </ul>
                             <ul class="list-inline list-social-3 list-inline-sm">
                                 <li>
-                                    <a class="icon mdi mdi-facebook icon-xxs" href="#"></a>
+                                    <a class="icon mdi mdi-facebook icon-xxs" href="https://www.facebook.com/bookboxsaude/"></a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a class="icon mdi mdi-twitter icon-xxs" href="#"></a>
+                                </li> --}}
+                                <li>
+                                    <a class="icon mdi mdi-instagram icon-xxs" href="https://www.instagram.com/bookboxsaude/"></a>
                                 </li>
                                 <li>
-                                    <a class="icon mdi mdi-instagram icon-xxs" href="#"></a>
+                                    <a class="icon mdi mdi-youtube-play icon-xxs" href="https://www.youtube.com/channel/UCh2dbFaDZWrS_Hz5-ZQNYwA"></a>
                                 </li>
                                 <li>
-                                    <a class="icon mdi mdi-google-plus icon-xxs" href="#"></a>
-                                </li>
-                                <li>
-                                    <a class="icon mdi mdi-skype icon-xxs" href="#"></a>
+                                    <a class="icon mdi mdi-whatsapp icon-xxs" href="https://api.whatsapp.com/send?phone=5511976816349&text=Vamos%20falar%20sobre%20a%20Bookbox!"></a>
                                 </li>
                             </ul>
                         </div>
@@ -1914,45 +1723,46 @@
                             </ul>
                         </div>
                         <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
-                            <h5 class="footer-modern-title">Desenvolvido por: Gigapixel</h5>
+                            <h5 class="footer-modern-title">Desenvolvido por: </h5>
+                            <h6 class="footer-modern-title">Gigapixel -  Design & Tecnology</h6>
                             <ul class="contacts-creative">
                                 <li>
                                     <div class="unit unit-spacing-sm flex-column flex-md-row">
-                                        <div class="unit-left"><span class="icon mdi mdi-map-marker"></span>
-                                        </div>
-                                        <div class="unit-body"><a href="#">523 Sylvan Ave, 5th Floor<br />Mountain
-                                                View, CA 94041 USA</a></div>
+					                    <a href="https://gigapixel.com.br/" target="_blank"><img src="{{ url ('assets/images/site/logo_gigapixel.png')}}" style="width: 100%; max-width: 180px" /></a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="unit unit-spacing-sm flex-column flex-md-row">
                                         <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                                        <div class="unit-body"><a href="tel:#">+1 (844) 123 456 78</a></div>
+                                        <div class="unit-body"><a href="tel:+55-16-98265-1020"> (16) 98265-1020</a></div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="unit unit-spacing-sm flex-column flex-md-row">
                                         <div class="unit-left"><span class="icon mdi mdi-email-outline"></span>
                                         </div>
-                                        <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                                        <div class="unit-body"><a href="mailto:contato@gigapixel.com.br?subject=Informação sobre a Gigapixel">contato@gigapixel.com.br</a></div>
                                     </div>
                                 </li>
                             </ul>
                             <ul class="list-inline list-social-3 list-inline-sm">
                                 <li>
-                                    <a class="icon mdi mdi-facebook icon-xxs" href="#"></a>
+                                    <a class="icon mdi mdi-facebook icon-xxs" href="https://www.facebook.com/gigapixxel/?ref=bookmarks"></a>
                                 </li>
                                 <li>
-                                    <a class="icon mdi mdi-twitter icon-xxs" href="#"></a>
+                                    <a class="icon mdi mdi-twitter icon-xxs" href="https://twitter.com/gigapixxel"></a>
                                 </li>
                                 <li>
-                                    <a class="icon mdi mdi-instagram icon-xxs" href="#"></a>
+                                    <a class="icon mdi mdi-instagram icon-xxs" href="https://www.instagram.com/gigapixxel/"></a>
                                 </li>
                                 <li>
-                                    <a class="icon mdi mdi-google-plus icon-xxs" href="#"></a>
+                                    <a class="icon mdi mdi-youtube-play icon-xxs" href="https://www.youtube.com/channel/UCMjqS_krg7VCKm35J9LtqtQ"></a>
                                 </li>
                                 <li>
-                                    <a class="icon mdi mdi-skype icon-xxs" href="#"></a>
+                                    <a class="icon mdi mdi-linkedin icon-xxs" href="https://www.linkedin.com/company/12636001/admin/"></a>
+                                </li>
+                                <li>
+                                    <a class="icon mdi mdi-whatsapp icon-xxs" href="https://api.whatsapp.com/send?phone=5516982651020&text=Vamos%20falar%20sobre%20a%20Gigapixel!"></a>
                                 </li>
                             </ul>
                         </div>
@@ -1962,7 +1772,7 @@
             <div class="footer-modern-panel text-center">
                 <div class="container">
                     <p class="rights"><span>&copy;&nbsp; </span><span
-                            class="copyright-year"></span><span>&nbsp;</span><span>Livedrink</span><span>.&nbsp; All
+                            class="copyright-year"></span><span>&nbsp;</span><span>Bookbox</span><span>.&nbsp; All
                             rights reserved.</span><span>&nbsp;</span><a href="privacy-policy.html">Privacy
                             Policy</a><span>.</span></p>
                 </div>

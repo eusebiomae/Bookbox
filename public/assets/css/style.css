@@ -3514,8 +3514,8 @@ hr {
 .button-secondary-2,
 .button-secondary-2:focus {
     color: #151515;
-    background-color: #f9e95e;
-    border-color: #f9e95e;
+    background-color: #f7af69;
+    border-color: #f7af69;
 }
 
 .button-secondary-2:hover,
@@ -3530,7 +3530,7 @@ hr {
 }
 
 .button-secondary-2.button-zakaria:after {
-    background: #f9e95e;
+    background: #f7af69;
 }
 
 .button-gray-6,
