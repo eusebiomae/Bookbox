@@ -10353,7 +10353,7 @@ html [class*='section-'].section-top-0 {
 
 p.rights {
     letter-spacing: 0;
-    color: #777777;
+    color: #fff;
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -11674,7 +11674,7 @@ html.tablet .ui-to-top {
     letter-spacing: .1em;
     text-transform: uppercase;
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #151515;
+    color: #fff;
     transition: all .25s ease-in-out;
 }
 

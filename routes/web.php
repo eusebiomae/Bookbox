@@ -43,6 +43,8 @@ Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->mi
 
 Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
 
+Route::get('/box_blog', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:box_blog']);
+
 Route::get('/article', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:article']);
 
 Route::get('/blog/{id}/{title?}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:blog']);

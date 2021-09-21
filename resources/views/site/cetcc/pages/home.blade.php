@@ -167,97 +167,6 @@
                                 </div>
                             </div>
                             <div class="rd-navbar-aside-element">
-                                <!-- RD Navbar Search-->
-                                {{-- <div class="rd-navbar-search rd-navbar-search-2">
-                                    <button class="rd-navbar-search-toggle rd-navbar-fixed-element-3"
-                                        data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
-                                    <form class="rd-search" action="search-results.html"
-                                        data-search-live="rd-search-results-live" method="GET">
-                                        <div class="form-wrap">
-                                            <input class="rd-navbar-search-form-input form-input"
-                                                id="rd-navbar-search-form-input" type="text" name="s"
-                                                autocomplete="off" />
-                                            <label class="form-label"
-                                                for="rd-navbar-search-form-input">Search...</label>
-                                            <div class="rd-search-results-live" id="rd-search-results-live"></div>
-                                            <button class="rd-search-form-submit fl-bigmug-line-search74"
-                                                type="submit"></button>
-                                        </div>
-                                    </form>
-                                </div> --}}
-                                <!-- RD Navbar Basket-->
-                                {{-- <div class="rd-navbar-basket-wrap">
-                                    <button class="rd-navbar-basket fl-bigmug-line-shopping202"
-                                        data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
-                                    <div class="cart-inline">
-                                        <div class="cart-inline-header">
-                                            <h5 class="cart-inline-title">In cart:<span> 2</span> Products</h5>
-                                            <h6 class="cart-inline-title">Total price:<span> $42</span></h6>
-                                        </div>
-                                        <div class="cart-inline-body">
-                                            <div class="cart-inline-item">
-                                                <div class="unit unit-spacing-sm align-items-center">
-                                                    <div class="unit-left">
-                                                        <a class="cart-inline-figure" href="single-product.html"><img
-                                                                src="{{ url('assets/images/product-mini-1-106x104.jpg') }}"
-                                                                alt="" width="106" height="104" /></a>
-                                                    </div>
-                                                    <div class="unit-body">
-                                                        <h6 class="cart-inline-name"><a
-                                                                href="single-product.html">Forest Berry</a></h6>
-                                                        <div>
-                                                            <div class="group-xs group-middle">
-                                                                <div class="table-cart-stepper">
-                                                                    <input class="form-input" type="number"
-                                                                        data-zeros="true" value="1" min="1"
-                                                                        max="1000" />
-                                                                </div>
-                                                                <h6 class="cart-inline-title">$18.00</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cart-inline-item">
-                                                <div class="unit unit-spacing-sm align-items-center">
-                                                    <div class="unit-left">
-                                                        <a class="cart-inline-figure" href="single-product.html"><img
-                                                                src="{{ url('assets/images/product-mini-2-106x104.jpg') }}"
-                                                                alt="" width="106" height="104" /></a>
-                                                    </div>
-                                                    <div class="unit-body">
-                                                        <h6 class="cart-inline-name"><a
-                                                                href="single-product.html">Carrots</a></h6>
-                                                        <div>
-                                                            <div class="group-xs group-middle">
-                                                                <div class="table-cart-stepper">
-                                                                    <input class="form-input" type="number"
-                                                                        data-zeros="true" value="1" min="1"
-                                                                        max="1000" />
-                                                                </div>
-                                                                <h6 class="cart-inline-title">$24.00</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="cart-inline-footer">
-                                            <div class="group-sm"><a
-                                                    class="button button-default-outline-2 button-zakaria" href="#">Go
-                                                    to cart</a><a class="button button-primary button-zakaria"
-                                                    href="#">Checkout</a></div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{-- <div class="rd-navbar-fixed-element-2 select-inline"><a class="rd-nav-link"
-                                        href="login.html">Login</a>
-                                    <!-- <select data-dropdown-class="select-inline-dropdown">
-                                                                        <option value="en">en</option>
-                                                             <option value="fr">fr</option>
-                                                                        <option value="es">es</option>
-                                                                </select> -->
-                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -267,20 +176,6 @@
                                 <ul class="rd-navbar-nav">
                                     <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
                                     </li>
-                                    <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
-                                        <ul class="rd-menu rd-navbar-dropdown">
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="what-we-offer.html">What We Offer</a>
-                                            </li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="our-team.html">Our Team</a>
-                                            </li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="404-page.html">404 Page</a>
-                                            </li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="coming-soon.html">Coming Soon</a>
-                                            </li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="search-results.html">Search Results</a>
-                                            </li>
-                                        </ul>
-                                    </li> -->
                                     <li class="rd-nav-item"><a class="rd-nav-link">Blog</a>
                                         <ul class="rd-menu rd-navbar-dropdown">
                                             <li class="rd-dropdown-item"><a class="rd-dropdown-link"
@@ -1615,7 +1510,7 @@
         </section>
         <!-- Page Footer-->
         <footer class="section footer-modern footer-modern-2">
-            <div class="footer-modern-body section-xl context-dark">
+            <div class="footer-modern-body section-xl context-dark" style="background-color: #855f9f">
                 <div class="container">
                     <div class="row row-40 row-md-50 justify-content-xl-between">
                         <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
@@ -1769,7 +1664,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-modern-panel text-center">
+            <div class="footer-modern-panel text-center" style="background-color: #855f9f">
                 <div class="container">
                     <p class="rights"><span>&copy;&nbsp; </span><span
                             class="copyright-year"></span><span>&nbsp;</span><span>Bookbox</span><span>.&nbsp; All

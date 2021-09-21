@@ -110,7 +110,8 @@ class BlogController extends Controller
 			->with('popularTags', BlogModel::getPopularTags())
 			->with('banner', $slides)
 			->with('footerLinks', $this->generateFooterLinks($categories));
-		}
+	}
+
 
 	public function getPost(Request $request, $id)
 	{
