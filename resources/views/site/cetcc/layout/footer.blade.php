@@ -1,138 +1,110 @@
 @php
 	$schoolInformation = schoolInformation();
 @endphp
-<footer class = "text-justify">
-	<div class="container margin_120_95">
-		<div class="row">
-			<div class="col-lg-5 col-md-12 p-r-5">
-				<p>
-					<a href="/about">
-						<img src="/cetcc/img/logo_vertical_white.png" style="text-align: center;" data-retina="true" alt="Logo CETCC"></p>
-					</a>
-				<p>{{ getValueByColumn($schoolInformation, 'company_information') }}</p>
-				<div class="follow_us">
-					{{-- <ul>
-							<li>Follow us</li>
-							<li><a href="#0"><i class="ti-facebook"></i></a></li>
-							<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
-							<li><a href="#0"><i class="ti-google"></i></a></li>
-							<li><a href="#0"><i class="ti-pinterest"></i></a></li>
-							<li><a href="#0"><i class="ti-instagram"></i></a></li>
-						</ul> --}}
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 ml-lg-auto">
-				@if (isset($footerLinks))
-					<h5>{{ $footerLinks['title'] }}</h5>
-					<ul class="links">
-						@foreach ($footerLinks['links'] as $item)
-							<li><a href="{{ $item['url'] }}" target="_blank">{{ $item['label'] }}</a></li>
-						@endforeach
-					</ul>
-				@else
-					<h5>Links</h5>
-					<ul class="links">
-						<li><a href="http://abpmc.org.br/" target="_blank">Associação Brasileira de Psicoterapia e Medicina Comportamental</a></li>
-						<li><a href="http://www.bvs-psi.org.br/php/index.php" target="_blank">BVS Psicologia ULAPSI Brasil</a></li>
-						<li><a href="https://inpaonline.com.br/" target="_blank">InPA – Instituto de Psicologia Aplicada</a></li>
-						<li><a href="http://ipc.psico.net/" target="_blank">Instituto de Psicologia Comportamental de São Carlos</a></li>
-						<li><a href="http://www.laborecursos.com.br/" target="_blank">Labore - Instituto de Ensino</a></li>
-						{{-- <li><a href="http://www.livrariadopsi.com.br/" target="_blank">Livraria do Psi</a></li> --}}
-						<li><a href="https://grudacom.wordpress.com/" target="_blank">Grupo de Estudos de Doenças Afetivas</a></li>
-						<li><a href="http://www.redepsi.com.br/" target="_blank">Rede Psi</a></li>
-					</ul>
-				@endif
+<footer class="section footer-modern footer-modern-2">
+	<div class="footer-modern-body section-xl context-dark" style="background-color: #855f9f">
+			<div class="container">
+					<div class="row row-40 row-md-50 justify-content-xl-between">
+							<div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
+									{{-- <h5 class="footer-modern-title">Contato: </h5>
+									<h6 class="footer-modern-title">Bookbox - Saúde Integrada </h6> --}}
+									<ul class="contacts-creative">
+										<div class="unit unit-spacing-sm flex-column flex-md-row align-center">
+												<a href="#" target="_blank"><img src="{{ url ('assets/images/site/Logo Negativo.png')}}" style="width: 100%; max-width: 240px; margin-top: -50px; margin-left: 15px;" /></a>
+										</div>
+											<li>
+												<div class="unit unit-spacing-sm flex-column flex-md-row">
+													<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+														It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											</div>
+											</li>
+									</ul>
+									<ul class="list-inline list-social-3 list-inline-sm" style="margin-left: 20px;">
+											<li>
+													<a class="icon mdi mdi-facebook icon-xxs" href="https://www.facebook.com/bookboxsaude/"></a>
+											</li>
+											<li>
+													<a class="icon mdi mdi-instagram icon-xxs" href="https://www.instagram.com/bookboxsaude/"></a>
+											</li>
+											<li>
+													<a class="icon mdi mdi-youtube-play icon-xxs" href="https://www.youtube.com/channel/UCh2dbFaDZWrS_Hz5-ZQNYwA"></a>
+											</li>
+											<li>
+													<a class="icon mdi mdi-whatsapp icon-xxs" href="https://api.whatsapp.com/send?phone=5511976816349&text=Vamos%20falar%20sobre%20a%20Bookbox!"></a>
+											</li>
+									</ul>
+							</div>
+							<div class="col-sm-6 col-md-7 col-lg-5 wow fadeInRight" data-wow-delay=".1s">
+									<h5 class="footer-modern-title">Links Importantes</h5>
+									<ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
+											<li><a href="grid-shop.html">ShopBox</a></li>
+											<li><a href="blog-list.html">Blog Post</a></li>
+											<li><a href="about-us.html">Sobre Nós</a></li>
+											<li><a href="#">Termos e Condições</a></li>
+											<li><a href="contact-us.html">Contato</a></li>
+											<li><a href="#">Assinar</a></li>
+									</ul><br/><br/>
+									<h5 class="footer-modern-title">Formas de pagamento</h5>
+									<div class="row" style="margin-left: 5px;">
+									{{-- <ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block"> --}}
+											<ul><img src="{{ url ('assets/images/site/formasPagamento/mastercard.svg')}}" alt="" class="" style="width: 50px;"></ul>
+											<ul><img src="{{ url ('assets/images/site/formasPagamento/visa.svg')}}" alt="" class="" style="width: 50px; margin-left: 25px;"></ul>
+											<ul><img src="{{ url ('assets/images/site/formasPagamento/boleto.svg')}}" alt="" class="" style="width: 65px; margin-left: 25px; margin-top: -8px;"></ul>
+									{{-- </ul> --}}
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
+									<h5 class="footer-modern-title">Credenciais Bookbox: </h5>
+									<ul class="contacts-creative">
+											<li>
+													<div class="unit unit-spacing-sm flex-column flex-md-row">
 
+													</div>
+											</li>
+											<li>
+													<div class="unit unit-spacing-sm flex-column flex-md-row">
+															{{-- <div class="unit-left"><span class="icon mdi mdi-phone"></span></div> --}}
+															<div class="unit-body"><a href="tel:+55-11-97681-6349">(11) 97681-6349</a></div>
+													</div>
+											</li>
+											<li>
+													<div class="unit unit-spacing-sm flex-column flex-md-row">
+															{{-- <div class="unit-left"><span class="icon mdi mdi-email-outline"></span> --}}
+															</div>
+															<div class="unit-body"><a href="mailto:atendimento@bookbox.com.br?subject=Informação sobre a Bookbox">atendimento@bookbox.com.br</a></div>
+													</div>
+											</li>
+									</ul>
+									{{-- <ul class="list-inline list-social-3 list-inline-sm">
+											<li>
+													<a class="icon mdi mdi-facebook icon-xxs" href="https://www.facebook.com/gigapixxel/?ref=bookmarks"></a>
+											</li>
+											<li>
+													<a class="icon mdi mdi-twitter icon-xxs" href="https://twitter.com/gigapixxel"></a>
+											</li>
+											<li>
+													<a class="icon mdi mdi-instagram icon-xxs" href="https://www.instagram.com/gigapixxel/"></a>
+											</li>
+											<li>
+													<a class="icon mdi mdi-youtube-play icon-xxs" href="https://www.youtube.com/channel/UCMjqS_krg7VCKm35J9LtqtQ"></a>
+											</li>
+											<li>
+													<a class="icon mdi mdi-linkedin icon-xxs" href="https://www.linkedin.com/company/12636001/admin/"></a>
+											</li>
+											<li>
+													<a class="icon mdi mdi-whatsapp icon-xxs" href="https://api.whatsapp.com/send?phone=5516982651020&text=Vamos%20falar%20sobre%20a%20Gigapixel!"></a>
+											</li>
+									</ul> --}}
+							</div>
+					</div>
 			</div>
-			<div class="col-lg-3 col-md-6">
-				<h5>Fale conosco</h5>
-				<ul class="contacts">
-					@if (isset($schoolInformation->phone1)&& !empty($schoolInformation->phone1))
-					<li><a href="tel://{{ $schoolInformation->phone1 }}"><i class="ti-mobile"></i>{{ $schoolInformation->phone1 }}</a></li>
-					@endif
-					@if (isset($schoolInformation->phone2)&& !empty($schoolInformation->phone2))
-						<li><a href="tel://{{ $schoolInformation->phone2 }}"><i class="ti-mobile"></i>{{ $schoolInformation->phone2 }}</a></li>
-					@endif
-					@if (isset($schoolInformation->cell_phone1)&& !empty($schoolInformation->cell_phone1))
-					<li><a href="tel://{{ $schoolInformation->cell_phone1 }}"><i class="ti-mobile"></i>{{ $schoolInformation->cell_phone1 }}</a></li>
-					@endif
-					@if (isset($schoolInformation->email1)&& !empty($schoolInformation->email1))
-					<li><a href="mailto://{{ $schoolInformation->email1 }}"><i class="ti-email"></i>{{ $schoolInformation->email1 }}</a></li>
-					@endif
-
-					<li>
-						<a href="#"><i class="icon-home"></i></a>
-							{{ getValueByColumn($schoolInformation, 'address') }}
-							Nª: {{ getValueByColumn($schoolInformation, 'number') }},
-							{{ getValueByColumn($schoolInformation, 'complement') }} -
-							{{ getValueByColumn($schoolInformation, 'neighborhood') }},
-							{{ getValueByColumn($schoolInformation, 'city') }} -
-							{{ getValueByColumn($schoolInformation, 'state.abbreviation')}}<br>
-							CEP: {{ getValueByColumn($schoolInformation, 'cep') }}
-					</li>
-					<li class="mt-2">
-						@if (isset($schoolInformation->facebook) && !empty($schoolInformation->facebook))
-							<a href="{{ $schoolInformation->facebook }}" target="_blank">
-								<i class="icon-facebook p-1" title="Facebook"></i>
-							</a>
-						@endif
-						@if (isset($schoolInformation->twitter) && !empty($schoolInformation->twitter))
-							<a href="{{ $schoolInformation->twitter }}" target="_blank">
-								<i class="icon-twitter p-1" title="Twitter"></i>
-							</a>
-						@endif
-						@if (isset($schoolInformation->instagram) && !empty($schoolInformation->instagram))
-							<a href="{{ $schoolInformation->instagram }}" target="_blank">
-								<i class="icon-instagram p-1" title="Instagram"></i>
-							</a>
-						@endif
-						@if (isset($schoolInformation->pinterest) && !empty($schoolInformation->pinterest))
-							<a href="{{ $schoolInformation->pinterest }}" target="_blank">
-								<i class="icon-pinterest p-1" title="Pinterest"></i>
-							</a>
-						@endif
-						@if (isset($schoolInformation->linkedin) && !empty($schoolInformation->linkedin))
-							<a href="{{ $schoolInformation->linkedin }}" target="_blank">
-								<i class="icon-linkedin p-1" title="Linkedin"></i>
-							</a>
-						@endif
-						@if (isset($schoolInformation->youtube) && !empty($schoolInformation->youtube))
-						<a href="{{ $schoolInformation->youtube }}" class="text-light" target="_blank">
-							<i class="icon-youtube p-1" title="Youtube"></i>
-						</a>
-					@endif
-					</li>
-				</ul>
-				{{-- <div id="newsletter">
-					<h6>Newsletter</h6>
-					<div id="message-newsletter"></div>
-					<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
-						<div class="form-group">
-							<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
-							<input type="submit" value="Submit" id="submit-newsletter">
-						</div>
-					</form>
-					</div> --}}
+	</div>
+	<div class="footer-modern-panel text-center" style="background-color: #855f9f">
+			<div class="container">
+					<p class="rights"><span>&copy;&nbsp; </span><span
+									class="copyright-year"></span><span>&nbsp;</span><span>2021 - Bookbox Saude - Todos os direitos reservados</span><a href="https://gigapixel.com.br/" target="_blank"><img src="{{ url ('assets/images/site/logo_gigapixel.png')}}" style="width: 100%; max-width: 150px; margin-left: 25px;" /></a></p>
 			</div>
-		</div>
-		<!--/row-->
-		<hr>
-		<div class="row">
-			<div class="col-md-8">
-				<a href="https://gigapixel.com.br/" target="_blank">
-					<img src="/images/logo/logo negativo.png" height="45"/>
-				</a>
-				{{-- <ul id="additional_links">
-						<li><a href="#0">Terms and conditions</a></li>
-						<li><a href="#0">Privacy</a></li>
-					</ul> --}}
-			</div>
-			<div class="col-md-4">
-				<div id="copy">
-					© {{ date('Y') }} <a href="https://gigapixel.com.br/" target="_blank">GigaPixel</a> - Design & Technology
-				</div>
-			</div>
-		</div>
 	</div>
 </footer>
 <!--/footer-->
