@@ -5,6 +5,7 @@ namespace App\Model\api;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Updater;
+use Illuminate\Support\Facades\Storage;
 
 class SlideModel extends Model {
 	use SoftDeletes;
@@ -34,6 +35,10 @@ class SlideModel extends Model {
 	];
 
 	protected $dates = ['deleted_at'];
+
+	public function getImageAttribute($val) {
+		return empty($val) ? null : Storage::url("slides/{$val}");
+	}
 
 	public function contentPage() {
 		return $this->belongsTo('\App\Model\api\Configuration\ContentPageModel');
