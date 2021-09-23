@@ -83,7 +83,7 @@ class HomeController extends _Controller
 
 		$event = ContentModel::select('id', 'title_pt', 'text_pt', 'image', 'link', 'image_bg', 'link_label')->where('visible_event', 1)->first();
 
-		return view('site/cetcc/pages/home')
+		return view('site/bookbox/pages/home')
 			->with('flgPage', $flgPage)
 			->with('features', $features)
 			->with('categoriesCourseType', $categoriesCourseType)

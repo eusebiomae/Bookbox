@@ -119,17 +119,16 @@
                                     <li class="rd-nav-item"><a class="rd-nav-link"
                                             href="grid-gallery.html" >Galeria</a>
                                     </li>
-                                    <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link"
-                                            href="grid-shop.html" >ShopBox</a>
+                                    <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">Sobre
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
                                             nós</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link"
-                                            href="contact-us.html">Contato</a>
+                                            href="/contact">Contato</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link"
-                                            href="/terms">Termos e Condições</a>
+                                            href="/privacy-policy">Termos e Condições</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="/pricing-list"
                                             target="blank" style="color: #552b79;">Assine já</a>

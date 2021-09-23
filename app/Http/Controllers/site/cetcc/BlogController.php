@@ -98,7 +98,7 @@ class BlogController extends Controller
 			'flgType' => $flgPage,
 		]);
 
-		return view('site/cetcc/pages/blog_post')
+		return view('site/bookbox/pages/blog_post')
 			->with('title', BlogCategoryModel::labelFlgType($flgPage))
 			->with('flgPage', $flgPage)
 			->with('params', $request->all())
@@ -152,7 +152,7 @@ class BlogController extends Controller
 			'flgType' => $flgPage,
 		]);
 
-		return view('site/cetcc/pages/blog_page')
+		return view('site/bookbox/pages/blog_page')
 		->with('title', BlogCategoryModel::labelFlgType($flgPage))
 		->with('flgPage', $flgPage)
 		->with('post', $post)

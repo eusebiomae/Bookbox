@@ -34,21 +34,21 @@ class ContactController extends _Controller
 			(object) [
 				'icon' => 'pe-7s-phone',
 				'title' => 'Telefone',
-				'description' => $schoolInformation->phone1,
+				// 'description' => $schoolInformation->phone1,
 			],
 			(object) [
 				'icon' => 'pe-7s-mail',
 				'title' => 'E-mail',
-				'description' => $schoolInformation->email1,
+				// 'description' => $schoolInformation->email1,
 			],
 			(object) [
 				'icon' => 'pe-7s-map',
 				'title' => 'Endereço',
-				'description' => $schoolInformation->fullAddress,
+				// 'description' => $schoolInformation->fullAddress,
 			],
 		];
 
-		return view('site/cetcc/pages/contact')
+		return view('site/bookbox/pages/contact')
 			->with('flgPage', $flgPage)
 			->with('schoolInformation', $schoolInformation)
 			->with('features', $features)

@@ -1,5 +1,5 @@
-@extends('site.cetcc.layout.footer')
-@extends('site.cetcc.layout.site')
+@extends('site.bookbox.layout.footer')
+@extends('site.bookbox.layout.site')
 
 @section('content')
 

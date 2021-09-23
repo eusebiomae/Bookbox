@@ -41,9 +41,16 @@ Route::get('/recommendation', 'site\cetcc\RecommendationController@index')->midd
 Route::get('/faq', 'site\cetcc\FaqController@index')->middleware(['injectFlgPage:faq']);
 Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:shopping_journey']);
 
-Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
 
-Route::get('/box_blog', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:box_blog']);
+// Site
+Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
+Route::get('/box_blog', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:box_blog']);
+Route::get('/single-product/{id}', 'site\cetcc\CourseController@courseDetails')->middleware(['injectFlgPage:single-product']);
+Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
+Route::get('/privacy-policy', 'site\cetcc\PrivacyController@index')->middleware(['injectFlgPage:privacy-policy']);
+// End Site
+
+
 
 Route::get('/article', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:article']);
 

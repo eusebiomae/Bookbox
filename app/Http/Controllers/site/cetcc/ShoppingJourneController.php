@@ -10,7 +10,7 @@ use App\Model\api\CourseSupervisionModel;
 use App\Model\api\Prospection\CourseCategoryModel;
 use App\Model\api\Prospection\CourseCategoryTypeModel;
 use App\Model\api\Prospection\CourseModel;
-use App\Model\api\Prospection\CourseSubcategoryModel;
+// use App\Model\api\Prospection\CourseSubcategoryModel;
 use App\Model\api\ScholarshipModel;
 use App\Model\api\ScholarshipStudentModel;
 use App\Model\api\StudentSocioeconomicModel;
@@ -43,7 +43,7 @@ class ShoppingJourneController extends _Controller
 				},
 				'courseCategory',
 				'courseCategoryType',
-				'courseSubcategory',
+				// 'courseSubcategory',
 			])->first();
 
 			$payload->minimum_wage = ParametersAppModel::first()->minimum_wage;
@@ -52,11 +52,11 @@ class ShoppingJourneController extends _Controller
 		} else {
 			$payload->categoryType = CourseCategoryTypeModel::orderBy('title')->get();
 			$payload->category = CourseCategoryModel::orderBy('description_pt')->get();
-			$payload->subCategory = CourseSubcategoryModel::orderBy('description_pt')->get();
+			// $payload->subCategory = CourseSubcategoryModel::orderBy('description_pt')->get();
 			$payload->courses = CourseModel::with([
 				'courseCategory',
 				'courseCategoryType',
-				'courseSubcategory',
+				// 'courseSubcategory',
 				'class' => function($query) {
 					$query->where('does_registre', '1');
 				},
@@ -90,7 +90,7 @@ class ShoppingJourneController extends _Controller
 			}
 		}
 
-		return view('site/cetcc/pages/default')
+		return view('site/bookbox/pages/box_blog')
 			->with('payload', $payload)
 			->with('flgPage', $flgPage)
 			->with('banner', SlideModel::whereHas('contentPage', function($query) use ($flgPage) {

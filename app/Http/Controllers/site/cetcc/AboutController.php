@@ -36,7 +36,7 @@ class AboutController extends _Controller
 			$teamMapData[$item->function->description_pt][] = $item;
 		}
 
-		return view('site/cetcc/pages/default')
+		return view('site/bookbox/pages/about')
 		->with('flgPage', $flgPage)
 		->with('teamMapData', $teamMapData)
 		->with('banner', SlideModel::select('id', 'title_pt', 'image')->whereHas('contentPage', function($query) use ($flgPage) {

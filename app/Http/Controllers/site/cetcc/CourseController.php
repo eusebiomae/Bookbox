@@ -121,29 +121,29 @@ class CourseController extends _Controller
 
 		])->find($id);
 
-		foreach ($course->otherInfType as $otherInfType) {
-			$courseOtherInf_otherInf = CourseOtherInfModel::query()
-			->with(['otherInf'])
-			->where('course_id', $otherInfType->pivot->course_id)
-			->where('other_inf_type_id', $otherInfType->pivot->other_inf_type_id)
-			->get();
+		// foreach ($course->otherInfType as $otherInfType) {
+		// 	$courseOtherInf_otherInf = CourseOtherInfModel::query()
+		// 	->with(['otherInf'])
+		// 	->where('course_id', $otherInfType->pivot->course_id)
+		// 	->where('other_inf_type_id', $otherInfType->pivot->other_inf_type_id)
+		// 	->get();
 
-			$otherInfType_otherInf = [];
-			foreach ($courseOtherInf_otherInf as $courseOtherInf_otherInf_item) {
-				$otherInfType_otherInf[] = $courseOtherInf_otherInf_item->otherInf;
-			}
+		// 	$otherInfType_otherInf = [];
+		// 	foreach ($courseOtherInf_otherInf as $courseOtherInf_otherInf_item) {
+		// 		$otherInfType_otherInf[] = $courseOtherInf_otherInf_item->otherInf;
+		// 	}
 
-			$otherInfType->otherInf = $otherInfType_otherInf;
-		}
+		// 	$otherInfType->otherInf = $otherInfType_otherInf;
+		// }
 
 		// return $course->courseFormPayment->toSql();
 
-		foreach ($course->courseFormPayment as $courseFormPayment) {
-			if (!empty($courseFormPayment->flg_main)) {
-				$course->courseFormPaymentMain = $courseFormPayment;
-				break;
-			}
-		}
+		// foreach ($course->courseFormPayment as $courseFormPayment) {
+		// 	if (!empty($courseFormPayment->flg_main)) {
+		// 		$course->courseFormPaymentMain = $courseFormPayment;
+		// 		break;
+		// 	}
+		// }
 
 		$mapDataTableValues = [
 			'header' => [],
@@ -152,37 +152,37 @@ class CourseController extends _Controller
 
 		$hasFree = false;
 
-		foreach ($course->courseFormPayment as $courseFormPayment) {
-			$mapDataTableValues['header'][$courseFormPayment->form_payment_id] = [
-				'label' => $courseFormPayment->formPayment->description,
-				'column' => $courseFormPayment->form_payment_id,
-			];
+		// foreach ($course->courseFormPayment as $courseFormPayment) {
+		// 	$mapDataTableValues['header'][$courseFormPayment->form_payment_id] = [
+		// 		'label' => $courseFormPayment->formPayment->description,
+		// 		'column' => $courseFormPayment->form_payment_id,
+		// 	];
 
-			if (!$hasFree && $courseFormPayment->formPayment->flg_free) {
-				$hasFree = true;
-			}
+		// 	if (!$hasFree && $courseFormPayment->formPayment->flg_free) {
+		// 		$hasFree = true;
+		// 	}
 
-			$mapDataTableValues['data'][$courseFormPayment->date][$courseFormPayment->form_payment_id][] = $courseFormPayment->toArray();
-		}
+		// 	$mapDataTableValues['data'][$courseFormPayment->date][$courseFormPayment->form_payment_id][] = $courseFormPayment->toArray();
+		// }
 
 		$cities = [];
 		$course['doesRegistre'] = false;
 
-		foreach ($course->class as $class) {
-			if ($class->city_id) {
-				$cities[$class->city_id] = $class->city;
-			}
+		// foreach ($course->class as $class) {
+		// 	if ($class->city_id) {
+		// 		$cities[$class->city_id] = $class->city;
+		// 	}
 
-			if (!$course['doesRegistre'] && $class->does_registre == '1') {
-				$course['doesRegistre'] = true;
-			}
-		}
+		// 	if (!$course['doesRegistre'] && $class->does_registre == '1') {
+		// 		$course['doesRegistre'] = true;
+		// 	}
+		// }
 
 		$course['cities'] = $cities;
 
 			// return $course->class;
 
-		return view('site/cetcc/pages/course_details')
+		return view('site/bookbox/pages/single-product')
 		->with('flgPage', $flgPage)
 		->with('mapDataTableValues', $mapDataTableValues)
 		->with('course', $course)
