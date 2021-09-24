@@ -1,6 +1,6 @@
-<section id="whats_in" class="section section-xxl bg-image-1">
+@foreach ($pageData->content as $item)
+<section id="whats_in" class="section section-xxl swiper-slide-pilars" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
-		@foreach ($pageData->content as $item)
 			<div class="row row-30 row-md-60 row-lg-70 justify-content-center align-items-md-center">
 					<div class="col-sm-8 col-md-5 col-xl-6">
 							<div class="inset-xl-right-20">
@@ -94,6 +94,6 @@
 					<h3 class="text-transform-none wow fadeScale">O que vem na sua box</h3>
 					<img  src="{{ url ('assets/images/site/bannerBox.webp')}}" alt="" class="">
 			</div> --}}
-			@endforeach
-	</div>
-</section>
+		</div>
+	</section>
+	@endforeach

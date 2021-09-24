@@ -14877,6 +14877,39 @@ html.rd-navbar-fixed-linked .page {
     background-size: cover;
 }
 
+.swiper-slide-faq {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* white-space: nowrap; */
+    background-position: 100%;
+    background-size: cover;
+}
+
+.swiper-slide-how {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* white-space: nowrap; */
+    background-position: 50%;
+    background-size: cover;
+}
+
+.swiper-slide-call {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* white-space: nowrap; */
+    /* background-position: 100%; */
+    background-size: cover;
+}
+
 .swiper-slide-caption {
     width: 100%;
     white-space: normal;
@@ -20566,4 +20599,13 @@ html#ecwid_html body#ecwid_body .ec-size.ec-size--m .ec-store .details-gallery__
 .box-icon-modern-svg [id*='SVGID'] {
     --color-stop-1: #f9e95e;
     --color-stop-2: #76aa6f;
+}
+
+
+}
+
+}
+
+}
+
 }

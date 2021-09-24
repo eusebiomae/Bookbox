@@ -1,6 +1,6 @@
-<section id="editions" class="section section-xxl bg-image-1">
+@foreach ($pageData->content as $item)
+<section id="editions" class="section section-xxl swiper-slide-call" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
-		@foreach ($pageData->content as $item)
 			<h2 class="text-transform-capitalize wow fadeScale">Confira nossas edições anteriores</h2>
 			<div class="isotope-wrap">
 					{{-- <div class="isotope-filters">
@@ -31,20 +31,6 @@
 															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
 																	class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
 																	href="grid-shop.html">Eu quero</a></div>
-															{{-- <div class="thumbnail-classic-price">$12.99</div>
-															<div class="thumbnail-classic-button-wrap">
-																	<div class="thumbnail-classic-button">
-																			<a class="button button-gray-6 button-zakaria fl-bigmug-line-search74"
-																					href="images/grid-gallery-4-1200x800-original.jpg"
-																					data-lightgallery="item"><img
-																							src="{{ url('assets/images/masonry-gallery-1-270x250.jpg') }}"
-																							alt="" width="270" style="height: 180px;" /></a>
-																	</div>
-																	<div class="thumbnail-classic-button">
-																			<a class="button button-primary button-zakaria fl-bigmug-line-shopping202"
-																					href="#"></a>
-																	</div>
-															</div> --}}
 													</div>
 											</div>
 									</article>
@@ -327,6 +313,6 @@
 							</div> --}}
 					</div>
 			</div>
-			@endforeach
-	</div>
-</section>
+		</div>
+	</section>
+	@endforeach

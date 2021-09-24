@@ -113,7 +113,7 @@
                         <div class="rd-navbar-main">
                             <div class="rd-navbar-nav-wrap">
                                 <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
                                     </li>
                                     <li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
                                     </li>

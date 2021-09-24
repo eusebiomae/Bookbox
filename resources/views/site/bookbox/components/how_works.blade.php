@@ -1,9 +1,9 @@
-<section id="how_works" class="section section-xxl bg-default text-md-left">
+@foreach ($pageData->content as $item)
+<section id="how_works" class="section section-xxl swiper-slide-how  text-md-left" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
-		@foreach ($pageData->content as $item)
 			<div class="row row-30 row-md-60 row-lg-70 justify-content-center align-items-md-center">
 					<div class="col-xl-12">
-							<h3 class="text-transform-none wow" style="text-align: center;">Cómo funciona?</h3>
+							<h3 class="text-transform-none wow" style="text-align: center; margin-top: 50px;">Cómo funciona?</h3>
 							{{-- <h4 class="text-transform-none wow" style="text-align: center;">Como funciona?</h4> --}}
 							<div class="row row-30">
 									<div class="col-sm-6 col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
@@ -38,6 +38,6 @@
 							</div>
 					</div>
 			</div>
-			@endforeach
-	</div>
-</section>
+		</div>
+	</section>
+	@endforeach
