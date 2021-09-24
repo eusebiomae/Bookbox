@@ -12,9 +12,10 @@
 													<h6 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft"
 															data-caption-delay="250" style="text-color: #fff">{!! $item['text_pt'] !!}</h6>
 													<div class="button-wrap" data-caption-animate="fadeInLeft"
-															data-caption-delay="400"><a
+															data-caption-delay="400" style="margin-top: 35px; margin-bottom: 70px;"><a
 																	class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-																	href="grid-shop.html">Assine Agora</a></div>
+																	href="grid-shop.html">Assine Agora</a>
+													</div>
 											</div>
 									</div>
 							</div>
