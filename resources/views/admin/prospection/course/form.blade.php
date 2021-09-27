@@ -43,15 +43,15 @@
 
 							<div class="tabs-container">
 								<ul class="nav nav-tabs">
-									<li class="active"><a data-toggle="tab" href="#tab-1">Dados do Curso</a></li>
-									<li><a class="" data-toggle="tab" href="#tab-2">Vantagens</a></li>
-									{{-- <li><a class="" data-toggle="tab" href="#tab-3">Valores</a></li> --}}
-									<li><a class="" data-toggle="tab" href="#tab-4">Professores</a></li>
+									<li class="active"><a data-toggle="tab" href="#tab-1">Dados do Produto</a></li>
+									{{-- <li><a class="" data-toggle="tab" href="#tab-2">Vantagens</a></li> --}}
+									<li><a class="" data-toggle="tab" href="#tab-3">Valores</a></li>
+									{{-- <li><a class="" data-toggle="tab" href="#tab-4">Professores</a></li> --}}
 									{{-- <li><a class="" data-toggle="tab" href="#tab-5">Módulos</a></li> --}}
 									<li><a class="" data-toggle="tab" href="#tab-6">Itens Inclusos</a></li>
-									<li><a class="" data-toggle="tab" href="#tab-additional">Adicionais</a></li>
-									<li><a class="" data-toggle="tab" href="#tab-discount">Cupom de desconto</a></li>
-									<li><a class="" data-toggle="tab" href="#tab-class">Turmas</a></li>
+									{{-- <li><a class="" data-toggle="tab" href="#tab-additional">Adicionais</a></li> --}}
+									{{-- <li><a class="" data-toggle="tab" href="#tab-discount">Cupom de desconto</a></li> --}}
+									{{-- <li><a class="" data-toggle="tab" href="#tab-class">Turmas</a></li> --}}
 								</ul>
 								<form name="formCourse" method="post" action="{{ url($urlAction) }}" class="form-horizontal" enctype="multipart/form-data">
 									{{ csrf_field() }}
@@ -63,7 +63,7 @@
 												<div class="col-lg-12 animated fadeInLeft">
 													<div class="form-group">
 
-														@if ($fieldPageConfig->show('course_category_type_id'))
+														{{-- @if ($fieldPageConfig->show('course_category_type_id'))
 														<div class="col-sm-4">
 															<label class="control-label">Tipo Categoria</label>
 															<select class="form-control" name="course_category_type_id" required {!! $fieldPageConfig->attr('course_category_type_id') !!}></select>
@@ -75,9 +75,9 @@
 															<label class="control-label">Categoria</label>
 															<div class="gp-block-ruby">
 																<select name="course_category_id" class="select2_demo_1 form-control" required onchange="onChangeCourseCategory(this.value, event)" {!! $fieldPageConfig->attr('course_category_id') !!}></select>
-																{{-- <button type="button" class="m-l-xs btn gp-btn-green " data-target="#courseCategoryModel" title="Nova opção" onclick="openModalNewItemSelect(event, 'course_category_id')">
+																<button type="button" class="m-l-xs btn gp-btn-green " data-target="#courseCategoryModel" title="Nova opção" onclick="openModalNewItemSelect(event, 'course_category_id')">
 																	<i class="fa fa-plus"></i>
-																</button> --}}
+																</button>
 															</div>
 														</div>
 														@endif
@@ -87,7 +87,7 @@
 															<label class="control-label">Subcategoria</label>
 															<select name="course_subcategory_id" class="select2_demo_1 form-control" required {!! $fieldPageConfig->attr('course_subcategory_id') !!}></select>
 														</div>
-														@endif
+														@endif --}}
 
 
 														{{--
@@ -182,7 +182,7 @@
 														</div>
 														@endif--}}
 
-														@if ($fieldPageConfig->show('hours_load'))
+														{{-- @if ($fieldPageConfig->show('hours_load'))
 														<div class="col-sm-4">
 															<label class=" control-label">Carga Horária (Em Horas)</label>
 															<input type="number" id="hours_load" name="hours_load" class="form-control" required {!! $fieldPageConfig->attr('hours_load') !!} />
@@ -208,7 +208,7 @@
 															<label class=" control-label">Quantidade de Módulos</label>
 															<input type="text" name="number_modules" class="form-control" required {!! $fieldPageConfig->attr('number_modules') !!} />
 														</div>
-														@endif
+														@endif --}}
 
 														{{-- @if ($fieldPageConfig->show('place_id'))
 														<div class="col-sm-4">
@@ -217,7 +217,7 @@
 														</div>
 														@endif--}}
 
-														@if ($fieldPageConfig->show('certified'))
+														{{-- @if ($fieldPageConfig->show('certified'))
 														<div class="col-sm-4">
 															<label class="control-label">Certificado</label>
 															<input type="text" id="certified" name="certified" class="form-control" maxlength="512" placeholder="MEC e CFP" {!! $fieldPageConfig->attr('certified') !!} />
@@ -250,9 +250,9 @@
 															<label class="control-label">Horas de Supervisão monitorada</label>
 															<input type="text" name="hours_monitored_supervision" class="form-control" maxlength="11" {!! $fieldPageConfig->attr('hours_monitored_supervision') !!} />
 														</div>
-														@endif
+														@endif --}}
 
-														@if ($fieldPageConfig->show('contact_course[]'))
+														{{-- @if ($fieldPageConfig->show('contact_course[]'))
 														<div class="col-sm-6">
 															<label class="control-label">Contato(s)</label>
 															<select name="contact_course[]" data-placeholder="Selecionar..." class="chosen-select" multiple value="" {!! $fieldPageConfig->attr('contact_course[]') !!} ></select>
@@ -264,10 +264,10 @@
 															<label class="control-label">Chamada Para Ação <small>(CTA)</small></label>
 															<input type="text" id="cta" name="cta" class="form-control" maxlenght = "15" placeholder="Ex. Últimas Vendas" {!! $fieldPageConfig->attr('cta') !!} />
 														</div>
-														@endif
+														@endif --}}
 													</div>
 
-													@if ($fieldPageConfig->show('course_other_inf[]'))
+													{{-- @if ($fieldPageConfig->show('course_other_inf[]'))
 													<div class="row">
 														@foreach ($listSelectBox->otherInfType as $otherInfType)
 															<div class="col-sm-6">
@@ -281,7 +281,7 @@
 															</div>
 														@endforeach
 													</div>
-													@endif
+													@endif --}}
 
 														{{-- @if ($fieldPageConfig->show('show_web'))
 													<div class="col-sm-5" style="padding-top: 25px">
@@ -290,7 +290,7 @@
 													</div>
 													@endif--}}
 
-													@if ($fieldPageConfig->show('show_home'))
+													{{-- @if ($fieldPageConfig->show('show_home'))
 													<div class="col-sm-3" style="padding-top: 25px">
 														<label class="control-label">Destaque Home:</label>
 														<input type="checkbox" id="show_home" name="show_home" class="js-switch" value="1" {!! $fieldPageConfig->attr('show_web') !!} />
@@ -323,7 +323,7 @@
 														<label class="control-label">Informações Complementares</label>
 														<input type="text" name="additional_information" class="form-control" maxlength="50" placeholder = "Algo que queira colocar a mais nos cards de curso..." {!! $fieldPageConfig->attr('additional_information') !!} />
 													</div>
-													@endif
+													@endif --}}
 
 													{{-- <div class="col-sm-5" style="padding-top: 25px">
 														<label class="control-label">Mostrar no Site</label>
@@ -389,23 +389,23 @@
 
 										</div>
 
-										<div id="tab-2" class="tab-pane">
+										{{-- <div id="tab-2" class="tab-pane">
 											<div class="panel-body">
 												<div class="wrapper wrapper-content animated fadeInRight">
 													<button type="button" class="m-l-xs btn gp-btn-green " data-toggle="modal" data-target="#bonusCourseModel" title="Nova opção"><i class="fa fa-plus"></i></button>
 													<div id="bonusCourse"></div>
 												</div>
 											</div>
-										</div>
+										</div> --}}
 
 										<div id="tab-3" class="tab-pane">
 											<div class="panel-body">
 												<div class="wrapper wrapper-content animated fadeInRight">
 													<div class="row" style="margin: 10px auto;">
-														<div class="col-sm-3">
+														{{-- <div class="col-sm-3">
 															<label class="control-label">Valor de multa (Contrato)</label>
 															<input type="tel" name="fine_value" class="form-control mask-currency" maxlength="10">
-														</div>
+														</div> --}}
 														<div class="col-sm-9 text-right">
 															<button type="button" class="btn btn-primary" title="Adicionar novo" onclick="newFormsPayment()">
 																<i class="fa fa-plus"></i>

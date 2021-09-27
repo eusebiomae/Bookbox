@@ -10,9 +10,9 @@
 				<h1>
 					Olá {{  Auth::user()->name }}
 				</h1>
-				<h2>Bem vindo à GigaPixel | &pi;+ Administração de Contatos</h2>
+				<h2>Bem vindo à GigaPixel | &pi;+ Administração de Site</h2>
 				<small>
-					Neste painel de administração de contatos, você tem todos os recursos de forma prática e fácil.
+					Neste painel de administração de site, você tem todos os recursos de forma prática e fácil.
 				</small>
 			</div>
 		</div>

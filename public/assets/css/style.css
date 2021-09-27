@@ -14910,6 +14910,17 @@ html.rd-navbar-fixed-linked .page {
     background-size: cover;
 }
 
+.swiper-slide-shopbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* white-space: nowrap; */
+    background-position: -240%;
+    background-size: cover;
+}
+
 .swiper-slide-caption {
     width: 100%;
     white-space: normal;

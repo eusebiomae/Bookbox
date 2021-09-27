@@ -61,8 +61,8 @@ class CourseController extends BaseMethodController {
 		$list->courseCategory = CourseCategoryModel::orderBy('description_pt')->get();
 		$list->place = PlaceModel::orderBy('description')->get();
 		$list->team = TeamModel::orderBy('name')->get();
-		$list->courseCategoryType = CourseCategoryTypeModel::orderBy('title')->get();
-		$list->courseSubcategory = CourseSubcategoryModel::orderBy('description_pt')->get();
+		// $list->courseCategoryType = CourseCategoryTypeModel::orderBy('title')->get();
+		// $list->courseSubcategory = CourseSubcategoryModel::orderBy('description_pt')->get();
 		$list->formPayment = FormPaymentModel::orderBy('description')->get();
 		$list->bonusCourse = BonusCourseModel::orderBy('title_pt')->get();
 		$list->includedItems = IncludedItemsModel::orderBy('title_pt')->get();
@@ -97,7 +97,7 @@ class CourseController extends BaseMethodController {
 		$dataTable->data = CourseModel::withTrashed()
 			->with('courseCategory')
 			->with('courseCategoryType')
-			->with('courseSubcategory')
+			// ->with('courseSubcategory')
 			->get();
 
 		$dataTable->header = [
@@ -105,18 +105,18 @@ class CourseController extends BaseMethodController {
 				'label' => 'ID',
 				'column' => 'id',
 			],
-			(object) [
-				'label' => 'Tipo',
-				'column' => 'courseCategoryType.title',
-			],
-			(object) [
-				'label' => 'Categoria',
-				'column' => 'courseCategory.description_pt',
-			],
-			(object) [
-				'label' => 'Subcategoria',
-				'column' => 'courseSubcategory.description_pt',
-			],
+			// (object) [
+			// 	'label' => 'Tipo',
+			// 	'column' => 'courseCategoryType.title',
+			// ],
+			// (object) [
+			// 	'label' => 'Categoria',
+			// 	'column' => 'courseCategory.description_pt',
+			// ],
+			// (object) [
+			// 	'label' => 'Subcategoria',
+			// 	'column' => 'courseSubcategory.description_pt',
+			// ],
 			(object) [
 				'label' => 'Titulo',
 				'column' => 'title_pt',
@@ -230,17 +230,17 @@ class CourseController extends BaseMethodController {
 
 		$save = parent::save($request);
 
-		if (empty($request->get('id'))) {
-			$courseFormPayment = CourseFormPaymentModel::whereNull('course_id')->where('course_subcategory_id',  $request->get('course_subcategory_id'))->get()->toArray();
+		// if (empty($request->get('id'))) {
+		// 	$courseFormPayment = CourseFormPaymentModel::whereNull('course_id')->where('course_subcategory_id',  $request->get('course_subcategory_id'))->get()->toArray();
 
-			foreach ($courseFormPayment as &$value) {
-				$value['date'] = formatDateEng($value['date']);
+		// 	foreach ($courseFormPayment as &$value) {
+		// 		$value['date'] = formatDateEng($value['date']);
 
-				unset($value['id'], $value['course_id']);
-			}
+		// 		unset($value['id'], $value['course_id']);
+		// 	}
 
-			$save->data->formPayment()->sync($courseFormPayment);
-		}
+		// 	$save->data->formPayment()->sync($courseFormPayment);
+		// }
 		// $formPayment = $request->get('formPayment');
 		// if (!empty($formPayment)) {
 		// 	foreach ($formPayment as $key => &$value) {

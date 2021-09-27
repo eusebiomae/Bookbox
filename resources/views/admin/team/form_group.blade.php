@@ -9,21 +9,22 @@
 	@if ($fieldPageConfig->show('name'))
 	<div class="col-sm-6">
 		<input type="text" id="name" name="name" class="form-control"  required {!! $fieldPageConfig->attr('name') !!} />
-		<span class="help-block m-b-none">Digite o nome do Funcionário.</span>
+		<span class="help-block m-b-none">Digite o nome do Consultor.</span>
 	</div>
 	@endif
 
-	<label class="col-sm-1 control-label">CRP</label>
+	<label class="col-sm-1 control-label">Função</label>
 	@if ($fieldPageConfig->show('crp'))
 	<div class="col-sm-3">
-		<input type="text" id="crp" name="crp" class="form-control" maxlength="16" {!! $fieldPageConfig->attr('crp') !!} />
-		<span class="help-block m-b-none">Digite o Código de Conselho Regional de Psicologia</span>
+		<input type="text" id="crp" name="crp" class="form-control" maxlength="100" {!! $fieldPageConfig->attr('crp') !!} />
+		<span class="help-block m-b-none"></span>
 	</div>
 	@endif
+
 </div>
 
 <div class="form-group">
-	<label class="col-sm-2 control-label">Função*</label>
+	{{-- <label class="col-sm-2 control-label">Função*</label>
 	@if ($fieldPageConfig->show('function_id'))
 	<div class="col-sm-4">
 		<select id="function_id" name="function_id" class="form-control m-b" required {!! $fieldPageConfig->attr('function_id') !!} >
@@ -32,9 +33,9 @@
 			@endforeach
 		</select>
 	</div>
-	@endif
+	@endif --}}
 
-	<label class="col-sm-2 control-label">Graduação*</label>
+	{{-- <label class="col-sm-2 control-label">Graduação*</label>
 	@if ($fieldPageConfig->show('graduation_id'))
 	<div class="col-sm-4">
 		<select id="graduation_id" name="graduation_id" class="form-control m-b" required {!! $fieldPageConfig->attr('graduation_id') !!} >
@@ -43,7 +44,7 @@
 			@endforeach
 		</select>
 	</div>
-	@endif
+	@endif --}}
 
 </div>
 <div class="form-group">
@@ -57,7 +58,7 @@
 		</select>
 	</div>
 	@endif--}}
-<label class="col-sm-2 control-label">Cargo</label>
+{{-- <label class="col-sm-2 control-label">Cargo</label>
 @if ($fieldPageConfig->show('office_id'))
 <div class="col-sm-4">
 	<select id="office_id" name="office_id" class="form-control m-b" required {!! $fieldPageConfig->attr('office_id') !!} >
@@ -66,7 +67,7 @@
 		@endforeach
 	</select>
 </div>
-@endif
+@endif --}}
 
 </div>
 

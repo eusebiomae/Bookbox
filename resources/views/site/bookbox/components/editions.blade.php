@@ -8,7 +8,7 @@
 									class="isotope-filters-toggle button button-sm button-icon button-icon-right button-default-outline"
 									data-custom-toggle=".isotope-filters-list" data-custom-toggle-disable-on-blur="true"
 									data-custom-toggle-hide-on-blur="true"><span
-											class="icon mdi mdi-chevron-down"></span>Filter</button>
+											class="icon mdi mdi-chevron-down"></span>Filtrar</button>
 							<div class="isotope-filters-list-wrap">
 									<ul class="isotope-filters-list">
 											<li><a class="active" href="#" data-isotope-filter="*">Todas</a></li>
