@@ -11,14 +11,10 @@
 													</h4>
 													<h6 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft"
 															data-caption-delay="250" style="text-color: #fff">{!! $item['text_pt'] !!}</h6>
-													{{-- <div class="button-wrap" data-caption-animate="fadeInLeft"
-															data-caption-delay="400"><a
-																	class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-																	href="grid-shop.html">Assine Agora</a></div> --}}
 											</div>
-											<div class="col-sm-4 col-md-5">
+											{{-- <div class="col-sm-4 col-md-5">
 												<img src="{{$item['image']}}" alt="" class="img-home-banner" >
-											</div>
+											</div> --}}
 									</div>
 							</div>
 					</div>
@@ -27,8 +23,8 @@
 
 	</div>
 	<!-- Swiper Pagination-->
-	<div class="swiper-pagination"></div>
+	{{-- <div class="swiper-pagination"></div> --}}
 	<!-- Swiper Navigation-->
-	<div class="swiper-button-prev"></div>
-	<div class="swiper-button-next"></div>
+	{{-- <div class="swiper-button-prev"></div> --}}
+	{{-- <div class="swiper-button-next"></div> --}}
 </section>

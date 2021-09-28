@@ -8,14 +8,14 @@
 							<!-- Product-->
 							<article class="product wow fadeInRight">
 									<div class="product-body">
-											<img src="{{ url('assets/images/site/LogoMini Estilizada.png') }}" alt="" class="" style="margin-top: 23px; width: 250px;">
-											<h3 class="product-title" style="margin-top: 5px;"><a href="single-product.html">Sou digital</a></h3>
+											<img src="{{ url('assets/images/site/LogoMini Estilizada.png') }}" alt="" class="" style="margin-top: 18px; width: 220px;">
+											<h4 class="product-title" style="margin-top: 5px;"><a href="single-product.html">Sou digital</a></h4>
 											<div class="product-price-wrap">
 													<div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 39.90/mês</h6></div>
 													<div class="product-price">Receba um link para download</div>
 													<div class="product-price">  em seu e-mail.</div>
 											</div>
-											<div class="" style="margin-top: 15px; margin-bottom: 100px;">
+											<div class="" style="margin-top: 15px; margin-bottom: 80px;">
 													<p class="">- Sem fidelidade: sem multa.</p>
 													<p class="">- Boleto ou cartão de crédito.</p>
 													{{-- <p class="">- </p> --}}
@@ -33,7 +33,7 @@
 							<article class="product wow fadeInRight">
 									<div class="product-body">
 											<img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
-											<h3 class="product-title" style="margin-top: 5px;"><a href="single-product.html">Cheirinho de livro</a></h3>
+											<h4 class="product-title" style="margin-top: 5px;"><a href="single-product.html">Cheirinho de livro</a></h4>
 											<div class="product-price-wrap">
 													<div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 89.90/mês</h6></div>
 													<div class="product-price">Receba o seu box em casa.</div>
@@ -55,7 +55,7 @@
 							<article class="product wow fadeInRight">
 									<div class="product-body">
 											<img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
-											<h3 class="product-title" style="margin-top: 5px;"><a href="single-product.html">Quero todos os meses</a></h3>
+											<h4 class="product-title" style="margin-top: 5px;"><a href="single-product.html">Quero todos mês</a></h4>
 											<div class="product-price-wrap">
 													<div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 79.90/mês</h6></div>
 													<div class="product-price">Receba o seu box em casa.</div>
@@ -77,7 +77,7 @@
 							<article class="product wow fadeInRight">
 									<div class="product-body">
 											<img src="{{ url('assets/images/site/01.png') }}" alt="" class="">
-											<h3 class="product-title" style="margin-top: 5px;"><a href="single-product.html">Quero o ano todo</a></h3>
+											<h4 class="product-title" style="margin-top: 5px;"><a href="single-product.html">Quero o ano todo</a></h4>
 											<div class="product-price-wrap">
 													<div class="product-price" style="margin-bottom: 15px;"><h6 class="">R$ 69.90/mês</h6></div>
 													<div class="product-price">Receba o seu box em casa.</div>

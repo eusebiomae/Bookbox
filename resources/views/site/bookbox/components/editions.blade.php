@@ -1,5 +1,5 @@
 @foreach ($pageData->content as $item)
-<section id="editions" class="section section-xxl swiper-slide-call" style="background-image: url('{{$item['image_bg']}}');">
+<section id="editions" class="section section-xxl swiper-slide-editions" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
 			<h2 class="text-transform-capitalize wow fadeScale">Confira nossas edições anteriores</h2>
 			<div class="isotope-wrap">

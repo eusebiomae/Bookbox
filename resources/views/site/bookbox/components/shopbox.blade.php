@@ -127,18 +127,21 @@
 						</div>
 					</div>
 				</div> --}}
+
 				<div class="row row-30 row-lg-50">
-					<div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
+					@foreach ($products as $product)
+					<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
 						<!-- Product-->
 						<article class="product">
 							<div class="product-body">
-								<div class="product-figure"><img style="background-image: url('{{$item['image_bg']}}');" alt="" width="95" height="175" />
+								<div class="product-figure-box"><img src="{{$product->img}}" alt="" />
 								</div>
-								<h5 class="product-title"><a href="single-product.html">{{$item['title_pt']}}</a></h5>
-								<div class="product-price-wrap">
+								<h5 class="product-title"><a href="single-product.html">{{$product->title_pt}}</a></h5>
+
+								{{-- <div class="product-price-wrap">
 									<div class="product-price product-price-old">$30.00</div>
 									<div class="product-price">$23.00</div>
-								</div>
+								</div> --}}
 							</div><span class="product-badge product-badge-sale">Sale</span>
 							<div class="product-button-wrap">
 								<div class="product-button">
@@ -150,177 +153,9 @@
 							</div>
 						</article>
 					</div>
-					<div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
-						<!-- Product-->
-						<article class="product">
-							<div class="product-body">
-								<div class="product-figure"><img src="images/product-2-95x175.png" alt="" width="95" height="175" />
-								</div>
-								<h5 class="product-title"><a href="single-product.html">Strawberry</a></h5>
-								<div class="product-price-wrap">
-									<div class="product-price">$13.00</div>
-								</div>
-							</div><span class="product-badge product-badge-new">New</span>
-							<div class="product-button-wrap">
-								<div class="product-button">
-									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="single-product.html"></a>
-								</div>
-								<div class="product-button">
-									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="#"></a>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
-						<!-- Product-->
-						<article class="product">
-							<div class="product-body">
-								<div class="product-figure"><img src="images/product-3-95x175.png" alt="" width="95" height="175" />
-								</div>
-								<h5 class="product-title"><a href="single-product.html">Apple</a></h5>
-								<div class="product-price-wrap">
-									<div class="product-price">$16.99</div>
-								</div>
-							</div>
-							<div class="product-button-wrap">
-								<div class="product-button">
-									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="single-product.html"></a>
-								</div>
-								<div class="product-button">
-									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="#"></a>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
-						<!-- Product-->
-						<article class="product">
-							<div class="product-body">
-								<div class="product-figure"><img src="images/product-5-95x175.png" alt="" width="95" height="175" />
-								</div>
-								<h5 class="product-title"><a href="single-product.html">Grapes</a></h5>
-								<div class="product-price-wrap">
-									<div class="product-price">$11.00</div>
-								</div>
-							</div>
-							<div class="product-button-wrap">
-								<div class="product-button">
-									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="single-product.html"></a>
-								</div>
-								<div class="product-button">
-									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="#"></a>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
-						<!-- Product-->
-						<article class="product">
-							<div class="product-body">
-								<div class="product-figure"><img src="images/product-6-95x175.png" alt="" width="95" height="175" />
-								</div>
-								<h5 class="product-title"><a href="single-product.html">Bananas</a></h5>
-								<div class="product-price-wrap">
-									<div class="product-price">$15.99</div>
-								</div>
-							</div>
-							<div class="product-button-wrap">
-								<div class="product-button">
-									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="single-product.html"></a>
-								</div>
-								<div class="product-button">
-									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="#"></a>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
-						<!-- Product-->
-						<article class="product">
-							<div class="product-body">
-								<div class="product-figure"><img src="images/product-7-95x175.png" alt="" width="95" height="175" />
-								</div>
-								<h5 class="product-title"><a href="single-product.html">Carrots</a></h5>
-								<div class="product-price-wrap">
-									<div class="product-price product-price-old">$33.00</div>
-									<div class="product-price">$24.00</div>
-								</div>
-							</div><span class="product-badge product-badge-sale">Sale</span>
-							<div class="product-button-wrap">
-								<div class="product-button">
-									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="single-product.html"></a>
-								</div>
-								<div class="product-button">
-									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="#"></a>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
-						<!-- Product-->
-						<article class="product">
-							<div class="product-body">
-								<div class="product-figure"><img src="images/product-8-95x175.png" alt="" width="95" height="175" />
-								</div>
-								<h5 class="product-title"><a href="single-product.html">Orange</a></h5>
-								<div class="product-price-wrap">
-									<div class="product-price">$14.99</div>
-								</div>
-							</div>
-							<div class="product-button-wrap">
-								<div class="product-button">
-									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="single-product.html"></a>
-								</div>
-								<div class="product-button">
-									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="#"></a>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
-						<!-- Product-->
-						<article class="product">
-							<div class="product-body">
-								<div class="product-figure"><img src="images/product-4-95x175.png" alt="" width="95" height="175" />
-								</div>
-								<h5 class="product-title"><a href="single-product.html">Guava</a></h5>
-								<div class="product-price-wrap">
-									<div class="product-price">$12.00</div>
-								</div>
-							</div><span class="product-badge product-badge-new">New</span>
-							<div class="product-button-wrap">
-								<div class="product-button">
-									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="single-product.html"></a>
-								</div>
-								<div class="product-button">
-									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="#"></a>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-6 col-xl-4">
-						<!-- Product-->
-						<article class="product">
-							<div class="product-body">
-								<div class="product-figure"><img src="images/product-9-95x175.png" alt="" width="95" height="175" />
-								</div>
-								<h5 class="product-title"><a href="single-product.html">Forest berry</a></h5>
-								<div class="product-price-wrap">
-									<div class="product-price">$18.00</div>
-								</div>
-							</div>
-							<div class="product-button-wrap">
-								<div class="product-button">
-									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="single-product.html"></a>
-								</div>
-								<div class="product-button">
-									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="#"></a>
-								</div>
-							</div>
-						</article>
-					</div>
+					@endforeach
 				</div>
-				<div class="pagination-wrap">
+				{{-- <div class="pagination-wrap">
 					<!-- Bootstrap Pagination-->
 					<nav aria-label="Page navigation">
 						<ul class="pagination">
@@ -331,7 +166,7 @@
 							<li class="page-item page-item-control"><a class="page-link" href="#" aria-label="Next"><span class="icon" aria-hidden="true"></span></a></li>
 						</ul>
 					</nav>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 	</div>

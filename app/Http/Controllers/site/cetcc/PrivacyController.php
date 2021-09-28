@@ -3,11 +3,19 @@
 namespace App\Http\Controllers\site\cetcc;
 
 use Illuminate\Http\Request;
+use App\Model\api\Configuration\ContentPageModel;
 
 class PrivacyController extends _Controller
 {
     public function index(Request $request)
     {
-        return view('site/bookbox/pages/privacy-policy');
+        $flgPage = $request->get('flgPage');
+
+		$pageComponents = ContentPageModel::getByComponent($flgPage);
+
+        // return $pageComponents;
+        return view('site/bookbox/pages/default')
+        ->with('flgPage', $flgPage)
+        ->with('pageComponents', $pageComponents);
     }
 }

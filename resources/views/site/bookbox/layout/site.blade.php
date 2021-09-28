@@ -117,17 +117,17 @@
                                     </li>
                                     <li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link"
+                                    {{-- <li class="rd-nav-item"><a class="rd-nav-link"
                                             href="grid-gallery.html" >Galeria</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
                                     </li>
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
                                             nós</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link"
+                                    {{-- <li class="rd-nav-item"><a class="rd-nav-link"
                                             href="/contact">Contato</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="rd-nav-item"><a class="rd-nav-link"
                                             href="/privacy-policy">Termos e Condições</a>
                                     </li>
