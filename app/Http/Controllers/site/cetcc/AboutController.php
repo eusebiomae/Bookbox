@@ -16,6 +16,8 @@ class AboutController extends _Controller
 	{
 		$flgPage = $request->get('flgPage');
 
+		$pageComponents = ContentPageModel::getByComponent($flgPage);
+
 		$teams = TeamModel::select('id', 'name', 'image', 'graduation_id', 'function_id')->with([
 			'graduation' => function ($query){
 				$query->select('id', 'description_pt');
@@ -30,14 +32,12 @@ class AboutController extends _Controller
 			'Co-fundadores' => [],
 		];
 
-		for ($i = 0, $ii = count($teams); $i < $ii; $i++) {
-			$item = $teams[$i];
 
-			$teamMapData[$item->function->description_pt][] = $item;
-		}
+		// return $pageComponents;
 
 		return view('site/bookbox/pages/about')
 		->with('flgPage', $flgPage)
+		->with('pageComponents', $pageComponents)
 		->with('teamMapData', $teamMapData)
 		->with('banner', SlideModel::select('id', 'title_pt', 'image')->whereHas('contentPage', function($query) use ($flgPage) {
 			$query->where('flg_page', $flgPage);

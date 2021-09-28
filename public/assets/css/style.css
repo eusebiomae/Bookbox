@@ -1213,7 +1213,7 @@ a[href*='mailto'] {
 
 @media (min-width: 992px) {
     .box-icon-creative {
-        padding: 30px;
+        padding: 20px;
     }
     .box-icon-creative-icon {
         font-size: 44px;
@@ -14911,6 +14911,17 @@ html.rd-navbar-fixed-linked .page {
 }
 
 .swiper-slide-call {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* white-space: nowrap; */
+    /* background-position: 20%; */
+    background-size: cover;
+}
+
+.swiper-slide-blog {
     position: relative;
     display: flex;
     align-items: center;

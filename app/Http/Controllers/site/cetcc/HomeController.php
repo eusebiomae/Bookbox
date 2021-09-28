@@ -4,7 +4,6 @@ namespace App\Http\Controllers\site\cetcc;
 
 use Illuminate\Http\Request;
 use App\Model\api\Configuration\ContentPageModel;
-
 class HomeController extends _Controller
 {
 
