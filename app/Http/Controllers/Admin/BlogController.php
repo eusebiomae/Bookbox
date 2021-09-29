@@ -55,11 +55,11 @@ class BlogController extends BaseMethodController {
 			'article' => [],
 		];
 
-		for ($i = 0, $ii = count($data); $i < $ii; $i++) {
-			$item = $data[$i];
+		// for ($i = 0, $ii = count($data); $i < $ii; $i++) {
+		// 	$item = $data[$i];
 
-			$mapData[$item->category->flg_type][] = $item;
-		}
+		// 	$mapData[$item->category->flg_type][] = $item;
+		// }
 
 		$dataTableA->header = $dataTableB->header = [
 			(object) [
@@ -72,7 +72,7 @@ class BlogController extends BaseMethodController {
 			],
 			(object) [
 				'label' => 'Categoria',
-				'column' => 'category.description_pt',
+				'column' => 'category',
 			],
 			(object) [
 				'label' => 'Data',

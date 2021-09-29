@@ -1,4 +1,4 @@
-<section id="banner_box" class="section swiper-container swiper-slider swiper-slider-4" data-loop="true">
+<section id="banner_generic" class="section swiper-container swiper-slider swiper-slider-4" data-loop="true">
 	<div class="swiper-wrapper context-dark">
 		@foreach ($pageData->content as $item)
 			<div class="swiper-slide swiper-slide-2" data-slide-bg="{{$item['image_bg']}}">

@@ -52,14 +52,20 @@
 							</div>
 						@endif
 
-						@if ($fieldPageConfig->show('blog_category_id'))
+						@if ($fieldPageConfig->show('blog_category'))
 							<div class="col-sm-3">
 								<label class="control-label">Categoria*</label>
-								<select id="blog_category_id" name="blog_category_id" class="form-control m-b" {!! $fieldPageConfig->attr('blog_category_id') !!}></select>
+								<select onchange="typeBlog(this.value)" class="form-control m-b" {!! $fieldPageConfig->attr('title') !!}>
+
+								{{-- <select id="blog_category_id" name="blog_category_id" class="form-control m-b" {!! $fieldPageConfig->attr('blog_category_id') !!}> --}}
+									<option value="blog">Notícias</option>
+									<option value="article">Artigo</option>
+									<option value="article">Dica do mês</option>
+								</select>
 							</div>
 						@endif
 
-						@if ($fieldPageConfig->show('author_post'))
+						{{-- @if ($fieldPageConfig->show('author_post'))
 							<div class="col-sm-2">
 								<label class="control-label">Autor*</label>
 								<select id="author_post" name="author_post" class="form-control m-b" {!! $fieldPageConfig->attr('author_post') !!}>
@@ -68,7 +74,7 @@
 									@endforeach
 								</select>
 							</div>
-						@endif
+						@endif --}}
 
 						@if ($fieldPageConfig->show('scheduling_date'))
 							<div class="col-sm-3">

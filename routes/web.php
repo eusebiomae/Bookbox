@@ -19,7 +19,6 @@ Route::get('/', 'site\cetcc\HomeController@index')->middleware(['injectFlgPage:h
 
 Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
 Route::post('/contact/save', 'site\cetcc\ContactController@save')->middleware(['injectFlgPage:contact']);
-Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
 Route::get('/supervision', 'site\cetcc\SupervisionController@index')->middleware(['injectFlgPage:supervision']);
 
 Route::get('/teacher', 'site\cetcc\TeacherController@index')->middleware(['injectFlgPage:teacher']);
@@ -48,6 +47,7 @@ Route::get('/box_blog', 'site\cetcc\ShoppingJourneController@index')->middleware
 Route::get('/single-product/{id}', 'site\cetcc\CourseController@courseDetails')->middleware(['injectFlgPage:single-product']);
 Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
 Route::get('/privacy-policy', 'site\cetcc\PrivacyController@index')->middleware(['injectFlgPage:privacy-policy']);
+Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
 // End Site
 
 

@@ -4,7 +4,7 @@
 
 	{{-- $banner --}}
 	@if (isset($carrossel))
-		@include('site.bookbox.components.about', ['banner' => $carrossel])
+		@include('site.bookbox.components.banner_generic', ['banner' => $carrossel])
 	@endif
 
 	{{-- SECTION about --}}

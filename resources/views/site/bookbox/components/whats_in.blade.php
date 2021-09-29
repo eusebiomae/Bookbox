@@ -30,7 +30,7 @@
 																	data-toggle="collapse" data-parent="#accordion1"
 																	href="#accordion1-card-body-unqfdlnh"
 																	aria-controls="accordion1-card-body-unqfdlnh" aria-expanded="true"
-																	role="button">Lorem ipsum.
+																	role="button">2 livros exclusivos.
 																	<div class="card-arrow">
 																			<div class="icon"></div>
 																	</div>
@@ -40,7 +40,7 @@
 													aria-labelledby="accordion1-card-head-qteehppu" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+															<p>Livros com temas variados segundo suas preferencias, com conteúdo diverso e didático para o seu dia a dia. </p>
 													</div>
 											</div>
 									</article>
@@ -51,7 +51,7 @@
 																	id="accordion1-card-head-iebkfbxx" data-toggle="collapse"
 																	data-parent="#accordion1" href="#accordion1-card-body-eephkkca"
 																	aria-controls="accordion1-card-body-eephkkca" aria-expanded="false"
-																	role="button">Ipsum ipsum.
+																	role="button">Itens para melhorar sua leitura.
 																	<div class="card-arrow">
 																			<div class="icon"></div>
 																	</div>
@@ -61,7 +61,7 @@
 													aria-labelledby="accordion1-card-head-iebkfbxx" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+															<p>Já vem um Marcadore de página personalizado do mês e uma Guia de Leitura para facilitar o entendimento do conteúdo. </p>
 													</div>
 											</div>
 									</article>
@@ -72,7 +72,7 @@
 																	id="accordion1-card-head-crpnkjpm" data-toggle="collapse"
 																	data-parent="#accordion1" href="#accordion1-card-body-qbvvnoxx"
 																	aria-controls="accordion1-card-body-qbvvnoxx" aria-expanded="false"
-																	role="button">Ipsum Lorem ipsum
+																	role="button">Colécionaveis e brindes.
 																	<div class="card-arrow">
 																			<div class="icon"></div>
 																	</div>
@@ -82,7 +82,7 @@
 													aria-labelledby="accordion1-card-head-crpnkjpm" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+															<p>Cada mês enviamos um Cartão Postal Colecionável e um Brinde Especial.
 															</p>
 													</div>
 											</div>

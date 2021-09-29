@@ -34,15 +34,16 @@ class AboutController extends _Controller
 
 
 		// return $pageComponents;
+		// return $flgPage;
 
-		return view('site/bookbox/pages/about')
+		return view('site/bookbox/pages/default')
 		->with('flgPage', $flgPage)
 		->with('pageComponents', $pageComponents)
 		->with('teamMapData', $teamMapData)
 		->with('banner', SlideModel::select('id', 'title_pt', 'image')->whereHas('contentPage', function($query) use ($flgPage) {
 			$query->where('flg_page', $flgPage);
 		})->first())
-		->with('pageComponents', ContentPageModel::getByComponent($flgPage))
+		// ->with('pageComponents', ContentPageModel::getByComponent($flgPage))
 		->with('teams', $teams)
 		->with('footerLinks', $this->generateFooterLinks());
 	}
