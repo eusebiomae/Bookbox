@@ -48,6 +48,7 @@ Route::get('/single-product/{id}', 'site\cetcc\CourseController@courseDetails')-
 Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
 Route::get('/privacy-policy', 'site\cetcc\PrivacyController@index')->middleware(['injectFlgPage:privacy-policy']);
 Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
+Route::get('/pricing', 'site\cetcc\ShoppingJourneController@pricing')->middleware(['injectFlgPage:pricing']);
 // End Site
 
 

@@ -8,7 +8,7 @@
 		<h4 class="text-transform-none wow fadeScale" style="color: #95cc9b;">Sua felicidade depende da sua saúde e vitalidade.</h4>
 		<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
 					class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-					href="grid-shop.html">Experimente adquirir o Box Avulso</a>
+					href="/box_blog">Experimente adquirir o Box Avulso</a>
 		</div>
 	</div>
 	</div>

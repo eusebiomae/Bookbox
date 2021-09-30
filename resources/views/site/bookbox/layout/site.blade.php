@@ -131,7 +131,7 @@
                                     <li class="rd-nav-item"><a class="rd-nav-link"
                                             href="/privacy-policy">Termos e Condições</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/pricing-list"
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/pricing"
                                             target="blank" style="color: #552b79;">Assine já</a>
                                     </li>
                                 </ul>

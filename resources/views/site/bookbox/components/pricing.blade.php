@@ -97,4 +97,4 @@
 			</div>
 		</div>
 	</section>
-	@endforeach
+@endforeach
