@@ -15,7 +15,7 @@
 					<div class="nav-tabs-wrap">
 						<ul class="nav nav-tabs">
 							<li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1" data-toggle="tab">Sobre a Book</a></li>
-							<li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">Nosso Formato</a></li>
+							<li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">Nosso Trabalho</a></li>
 							<li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3" data-toggle="tab">Nosso Objetivo</a></li>
 						</ul>
 					</div>

@@ -61,7 +61,7 @@
 													aria-labelledby="accordion1-card-head-iebkfbxx" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Já vem um Marcadore de página personalizado do mês e uma Guia de Leitura para facilitar o entendimento do conteúdo. </p>
+															<p>Já vem um Marcador de página personalizado do mês e uma Guia de Leitura para facilitar o entendimento do conteúdo. </p>
 													</div>
 											</div>
 									</article>

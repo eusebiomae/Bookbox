@@ -8,40 +8,16 @@
 			<!-- Post Classic-->
 			@foreach ($blogs as $blog)
 			<article class="post post-classic box-md wow slideInDown">
-				<a class="post-classic-figure" href="blog-post.html"><img src="images/post-1-370x239.jpg" alt="" width="370" height="239" /></a>
+				<a class="post-classic-figure" href="blog-post.html"><img src="{{$blog->image}}" alt="" width="370" height="239"/></a>
 				<div class="post-classic-content">
 					<div class="post-classic-time">
-						<time datetime="2020-08-09">August 9, 2020</time>
+						<time datetime="2020-08-09">{{$blog->scheduling_date}}</time>
 					</div>
-					<h5 class="post-classic-title"><a href="blog-post.html">Can a Smoothie Supercharge Your Day?</a></h5>
-					<p class="post-classic-text">Most of us would agree – mornings are hectic. Getting yourself and possibly others ready for the day ahead may...</p>
+					<h5 class="post-classic-title"><a href="blog-post.html">{{$blog->title_pt}}</a></h5>
+					<p class="post-classic-text">{{$blog->subtitle_pt}}</p>
 				</div>
 			</article>
 			@endforeach
-
-
-			<!-- Post Classic-->
-			<article class="post post-classic box-md wow slideInUp">
-				<a class="post-classic-figure" href="blog-post.html"><img src="images/post-2-370x239.jpg" alt="" width="370" height="239" /></a>
-				<div class="post-classic-content">
-					<div class="post-classic-time">
-						<time datetime="2020-08-09">August 9, 2020</time>
-					</div>
-					<h5 class="post-classic-title"><a href="blog-post.html">How to Make Your Breakfast Easy and Yummy</a></h5>
-					<p class="post-classic-text">Overloading your breakfast with calories may not be the best idea but when you need a boost for the upcoming...</p>
-				</div>
-			</article>
-			<!-- Post Classic-->
-			<article class="post post-classic box-md wow slideInDown">
-				<a class="post-classic-figure" href="blog-post.html"><img src="images/post-3-370x239.jpg" alt="" width="370" height="239" /></a>
-				<div class="post-classic-content">
-					<div class="post-classic-time">
-						<time datetime="2020-08-09">August 9, 2020</time>
-					</div>
-					<h5 class="post-classic-title"><a href="blog-post.html">Tips from Our Team: Making Yoghurts with Fresh Fruits</a></h5>
-					<p class="post-classic-text">Combining milk and fruits is the best solution for your daily meal, whether it’s breakfast, lunch, or any other...</p>
-				</div>
-			</article>
 		</div>
 	</div>
 </div>
