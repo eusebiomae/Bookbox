@@ -8,7 +8,6 @@ use App\Model\api\Prospection\CourseCategoryModel;
 use App\Model\api\Prospection\CourseCategoryTypeModel;
 use App\Model\api\Prospection\CourseModel;
 use App\Model\api\Prospection\CourseSubcategoryModel;
-use App\Model\api\SchoolInformationModel;
 use App\Model\api\SlideModel;
 use Illuminate\Support\Facades\DB;
 

@@ -115,13 +115,13 @@
                                 <ul class="rd-navbar-nav">
                                     <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
                                     </li>
-                                    <li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
-                                    </li>
+                                    {{-- <li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
+                                    </li> --}}
                                     {{-- <li class="rd-nav-item"><a class="rd-nav-link"
                                             href="grid-gallery.html" >Galeria</a>
                                     </li> --}}
-                                    <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
-                                    </li>
+                                    {{-- <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
+                                    </li> --}}
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
                                             nós</a>
                                     </li>

@@ -65,14 +65,14 @@
 
 														{{-- @if ($fieldPageConfig->show('course_category_type_id'))
 														<div class="col-sm-4">
-															<label class="control-label">Tipo Categoria</label>
+															<label class="control-label">Tipo de Produto</label>
 															<select class="form-control" name="course_category_type_id" required {!! $fieldPageConfig->attr('course_category_type_id') !!}></select>
 														</div>
-														@endif
+														@endif --}}
 
 														@if ($fieldPageConfig->show('course_category_id'))
 														<div class="col-sm-4">
-															<label class="control-label">Categoria</label>
+															<label class="control-label">Categoria de Produto</label>
 															<div class="gp-block-ruby">
 																<select name="course_category_id" class="select2_demo_1 form-control" required onchange="onChangeCourseCategory(this.value, event)" {!! $fieldPageConfig->attr('course_category_id') !!}></select>
 																<button type="button" class="m-l-xs btn gp-btn-green " data-target="#courseCategoryModel" title="Nova opção" onclick="openModalNewItemSelect(event, 'course_category_id')">
@@ -82,7 +82,7 @@
 														</div>
 														@endif
 
-														@if ($fieldPageConfig->show('course_subcategory_id'))
+														{{-- @if ($fieldPageConfig->show('course_subcategory_id'))
 														<div class="col-sm-4">
 															<label class="control-label">Subcategoria</label>
 															<select name="course_subcategory_id" class="select2_demo_1 form-control" required {!! $fieldPageConfig->attr('course_subcategory_id') !!}></select>
