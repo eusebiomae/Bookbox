@@ -13,7 +13,6 @@ class HomeController extends _Controller
 
 		$pageComponents = ContentPageModel::getByComponent($flgPage);
 
-		// return $pageComponents;
 		return view('site/bookbox/pages/default')
 			->with('flgPage', $flgPage)
 			->with('pageComponents', $pageComponents);
