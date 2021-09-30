@@ -57,8 +57,9 @@
 		</div>
 	</div>
 	<div class="page">
+
 		<header class="section page-header header-creative-wrap context-dark">
-			<div>
+			<div class="rd-navbar-wrap">
 				<nav class="rd-navbar rd-navbar-creative rd-navbar-creative-2" data-layout="rd-navbar-fixed"
 				data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed"
 				data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
@@ -90,7 +91,7 @@
 							<!-- RD Navbar Brand-->
 							<div class="rd-navbar-brand">
 								<!--Brand-->
-								<a class="brand" href="index.html"><img class="brand-logo-light"
+								<a class="brand" href="/"><img class="brand-logo-light"
 									src="{{ url ('assets/images/site/Logo H Negativo Roxo.png')}}"
 									alt="" /></a>
 									<!-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> -->
@@ -106,13 +107,13 @@
 								<ul class="rd-navbar-nav">
 									<li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
 									</li>
-									<li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
-									</li>
+									{{-- <li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
+									</li> --}}
 									{{-- <li class="rd-nav-item"><a class="rd-nav-link"
 										href="grid-gallery.html" >Galeria</a>
 									</li> --}}
-									<li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
-									</li>
+									{{-- <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
+									</li> --}}
 									<li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
 										nós</a>
 									</li>
@@ -122,7 +123,7 @@
 									<li class="rd-nav-item"><a class="rd-nav-link"
 										href="/privacy-policy">Termos e Condições</a>
 									</li>
-									<li class="rd-nav-item"><a class="rd-nav-link" href="/pricing"
+									<li class="rd-nav-item"><a class="rd-nav-link" href="/signature"
 										target="blank" style="color: #552b79;">Assine já</a>
 									</li>
 								</ul>
@@ -134,7 +135,6 @@
 		</header>
 
 		@yield('content')
-
 	</div>
 	<div class="snackbars" id="form-output-global"></div>
 	<script src="{{ url('assets/js/core.min.js') }}"></script>

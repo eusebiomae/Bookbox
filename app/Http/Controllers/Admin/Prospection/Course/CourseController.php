@@ -61,7 +61,7 @@ class CourseController extends BaseMethodController {
 		$list->courseCategory = CourseCategoryModel::orderBy('description_pt')->get();
 		$list->place = PlaceModel::orderBy('description')->get();
 		$list->team = TeamModel::orderBy('name')->get();
-		// $list->courseCategoryType = CourseCategoryTypeModel::orderBy('title')->get();
+		$list->courseCategoryType = CourseCategoryTypeModel::orderBy('title')->get();
 		// $list->courseSubcategory = CourseSubcategoryModel::orderBy('description_pt')->get();
 		$list->formPayment = FormPaymentModel::orderBy('description')->get();
 		$list->bonusCourse = BonusCourseModel::orderBy('title_pt')->get();

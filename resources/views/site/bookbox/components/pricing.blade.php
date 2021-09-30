@@ -30,7 +30,7 @@
 					<span class="   product-badge product-badge-new">Novo</span>
 					<div class="product-button-wrap">
 						<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-							<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="/pricing">
+							<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="/signature">
 								Assine Agora
 							</a>
 						</div>
@@ -60,7 +60,7 @@
 					</div><span class="   product-badge product-badge-sale">Box</span>
 					<div class="product-button-wrap">
 						<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-							<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="/pricing">
+							<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="/signature">
 								Assine Agora
 							</a>
 						</div>
@@ -91,7 +91,7 @@
 					<span class=" product-badge product-badge-sale">Box</span>
 					<div class="product-button-wrap">
 						<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-							<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="/pricing">
+							<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="/signature">
 								Assine Agora
 							</a>
 						</div>
@@ -122,7 +122,7 @@
 					<span class="product-badge product-badge-sale">Box</span>
 					<div class="product-button-wrap">
 						<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-							<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="/pricing">
+							<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="/signature">
 								Assine Agora
 							</a>
 						</div>
