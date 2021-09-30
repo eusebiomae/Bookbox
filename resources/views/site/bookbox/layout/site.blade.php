@@ -99,7 +99,7 @@
                                 <!-- RD Navbar Brand-->
                                 <div class="rd-navbar-brand">
                                     <!--Brand-->
-                                    <a class="brand" href="index.html"><img class="brand-logo-light"
+                                    <a class="brand" href="/"><img class="brand-logo-light"
                                             src="{{ url ('assets/images/site/Logo H Negativo Roxo.png')}}"
                                             alt="" /></a>
                                     <!-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> -->
