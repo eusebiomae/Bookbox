@@ -1,4 +1,5 @@
-<section class="section section-lg">
+
+@foreach ($pageData->content as $item)
 	<div class="card">
 		<div class="card-body">
 			<div id="shoppingJourney" class="row">
@@ -122,6 +123,7 @@
 		</div>
 	</div>
 </section>
+@endforeach
 
 <script type="x-template"></script>
 
