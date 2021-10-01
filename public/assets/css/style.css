@@ -8171,6 +8171,11 @@ textarea.textarea-lg {
     margin: 75px;
 }
 
+.img-generic-banner {
+    width: 100%;
+    margin: -100px;
+}
+
 .banner-classic:before {
     position: absolute;
     content: '';

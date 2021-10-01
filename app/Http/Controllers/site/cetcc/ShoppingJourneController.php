@@ -45,6 +45,7 @@ class ShoppingJourneController extends _Controller
 		// $products = CourseModel::get();
 
 		// return $pageComponents;
+		// return $flgPage;
 		return view('site/bookbox/pages/default')
 			->with('flgPage', $flgPage)
 			->with('pageComponents', $pageComponents);

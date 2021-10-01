@@ -21,19 +21,18 @@
 							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 1">
 									<!-- Thumbnail Classic-->
 									<article class="thumbnail-classic block-1">
-											<div class="thumbnail-classic-caption">
+											{{-- <div class="thumbnail-classic-caption">
 													<div>
 															<h5 class="thumbnail-classic-title">
 																<a href="">
 																	<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																		<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-																		href="single-product.html">Eu quero</a>
+																		<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
 																	</div>
 																</a>
 															</h5>
 
 													</div>
-											</div>
+											</div> --}}
 											<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/bannerBoxAgosto.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Agosto/2021</h5>
 											</div>
 									</article>
@@ -41,19 +40,18 @@
 							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 1">
 									<!-- Thumbnail Classic-->
 									<article class="thumbnail-classic block-1">
-										<div class="thumbnail-classic-caption">
+										{{-- <div class="thumbnail-classic-caption">
 											<div>
 													<h5 class="thumbnail-classic-title">
 														<a href="">
 															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-																href="single-product.html">Eu quero</a>
+																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
 															</div>
 														</a>
 													</h5>
 
 											</div>
-									</div>
+									</div> --}}
 									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxJulho.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Julho/2021</h5>
 									</div>
 									</article>
@@ -61,19 +59,18 @@
 							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 1">
 									<!-- Thumbnail Classic-->
 									<article class="thumbnail-classic block-1">
-										<div class="thumbnail-classic-caption">
+										{{-- <div class="thumbnail-classic-caption">
 											<div>
 													<h5 class="thumbnail-classic-title">
 														<a href="">
 															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-																href="single-product.html">Eu quero</a>
+																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
 															</div>
 														</a>
 													</h5>
 
 											</div>
-									</div>
+									</div> --}}
 									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxJunho.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Junho/2021</h5>
 									</div>
 									</article>
@@ -81,19 +78,18 @@
 							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 2">
 									<!-- Thumbnail Classic-->
 									<article class="thumbnail-classic block-1">
-										<div class="thumbnail-classic-caption">
+										{{-- <div class="thumbnail-classic-caption">
 											<div>
 													<h5 class="thumbnail-classic-title">
 														<a href="">
 															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-																href="single-product.html">Eu quero</a>
+																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
 															</div>
 														</a>
 													</h5>
 
 											</div>
-									</div>
+									</div> --}}
 									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxMaio.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Maio/2021</h5>
 									</div>
 									</article>
@@ -101,19 +97,18 @@
 							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 2">
 									<!-- Thumbnail Classic-->
 									<article class="thumbnail-classic block-1">
-										<div class="thumbnail-classic-caption">
+										{{-- <div class="thumbnail-classic-caption">
 											<div>
 													<h5 class="thumbnail-classic-title">
 														<a href="">
 															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-																href="single-product.html">Eu quero</a>
+																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
 															</div>
 														</a>
 													</h5>
 
 											</div>
-									</div>
+									</div> --}}
 									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxAbril.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Abril/2021</h5>
 									</div>
 									</article>
@@ -121,19 +116,18 @@
 							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 2">
 									<!-- Thumbnail Classic-->
 									<article class="thumbnail-classic block-1">
-										<div class="thumbnail-classic-caption">
+										{{-- <div class="thumbnail-classic-caption">
 											<div>
 													<h5 class="thumbnail-classic-title">
 														<a href="">
 															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-																href="single-product.html">Eu quero</a>
+																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
 															</div>
 														</a>
 													</h5>
 
 											</div>
-									</div>
+									</div> --}}
 									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxMarço.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Março/2021</h5>
 									</div>
 									</article>
@@ -141,19 +135,18 @@
 							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 2">
 									<!-- Thumbnail Classic-->
 									<article class="thumbnail-classic block-1">
-										<div class="thumbnail-classic-caption">
+										{{-- <div class="thumbnail-classic-caption">
 											<div>
 													<h5 class="thumbnail-classic-title">
 														<a href="">
 															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-																href="single-product.html">Eu quero</a>
+																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
 															</div>
 														</a>
 													</h5>
 
 											</div>
-									</div>
+									</div> --}}
 									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxFevereiro.jpg') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Fevereiro/2021</h5>
 									</div>
 									</article>

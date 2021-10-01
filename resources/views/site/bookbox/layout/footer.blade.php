@@ -14,36 +14,35 @@
 										</div>
 											<li>
 												<div class="unit unit-spacing-sm flex-column flex-md-row">
-													<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-														It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+													<p class="text-justify">Chegou a hora de você alcançar a prosperidade em sua vida!
+														Com a Bookbox, você terá acesso a conteúdos fundamentais para evolução da sua saúde física, mental, financeira e emocional!</p>
 											</div>
 											</li>
 									</ul>
 									<ul class="list-inline list-social-3 list-inline-sm" style="margin-left: 20px;">
 											<li>
-													<a class="icon mdi mdi-facebook icon-xxs" href="https://www.facebook.com/bookboxsaude/"></a>
+													<a class="icon mdi mdi-facebook icon-xxs" href="https://www.facebook.com/bookboxsaude/" target="_blank"></a>
 											</li>
 											<li>
-													<a class="icon mdi mdi-instagram icon-xxs" href="https://www.instagram.com/bookboxsaude/"></a>
+													<a class="icon mdi mdi-instagram icon-xxs" href="https://www.instagram.com/bookboxsaude/" target="_blank"></a>
 											</li>
 											<li>
-													<a class="icon mdi mdi-youtube-play icon-xxs" href="https://www.youtube.com/channel/UCh2dbFaDZWrS_Hz5-ZQNYwA"></a>
+													<a class="icon mdi mdi-youtube-play icon-xxs" href="https://www.youtube.com/channel/UCh2dbFaDZWrS_Hz5-ZQNYwA" target="_blank"></a>
 											</li>
 											<li>
-													<a class="icon mdi mdi-whatsapp icon-xxs" href="https://api.whatsapp.com/send?phone=5511976816349&text=Vamos%20falar%20sobre%20a%20Bookbox!"></a>
+													<a class="icon mdi mdi-whatsapp icon-xxs" href="https://api.whatsapp.com/send?phone=5511976816349&text=Vamos%20falar%20sobre%20a%20Bookbox!" target="_blank"></a>
 											</li>
 									</ul>
 							</div>
 							<div class="col-sm-6 col-md-7 col-lg-5 wow fadeInRight" data-wow-delay=".1s">
 									<h5 class="footer-modern-title">Links Importantes</h5>
 									<ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
-											<li><a href="grid-shop.html">ShopBox</a></li>
-											<li><a href="blog-list.html">Blog Post</a></li>
-											<li><a href="about-us.html">Sobre Nós</a></li>
-											<li><a href="#">Termos e Condições</a></li>
-											<li><a href="contact-us.html">Contato</a></li>
-											<li><a href="#">Assinar</a></li>
+											{{-- <li><a href="grid-shop.html">ShopBox</a></li> --}}
+											{{-- <li><a href="blog-list.html">Blog Post</a></li> --}}
+											<li><a href="/about">Sobre Nós</a></li>
+											<li><a href="/privacy-policy">Termos e Condições</a></li>
+											{{-- <li><a href="contact-us.html">Contato</a></li> --}}
+											<li><a href="/signature">Assinar</a></li>
 									</ul><br/><br/>
 									<h5 class="footer-modern-title">Formas de pagamento</h5>
 									<div class="row" style="margin-left: 5px;">
@@ -65,14 +64,14 @@
 											<li>
 													<div class="unit unit-spacing-sm flex-column flex-md-row">
 															{{-- <div class="unit-left"><span class="icon mdi mdi-phone"></span></div> --}}
-															<div class="unit-body"><a href="tel:+55-11-97681-6349">(11) 97681-6349</a></div>
+															<div class="unit-body"><a href="tel:+55-11-97681-6349" target="_blank">(11) 97681-6349</a></div>
 													</div>
 											</li>
 											<li>
 													<div class="unit unit-spacing-sm flex-column flex-md-row">
 															{{-- <div class="unit-left"><span class="icon mdi mdi-email-outline"></span> --}}
 															</div>
-															<div class="unit-body"><a href="mailto:atendimento@bookbox.com.br?subject=Informação sobre a Bookbox">atendimento@bookbox.com.br</a></div>
+															<div class="unit-body"><a href="mailto:atendimento@bookbox.com.br?subject=Informação sobre a Bookbox" target="_blank">atendimento@bookbox.com.br</a></div>
 													</div>
 											</li>
 									</ul>
@@ -103,7 +102,7 @@
 	<div class="footer-modern-panel text-center" style="background-color: #855f9f">
 			<div class="container">
 					<p class="rights"><span>&copy;&nbsp; </span><span
-									class="copyright-year"></span><span>&nbsp;</span><span>2021 - Bookbox Saude - Todos os direitos reservados</span><a href="https://gigapixel.com.br/" target="_blank"><img src="{{ url ('assets/images/site/logo_gigapixel.png')}}" style="width: 100%; max-width: 150px; margin-left: 25px;" /></a></p>
+									class="copyright-year"></span><span>&nbsp;</span><span>2021 - Bookbox Saude - Todos os direitos reservados.</span> <span></span> <span style="margin-right: 75px;"></span>Powered by:<a href="https://gigapixel.com.br/" target="_blank"><img src="{{ url ('assets/images/site/logo_gigapixel.png')}}" style="width: 100%; max-width: 150px; margin-left: 25px;" /></a></p>
 			</div>
 	</div>
 </footer>

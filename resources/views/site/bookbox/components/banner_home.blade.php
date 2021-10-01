@@ -14,7 +14,7 @@
 							<div class="button-wrap" data-caption-animate="fadeInLeft"
 								data-caption-delay="400" style="margin-top: 35px; margin-bottom: 70px;"><a
 								class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-								href="grid-shop.html">Assine Agora</a>
+								href="/signature">Assine Agora</a>
 							</div>
 						</div>
 						<div class="col-sm-4 col-md-5">
