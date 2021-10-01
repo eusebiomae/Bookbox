@@ -518,7 +518,7 @@ class StudentController extends BaseMethodController {
 				<header>
 					<div class="container">
 						<div class="item">
-						<img class="gp-img" src="'.$img.'" alt="Logo CETCC"  height="80">
+						<img class="gp-img" src="'.$img.'" alt="Logo"  height="80">
 						</div>
 						<div class="item">
 						<p class="gp-header">

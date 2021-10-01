@@ -108,8 +108,8 @@
 				<h4>@{{ supervision.label }}</h4>
 				<div>Responsável: <b>@{{ supervision.teacher.name }}</b></div>
 				<q-list>
-					<q-item><q-radio dense v-model="supervision.valueSelected" val="1" checked :label="'Ex-alunos do CETCC: R$' + numberWithCommas(supervision.value_1, 2)" />
-					<q-item><q-radio dense v-model="supervision.valueSelected" val="2" :label="'Avulso do CETCC: R$' + numberWithCommas(supervision.value_2, 2)" />
+					<q-item><q-radio dense v-model="supervision.valueSelected" val="1" checked :label="'Ex-alunos: R$' + numberWithCommas(supervision.value_1, 2)" />
+					<q-item><q-radio dense v-model="supervision.valueSelected" val="2" :label="'Avulso: R$' + numberWithCommas(supervision.value_2, 2)" />
 				</q-list>
 			</div>
 
