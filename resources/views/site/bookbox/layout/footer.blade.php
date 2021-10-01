@@ -14,9 +14,8 @@
 										</div>
 											<li>
 												<div class="unit unit-spacing-sm flex-column flex-md-row">
-													<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-														It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+													<p class="text-justify">Chegou a hora de você alcançar a prosperidade em sua vida!
+														Com a Bookbox, você terá acesso a conteúdos fundamentais para evolução da sua saúde física, mental, financeira e emocional!</p>
 											</div>
 											</li>
 									</ul>
