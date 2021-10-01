@@ -7,7 +7,7 @@
 		<!-- CSRF Token -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
-		<title>&pi;+ | CETCC</title>
+		<title>&pi;+</title>
 		<link href="{!! asset('images/favicon/favicon.ico') !!}" rel="icon">
 
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />

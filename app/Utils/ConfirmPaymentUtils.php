@@ -28,23 +28,6 @@ class ConfirmPaymentUtils {
 		$this->opt = $opt;
 		$schoolInformationModel = SchoolInformationModel::query();
 
-		if (isset($opt->course_id) && $opt->course_id) {
-			$this->course = CourseModel::with('courseSubcategory')->find($opt->course_id);
-
-			$flgSubcategory = $this->course->courseSubcategory->flg;
-
-			if (in_array($flgSubcategory, ['esp'])) {
-				$schoolInformationModel->where('id', 1);
-				$this->asaasType = 'subscriptions';
-			} else {
-				$schoolInformationModel->where('id', 2);
-				$this->asaasType = 'payments';
-			}
-		} else {
-			$schoolInformationModel->where('id', 2);
-			$this->asaasType = 'payments';
-		}
-
 		$this->company = $schoolInformationModel->first();
 
 		if (!$this->company) {
@@ -56,46 +39,13 @@ class ConfirmPaymentUtils {
 		return base_convert(time() . mt_rand(0, 0xffff), 10, 36);
 	}
 
-	public function makeStudentOrder($payload, $studentId) {
-		$scholarship = isset($payload['scholarship']) && $payload['scholarship'];
-
-		$this->getAsaasCustomerCode($studentId, $payload);
+	public function makeStudentOrder($payload) {
+		$this->getAsaasCustomerCode($payload);
 
 		$payload['flg_free'] = false;
 
-		if ($scholarship) {
-			$this->setByScholarship($payload);
-		} else
-		if (isset($payload['specialNegotiation'])) {
-			// Se houver uma Negociação especial, não aplica nenhum outro calculo de valores
-			$this->setBySpecialNegotiation($payload);
-		} else {
-			if (isset($payload['supervision_id']) && !empty($payload['supervision_id'])) {
-				$this->setBySupervisionFormPayment($payload);
-			} else
-			if (isset($payload['course_form_payment_id']) && !empty($payload['course_form_payment_id'])) {
-				$this->setByCourseFormPayment($payload);
-			}
-
-			if (isset($payload['additional'])) {
-				$this->setByAdditionalsFormPayment($payload);
-			}
-
-			if (isset($payload['financial_credit']) && $payload['financial_credit'] > 0) {
-				$payload['value'] = $payload['value'] - ($payload['financial_credit'] / $payload['number_parcel']);
-
-				if ($payload['value'] < 0) {
-					$payload['value'] = 0;
-				}
-
-				$payload['full_value'] = $payload['value'] * $payload['number_parcel'];
-			}
-
-			if (isset($payload['scholarshipStudent']) && $payload['scholarshipStudent']) {
-				$this->setScholarshipDiscount($payload);
-			} elseif (isset($payload['course_discount_id']) && $payload['course_discount_id']) {
-				$this->setCourseDiscount($payload);
-			}
+		if (isset($payload['course_form_payment_id']) && !empty($payload['course_form_payment_id'])) {
+			$this->setByCourseFormPayment($payload);
 		}
 
 		if (!(isset($payload['due_date']) && !empty($payload['due_date']))) {
@@ -116,6 +66,8 @@ class ConfirmPaymentUtils {
 			}
 		}
 
+		$payload['value'] = 36.45;
+
 		if ($payload['value'] == 0) {
 			$payload['flg_free'] = true;
 		}
@@ -125,25 +77,6 @@ class ConfirmPaymentUtils {
 		}
 
 		$payload['asaas_token'] = $this->company->asaas_token;
-
-		if ($scholarship) {
-			$scholarshipStudent = ScholarshipStudentModel::where([
-				'student_id' => $studentId,
-				'scholarship_id' => $payload['scholarship'],
-			])->first();
-
-			$payload['code'] = $scholarshipStudent->code ?? $this->getCode();
-
-			$scholarshipStudent->fill($payload)->save();
-
-			$payments = $this->paymentAsaas($scholarshipStudent);
-
-			return [
-				'scholarship' => $scholarship,
-				'scholarshipStudent' => $scholarshipStudent,
-				'payments' => $payments,
-			];
-		}
 
 		if (isset($payload['orderId']) && !empty($payload['orderId'])) {
 			$order = OrderModel::find($payload['orderId']);
@@ -161,22 +94,6 @@ class ConfirmPaymentUtils {
 		}
 
 		$order->fill($payload)->save();
-
-		OrderAdditionalModel::where('order_id', $order->id)->delete();
-		if (isset($payload['additionals'])) {
-			foreach ($payload['additionals'] as $additional) {
-				(new OrderAdditionalModel)->fill([
-					'order_id' => $order->id,
-					'course_additional_id' => $additional->id,
-					'additional_id' => $additional->additional_id,
-					'course_id' => $additional->course_id,
-					'form_payment_id' => $additional->form_payment_id,
-					'parcel' => $additional->parcel,
-					'value' => $additional->value,
-					'full_value' => $additional->full_value,
-				])->save();
-			}
-		}
 
 		if ($payload['flg_free']) {
 			$payments = $this->makeOrderParcel($order);
@@ -200,10 +117,25 @@ class ConfirmPaymentUtils {
 		];
 	}
 
-	public function getAsaasCustomerCode($studentId, &$payload) {
-		$student = StudentModel::find($studentId);
+	public function getAsaasCustomerCode(&$payload) {
+		if (isset($payload['student_id'])) {
+			$student = StudentModel::find($payload['student_id']);
+			$payload['student_id'] = $student->id;
+		} else {
+			$student = StudentModel::where('email', $payload['email'])->first();
 
-		$payload['student_id'] = $student->id;
+			if (!$student) {
+				$student = new StudentModel;
+
+				$student->fill([
+					'email' => $payload['email'],
+					'cpf' => $payload['cpf'],
+				]);
+				$student->save();
+			}
+
+			$payload['student_id'] = $student->id;
+		}
 
 		if (empty($payload['email'])) {
 			$payload['email'] = $student->email;
@@ -213,6 +145,7 @@ class ConfirmPaymentUtils {
 			$payload['cpf'] = $student->cpf;
 		}
 
+		return;
 		$asaasCustomerCode = $this->getClientAsaas($student);
 
 		if (!$asaasCustomerCode) {
@@ -230,7 +163,7 @@ class ConfirmPaymentUtils {
 		}
 
 		if ($asaasCustomerCode != $student->asaas_code) {
-			StudentModel::where('id', $studentId)->update([ 'asaas_code' => $asaasCustomerCode ]);
+			StudentModel::where('id', $student->id)->update([ 'asaas_code' => $asaasCustomerCode ]);
 		}
 
 		$payload['asaas_customers_code'] = $asaasCustomerCode;

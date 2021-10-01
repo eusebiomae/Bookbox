@@ -40,7 +40,6 @@ Route::get('/recommendation', 'site\cetcc\RecommendationController@index')->midd
 Route::get('/faq', 'site\cetcc\FaqController@index')->middleware(['injectFlgPage:faq']);
 Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:shopping_journey']);
 
-
 // Site
 Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
 Route::get('/box_blog', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:box_blog']);
@@ -49,9 +48,9 @@ Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injec
 Route::get('/privacy-policy', 'site\cetcc\PrivacyController@index')->middleware(['injectFlgPage:privacy-policy']);
 Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
 Route::get('/pricing', 'site\cetcc\ShoppingJourneController@pricing')->middleware(['injectFlgPage:pricing']);
+Route::get('/signature', 'site\cetcc\ShoppingJourneController@signature')->middleware(['injectFlgPage:signature']);
+Route::post('confirm_payment', 'StudentArea\ConfirmPaymentController@confirmPayment');
 // End Site
-
-
 
 Route::get('/article', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:article']);
 

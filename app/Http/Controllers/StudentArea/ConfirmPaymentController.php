@@ -10,6 +10,17 @@ use stdClass;
 class ConfirmPaymentController extends _Controller {
 
 	public function confirmPayment(Request $request) {
+		$payload = $request->all();
+		$opts = new stdClass;
+
+		$confirmPaymentUtils = new ConfirmPaymentUtils($opts);
+
+		$confirmPayment = $confirmPaymentUtils->makeStudentOrder($payload);
+
+		return $confirmPayment;
+	}
+
+	public function confirmPayment_(Request $request) {
 		try {
 			$payload = $request->all();
 
