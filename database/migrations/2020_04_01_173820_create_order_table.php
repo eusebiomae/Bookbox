@@ -57,6 +57,8 @@ class CreateOrderTable extends Migration
 
 				$table->string('asaas_payments_code', 32)->nullable();
 				$table->string('asaas_customers_code', 32)->nullable();
+				$table->string('asaas_token', 521)->nullable();
+				$table->string('asaas_type', 64)->nullable();
 				$table->mediumText('asaas_json')->nullable();
 				$table->text('asaas_fine')->nullable();
 				$table->string('imported', 1)->nullable();

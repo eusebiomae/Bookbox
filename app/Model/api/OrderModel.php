@@ -53,6 +53,8 @@ class OrderModel extends Model {
 		'contract',
 		'asaas_payments_code',
 		'asaas_customers_code',
+		'asaas_token',
+		'asaas_type',
 		'asaas_json',
 
 		'imported',
@@ -131,6 +133,10 @@ class OrderModel extends Model {
 		$this->attributes['security_code'] = empty($val) ? null : Crypt::encrypt($val);
 	}
 
+	public function setAsaasTokenAttribute($val) {
+		$this->attributes['asaas_token'] = empty($val) ? null : Crypt::encrypt($val);
+	}
+
 	public function setShelfLifeAttribute($val) {
 		$this->attributes['shelf_life'] = empty($val) ? null : Crypt::encrypt($val);
 	}
@@ -165,6 +171,10 @@ class OrderModel extends Model {
 	}
 
 	public function getShelfLifeAttribute($val) {
+		return empty($val) ? null : Crypt::decrypt($val);
+	}
+
+	public function getAsaasTokenAttribute($val) {
 		return empty($val) ? null : Crypt::decrypt($val);
 	}
 

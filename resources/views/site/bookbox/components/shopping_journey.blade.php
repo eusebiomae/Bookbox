@@ -111,12 +111,18 @@
 								</div>
 
 								<div class="col-md-12 align-right">
-									<button class="btn" @click="confirmOrder">Confirmar</button>
+									<button v-if="!wasRequest" class="btn" @click="confirmOrder">Confirmar</button>
 								</div>
 							</div>
 						</div>
-						<div class="tab-pane fade show" data-select-tab="finalization">..2..</div>
+						<div class="tab-pane fade show" data-select-tab="finalization">
+							<div v-if="orderPayments.payments" class="alert alert-primary" role="alert">
+								<h4 class="alert-heading">Compra feita com sucesso!</h4>
+								<p v-html="orderPayments.msg"></p>
+							</div>
+						</div>
 					</div>
+					<div class="alert alert-danger" v-for="error in showError" v-html="error.description"></div>
 				</div>
 			</div>
 		</div>
@@ -151,6 +157,9 @@
 						value: 'creditCard',
 					},
 				],
+				orderPayments: {},
+				showError: [],
+				wasRequest: false,
 			}
 		},
 		methods: {
@@ -161,13 +170,20 @@
 				this.$refs.tabsContentShoppingJourney.querySelector('[data-select-tab="'+ targetKey +'"]').classList.add('active')
 			},
 			confirmOrder: function() {
-				console.log(JSON.stringify(this.orderData, null, 2))
+				this.wasRequest = true
 				axios({
 					url: '/confirm_payment',
 					method: 'post',
 					data: this.orderData,
 				}).then(resp => {
-					console.log(resp)
+					this.wasRequest = false
+					if (resp.data.payments) {
+						this.orderPayments = resp.data
+
+						this.selectNavTab('finalization')
+					} else {
+						this.showError = resp.data.showError.errors
+					}
 				})
 			},
 		},
