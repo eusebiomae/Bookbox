@@ -8,24 +8,18 @@ use App\Model\api\CourseFormPaymentModel;
 use App\Model\api\CourseSupervisionModel;
 use App\Model\api\ErrorAsaasModel;
 use App\Model\api\FormPaymentModel;
-use App\Model\api\OrderAdditionalModel;
 use App\Model\api\OrderModel;
 use App\Model\api\OrderParcelModel;
-use App\Model\api\Prospection\CourseModel;
 use App\Model\api\ScholarshipStudentModel;
 use App\Model\api\SchoolInformationModel;
 use App\Model\api\StudentModel;
-use App\Model\api\StudentSocioeconomicModel;
-use PhpParser\Node\Expr\Instanceof_;
 
 class ConfirmPaymentUtils {
 	private $company = null;
-	private $course = null;
-	private $asaasType = null;
-	private $opt = null;
+	private $opts = null;
 
-	public function __construct($opt) {
-		$this->opt = $opt;
+	public function __construct($opts) {
+		$this->opts = $opts;
 		$schoolInformationModel = SchoolInformationModel::query();
 
 		$this->company = $schoolInformationModel->first();
@@ -42,8 +36,12 @@ class ConfirmPaymentUtils {
 	public function makeStudentOrder($payload) {
 		$this->getAsaasCustomerCode($payload);
 
+		// $payload['asaas_type'] = 'payments';
+		$payload['asaas_type'] = 'subscriptions';
+
 		$payload['flg_free'] = false;
 
+		$payload['form_payment'] = $payload['formPayment'];
 		if (isset($payload['course_form_payment_id']) && !empty($payload['course_form_payment_id'])) {
 			$this->setByCourseFormPayment($payload);
 		}
@@ -98,11 +96,8 @@ class ConfirmPaymentUtils {
 		if ($payload['flg_free']) {
 			$payments = $this->makeOrderParcel($order);
 		} else
-		if (in_array($order->form_payment, [ 'card', 'bankSlip' ])) {
+		if (in_array($order->form_payment, [ 'creditCard', 'bankSlip' ])) {
 			$payments = $this->paymentAsaas($order);
-		} else
-		if (in_array($order->form_payment, [ 'postdatedChecks' ])) {
-			$payments = $this->paymentChecks($order);
 		} else {
 			$payments = $this->makeOrderParcel($order);
 		}
@@ -111,9 +106,16 @@ class ConfirmPaymentUtils {
 			(new StudentClassControlUtils)->generateByOrder($order->id);
 		}
 
+		$msg = '';
+
+		if ($order->form_payment == 'bankSlip' && $order->asaas_type == 'subscriptions') {
+			$msg = 'Boleto enviado por e-mail';
+		}
+
 		return [
 			'order' => $order,
 			'payments' => $payments,
+			'msg' => $msg,
 		];
 	}
 
@@ -130,6 +132,7 @@ class ConfirmPaymentUtils {
 				$student->fill([
 					'email' => $payload['email'],
 					'cpf' => $payload['cpf'],
+					'name' => $payload['name'] ?? $payload['cardholder'],
 				]);
 				$student->save();
 			}
@@ -145,7 +148,6 @@ class ConfirmPaymentUtils {
 			$payload['cpf'] = $student->cpf;
 		}
 
-		return;
 		$asaasCustomerCode = $this->getClientAsaas($student);
 
 		if (!$asaasCustomerCode) {
@@ -210,7 +212,7 @@ class ConfirmPaymentUtils {
 	}
 
 	public function setBySupervisionFormPayment(&$payload) {
-		$formPayment = FormPaymentModel::where('flg_type', 'card')->first();
+		$formPayment = FormPaymentModel::where('flg_type', 'creditCard')->first();
 		$supervision = CourseSupervisionModel::find($payload['supervision_id']);
 
 		$payload['number_parcel'] = 1;
@@ -312,20 +314,19 @@ class ConfirmPaymentUtils {
 			],
 		];
 
-		if ($this->asaasType == 'subscriptions' && $formPayment == 'card') {
-			$asaasData['path'] = 'subscriptions';
+		$asaasData['path'] = $model->asaas_type;
+		if ($asaasData['path'] == 'subscriptions') {
 			$asaasData['payload']['nextDueDate'] = $dueDate;
 			$asaasData['payload']['cycle'] = 'MONTHLY';
 			$asaasData['payload']['maxPayments'] = $model->number_parcel;
 		} else {
-			$asaasData['path'] = 'payments';
 			$asaasData['payload']['dueDate'] = $dueDate;
 		}
 
 		if ($formPayment == 'bankSlip') {
 			$asaasData['payload']['billingType'] = 'BOLETO';
 		} else
-		if ($formPayment == 'card') {
+		if ($formPayment == 'creditCard') {
 			if (empty($model->shelf_life) || empty($model->cardholder) || empty($model->number_card) || empty($model->security_code)) {
 				throw new \Exception(json_encode([
 					'errors' => [
@@ -390,7 +391,7 @@ class ConfirmPaymentUtils {
 		}
 
 		if (isset($asaas->id)) {
-			if ($formPayment == 'card') {
+			if ($formPayment == 'creditCard') {
 				$status = 'AP';
 			}
 

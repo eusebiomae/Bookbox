@@ -15,9 +15,11 @@ class ConfirmPaymentController extends _Controller {
 
 		$confirmPaymentUtils = new ConfirmPaymentUtils($opts);
 
-		$confirmPayment = $confirmPaymentUtils->makeStudentOrder($payload);
-
-		return $confirmPayment;
+		try {
+			return $confirmPaymentUtils->makeStudentOrder($payload);
+		} catch (\Throwable $th) {
+			return $th->getMessage();
+		}
 	}
 
 	public function confirmPayment_(Request $request) {
