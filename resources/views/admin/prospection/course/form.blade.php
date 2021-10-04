@@ -149,6 +149,14 @@
 														@endif
 
 
+														{{-- @if ($fieldPageConfig->show('full_value'))
+														<div class="col-sm-4">
+															<label class=" control-label">Valor Total (Em Reais)</label>
+															<input type="number" id="full_value" name="full_value" class="form-control" required {!! $fieldPageConfig->attr('full_value') !!} />
+														</div>
+														@endif --}}
+
+
 														{{-- @if ($fieldPageConfig->show('subtitle_en'))
 														<div class="col-sm-12">
 															<label class=" control-label">Subtítulo EN</label>
@@ -402,10 +410,10 @@
 											<div class="panel-body">
 												<div class="wrapper wrapper-content animated fadeInRight">
 													<div class="row" style="margin: 10px auto;">
-														{{-- <div class="col-sm-3">
+														<div class="col-sm-3">
 															<label class="control-label">Valor de multa (Contrato)</label>
 															<input type="tel" name="fine_value" class="form-control mask-currency" maxlength="10">
-														</div> --}}
+														</div>
 														<div class="col-sm-9 text-right">
 															<button type="button" class="btn btn-primary" title="Adicionar novo" onclick="newFormsPayment()">
 																<i class="fa fa-plus"></i>
@@ -414,12 +422,12 @@
 													</div>
 
 													<div id="formPayment"></div>
-													{{-- <div class="form-group">
+													<div class="form-group">
 														<label class="control-label">
 															Valor padrão do curso
 															<input type="checkbox" name="course_default_value" class="form-control" value="1" {{ isset($courseDefaultValue) ? 'checked' : '' }} />
 														</label>
-													</div> --}}
+													</div>
 												</div>
 											</div>
 										</div>

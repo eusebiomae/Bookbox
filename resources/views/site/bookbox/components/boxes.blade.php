@@ -26,7 +26,7 @@
 									<div class="product-button-wrap">
 													<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
 															class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-															href="/signature/{{ $item['id'] }}">Assine Agora</a></div>
+															href="/signature/{{ $product['id'] }}">Assine Agora</a></div>
 									</div>
 							</article>
 					</div>

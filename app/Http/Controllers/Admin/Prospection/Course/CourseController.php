@@ -133,8 +133,8 @@ class CourseController extends BaseMethodController {
 		$this->config->fileView = 'form';
 		$this->config->toView['title_page'] = 'Inserir';
 		$this->config->toView['url_page_action'] = '/insert';
-		$this->config->toView['title'] = 'Ficha cadastral do Aluno';
-		$this->config->toView['subtitle'] = 'Cadastre todas as informações referente ao aluno em um único lugar.';
+		$this->config->toView['title'] = 'Ficha cadastral do Produto';
+		$this->config->toView['subtitle'] = 'Cadastre todas as informações referente ao Produto em um único lugar.';
 
 		return parent::insert($request)
 		->with('listSelectBox', $this->getListSelectBox())
@@ -152,8 +152,8 @@ class CourseController extends BaseMethodController {
 		$this->config->fileView = 'form';
 		$this->config->toView['title_page'] = 'Editar';
 		$this->config->toView['url_page_action'] = '/update';
-		$this->config->toView['title'] = 'Ficha de edição do Aluno';
-		$this->config->toView['subtitle'] = 'Edite todas as informações referente ao aluno em um único lugar.';
+		$this->config->toView['title'] = 'Ficha de edição do Produto';
+		$this->config->toView['subtitle'] = 'Edite todas as informações referente ao Produto em um único lugar.';
 
 		$listSelectBox = $this->getListSelectBox();
 
@@ -225,11 +225,17 @@ class CourseController extends BaseMethodController {
 			$request['school_clinic'] = null;
 		}
 
+		if (!$request->get('formPayment')) {
+			$request['full_value'] = null;
+		}
+
 		// return $request;
+		// return $request->get('full_value');
 		// return toNumberFormat($request->get('fine_value'));
 
 		$save = parent::save($request);
 
+		// cetcc
 		// if (empty($request->get('id'))) {
 		// 	$courseFormPayment = CourseFormPaymentModel::whereNull('course_id')->where('course_subcategory_id',  $request->get('course_subcategory_id'))->get()->toArray();
 
@@ -241,21 +247,26 @@ class CourseController extends BaseMethodController {
 
 		// 	$save->data->formPayment()->sync($courseFormPayment);
 		// }
-		// $formPayment = $request->get('formPayment');
-		// if (!empty($formPayment)) {
-		// 	foreach ($formPayment as $key => &$value) {
-		// 		if (empty($value['form_payment_id'])) {
-		// 			unset($formPayment[$key]);
-		// 			continue;
-		// 		}
 
-		// 		if (empty($value['id'])) {
-		// 			unset($value['id']);
-		// 		}
+		$formPayment = $request->get('formPayment');
+		if (!empty($formPayment)) {
+			$courseFormPayment = [];
 
-		// 		$value = (new CourseFormPaymentModel($value))->toArray();
-		// 	}
-		// }
+			foreach ($formPayment as $key => &$value) {
+				if (empty($value['form_payment_id'])) {
+					unset($formPayment[$key]);
+					continue;
+				}
+
+				if (empty($value['id'])) {
+					unset($value['id']);
+				}
+
+				$courseFormPayment[] = (new CourseFormPaymentModel($value))->toArray();
+			}
+
+			$save->data->formPayment()->sync($courseFormPayment);
+		}
 
 		$courseOtherInfType = [];
 		if ($request->get('course_other_inf')) {

@@ -54,6 +54,10 @@ class CreateCourseTable extends Migration
 				$table->foreign('course_category_id')
 				->references('id')
 				->on('course_category');
+
+				$table->foreign('course_form_payment_id')
+				->references('id')
+				->on('course_form_payment');
 			});
 		}
 	}
