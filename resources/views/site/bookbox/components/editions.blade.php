@@ -17,140 +17,31 @@
 									</ul>
 							</div>
 					</div>
-					<div class="row row-30 isotope isotope-custom-1" data-lightgallery="group">
-							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 1">
-									<!-- Thumbnail Classic-->
-									<article class="thumbnail-classic block-1">
-											{{-- <div class="thumbnail-classic-caption">
-													<div>
-															<h5 class="thumbnail-classic-title">
-																<a href="">
-																	<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																		<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
-																	</div>
-																</a>
-															</h5>
-
-													</div>
-											</div> --}}
-											<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/bannerBoxAgosto.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Agosto/2021</h5>
-											</div>
-									</article>
-							</div>
-							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 1">
-									<!-- Thumbnail Classic-->
-									<article class="thumbnail-classic block-1">
-										{{-- <div class="thumbnail-classic-caption">
-											<div>
-													<h5 class="thumbnail-classic-title">
-														<a href="">
-															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
-															</div>
-														</a>
-													</h5>
-
-											</div>
-									</div> --}}
-									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxJulho.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Julho/2021</h5>
+					<div class="row row-30 row-lg-50">
+						@foreach ($editions as $edition)
+						<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+							<!-- Product-->
+							<article class="product">
+								<div class="product-body">
+									<div class="product-figure-box"><img src="{{$edition->img}}" alt="" />
 									</div>
-									</article>
-							</div>
-							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 1">
-									<!-- Thumbnail Classic-->
-									<article class="thumbnail-classic block-1">
-										{{-- <div class="thumbnail-classic-caption">
-											<div>
-													<h5 class="thumbnail-classic-title">
-														<a href="">
-															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
-															</div>
-														</a>
-													</h5>
+									<h5 class="product-title"><a href="single-product.html">{{$edition->title_pt}}</a></h5>
 
-											</div>
-									</div> --}}
-									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxJunho.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Junho/2021</h5>
+									<div class="product-price-wrap">
+										<div class="product-price">{{$edition->subtitle_pt}}</div>
 									</div>
-									</article>
-							</div>
-							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 2">
-									<!-- Thumbnail Classic-->
-									<article class="thumbnail-classic block-1">
-										{{-- <div class="thumbnail-classic-caption">
-											<div>
-													<h5 class="thumbnail-classic-title">
-														<a href="">
-															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
-															</div>
-														</a>
-													</h5>
-
-											</div>
-									</div> --}}
-									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxMaio.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Maio/2021</h5>
+								</div>
+								<div class="product-button-wrap">
+									<div class="product-button">
+										<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="/single-box-details/{{ $edition['id'] }}" title="Detalhes"></a>
 									</div>
-									</article>
-							</div>
-							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 2">
-									<!-- Thumbnail Classic-->
-									<article class="thumbnail-classic block-1">
-										{{-- <div class="thumbnail-classic-caption">
-											<div>
-													<h5 class="thumbnail-classic-title">
-														<a href="">
-															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
-															</div>
-														</a>
-													</h5>
-
-											</div>
-									</div> --}}
-									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxAbril.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Abril/2021</h5>
+									<div class="product-button">
+										<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="/signature/{{ $edition['id'] }}" title="Eu quero"></a>
 									</div>
-									</article>
-							</div>
-							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 2">
-									<!-- Thumbnail Classic-->
-									<article class="thumbnail-classic block-1">
-										{{-- <div class="thumbnail-classic-caption">
-											<div>
-													<h5 class="thumbnail-classic-title">
-														<a href="">
-															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
-															</div>
-														</a>
-													</h5>
-
-											</div>
-									</div> --}}
-									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxMarço.png') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Março/2021</h5>
-									</div>
-									</article>
-							</div>
-							<div class="col-sm-6 col-lg-4 col-xl-3 isotope-item" data-filter="Type 2">
-									<!-- Thumbnail Classic-->
-									<article class="thumbnail-classic block-1">
-										{{-- <div class="thumbnail-classic-caption">
-											<div>
-													<h5 class="thumbnail-classic-title">
-														<a href="">
-															<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400">
-																<a class="button button-lg button-shadow-4 button-secondary-2 button-zakaria" href="single-product.html">Eu quero</a>
-															</div>
-														</a>
-													</h5>
-
-											</div>
-									</div> --}}
-									<div class="thumbnail-classic-figure"><img src="{{ url('assets/images/site/boxAvulso/boxFevereiro.jpg') }}" alt="" width="270" style="height: 180px;" /><h5 class="" style="margin-top: 15px;">Box Fevereiro/2021</h5>
-									</div>
-									</article>
-							</div>
+								</div>
+							</article>
+						</div>
+						@endforeach
 					</div>
 			</div>
 	</div>

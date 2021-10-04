@@ -17,10 +17,13 @@ class HomeController extends _Controller
 
 		$products = CourseModel::where('course_category_id', 2)->get();
 
+		$editions = CourseModel::where('course_category_id', 1)->get();
+
 		// return $pageComponents;
 		return view('site/bookbox/pages/default')
 			->with('flgPage', $flgPage)
 			->with('pageComponents', $pageComponents)
-			->with('products', $products);
+			->with('products', $products)
+			->with('editions', $editions);
 	}
 }

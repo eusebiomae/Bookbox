@@ -138,17 +138,27 @@
 								</div>
 								<h5 class="product-title"><a href="single-product.html">{{$product->title_pt}}</a></h5>
 
-								{{-- <div class="product-price-wrap">
-									<div class="product-price product-price-old">$30.00</div>
-									<div class="product-price">$23.00</div>
-								</div> --}}
-							</div><span class="product-badge product-badge-sale">Sale</span>
+								<div class="product-price-wrap">
+									{{-- <div class="product-price product-price-old">$30.00</div> --}}
+									<div class="product-price">{{$product->subtitle_pt}}</div>
+								</div>
+							</div>
+
+							@if ($product->course_category_id == 1)
+
+								<span class="product-badge product-badge-sale">Venda</span>
+
+							@else
+							 	<span class="product-badge product-badge-sale" style="background: #ec7f6e">Box</span>
+
+							@endif
+
 							<div class="product-button-wrap">
 								<div class="product-button">
-									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="/single-product/{id}" title="Ver produto"></a>
+									<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="/single-box-details/{{ $product['id'] }}" title="Detalhes"></a>
 								</div>
 								<div class="product-button">
-									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="#" title="Eu quero"></a>
+									<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="/signature/{{ $product['id'] }}" title="Eu quero"></a>
 								</div>
 							</div>
 						</article>

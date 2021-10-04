@@ -43,11 +43,11 @@ Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->mi
 // Site
 Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
 Route::get('/box_blog', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:box_blog']);
-Route::get('/single-product/{id}', 'site\cetcc\CourseController@courseDetails')->middleware(['injectFlgPage:single-product']);
+Route::get('/single-box-details/{id}', 'site\cetcc\CourseController@courseDetails')->middleware(['injectFlgPage:single-box-details']);
 Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
 Route::get('/privacy-policy', 'site\cetcc\PrivacyController@index')->middleware(['injectFlgPage:privacy-policy']);
 Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
-Route::get('/pricing', 'site\cetcc\ShoppingJourneController@pricing')->middleware(['injectFlgPage:pricing']);
+Route::get('/pricing-list', 'site\cetcc\ShoppingJourneController@pricing')->middleware(['injectFlgPage:pricing-list']);
 Route::get('/signature/{id}', 'site\cetcc\ShoppingJourneController@signature')->middleware(['injectFlgPage:signature']);
 Route::post('confirm_payment', 'StudentArea\ConfirmPaymentController@confirmPayment');
 // End Site
