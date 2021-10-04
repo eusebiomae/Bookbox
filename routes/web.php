@@ -48,7 +48,7 @@ Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injec
 Route::get('/privacy-policy', 'site\cetcc\PrivacyController@index')->middleware(['injectFlgPage:privacy-policy']);
 Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
 Route::get('/pricing', 'site\cetcc\ShoppingJourneController@pricing')->middleware(['injectFlgPage:pricing']);
-Route::get('/signature', 'site\cetcc\ShoppingJourneController@signature')->middleware(['injectFlgPage:signature']);
+Route::get('/signature/{id}', 'site\cetcc\ShoppingJourneController@signature')->middleware(['injectFlgPage:signature']);
 Route::post('confirm_payment', 'StudentArea\ConfirmPaymentController@confirmPayment');
 // End Site
 
