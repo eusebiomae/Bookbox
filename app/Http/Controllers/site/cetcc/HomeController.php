@@ -15,6 +15,8 @@ class HomeController extends _Controller
 
 		$pageComponents = ContentPageModel::getByComponent($flgPage);
 
+		$product = CourseModel::where('course_category_id')->get();
+
 		$products = CourseModel::where('course_category_id', 2)->get();
 
 		$editions = CourseModel::where('course_category_id', 1)->get();
@@ -23,6 +25,7 @@ class HomeController extends _Controller
 		return view('site/bookbox/pages/default')
 			->with('flgPage', $flgPage)
 			->with('pageComponents', $pageComponents)
+			->with('product', $product)
 			->with('products', $products)
 			->with('editions', $editions);
 	}

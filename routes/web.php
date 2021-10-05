@@ -50,6 +50,8 @@ Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlg
 Route::get('/pricing-list', 'site\cetcc\ShoppingJourneController@pricing')->middleware(['injectFlgPage:pricing-list']);
 Route::get('/signature/{id}', 'site\cetcc\ShoppingJourneController@signature')->middleware(['injectFlgPage:signature']);
 Route::post('confirm_payment', 'StudentArea\ConfirmPaymentController@confirmPayment');
+Route::get('register', 'site\cetcc\RegisterController@index')->name('register')->middleware(['injectFlgPage:register']);
+Route::post('register', 'site\cetcc\RegisterController@store');
 // End Site
 
 Route::get('/article', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:article']);

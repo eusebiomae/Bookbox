@@ -64,13 +64,20 @@ class CourseController extends _Controller
 		$flgPage = $request->get('flgPage');
 
 		$pageComponents = ContentPageModel::getByComponent($flgPage);
+
+		// $content_page_id = ContentPageModel::getByComponent($id);
+
+		// return $id;
+		// return $flgPage;
+		// return $id = CourseModel::getByComponent($flgPage);
 		// $products = CourseModel::where('course_category_id', 1)->get();
 
 			// return $course->class;
 		// return $pageComponents;
-		// return view('site/bookbox/pages/single-product')
 		return view('site/bookbox/pages/default')
+		// ->with('content_page_id', $content_page_id)
 		->with('flgPage', $flgPage)
+		->with('id', $id)
 		->with('pageComponents', $pageComponents);
 		// ->with('products', $products);
 	}

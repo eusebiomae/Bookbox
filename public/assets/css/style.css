@@ -5856,7 +5856,7 @@ textarea.textarea-lg {
 .thumbnail-classic-title {
     font-weight: 500;
     letter-spacing: 0;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .thumbnail-classic-tag,
