@@ -1,7 +1,9 @@
-<section id="banner_home" class="section swiper-container swiper-slider swiper-slider-4" data-loop="true">
+<section id="banner_home" class="section section-xxl swiper-container swiper-slide-call" data-loop="true" style="background-image: url('assets/images/site/home/last/pedidosCliente/banner3.png');">
+	{{-- style="background-image: url('{{$item['image_bg']}}');" --}}
+	@foreach ($pageData->content as $item)
 	<div class="swiper-wrapper context-dark">
-		@foreach ($pageData->content as $item)
-		<div class="swiper-slide swiper-slide-1" data-slide-bg="{{$item['image_bg']}}">
+		<div class="swiper-slide swiper-slide-1">
+			{{-- "{{ url ('assets/images/site/01.png')}}" --}}
 			<div class="swiper-slide-caption section-md text-sm-left">
 				<div class="container">
 					<div class="row col-sm-12 col-md-12">
@@ -14,7 +16,7 @@
 							<div class="button-wrap" data-caption-animate="fadeInLeft"
 								data-caption-delay="400" style="margin-top: 35px; margin-bottom: 70px;"><a
 								class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-								href="/pricing-list">Assine Agora</a>
+								href="/pricing-list">Eu Quero</a>
 							</div>
 						</div>
 						<div class="col-sm-4 col-md-5">
