@@ -1,9 +1,7 @@
-<section id="banner_home" class="section section-xxl swiper-container swiper-slide-call" data-loop="true" style="background-image: url('assets/images/site/home/last/pedidosCliente/banner3.png');">
-	{{-- style="background-image: url('{{$item['image_bg']}}');" --}}
-	@foreach ($pageData->content as $item)
+<section id="banner_home" class="section swiper-container swiper-slider swiper-slider-4" data-loop="true">
 	<div class="swiper-wrapper context-dark">
-		<div class="swiper-slide swiper-slide-1">
-			{{-- "{{ url ('assets/images/site/01.png')}}" --}}
+		@foreach ($pageData->content as $item)
+		<div class="swiper-slide swiper-slide-1" data-slide-bg="{{$item['image_bg']}}">
 			<div class="swiper-slide-caption section-md text-sm-left">
 				<div class="container">
 					<div class="row col-sm-12 col-md-12">
