@@ -2,8 +2,8 @@
 <section>
 	<div id="address" class="container-fluid align-items-center" style="background: url({{$item['image_bg']}}) no-repeat center; background-size:cover;">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
+			<div class="row row-30 row-lg-50">
+				<div class="col-md-12 col-sm-12 col-xl-12">
 						<h2>{{$item['title_pt']}}</h2>
 						<h3 class="h1">{{$item['subtitle_pt']}}</h3>
 						<form action="/register" method="post">

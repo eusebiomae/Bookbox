@@ -19,7 +19,8 @@
 					</div>
 
 					<div class="col-md-7 col-xl-6">
-							<h3 class="text-transform-none wow text-align-center">O que vem na sua box?</h3>
+							<h3 class="text-transform-none wow text-align-center">{{$item->title_pt}}</h3>
+							<h6 class="text-transform-none wow text-align-center">{{$item->subtitle_pt}}</h6>
 							<!-- Bootstrap collapse-->
 							<div class="card-group-custom card-group-corporate" id="accordion1" role="tablist"
 									aria-multiselectable="false">
