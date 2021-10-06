@@ -41,7 +41,8 @@
 													aria-labelledby="accordion1-card-head-qteehppu" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Livros com temas variados segundo suas preferencias, com conteúdo diverso e didático para o seu dia a dia. </p>
+															<p>1 LIVRO de saúde & bem-estar – lindo, todo colorido, de leitura leve, com dicas e exercícios para seu equilíbrio emocional. </p>
+															<p>1 LIVRO de alimentação e receitas – com informações sobre os alimentos e receitas práticas e saborosas, todo ilustrado e com QR CODE para você acompanhar o preparo em nosso canal no YouTube. </p>
 													</div>
 											</div>
 									</article>
@@ -62,7 +63,8 @@
 													aria-labelledby="accordion1-card-head-iebkfbxx" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Já vem um Marcador de página personalizado do mês e uma Guia de Leitura para facilitar o entendimento do conteúdo. </p>
+															<p>MARCA PÁGINAS – para acompanhar seus livros e facilitar sua leitura. </p>
+															<p>GUIA DE LEITURA – para você ficar por dentro de todo o conteúdo do mês. </p>
 													</div>
 											</div>
 									</article>
@@ -83,7 +85,9 @@
 													aria-labelledby="accordion1-card-head-crpnkjpm" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Cada mês enviamos um Cartão Postal Colecionável e um Brinde Especial.
+															<p>1 BRINDE – selecionamos com muito carinho produtos fofos para completar seu momento de autocuidado e leitura, todo mês uma surpresa incrível.
+															</p>
+															<p>CARTÃO POSTAL – com mensagens motivacionais para você enviar para aquela pessoa querida ou colecionar, são lindos!
 															</p>
 													</div>
 											</div>
