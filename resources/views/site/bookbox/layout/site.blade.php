@@ -101,28 +101,31 @@
 							</div>
 						</div>
 					</div>
-					<div class="rd-navbar-main-outer">
+					<div class="rd-navbar-main-outer" style="background-color: #8571a2;">
 						<div class="rd-navbar-main">
 							<div class="rd-navbar-nav-wrap">
 								<ul class="rd-navbar-nav">
 									<li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
 									</li>
-									{{-- <li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
-									</li> --}}
-									{{-- <li class="rd-nav-item"><a class="rd-nav-link"
-										href="grid-gallery.html" >Galeria</a>
-									</li> --}}
+									<li class="rd-nav-item"><a href="#whats_in" class="rd-nav-link">O Que Vem No Box</a>
+									</li>
+									<li class="rd-nav-item"><a class="rd-nav-link"
+										href="#how_works" >Como Funciona</a>
+									</li>
+									<li class="rd-nav-item"><a class="rd-nav-link"
+										href="#boxes" >Planos</a>
+									</li>
 									<li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
 									</li>
-									<li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
+									{{-- <li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
 										nós</a>
-									</li>
+									</li> --}}
 									{{-- <li class="rd-nav-item"><a class="rd-nav-link"
 										href="/contact">Contato</a>
 									</li> --}}
-									<li class="rd-nav-item"><a class="rd-nav-link"
+									{{-- <li class="rd-nav-item"><a class="rd-nav-link"
 										href="/privacy-policy">Termos e Condições</a>
-									</li>
+									</li> --}}
 									<li class="rd-nav-item"><a class="rd-nav-link" href="/pricing-list"
 										target="blank" style="color: #552b79;">Assine já</a>
 									</li>
