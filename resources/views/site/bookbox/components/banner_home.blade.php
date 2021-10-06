@@ -7,7 +7,7 @@
 					<div class="row col-sm-12 col-md-12">
 						<div class="col-sm-8 col-md-7">
 							<h4 class="swiper-title-1 text-uppercase" data-caption-animate="fadeInLeft"
-							data-caption-delay="100" style="margin-top: 125px;">{{$item['title_pt']}}<br>
+							data-caption-delay="100" style="margin-top: 125px; color: #000">{{$item['title_pt']}}<br>
 						  </h4>
 							<h6 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft"
 							data-caption-delay="250" style="text-color: #fff">{!! $item['text_pt'] !!}</h6>
