@@ -94,6 +94,7 @@
 									</article>
 							</div>
 					</div>
+					<h3 class="text-transform-uppercase wow text-align-center" style="margin-top: 75px; color: #8571a2">Sua felicidade depende da sua saúde e vitalidade!</h3>
 			</div>
 			{{-- <div class="banner">
 					<h3 class="text-transform-none wow fadeScale">O que vem na sua box</h3>

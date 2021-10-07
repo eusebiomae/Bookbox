@@ -1180,7 +1180,7 @@ a[href*='mailto'] {
 .box-icon-creative {
     text-align: center;
     padding: 15px;
-    border: 1px solid #e1e1e1;
+    /* border: 1px solid #e1e1e1; */
     background: #ffffff;
 }
 

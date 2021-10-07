@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
-	<title>Home</title>
+	<title>Bookbox - Saúde Integrada</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -92,7 +92,7 @@
 							<div class="rd-navbar-brand">
 								<!--Brand-->
 								<a class="brand" href="/"><img class="brand-logo-light"
-									src="{{ url ('assets/images/site/Logo H Negativo Roxo.png')}}"
+									src="{{ url ('assets/images/site/Logo_estilizado.png')}}"
 									alt="" /></a>
 									<!-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> -->
 								</div>
