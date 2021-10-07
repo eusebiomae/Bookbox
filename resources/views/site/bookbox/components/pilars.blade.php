@@ -1,4 +1,4 @@
-@foreach ($pageData->content as $item)
+{{-- @foreach ($pageData->content as $item)
 <section id="pilars" class="section section-xxl swiper-slide-pilars background-default">
 	<div class="container">
 		<h4 class="col-md-12 text-center">{{$item['title_pt']}}</h4>
@@ -67,4 +67,4 @@
 			</div>
 		</div>
 	</section>
-	@endforeach
+	@endforeach --}}
