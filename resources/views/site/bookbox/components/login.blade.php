@@ -1,19 +1,21 @@
-@foreach ($pageData->content as $item)
+{{-- @foreach ($pageData->content as $item) --}}
 <section>
-	<div id="address" class="container-fluid align-items-center" style="background: url({{$item['image_bg']}}) no-repeat center; background-size:cover;">
+	<div id="address" class="container-fluid align-items-center">
+		{{-- style="background-image: url('assets/images/site/home/last/pedidosCliente/banner3.png')"  --}}
+		{{-- style="background: url({{$item['image_bg']}}) no-repeat center; background-size:cover;" --}}
 		<div class="container">
 			{{-- <div class="row row-30 row-lg-50">
 				<div class="col-md-12 col-sm-12 col-xl-12"> --}}
-					<div class="" id="login-container">
-						<h6>{{$item['title_pt']}}</h6>
-
+					<div class="" id="login-container" style="margin-top: -25px;">
+						<img class="brand-logo-light" src="{{ url ('assets/images/site/Logo_estilizado.png')}}" alt="" style="width: 300px; margin-bottom: -50px;"/>
+						<h3>Login</h3>
 						<form action="/login" method="post">
 							@csrf
 							<label for="Email" class="">Email</label>
 							<input type="email" name="email" id="email" required placeholder="Digite seu e-mail*" autocomplete="off">
 
 							<label for="Senha" class="">Senha</label>
-							<input type="password" name="password" id="password" required placeholder="Digite sua senha*" autocomplete="off">
+							<input type="password" name="password" id="password" required placeholder="Digite sua senha*">
 
 							<a href="#" class="" id="forgot-pass">Esqueceu a senha?</a>
 							<input type="submit" value="Login" class="btn_send">
@@ -46,7 +48,10 @@
 	}
 
 	body {
-
+		background-image: url('assets/images/site/home/last/pedidosCliente/banner3.png');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
 	}
 
 	textarea:focus, input:focus {
@@ -164,5 +169,5 @@
 
 	</style>
 </section>
-@endforeach
+{{-- @endforeach --}}
 
