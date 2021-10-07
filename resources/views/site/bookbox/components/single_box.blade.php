@@ -1,5 +1,5 @@
 @foreach ($pageData->content as $item)
-<section class="parallax-container" data-parallax-img="{{$item['image_bg']}}">
+<section class="parallax-container" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="parallax-content section-xxl context-dark">
 {{-- <section id="single_box" class="section section-xxl swiper-slide-pilars" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="parallax"> --}}
@@ -15,9 +15,9 @@
 </section>
 
 <style>
-	.parallax {
+	.parallax-container {
 		/* The image used */
-		background-image: url("assets/images/parallax-2.jpg");
+		/* background-image: url("assets/images/site/parallax/parallax4.jpg"); */
 
 		/* Set a specific height */
 		min-height: 500px;
