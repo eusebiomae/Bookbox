@@ -92,7 +92,7 @@
 							<div class="rd-navbar-brand">
 								<!--Brand-->
 								<a class="brand" href="/"><img class="brand-logo-light"
-									src="{{ url ('assets/images/site/Logo_estilizado.png')}}"
+									src="{{ url ('assets/images/site/Logo_saude.png')}}"
 									alt="" /></a>
 									<!-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> -->
 								</div>
@@ -115,8 +115,8 @@
 									<li class="rd-nav-item"><a class="rd-nav-link"
 										href="#boxes" >Planos</a>
 									</li>
-									<li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
-									</li>
+									{{-- <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
+									</li> --}}
 									{{-- <li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
 										nós</a>
 									</li> --}}

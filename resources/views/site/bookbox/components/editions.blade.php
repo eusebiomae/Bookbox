@@ -31,14 +31,14 @@
 										<div class="product-price">{{$edition->subtitle_pt}}</div>
 									</div>
 								</div>
-								<div class="product-button-wrap">
+								{{-- <div class="product-button-wrap">
 									<div class="product-button">
 										<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="/box_blog" title="Detalhes"></a>
 									</div>
 									<div class="product-button">
 										<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="/signature/{{ $edition['id'] }}" title="Eu quero"></a>
 									</div>
-								</div>
+								</div> --}}
 							</article>
 						</div>
 						@endforeach

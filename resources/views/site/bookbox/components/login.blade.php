@@ -1,4 +1,4 @@
-{{-- @foreach ($pageData->content as $item) --}}
+@foreach ($pageData->content as $item)
 <section>
 	<div id="address" class="container-fluid align-items-center">
 		{{-- style="background-image: url('assets/images/site/home/last/pedidosCliente/banner3.png')"  --}}
@@ -23,8 +23,8 @@
 
 						<div class="" id="social-container">
 							<p class="">Ou entre com suas redes sociais</p>
-							<i class="fa fa-facebook-f"></i>
-							<i class="fa fa-google"></i>
+							<i class="fab fa-facebook"></i>
+							<i class="fab fa-google"></i>
 						</div>
 
 						<div class="" id="register-container">
@@ -147,7 +147,7 @@
 		cursor: pointer;
 	}
 
-	.fa-facebook-f {
+	.fa-facebook {
 		background-color: #3B5998;
 		color: #fff
 	}
@@ -169,5 +169,5 @@
 
 	</style>
 </section>
-{{-- @endforeach --}}
+@endforeach
 

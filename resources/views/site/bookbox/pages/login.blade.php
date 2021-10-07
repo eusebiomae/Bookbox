@@ -3,9 +3,9 @@
 @section('content')
 
 	{{-- $banner --}}
-	@if (isset($carrossel))
-		@include('site.bookbox.components.banner-home', ['banner' => $carrossel])
-	@endif
+	{{-- @if (isset($carrossel))
+		@include('site.bookbox.components.banner_generic', ['banner' => $carrossel])
+	@endif --}}
 
 	{{-- SECTION about --}}
 	@if(isset($pageComponents))

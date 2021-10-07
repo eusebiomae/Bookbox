@@ -8,7 +8,7 @@
 		<h4 class="text-transform-none wow fadeScale" style="color: #95cc9b;">{{$item['subtitle_pt']}}</h4>
 		<div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a
 					class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
-					href="/box_blog">Experimente adquirir o Box Avulso</a>
+					href="#editions">Experimente adquirir o Box Avulso</a>
 		</div>
 	</div>
 	</div>
