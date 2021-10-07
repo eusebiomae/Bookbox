@@ -9,13 +9,13 @@
 									data-custom-toggle=".isotope-filters-list" data-custom-toggle-disable-on-blur="true"
 									data-custom-toggle-hide-on-blur="true"><span
 											class="icon mdi mdi-chevron-down"></span>Filtrar</button>
-							<div class="isotope-filters-list-wrap">
+							{{-- <div class="isotope-filters-list-wrap">
 									<ul class="isotope-filters-list">
 											<li><a class="active" href="#" data-isotope-filter="*">Todas</a></li>
 											<li><a href="#" data-isotope-filter="Type 1">Últimos 3 meses</a></li>
 											<li><a href="#" data-isotope-filter="Type 2">Mais antigas</a></li>
 									</ul>
-							</div>
+							</div> --}}
 					</div>
 					<div class="row row-30 row-lg-50">
 						@foreach ($editions as $edition)
@@ -33,7 +33,7 @@
 								</div>
 								<div class="product-button-wrap">
 									<div class="product-button">
-										<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="/single-box-details/{{ $edition['id'] }}" title="Detalhes"></a>
+										<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="/box_blog" title="Detalhes"></a>
 									</div>
 									<div class="product-button">
 										<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="/signature/{{ $edition['id'] }}" title="Eu quero"></a>
