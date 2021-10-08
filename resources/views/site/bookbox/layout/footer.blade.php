@@ -1,6 +1,7 @@
 @php
 	$schoolInformation = schoolInformation();
 @endphp
+@foreach ($pageData->content as $item)
 <footer class="section footer-modern footer-modern-2">
 	<div class="footer-modern-body section-xl context-dark" style="background-color: #855f9f">
 			<div class="container">
@@ -106,4 +107,5 @@
 			</div>
 	</div>
 </footer>
+@endforeach
 <!--/footer-->
