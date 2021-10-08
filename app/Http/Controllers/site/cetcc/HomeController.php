@@ -5,6 +5,7 @@ namespace App\Http\Controllers\site\cetcc;
 use Illuminate\Http\Request;
 use App\Model\api\Configuration\ContentPageModel;
 use App\Model\api\Prospection\CourseModel;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends _Controller
 {
@@ -29,4 +30,19 @@ class HomeController extends _Controller
 			->with('products', $products)
 			->with('editions', $editions);
 	}
+
+	function getEditions(Request $request)
+	{
+		$editions = DB::select("SELECT c.`created_at`, c.title_pt
+		FROM course c
+		WHERE c.deleted_at IS NULL
+		ORDER BY c.`created_at` DESC
+		LIMIT 3");
+
+		return response()->json([
+			'editions' => $editions,
+
+		]);
+	}
 }
+

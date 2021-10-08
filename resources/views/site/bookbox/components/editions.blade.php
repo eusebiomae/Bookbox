@@ -9,13 +9,13 @@
 									data-custom-toggle=".isotope-filters-list" data-custom-toggle-disable-on-blur="true"
 									data-custom-toggle-hide-on-blur="true"><span
 											class="icon mdi mdi-chevron-down"></span>Filtrar</button>
-							{{-- <div class="isotope-filters-list-wrap">
+							<div class="isotope-filters-list-wrap">
 									<ul class="isotope-filters-list">
-											<li><a class="active" href="#" data-isotope-filter="*">Todas</a></li>
-											<li><a href="#" data-isotope-filter="Type 1">Últimos 3 meses</a></li>
-											<li><a href="#" data-isotope-filter="Type 2">Mais antigas</a></li>
+											{{-- <li><a class="active" href="#" data-isotope-filter="*">Todas</a></li> --}}
+											<li><a href="#editions" data-isotope-filter="getMonth">Últimos 3 meses</a></li>
+											{{-- <li><a href="#" data-isotope-filter="Type 2">Mais antigas</a></li> --}}
 									</ul>
-							</div> --}}
+							</div>
 					</div>
 					<div class="row row-30 row-lg-50">
 						@foreach ($editions as $edition)
@@ -47,3 +47,28 @@
 	</div>
 </section>
 @endforeach
+
+<script>
+
+function foobar( dt )
+{
+    var array = [];
+
+    var d = new Date( dt );
+
+    for( var i = 0; i < 3; i++ )
+    {
+        var m = d.getMonth();
+
+        d.setMonth( m - 1 );
+
+        if( d.getMonth() != m - 1 && (d.getMonth() != 11 || (m == 11 && d.getDate() == 1)))
+            d.setDate(0);
+
+        array[i] = new Date(d);
+    }
+
+    return array;
+}
+
+</script>
