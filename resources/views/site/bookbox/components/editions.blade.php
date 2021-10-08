@@ -1,7 +1,7 @@
 @foreach ($pageData->content as $item)
 <section id="editions" class="section section-xxl swiper-slide-editions" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
-			<h2 class="text-transform-capitalize wow fadeScale">Confira nossas edições anteriores</h2>
+			<h3 class="text-transform-none wow fadeScale">Confira nossas edições anteriores</h3>
 			<div class="isotope-wrap">
 					<div class="isotope-filters">
 							<button
@@ -23,7 +23,7 @@
 							<!-- Product-->
 							<article class="product">
 								<div class="product-body">
-									<div class="product-figure-box"><img src="{{$edition->img}}" alt="" />
+									<div class="product-figure-box"><img src="{{$edition->img}}" alt=""/>
 									</div>
 									<h5 class="product-title"><a href="single-product.html">{{$edition->title_pt}}</a></h5>
 

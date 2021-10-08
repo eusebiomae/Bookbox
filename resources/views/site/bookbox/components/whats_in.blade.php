@@ -2,7 +2,7 @@
 <section id="whats_in" class="section section-xxl swiper-slide-pilars" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
 		<h3 class="text-transform-none wow text-align-center" style="margin-top: 75px;">{{$item->title_pt}}</h3>
-		<h6 class="text-transform-none wow text-justify">{{$item->subtitle_pt}}</h6>
+		<h6 class="text-transform-none wow text-justify">{!! $item['text_pt'] !!}</h6>
 			<div class="row row-30 row-md-60 row-lg-70 justify-content-center align-items-md-center">
 					<div class="col-sm-8 col-md-5 col-xl-6">
 							<div class="inset-xl-right-20">
@@ -31,7 +31,7 @@
 																	data-toggle="collapse" data-parent="#accordion1"
 																	href="#accordion1-card-body-unqfdlnh"
 																	aria-controls="accordion1-card-body-unqfdlnh" aria-expanded="true"
-																	role="button">2 livros exclusivos.
+																	role="button">2 livros exclusivos
 																	<div class="card-arrow">
 																			<div class="icon"></div>
 																	</div>
@@ -53,7 +53,7 @@
 																	id="accordion1-card-head-iebkfbxx" data-toggle="collapse"
 																	data-parent="#accordion1" href="#accordion1-card-body-eephkkca"
 																	aria-controls="accordion1-card-body-eephkkca" aria-expanded="false"
-																	role="button">Itens para melhorar sua leitura.
+																	role="button">Itens para melhorar sua leitura
 																	<div class="card-arrow">
 																			<div class="icon"></div>
 																	</div>
@@ -75,7 +75,7 @@
 																	id="accordion1-card-head-crpnkjpm" data-toggle="collapse"
 																	data-parent="#accordion1" href="#accordion1-card-body-qbvvnoxx"
 																	aria-controls="accordion1-card-body-qbvvnoxx" aria-expanded="false"
-																	role="button">Colécionaveis e brindes.
+																	role="button">Mimos para seu autocuidado
 																	<div class="card-arrow">
 																			<div class="icon"></div>
 																	</div>
@@ -94,7 +94,7 @@
 									</article>
 							</div>
 					</div>
-					<h3 class="text-transform-uppercase wow text-align-center" style="margin-top: 75px; color: #8571a2">Sua felicidade depende da sua saúde e vitalidade!</h3>
+					<h3 class="text-transform-uppercase wow text-align-center wow fadeInRight" data-wow-delay=".3s" style="margin-top: 75px; color: #8571a2">{{$item->subtitle_pt}}</h3>
 			</div>
 			{{-- <div class="banner">
 					<h3 class="text-transform-none wow fadeScale">O que vem na sua box</h3>
