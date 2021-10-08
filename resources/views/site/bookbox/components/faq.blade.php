@@ -102,20 +102,20 @@
 									</div>
 							</article>
 							<!-- Bootstrap card-->
-							<article class="card card-custom card-corporate wow fadeInRight" data-wow-delay=".3s">
+							<article class="card card-custom card-corporate wow fadeInRight" data-wow-delay=".4s">
 									<div class="card-header" role="tab">
 											<div class="card-title"><a class="collapsed"
-															id="accordion1-card-head-kgkjkjj" data-toggle="collapse"
-															data-parent="#accordion1" href="#accordion1-card-body-sadasdas"
-															aria-controls="accordion1-card-body-sadasdas" aria-expanded="false"
+															id="accordion1-card-head-easgcjgdtrrnbjjhbh" data-toggle="collapse"
+															data-parent="#accordion1" href="#accordion1-card-body-jhgkjsgfkjsagfksdgfkeuh"
+															aria-controls="accordion1-card-body-jhgkjsgfkjsagfksdgfkeuh" aria-expanded="false"
 															role="button">Como posso cancelar?
 															<div class="card-arrow">
 																	<div class="icon"></div>
 															</div>
 													</a></div>
 									</div>
-									<div class="collapse" id="accordion1-card-body-sadasdas"
-											aria-labelledby="accordion1-card-head-crpnkjpm" data-parent="#accordion1"
+									<div class="collapse" id="accordion1-card-body-jhgkjsgfkjsagfksdgfkeuh"
+											aria-labelledby="accordion1-card-head-kjgkbkmjnbj" data-parent="#accordion1"
 											role="tabpanel">
 											<div class="card-body">
 													<p style="color: #fff">Caso queira cancelar o plano contratado, você deve entrar na sua conta e solicitar o cancelamento, lembrando que nos planos semestral e anual o cancelamento só poderá ser feito no último mês do período contrato, para que não seja feita a renovação automática.
