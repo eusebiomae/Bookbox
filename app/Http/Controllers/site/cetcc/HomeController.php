@@ -20,7 +20,7 @@ class HomeController extends _Controller
 
 		$products = CourseModel::where('course_category_id', 2)->get();
 
-		$editions = CourseModel::where('course_category_id', 1)->orderBy('created_at', 'desc')->limit(3)->get();
+		$editions = CourseModel::where('course_category_id', 1)->orderBy('created_at', 'asc')->limit(3)->get();
 
 		// return $pageComponents;
 		return view('site/bookbox/pages/default')
