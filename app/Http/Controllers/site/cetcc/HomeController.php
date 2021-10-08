@@ -20,7 +20,7 @@ class HomeController extends _Controller
 
 		$products = CourseModel::where('course_category_id', 2)->get();
 
-		$editions = CourseModel::where('course_category_id', 1)->get();
+		$editions = CourseModel::where('course_category_id', 1)->orderBy('created_at', 'desc')->limit(3)->get();
 
 		// return $pageComponents;
 		return view('site/bookbox/pages/default')
@@ -29,20 +29,6 @@ class HomeController extends _Controller
 			->with('product', $product)
 			->with('products', $products)
 			->with('editions', $editions);
-	}
-
-	function getEditions(Request $request)
-	{
-		$editions = DB::select("SELECT c.`created_at`, c.title_pt
-		FROM course c
-		WHERE c.deleted_at IS NULL
-		ORDER BY c.`created_at` DESC
-		LIMIT 3");
-
-		return response()->json([
-			'editions' => $editions,
-
-		]);
 	}
 }
 

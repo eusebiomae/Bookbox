@@ -47,28 +47,3 @@
 	</div>
 </section>
 @endforeach
-
-<script>
-
-function foobar( dt )
-{
-    var array = [];
-
-    var d = new Date( dt );
-
-    for( var i = 0; i < 3; i++ )
-    {
-        var m = d.getMonth();
-
-        d.setMonth( m - 1 );
-
-        if( d.getMonth() != m - 1 && (d.getMonth() != 11 || (m == 11 && d.getDate() == 1)))
-            d.setDate(0);
-
-        array[i] = new Date(d);
-    }
-
-    return array;
-}
-
-</script>
