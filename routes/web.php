@@ -37,10 +37,10 @@ Route::get('/add_patient', 'site\cetcc\PatientController@add')->middleware(['inj
 Route::post('/add_patient/save', 'site\cetcc\PatientController@save')->middleware(['injectFlgPage:add_patient']);
 Route::get('/doc', 'site\cetcc\DocController@index')->middleware(['injectFlgPage:doc']);
 Route::get('/recommendation', 'site\cetcc\RecommendationController@index')->middleware(['injectFlgPage:recommendation']);
-Route::get('/faq', 'site\cetcc\FaqController@index')->middleware(['injectFlgPage:faq']);
-Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:shopping_journey']);
 
 // Site
+Route::get('/faq', 'site\cetcc\FaqController@index')->middleware(['injectFlgPage:faq']);
+Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:shopping_journey']);
 Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
 Route::get('/box_blog', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:box_blog']);
 Route::get('/single-box-details/{id}', 'site\cetcc\CourseController@courseDetails')->middleware(['injectFlgPage:single-box-details']);
@@ -53,6 +53,9 @@ Route::post('confirm_payment', 'StudentArea\ConfirmPaymentController@confirmPaym
 Route::post('confirm_email', 'StudentArea\ConfirmPaymentController@confirmEmail');
 Route::post('login', 'site\cetcc\ShoppingJourneController@login');
 Route::post('reset_password', 'site\cetcc\ShoppingJourneController@resetPassword');
+Route::get('login', 'site\cetcc\LoginController@index')->name('login')->middleware(['injectFlgPage:login']);
+Route::get('register', 'site\cetcc\RegisterController@index')->name('register')->middleware(['injectFlgPage:register']);
+Route::post('register', 'site\cetcc\RegisterController@store');
 // End Site
 
 Route::get('/article', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:article']);

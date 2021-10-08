@@ -31,6 +31,7 @@ class CourseModel extends Model
 		'subtitle_es',
 		'value',
 		'full_value',
+		'flg_page',
 		'description_pt',
 		'description_en',
 		'description_es',
@@ -62,6 +63,31 @@ class CourseModel extends Model
 	];
 
 	protected $dates = ['deleted_at'];
+
+	static public function getByComponent($flgPage) {
+		return CourseModel::where('flg_page', $flgPage)
+		->select('id', 'description_pt', 'flg_page')
+		->with([
+			'metaTag',
+			'contentSection' => function($query) {
+				$query->select('id', 'content_page_id', 'description_pt', 'subtitle_pt', 'component', 'component_order');
+				$query->whereNotNull('component');
+				$query->orderBy('component_order', 'asc');
+				$query->with([
+					'content' => function($query) {
+						$query->select('id', 'content_section_id', 'title_pt', 'subtitle_pt', 'text_pt', 'image', 'link', 'image_bg', 'link_label', 'icon', 'created_at', 'created_by');
+					},
+					// 'galery' => function($query) {
+					// 	$query->select('id', 'content_section_id', 'title_pt', 'description_pt', 'type', 'image');
+						// $query->with(['photoGalery' => function($query) {
+						// 	$query->select('title_pt', 'file', 'galery_id');
+						// }]);
+					// },
+				]);
+			},
+		])
+		->first();
+	}
 
 	public function getStartDateAttribute($value) {
 		return empty($value) ? null : Carbon::parse($value)->format('d/m/Y');

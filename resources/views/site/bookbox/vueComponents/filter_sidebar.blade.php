@@ -18,7 +18,7 @@
 		<div class="collapse show" :id="'collapseFilters' + filterSidebarKey">
 			<div class="filter_type">
 				<ul>
-					<li class="" v-for="item in payload.items">
+					<li class="list-style" v-for="item in payload.items">
 						<label class="control control--checkbox">
 							@{{ item.label }}
 							<input
@@ -67,10 +67,10 @@
 	window.addEventListener("resize", function(){
     if (window.outerWidth < 991) {
         document.getElementById("collapseFilterscategory").classList.remove("show");
-        document.getElementById("collapseFilterssubcategory").classList.remove("show");
+        // document.getElementById("collapseFilterssubcategory").classList.remove("show");
     } else {
         document.getElementById("collapseFilterscategory").classList.add("show");
-        document.getElementById("collapseFilterssubcategory").classList.add("show");
+        // document.getElementById("collapseFilterssubcategory").classList.add("show");
     }
 	})
 </script>

@@ -1,7 +1,7 @@
 @foreach ($pageData->content as $item)
 <section id="about" class="section section-xl bg-default text-md-left">
 	<div class="container">
-		<div class="row row-40 row-md-60 justify-content-center align-items-xl-center">
+		<div class="row row-40 row-md-60 justify-content-center align-items-xl-center" style="margin-top: -100px;">
 			<div class="col-md-11 col-lg-6 col-xl-5">
 				<!-- Quote Classic Big-->
 				<article class="quote-classic-big inset-xl-right-30">

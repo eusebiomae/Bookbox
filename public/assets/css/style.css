@@ -1180,7 +1180,7 @@ a[href*='mailto'] {
 .box-icon-creative {
     text-align: center;
     padding: 15px;
-    border: 1px solid #e1e1e1;
+    /* border: 1px solid #e1e1e1; */
     background: #ffffff;
 }
 
@@ -3514,8 +3514,15 @@ hr {
 .button-secondary-2,
 .button-secondary-2:focus {
     color: #151515;
-    background-color: #f7af69;
-    border-color: #f7af69;
+    background-color: #37a4a9;
+    border-color: #e9ac6c;
+}
+
+.button-secondary-3,
+.button-secondary-2:focus {
+    color: #151515;
+    background-color: #37a4a9;
+    border-color: #37a4a9;
 }
 
 .button-secondary-2:hover,
@@ -5856,7 +5863,7 @@ textarea.textarea-lg {
 .thumbnail-classic-title {
     font-weight: 500;
     letter-spacing: 0;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .thumbnail-classic-tag,
@@ -9609,7 +9616,7 @@ h3+img {
 .section-xl,
 .section-xxl,
 .section-inset-2 {
-    padding: 50px 0;
+    padding: 110px 0;
 }
 
 .section-collapse+.section-collapse {
@@ -14966,7 +14973,8 @@ html.rd-navbar-fixed-linked .page {
 
 @media (max-width: 991.98px) {
     .swiper-slide-caption {
-        padding-bottom: 70px;
+        padding-bottom: 100px;
+        margin-top: -190px;
     }
 }
 
@@ -15261,7 +15269,7 @@ html.rd-navbar-fixed-linked .page {
 }
 
 .rd-navbar-static-linked .header-creative-wrap+.swiper-slider-4 .swiper-slide-1 {
-    padding-bottom: 5%;
+    padding-bottom: 2%;
 }
 
 .rd-navbar-static-linked .header-creative-wrap+.swiper-slider-4 .swiper-slide-2 {
@@ -20650,6 +20658,10 @@ html#ecwid_html body#ecwid_body .ec-size.ec-size--m .ec-store .details-gallery__
     --color-stop-2: #76aa6f;
 }
 
+
+}
+
+}
 
 }
 

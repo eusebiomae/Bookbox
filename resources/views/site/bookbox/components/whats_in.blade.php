@@ -1,6 +1,9 @@
 @foreach ($pageData->content as $item)
-<section id="whats_in" class="section section-xxl swiper-slide-pilars" style="background-image: url('{{$item['image_bg']}}');">
+<section id="whats_in" class="section section-xxl swiper-slide-pilars background-default">
+	{{-- style="background-image: url('{{$item['image_bg']}}');" --}}
 	<div class="container">
+		<h3 class="text-transform-none wow text-align-center" style="margin-top: -105px;">{{$item->title_pt}}</h3>
+		<h6 class="text-transform-none wow text-justify">{!! $item['text_pt'] !!}</h6>
 			<div class="row row-30 row-md-60 row-lg-70 justify-content-center align-items-md-center">
 					<div class="col-sm-8 col-md-5 col-xl-6">
 							<div class="inset-xl-right-20">
@@ -19,7 +22,6 @@
 					</div>
 
 					<div class="col-md-7 col-xl-6">
-							<h3 class="text-transform-none wow text-align-center">O que vem na sua box?</h3>
 							<!-- Bootstrap collapse-->
 							<div class="card-group-custom card-group-corporate" id="accordion1" role="tablist"
 									aria-multiselectable="false">
@@ -30,7 +32,7 @@
 																	data-toggle="collapse" data-parent="#accordion1"
 																	href="#accordion1-card-body-unqfdlnh"
 																	aria-controls="accordion1-card-body-unqfdlnh" aria-expanded="true"
-																	role="button">2 livros exclusivos.
+																	role="button">2 livros exclusivos
 																	<div class="card-arrow">
 																			<div class="icon"></div>
 																	</div>
@@ -40,7 +42,8 @@
 													aria-labelledby="accordion1-card-head-qteehppu" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Livros com temas variados segundo suas preferencias, com conteúdo diverso e didático para o seu dia a dia. </p>
+															<p>1 LIVRO de saúde & bem-estar – lindo, todo colorido, de leitura leve, com dicas e exercícios para seu equilíbrio emocional. </p>
+															<p>1 LIVRO de alimentação e receitas – com informações sobre os alimentos e receitas práticas e saborosas, todo ilustrado e com QR CODE para você acompanhar o preparo em nosso canal no YouTube. </p>
 													</div>
 											</div>
 									</article>
@@ -51,7 +54,7 @@
 																	id="accordion1-card-head-iebkfbxx" data-toggle="collapse"
 																	data-parent="#accordion1" href="#accordion1-card-body-eephkkca"
 																	aria-controls="accordion1-card-body-eephkkca" aria-expanded="false"
-																	role="button">Itens para melhorar sua leitura.
+																	role="button">Itens para melhorar sua leitura
 																	<div class="card-arrow">
 																			<div class="icon"></div>
 																	</div>
@@ -61,7 +64,8 @@
 													aria-labelledby="accordion1-card-head-iebkfbxx" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Já vem um Marcador de página personalizado do mês e uma Guia de Leitura para facilitar o entendimento do conteúdo. </p>
+															<p>MARCA PÁGINAS – para acompanhar seus livros e facilitar sua leitura. </p>
+															<p>GUIA DE LEITURA – para você ficar por dentro de todo o conteúdo do mês. </p>
 													</div>
 											</div>
 									</article>
@@ -72,7 +76,7 @@
 																	id="accordion1-card-head-crpnkjpm" data-toggle="collapse"
 																	data-parent="#accordion1" href="#accordion1-card-body-qbvvnoxx"
 																	aria-controls="accordion1-card-body-qbvvnoxx" aria-expanded="false"
-																	role="button">Colécionaveis e brindes.
+																	role="button">Mimos para seu autocuidado
 																	<div class="card-arrow">
 																			<div class="icon"></div>
 																	</div>
@@ -82,13 +86,16 @@
 													aria-labelledby="accordion1-card-head-crpnkjpm" data-parent="#accordion1"
 													role="tabpanel">
 													<div class="card-body">
-															<p>Cada mês enviamos um Cartão Postal Colecionável e um Brinde Especial.
+															<p>1 BRINDE – selecionamos com muito carinho produtos fofos para completar seu momento de autocuidado e leitura, todo mês uma surpresa incrível.
+															</p>
+															<p>CARTÃO POSTAL – com mensagens motivacionais para você enviar para aquela pessoa querida ou colecionar, são lindos!
 															</p>
 													</div>
 											</div>
 									</article>
 							</div>
 					</div>
+					<h3 class="text-transform-uppercase wow text-align-center wow fadeInRight" data-wow-delay=".3s" style="color: #8571a2;">{{$item->subtitle_pt}}</h3>
 			</div>
 			{{-- <div class="banner">
 					<h3 class="text-transform-none wow fadeScale">O que vem na sua box</h3>

@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
-	<title>Home</title>
+	<title>Bookbox - Saúde Integrada</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -92,7 +92,7 @@
 							<div class="rd-navbar-brand">
 								<!--Brand-->
 								<a class="brand" href="/"><img class="brand-logo-light"
-									src="{{ url ('assets/images/site/Logo H Negativo Roxo.png')}}"
+									src="{{ url ('assets/images/site/Logo_saude.png')}}"
 									alt="" /></a>
 									<!-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> -->
 								</div>
@@ -101,30 +101,33 @@
 							</div>
 						</div>
 					</div>
-					<div class="rd-navbar-main-outer">
+					<div class="rd-navbar-main-outer" style="background-color: #8571a2;">
 						<div class="rd-navbar-main">
 							<div class="rd-navbar-nav-wrap">
 								<ul class="rd-navbar-nav">
 									<li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
 									</li>
-									{{-- <li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
-									</li> --}}
-									{{-- <li class="rd-nav-item"><a class="rd-nav-link"
-										href="grid-gallery.html" >Galeria</a>
-									</li> --}}
-									<li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
+									<li class="rd-nav-item"><a href="#whats_in" class="rd-nav-link">O Que Vem No Box</a>
 									</li>
-									<li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
+									<li class="rd-nav-item"><a class="rd-nav-link"
+										href="#how_works" >Como Funciona</a>
+									</li>
+									<li class="rd-nav-item"><a class="rd-nav-link"
+										href="#boxes" >Planos</a>
+									</li>
+									{{-- <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
+									</li> --}}
+									{{-- <li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
 										nós</a>
-									</li>
+									</li> --}}
 									{{-- <li class="rd-nav-item"><a class="rd-nav-link"
 										href="/contact">Contato</a>
 									</li> --}}
-									<li class="rd-nav-item"><a class="rd-nav-link"
+									{{-- <li class="rd-nav-item"><a class="rd-nav-link"
 										href="/privacy-policy">Termos e Condições</a>
-									</li>
-									<li class="rd-nav-item"><a class="rd-nav-link" href="/pricing-list"
-										target="blank" style="color: #552b79;">Assine já</a>
+									</li> --}}
+									<li class="rd-nav-item"><a class="rd-nav-link button button-lg button-shadow-4 button-secondary-3 button-zakaria" href="/pricing-list"
+										target="blank" style="color: #fff;">Assine já</a>
 									</li>
 								</ul>
 							</div>
@@ -146,3 +149,9 @@
 </body>
 
 </html>
+
+							{{-- <div class="button-wrap" data-caption-animate="fadeInLeft"
+								data-caption-delay="400" style="margin-top: 35px; margin-bottom: 70px;"><a
+								class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+								href="/pricing-list">Eu Quero</a>
+							</div> --}}

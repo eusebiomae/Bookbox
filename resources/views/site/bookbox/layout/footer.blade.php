@@ -1,6 +1,7 @@
 @php
 	$schoolInformation = schoolInformation();
 @endphp
+{{-- @foreach ($pageData->content as $item) --}}
 <footer class="section footer-modern footer-modern-2">
 	<div class="footer-modern-body section-xl context-dark" style="background-color: #855f9f">
 			<div class="container">
@@ -10,12 +11,12 @@
 									<h6 class="footer-modern-title">Bookbox - Saúde Integrada </h6> --}}
 									<ul class="contacts-creative">
 										<div class="unit unit-spacing-sm flex-column flex-md-row align-center">
-												<a href="#" target="_blank"><img src="{{ url ('assets/images/site/Logo Negativo.png')}}" style="width: 100%; max-width: 240px; margin-top: -50px; margin-left: 15px;" /></a>
+												<a href="#" target="_blank"><img src="{{ url ('assets/images/site/Logo_Negativo_saude.png')}}" style="width: 100%; max-width: 240px; margin-top: -50px; margin-left: 15px;" /></a>
 										</div>
 											<li>
 												<div class="unit unit-spacing-sm flex-column flex-md-row">
-													<p class="text-justify">Chegou a hora de você alcançar a prosperidade em sua vida!
-														Com a Bookbox, você terá acesso a conteúdos fundamentais para evolução da sua saúde física, mental, financeira e emocional!</p>
+													{{-- <p class="text-justify">{!! $item['text_pt'] !!}</p> --}}
+													<p class="text-justify">A Bookbox Saúde é uma caixa com doses de saúde, autocuidado, equilíbrio e bem-estar físico, mental e financeiro. Ela é desenvolvida com exclusividade para você ter uma vida cheia de saúde e vitalidade!</p>
 											</div>
 											</li>
 									</ul>
@@ -35,14 +36,14 @@
 									</ul>
 							</div>
 							<div class="col-sm-6 col-md-7 col-lg-5 wow fadeInRight" data-wow-delay=".1s">
-									<h5 class="footer-modern-title">Links Importantes</h5>
+									<h5 class="footer-modern-title">Saiba mais</h5>
 									<ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
 											{{-- <li><a href="grid-shop.html">ShopBox</a></li> --}}
 											{{-- <li><a href="blog-list.html">Blog Post</a></li> --}}
 											<li><a href="/about">Sobre Nós</a></li>
 											<li><a href="/privacy-policy">Termos e Condições</a></li>
-											{{-- <li><a href="contact-us.html">Contato</a></li> --}}
-											<li><a href="/signature">Assinar</a></li>
+											<li><a href="/pricing-list">Assinar</a></li>
+											{{-- <li><a href="#">Contato</a></li> --}}
 									</ul><br/><br/>
 									<h5 class="footer-modern-title">Formas de pagamento</h5>
 									<div class="row" style="margin-left: 5px;">
@@ -106,4 +107,5 @@
 			</div>
 	</div>
 </footer>
+{{-- @endforeach --}}
 <!--/footer-->
