@@ -1,4 +1,4 @@
-<section id="banner_home" class="section swiper-container swiper-slider swiper-slider-4" data-loop="true"  style="background-image: url('assets/images/site/home/oquevem_banner.png')">
+<section id="banner_home" class="section swiper-container swiper-slider swiper-slider-4" data-loop="true"  style="background-image: url('assets/images/site/home/oquevem_banner.png'); padding-bottom: 6%;">
 	<div class="swiper-wrapper context-dark">
 		@foreach ($pageData->content as $item)
 		<div class="swiper-slide swiper-slide-1">
