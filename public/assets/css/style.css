@@ -9616,7 +9616,7 @@ h3+img {
 .section-xl,
 .section-xxl,
 .section-inset-2 {
-    padding: 50px 0;
+    padding: 110px 0;
 }
 
 .section-collapse+.section-collapse {
@@ -14973,7 +14973,8 @@ html.rd-navbar-fixed-linked .page {
 
 @media (max-width: 991.98px) {
     .swiper-slide-caption {
-        padding-bottom: 70px;
+        padding-bottom: 100px;
+        margin-top: -190px;
     }
 }
 
@@ -20664,4 +20665,8 @@ html#ecwid_html body#ecwid_body .ec-size.ec-size--m .ec-store .details-gallery__
 
 }
 
-}}
+}
+
+}
+
+}
