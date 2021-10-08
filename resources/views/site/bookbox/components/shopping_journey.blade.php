@@ -7,7 +7,7 @@
 				<div class="col-12 my-5">
 					<nav>
 						<div ref="tabsShoppingJourney" class="nav nav-tabs">
-							<button class="nav-item nav-link active" @click="selectNavTab('login')" data-select-tab="login" v-if="!student">Login</button>
+							<button class="nav-item nav-link active" @click="selectNavTab('login')" data-select-tab="login" v-if="!student.id">Login</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('delivery')" data-select-tab="delivery">Entrega</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('payment')" data-select-tab="payment">Pagamento</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('finalization')" data-select-tab="finalization">Finalização</button>
@@ -18,16 +18,34 @@
 							<div class="row">
 								<div class="col-md-12 form-group">
 									<label>E-mail*</label>
-									<input type="email" v-model="orderData.email" class="form-control required">
+									<input type="email" v-model="student.email" class="form-control required">
 								</div>
+
 								<div class="col-md-12 form-group" v-if="formLogin.showPassword">
 									<label>Senha*</label>
-									<input type="password" v-model="orderData.password" class="form-control required">
+									<input type="password" v-model="student.password" class="form-control required">
 									<a @click="resetPassword" style="color: #76aa6f; cursor: pointer">Esqueci minha senha</a>
 								</div>
 
 								<div class="col-md-12 form-group" v-if="formLogin.showFormCreate">
-									showFormCreate
+									<div class="row">
+
+										<div class="col-md-4 form-group">
+											<label>Nome*</label>
+											<input type="text" v-model="student.name" class="form-control required">
+										</div>
+
+										<div class="col-md-4 form-group">
+											<label>CPF*</label>
+											<input type="text" v-model="student.cpf" class="form-control required">
+										</div>
+
+										<div class="col-md-4 form-group">
+											<label>Senha*</label>
+											<input type="password" v-model="student.password" class="form-control required">
+										</div>
+
+									</div>
 								</div>
 
 								<div class="col-md-12 text-right">
@@ -225,7 +243,7 @@
 	var appShoppingJourney = Vue.createApp({
 		data: function() {
 			return {
-				student: @json(Auth::guard('studentArea')->user()),
+				student: @json(Auth::guard('studentArea')->user() ?? new stdClass),
 				product: @json($product),
 				orderData: {
 					formPayment: 'bankSlip',
@@ -247,11 +265,14 @@
 		},
 		methods: {
 			nextLogin: function() {
-				if (!this.formLogin.showPassword) {
+				if (!this.formLogin.showPassword && !this.formLogin.showFormCreate) {
 					return this.validEmail()
+				} else
+				if (this.formLogin.showFormCreate) {
+					return this.newStudent()
 				}
 
-				this.login()
+				return this.login()
 			},
 			validEmail: function() {
 				showPreloader()
@@ -260,7 +281,7 @@
 					url: '/confirm_email',
 					method: 'post',
 					data: {
-						email: this.orderData.email,
+						email: this.student.email,
 					},
 				}).then(resp => {
 					hidePreloader()
@@ -278,15 +299,36 @@
 					url: '/reset_password',
 					method: 'post',
 					data: {
-						email: this.orderData.email,
+						email: this.student.email,
 					},
 				}).then(resp => {
 					hidePreloader()
 					Swal.fire({
 						icon: 'success',
 						title: 'Olhe sua caixa de e-mail',
-						text: 'Um e-mail de recuperação de senha foi enviado para: ' + this.orderData.email,
+						text: 'Um e-mail de recuperação de senha foi enviado para: ' + this.student.email,
 					})
+				})
+			},
+			newStudent: function() {
+				return axios({
+					url: '/api/save',
+					method: 'post',
+					headers: {
+						method: 'student'
+					},
+					data: this.student,
+				}).then(resp => {
+					if (resp.data) {
+						this.student = resp.data
+						this.orderData.student_id = resp.data.id
+						this.orderData.email = resp.data.email
+						this.orderData.cardholder = resp.data.name
+
+						this.selectNavTab('delivery', 1)
+					}
+
+					return resp.data
 				})
 			},
 			login: function() {
@@ -296,8 +338,8 @@
 					url: '/login',
 					method: 'post',
 					data: {
-						email: this.orderData.email,
-						password: this.orderData.password,
+						email: this.student.email,
+						password: this.student.password,
 					},
 				}).then(resp => {
 					hidePreloader()
@@ -307,6 +349,8 @@
 					if (resp.data.id) {
 						this.student = resp.data
 						this.orderData.student_id = resp.data.id
+						this.orderData.email = resp.data.email
+						this.orderData.cardholder = resp.data.name
 						this.selectNavTab('delivery', 1)
 					}
 				})
@@ -421,7 +465,7 @@
 				})
 			},
 			getZipCode: function(address) {
-				if (address.zip_code.length == 8) {
+				if (address.zip_code && address.zip_code.length == 8) {
 					return axios({
 						url: 'https://viacep.com.br/ws/'+ address.zip_code +'/json',
 						method: 'get',
@@ -472,7 +516,7 @@
 				this.renderFormPaymentByCourse(this.product.course_form_payment)
 			}
 
-			if (this.student) {
+			if (this.student.id) {
 				this.orderData.student_id = this.student.id
 				this.orderData.email = this.student.email
 				this.orderData.cardholder = this.student.name

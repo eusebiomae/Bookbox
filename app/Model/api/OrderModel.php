@@ -27,6 +27,7 @@ class OrderModel extends Model {
 		'bank_id',
 		'course_discount_id',
 		'company_id',
+		'student_address_id',
 
 		'form_payment',
 		'due_date',

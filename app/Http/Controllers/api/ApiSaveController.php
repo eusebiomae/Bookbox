@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Model\api\Content;
 use App\Model\api\StudentAddressModel;
+use App\Model\api\StudentModel;
+use Illuminate\Support\Facades\Hash;
 
 class ApiSaveController extends Controller {
 
@@ -120,6 +122,28 @@ class ApiSaveController extends Controller {
 		$model->fill($request->all())->save();
 
 		return $model;
+	}
+
+	public function student(Request $request) {
+		if (!$request->has('email')) {
+			return null;
+		}
+
+		$input = $request->all();
+
+		$studentModel = StudentModel::where('email', $input['email'])->first();
+
+		if (!$studentModel) {
+			$studentModel = new StudentModel;
+		}
+
+		if ($request->has('password')) {
+			$input['password'] = Hash::make($input['password']);
+		}
+
+		$studentModel->fill($input)->save();
+
+		return $studentModel;
 	}
 
 	public function delivery(Request $request) {
