@@ -1,7 +1,7 @@
 @php
 	$schoolInformation = schoolInformation();
 @endphp
-@foreach ($pageData->content as $item)
+{{-- @foreach ($pageData->content as $item) --}}
 <footer class="section footer-modern footer-modern-2">
 	<div class="footer-modern-body section-xl context-dark" style="background-color: #855f9f">
 			<div class="container">
@@ -15,8 +15,8 @@
 										</div>
 											<li>
 												<div class="unit unit-spacing-sm flex-column flex-md-row">
-													<p class="text-justify">{!! $item['text_pt'] !!}</p>
-													{{-- <p class="text-justify">A Bookbox Saúde é uma caixa com doses de saúde, autocuidado, equilíbrio e bem-estar físico, mental e financeiro. Ela é desenvolvida com exclusividade para você ter uma vida cheia de saúde e vitalidade!</p> --}}
+													{{-- <p class="text-justify">{!! $item['text_pt'] !!}</p> --}}
+													<p class="text-justify">A Bookbox Saúde é uma caixa com doses de saúde, autocuidado, equilíbrio e bem-estar físico, mental e financeiro. Ela é desenvolvida com exclusividade para você ter uma vida cheia de saúde e vitalidade!</p>
 											</div>
 											</li>
 									</ul>
@@ -107,5 +107,5 @@
 			</div>
 	</div>
 </footer>
-@endforeach
+{{-- @endforeach --}}
 <!--/footer-->
