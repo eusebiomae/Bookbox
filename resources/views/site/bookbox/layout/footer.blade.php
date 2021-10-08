@@ -14,8 +14,8 @@
 										</div>
 											<li>
 												<div class="unit unit-spacing-sm flex-column flex-md-row">
-													<p class="text-justify">Chegou a hora de você alcançar a prosperidade em sua vida!
-														Com a Bookbox, você terá acesso a conteúdos fundamentais para evolução da sua saúde física, mental, financeira e emocional!</p>
+													<p class="text-justify">{!! $item['text_pt'] !!}</p>
+													{{-- <p class="text-justify">A Bookbox Saúde é uma caixa com doses de saúde, autocuidado, equilíbrio e bem-estar físico, mental e financeiro. Ela é desenvolvida com exclusividade para você ter uma vida cheia de saúde e vitalidade!</p> --}}
 											</div>
 											</li>
 									</ul>
