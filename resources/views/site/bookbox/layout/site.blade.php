@@ -126,8 +126,8 @@
 									{{-- <li class="rd-nav-item"><a class="rd-nav-link"
 										href="/privacy-policy">Termos e Condições</a>
 									</li> --}}
-									<li class="rd-nav-item"><a class="rd-nav-link" href="/pricing-list"
-										target="blank" style="color: #552b79;">Assine já</a>
+									<li class="rd-nav-item"><a class="rd-nav-link button button-lg button-shadow-4 button-secondary-3 button-zakaria" href="/pricing-list"
+										target="blank" style="color: #fff;">Assine já</a>
 									</li>
 								</ul>
 							</div>
@@ -148,3 +148,9 @@
 </body>
 
 </html>
+
+							{{-- <div class="button-wrap" data-caption-animate="fadeInLeft"
+								data-caption-delay="400" style="margin-top: 35px; margin-bottom: 70px;"><a
+								class="button button-lg button-shadow-4 button-secondary-2 button-zakaria"
+								href="/pricing-list">Eu Quero</a>
+							</div> --}}

@@ -3514,8 +3514,15 @@ hr {
 .button-secondary-2,
 .button-secondary-2:focus {
     color: #151515;
-    background-color: #f7af69;
-    border-color: #f7af69;
+    background-color: #37a4a9;
+    border-color: #e9ac6c;
+}
+
+.button-secondary-3,
+.button-secondary-2:focus {
+    color: #151515;
+    background-color: #37a4a9;
+    border-color: #37a4a9;
 }
 
 .button-secondary-2:hover,
@@ -20657,4 +20664,4 @@ html#ecwid_html body#ecwid_body .ec-size.ec-size--m .ec-store .details-gallery__
 
 }
 
-}
+}}

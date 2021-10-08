@@ -36,15 +36,15 @@
 									</ul>
 							</div>
 							<div class="col-sm-6 col-md-7 col-lg-5 wow fadeInRight" data-wow-delay=".1s">
-									{{-- <h5 class="footer-modern-title">Links Importantes</h5>
+									<h5 class="footer-modern-title">Saiba mais</h5>
 									<ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
-											<li><a href="grid-shop.html">ShopBox</a></li>
-											<li><a href="blog-list.html">Blog Post</a></li>
+											{{-- <li><a href="grid-shop.html">ShopBox</a></li> --}}
+											{{-- <li><a href="blog-list.html">Blog Post</a></li> --}}
 											<li><a href="/about">Sobre Nós</a></li>
 											<li><a href="/privacy-policy">Termos e Condições</a></li>
-											<li><a href="contact-us.html">Contato</a></li>
-											<li><a href="/signature">Assinar</a></li>
-									</ul><br/><br/> --}}
+											<li><a href="/pricing-list">Assinar</a></li>
+											{{-- <li><a href="#">Contato</a></li> --}}
+									</ul><br/><br/>
 									<h5 class="footer-modern-title">Formas de pagamento</h5>
 									<div class="row" style="margin-left: 5px;">
 									{{-- <ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block"> --}}
