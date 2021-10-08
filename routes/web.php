@@ -48,8 +48,11 @@ Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injec
 Route::get('/privacy-policy', 'site\cetcc\PrivacyController@index')->middleware(['injectFlgPage:privacy-policy']);
 Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
 Route::get('/pricing-list', 'site\cetcc\ShoppingJourneController@pricing')->middleware(['injectFlgPage:pricing-list']);
-Route::get('/signature/{id}', 'site\cetcc\ShoppingJourneController@signature')->middleware(['injectFlgPage:signature']);
+Route::get('/signature', 'site\cetcc\ShoppingJourneController@signature')->middleware(['injectFlgPage:signature']);
 Route::post('confirm_payment', 'StudentArea\ConfirmPaymentController@confirmPayment');
+Route::post('confirm_email', 'StudentArea\ConfirmPaymentController@confirmEmail');
+Route::post('login', 'site\cetcc\ShoppingJourneController@login');
+Route::post('reset_password', 'site\cetcc\ShoppingJourneController@resetPassword');
 // End Site
 
 Route::get('/article', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:article']);
@@ -80,8 +83,8 @@ Route::get('resetPassword/{code}', function(Request $request, $code) {
 	preg_match('/^(\w+)\-.+/', $code, $match);
 
 	switch ($match[1]) {
-		case 'studentArea':
-			return view('student_area.login.login')->with('resetPasswordCode', $code);
+		case 'subscriberArea':
+			return view('site.bookbox.pages.resetPassword')->with('resetPasswordCode', $code);
 		break;
 	}
 

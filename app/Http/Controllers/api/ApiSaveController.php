@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Model\api\Content;
+use App\Model\api\StudentAddressModel;
 
 class ApiSaveController extends Controller {
 
@@ -119,6 +120,22 @@ class ApiSaveController extends Controller {
 		$model->fill($request->all())->save();
 
 		return $model;
+	}
+
+	public function delivery(Request $request) {
+		if (!$request->has('student_id')) {
+			return null;
+		}
+
+		$studentAddressModel = StudentAddressModel::where('student_id', $request->get('student_id'))->first();
+
+		if (!$studentAddressModel) {
+			$studentAddressModel = new StudentAddressModel;
+		}
+
+		$studentAddressModel->fill($request->all())->save();
+
+		return $studentAddressModel;
 	}
 
 }

@@ -64,8 +64,6 @@ class ConfirmPaymentUtils {
 			}
 		}
 
-		$payload['value'] = 36.45;
-
 		if ($payload['value'] == 0) {
 			$payload['flg_free'] = true;
 		}

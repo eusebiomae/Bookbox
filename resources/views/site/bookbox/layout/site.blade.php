@@ -139,6 +139,7 @@
 	<div class="snackbars" id="form-output-global"></div>
 	<script src="{{ url('assets/js/core.min.js') }}"></script>
 	<script src="{{ url('assets/js/script.js') }}"></script>
+	<script src="{{ url('js/gp-ays.js') }}"></script>
 
 	@include('site.bookbox.layout.footer')
 	@yield('scripts')

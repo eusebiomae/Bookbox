@@ -109,6 +109,6 @@ class LoginController extends _Controller {
 			]);
 		}
 
-		return redirect('student_area/login');
+		return redirect('/');
 	}
 }
