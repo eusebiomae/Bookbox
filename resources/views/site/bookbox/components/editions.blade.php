@@ -36,7 +36,7 @@
 										<a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="/box_blog" title="Detalhes"></a>
 									</div>
 									<div class="product-button">
-										<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="/signature/{{ $edition['id'] }}" title="Eu quero"></a>
+										<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="/signature?edition={{ $edition['id'] }}" title="Eu quero"></a>
 									</div>
 								</div> --}}
 							</article>
