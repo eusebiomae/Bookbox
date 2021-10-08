@@ -16,7 +16,7 @@
 											<li>
 												<div class="unit unit-spacing-sm flex-column flex-md-row">
 													{{-- <p class="text-justify">{!! $item['text_pt'] !!}</p> --}}
-													<p class="text-justify">A Bookbox Saúde é uma caixa com doses de saúde, autocuidado, equilíbrio e bem-estar físico, mental e financeiro. Ela é desenvolvida com exclusividade para você ter uma vida cheia de saúde e vitalidade!</p>
+													<p class="text-justify">Bookbox Saúde é um clube de assinatura de livros na área de saúde, bem-estar e autocuidado. Todos os meses enviamos uma caixa com livros e mimos fofos para você ter mais equilíbrio nos principais pilares da sua vida: saúde física, mental, emocional, financeira e também cuidar da sua alimentação. Um acompanhamento mensal, desenvolvido com exclusividade para você ter uma vida cheia de saúde e vitalidade.</p>
 											</div>
 											</li>
 									</ul>
@@ -65,12 +65,35 @@
 											<li>
 													<div class="unit unit-spacing-sm flex-column flex-md-row">
 															{{-- <div class="unit-left"><span class="icon mdi mdi-phone"></span></div> --}}
-															<div class="unit-body"><a href="tel:+55-11-97681-6349" target="_blank">(11) 97681-6349</a></div>
+															{{-- <p class="unit-body"><a href="tel:+55-11-97681-6349" target="_blank">(11) 97681-6349</a></p> --}}
+															<div class="unit-body"><span>CNPJ:</span><span class=""></span><span style="margin-left: 15px;">62.328.984/0001-91</span></div>
 													</div>
 											</li>
 											<li>
 													<div class="unit unit-spacing-sm flex-column flex-md-row">
-															{{-- <div class="unit-left"><span class="icon mdi mdi-email-outline"></span> --}}
+															<div class="unit-left"><p style="color: #fff">Av. Armando Ferrentini, 388 - Paraíso	São Paulo - SP</p>
+															</div>
+															{{-- <div class="unit-body"><a href="mailto:atendimento@bookbox.com.br?subject=Informação sobre a Bookbox" target="_blank">atendimento@bookbox.com.br</a></div> --}}
+													</div>
+											</li>
+									</ul><br/><br/>
+									<h5 class="footer-modern-title">Contato: </h5>
+									<ul class="contacts-creative">
+											<li>
+													<div class="unit unit-spacing-sm flex-column flex-md-row">
+
+													</div>
+											</li>
+											<li>
+													<div class="unit unit-spacing-sm flex-column flex-md-row">
+															{{-- <div class="unit-left"><span class="icon mdi mdi-phone"></span></div> --}}
+															<p class="unit-body"><a href="tel:+55-11-97681-6349" target="_blank">(11) 97681-6349</a></p>
+															{{-- <div class="unit-body"><span>CNPJ:</span><span class=""></span><span style="margin-left: 15px;">62.328.984/0001-91</span></div> --}}
+													</div>
+											</li>
+											<li>
+													<div class="unit unit-spacing-sm flex-column flex-md-row">
+															{{-- <div class="unit-left"><p style="color: #fff">Av. Armando Ferrentini, 388 - Paraíso	São Paulo - SP</p> --}}
 															</div>
 															<div class="unit-body"><a href="mailto:atendimento@bookbox.com.br?subject=Informação sobre a Bookbox" target="_blank">atendimento@bookbox.com.br</a></div>
 													</div>

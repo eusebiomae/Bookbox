@@ -13,7 +13,7 @@
 															data-toggle="collapse" data-parent="#accordion1"
 															href="#accordion1-card-body-unqfdlnh"
 															aria-controls="accordion1-card-body-unqfdlnh" aria-expanded="false"
-															role="button">O que é o bookbox?
+															role="button">O que é Bookbox Saúde?
 															<div class="card-arrow">
 																	<div class="icon"></div>
 															</div>
@@ -23,7 +23,7 @@
 											aria-labelledby="accordion1-card-head-qteehppu" data-parent="#accordion1"
 											role="tabpanel">
 											<div class="card-body">
-													<p style="color: #fff">Bookbox é o seu clube de assinatura de livros na área de saúde e bem-estar, com conteúdos baseados nos quatro principais pilares da vida, saúde física, mental, espiritual e financeira.</p>
+													<p class="text-justify" style="color: #fff">Somos seu clube de assinatura de livros na área de saúde, bem-estar e autocuidado, com conteúdos baseados nos quatro principais pilares da vida, saúde física, mental, emocional e financeira.</p>
 											</div>
 									</div>
 							</article>
@@ -43,7 +43,7 @@
 											aria-labelledby="accordion1-card-head-iebkfbxx" data-parent="#accordion1"
 											role="tabpanel">
 											<div class="card-body">
-													<p style="color: #fff">Todo mês você vai receber uma caixa com dois livros inéditos e exclusivos para assinantes, um guia de leitura, um brinde especial, 2 marca páginas e 1 cartão postal colecionável. Os itens são exclusivos para assinantes e só poderão ser adquiridos no site.</p>
+													<p class="text-justify" style="color: #fff">Todo mês você vai receber uma caixa com dois livros inéditos e exclusivos para assinantes, brinde especial, guia de leitura, 2 marca páginas e 1 cartão postal colecionável. Os itens são exclusivos para assinantes e acompanham o kit.</p>
 											</div>
 									</div>
 							</article>
@@ -64,7 +64,7 @@
 											aria-labelledby="accordion1-card-head-crpnkjpm" data-parent="#accordion1"
 											role="tabpanel">
 											<div class="card-body">
-													<p style="color: #fff">Para assinar, escolha um dos nossos planos, preencha os seus dados e inclua o endereço. Após concluir o pagamento espere a confirmação do pagamento por e-mail. Agora é só esperar o seu box chegar em sua casa.
+													<p class="text-justify" style="color: #fff">Para assinar, escolha um dos nossos planos, preencha os seus dados, escolha a melhor forma de pagamento e aguarde a confirmação do pagamento por e-mail. Agora é só esperar o seu box chegar em sua casa e aproveitar a experiência da vida saudável, plena e feliz!
 													</p>
 											</div>
 									</div>
@@ -86,7 +86,39 @@
 											aria-labelledby="accordion1-card-head-crpnkjpm" data-parent="#accordion1"
 											role="tabpanel">
 											<div class="card-body">
-													<p style="color: #fff">Todo plano padrão, o pagamento pode ser realizado no cartão de crédito ou no boleto. No plano anual, o pagamento é exclusivamente no cartão de crédito. Caso a assinatura seja realizada no boleto, você receberá por e-mail o documento com vencimento em até 3 dias corridos no dia 15 de cada mês. Caso a assinatura seja realizada no cartão de crédito, a cobrança será realizada automaticamente e você receberá as informações do pagamento no dia 15 de cada mês.
+														<p class="text-justify" style="color: #fff"><b>Plano digital</b> - o pagamento pode ser feito com cartão de crédito ou boleto bancário, sem fidelidade, todos os meses será feita a cobrança no seu cartão de crédito ou você receberá o boleto por e-mail.
+
+														Caso não queira receber o e-book do mês seguinte, você pode entrar na sua conta e cancelar a próxima cobrança.</p>
+
+														<p class="text-justify" style="color: #fff"><b>Plano Mensal</b> - o pagamento pode ser feito com cartão de crédito ou boleto bancário, sem fidelidade, todos os meses será feita a cobrança no seu cartão de crédito ou você receberá o boleto por e-mail.
+
+														Caso não queira receber o box do mês seguinte, você pode entrar na sua conta e cancelar a próxima cobrança.</p>
+
+														<p class="text-justify" style="color: #fff"><b>Plano Semestral</b> - o pagamento deverá ser efetuado com cartão de crédito com fidelidade de 6 meses. Todos os meses será debitado do seu cartão de crédito o valor correspondente ao plano escolhido. Após o período contratado a renovação é feita automaticamente, caso queira cancelar sua assinatura você poderá entrar na sua conta e pedir o cancelamento.</p>
+
+														<p class="text-justify" style="color: #fff"><b>Plano Anual</b> - o pagamento deverá ser efetuado com cartão de crédito com fidelidade de 12 meses. Todos os meses será debitado do seu cartão de crédito o valor correspondente ao plano escolhido. Após o período contratado a renovação é feita automaticamente, caso queira cancelar sua assinatura você poderá entrar na sua conta e pedir o cancelamento.</p>
+
+											</div>
+									</div>
+							</article>
+							<!-- Bootstrap card-->
+							<article class="card card-custom card-corporate wow fadeInRight" data-wow-delay=".3s">
+									<div class="card-header" role="tab">
+											<div class="card-title"><a class="collapsed"
+															id="accordion1-card-head-kgkjkjj" data-toggle="collapse"
+															data-parent="#accordion1" href="#accordion1-card-body-sadasdas"
+															aria-controls="accordion1-card-body-sadasdas" aria-expanded="false"
+															role="button">Como posso cancelar?
+															<div class="card-arrow">
+																	<div class="icon"></div>
+															</div>
+													</a></div>
+									</div>
+									<div class="collapse" id="accordion1-card-body-sadasdas"
+											aria-labelledby="accordion1-card-head-crpnkjpm" data-parent="#accordion1"
+											role="tabpanel">
+											<div class="card-body">
+													<p style="color: #fff">Caso queira cancelar o plano contratado, você deve entrar na sua conta e solicitar o cancelamento, lembrando que nos planos semestral e anual o cancelamento só poderá ser feito no último mês do período contrato, para que não seja feita a renovação automática.
 													</p>
 											</div>
 									</div>
