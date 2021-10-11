@@ -5,7 +5,7 @@
 			<div class="swiper-slide-caption section-md text-sm-left">
 				<div class="container">
 					<div class="row col-sm-12 col-md-12">
-						<div class="col-sm-10 col-md-9">
+						<div class="col-sm-8 col-md-7">
 							<h4 class="swiper-title-1 text-uppercase" data-caption-animate="fadeInLeft"
 							data-caption-delay="100" style="margin-top: 125px; color: #000">{{$item['title_pt']}}<br>
 						  </h4>
@@ -17,7 +17,7 @@
 								href="/pricing-list">Eu Quero</a>
 							</div>
 						</div>
-						<div class="col-sm-2 col-md-3">
+						<div class="col-sm-4 col-md-5">
 							<img src="{{$item['image']}}" alt="" class="img-home-banner" >
 						</div>
 					</div>
