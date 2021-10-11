@@ -18,7 +18,7 @@
 							</div>
 						</div>
 						<div class="col-sm-4 col-md-5">
-							<img src="{{$item['image']}}" alt="" class="img-home-banner" >
+							<img src="{{$item['image']}}" alt="" class="img-home-banner" style="display: block; width: 100%; max-height: 100%; margin-top: 5px;">
 						</div>
 					</div>
 				</div>
