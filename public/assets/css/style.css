@@ -7303,10 +7303,10 @@ textarea.textarea-lg {
     .desktop .product:hover {
         z-index: 2;
     }
-    .desktop .product:hover .product-badge,
+    /* .desktop .product:hover .product-badge,
     .desktop .product:hover .product-body {
         transform: translate3d(0, -18px, 0);
-    }
+    } */
     .desktop .product:hover .product-button-wrap {
         top: -18px;
         bottom: -60px;

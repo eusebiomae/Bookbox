@@ -16,7 +16,7 @@
 													<div class="product-price" style="margin-bottom: 15px;"><h6 class="">{{$product->subtitle_pt}}</h6></div>
 											</div>
 											<div class="" style="margin-top: 15px; margin-bottom: 100px;">
-													<p class="" style="text-align: inherit; white-space: break-spaces;">{{$product->description_pt}}</p>
+													<p id="product-description" class="" style="text-align: inherit; white-space: break-spaces;">{{$product->description_pt}}</p>
 											</div>
 									</div>
 									<div class="product-button-wrap">

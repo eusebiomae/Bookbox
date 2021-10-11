@@ -91,10 +91,10 @@
 							<!-- RD Navbar Brand-->
 							<div class="rd-navbar-brand">
 								<!--Brand-->
-								<a class="brand" href="/"><img class="brand-logo-light"
+								<a id="logo" class="brand" href="/"><img class="brand-logo-light"
 									src="{{ url ('assets/images/site/Logo_saude.png')}}"
-									alt="" /></a>
-									<!-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> -->
+									alt="" style="display: block; width: 200px; max-height: 200px; text-align: center;"/></a>
+									{{-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> --}}
 								</div>
 							</div>
 							<div class="rd-navbar-aside-element">
