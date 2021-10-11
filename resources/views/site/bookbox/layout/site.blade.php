@@ -72,7 +72,7 @@
 				data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div> --}}
 				<div class="rd-navbar-aside-outer">
 					<div class="rd-navbar-aside">
-						{{-- <div class="rd-navbar-collapse">
+						<div class="rd-navbar-collapse">
 							<ul class="contacts-classic">
 								<li><span class="contacts-classic-title"></span>
 									<a href="tel:#"></a>
@@ -83,7 +83,7 @@
 							</ul>
 							<a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202"
 							href="#"><span></span></a>
-						</div> --}}
+						</div>
 						<!-- RD Navbar Panel-->
 						<div class="rd-navbar-panel">
 							<!-- RD Navbar Toggle-->
