@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="icon" href="{{ url ('assets/images/site/LogoMini Negativo Roxo.png')}}" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700">
 	<link rel="stylesheet" href="{{ url('assets/css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ url('assets/css/fonts.css') }}">
 	<link rel="stylesheet" href="{{ url('assets/css/style.css') }}">

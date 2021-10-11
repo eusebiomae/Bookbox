@@ -238,7 +238,7 @@
 @parent
 <script src="https://unpkg.com/vue@next"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 	var appShoppingJourney = Vue.createApp({
 		data: function() {
@@ -386,7 +386,7 @@
 					if (resp.data.payments) {
 						this.orderPayments = resp.data
 
-						this.selectNavTab('finalization')
+						this.selectNavTab('finalization', 1)
 					} else {
 						this.showError = resp.data.showError ? resp.data.showError.errors : []
 					}
