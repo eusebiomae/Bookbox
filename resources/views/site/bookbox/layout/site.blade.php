@@ -93,7 +93,7 @@
 								<!--Brand-->
 								<a id="logo" class="brand" href="/"><img class="brand-logo-light"
 									src="{{ url ('assets/images/site/Logo_saude.png')}}"
-									alt="" style="display: block; width: 200px; max-height: 200px; text-align: center;"/></a>
+									alt="" style="display: block; width: 200px; max-height: 200px; margin-left: 75px; text-align: center;"/></a>
 									{{-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> --}}
 								</div>
 							</div>
@@ -107,13 +107,13 @@
 								<ul class="rd-navbar-nav">
 									<li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
 									</li>
-									<li class="rd-nav-item"><a href="#whats_in" class="rd-nav-link">O Que Vem No Box</a>
+									<li class="rd-nav-item"><a href="/#whats_in" class="rd-nav-link">O Que Vem No Box</a>
 									</li>
 									<li class="rd-nav-item"><a class="rd-nav-link"
-										href="#how_works" >Como Funciona</a>
+										href="/#how_works" >Como Funciona</a>
 									</li>
 									<li class="rd-nav-item"><a class="rd-nav-link"
-										href="#boxes" >Planos</a>
+										href="/#boxes" >Planos</a>
 									</li>
 									{{-- <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
 									</li> --}}

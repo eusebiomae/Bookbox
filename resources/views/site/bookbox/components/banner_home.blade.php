@@ -5,11 +5,11 @@
 			<div class="swiper-slide-caption section-md text-sm-left">
 				<div class="container">
 					<div class="row col-sm-12 col-md-12">
-						<div class="col-sm-8 col-md-7">
+						<div class="col-sm-9 col-md-8">
 							<h4 class="swiper-title-1 text-uppercase" data-caption-animate="fadeInLeft"
 							data-caption-delay="100" style="margin-top: 125px; color: #000">{{$item['title_pt']}}<br>
 						  </h4>
-							<h6 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft"
+							<h6 class="swiper-title-2 text-width-large" data-caption-animate="fadeInLeft"
 							data-caption-delay="250" style="text-color: #fff">{!! $item['text_pt'] !!}</h6>
 							<div class="button-wrap" data-caption-animate="fadeInLeft"
 								data-caption-delay="400" style="margin-top: 35px; margin-bottom: 70px;"><a
@@ -17,7 +17,7 @@
 								href="/pricing-list">Eu Quero</a>
 							</div>
 						</div>
-						<div class="col-sm-4 col-md-5">
+						<div class="col-sm-3 col-md-4">
 							<img src="{{$item['image']}}" alt="" class="img-home-banner" >
 						</div>
 					</div>
