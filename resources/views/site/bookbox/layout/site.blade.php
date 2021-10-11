@@ -68,11 +68,11 @@
 				data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="100px"
 				data-xl-stick-up-offset="112px" data-xxl-stick-up-offset="132px" data-lg-stick-up="true"
 				data-xl-stick-up="true" data-xxl-stick-up="true">
-				<div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1"
-				data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+				{{-- <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1"
+				data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div> --}}
 				<div class="rd-navbar-aside-outer">
 					<div class="rd-navbar-aside">
-						<div class="rd-navbar-collapse">
+						{{-- <div class="rd-navbar-collapse">
 							<ul class="contacts-classic">
 								<li><span class="contacts-classic-title"></span>
 									<a href="tel:#"></a>
@@ -80,9 +80,10 @@
 								<li>
 									<a href="mailto:#"></a>
 								</li>
-							</ul><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202"
+							</ul>
+							<a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202"
 							href="#"><span></span></a>
-						</div>
+						</div> --}}
 						<!-- RD Navbar Panel-->
 						<div class="rd-navbar-panel">
 							<!-- RD Navbar Toggle-->
