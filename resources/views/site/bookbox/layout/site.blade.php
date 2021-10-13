@@ -108,6 +108,8 @@
 								<ul class="rd-navbar-nav">
 									<li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
 									</li>
+									<li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
+									</li>
 									<li class="rd-nav-item"><a href="/#whats_in" class="rd-nav-link">O Que Vem No Box</a>
 									</li>
 									<li class="rd-nav-item"><a class="rd-nav-link"

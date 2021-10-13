@@ -13,8 +13,12 @@
 					<div class="post-classic-time">
 						<time datetime="2020-08-09">{{$blog->scheduling_date}}</time>
 					</div>
-					<h5 class="post-classic-title"><a href="blog-post.html">{{$blog->title_pt}}</a></h5>
+					<h5 class="post-classic-title">{{$blog->title_pt}}</h5>
 					<p class="post-classic-text">{{$blog->subtitle_pt}}</p>
+
+					<a class="entry-more" href="blog_post_details/{{$item->id}}"><i class="fa fa-plus"></i>
+						<span>Ler mais</span>
+					</a>
 				</div>
 			</article>
 			@endforeach

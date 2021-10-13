@@ -13,6 +13,7 @@ class BlogController extends _Controller
 		$flgPage = $request->get('flgPage');
 
 		$pageComponents = ContentPageModel::getByComponent($flgPage);
+
 		$blogs = BlogModel::get();
 
 		// return $pageComponents;
@@ -20,5 +21,21 @@ class BlogController extends _Controller
 			->with('flgPage', $flgPage)
 			->with('pageComponents', $pageComponents)
 			->with('blogs', $blogs);
+	}
+
+	public function getPost(Request $request, $id) {
+
+		$flgPage = $request->get('flgPage');
+
+		$pageComponents = ContentPageModel::getByComponent($flgPage);
+
+		$blog = BlogModel::find($id);
+
+		// return $flgPage;
+
+		return view ('site/bookbox/pages/blog_post_details')
+		->with('flgPage', $flgPage)
+		->with('pageComponents', $pageComponents)
+		->with('blog', $blog);
 	}
 }

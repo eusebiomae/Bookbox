@@ -41,7 +41,13 @@ Route::get('/recommendation', 'site\cetcc\RecommendationController@index')->midd
 // Site
 Route::get('/faq', 'site\cetcc\FaqController@index')->middleware(['injectFlgPage:faq']);
 Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:shopping_journey']);
+
 Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
+
+Route::get('/blog_post_details/{id}/{title_pt?}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:blog_post']);
+
+Route::get('/blog_post/liked/{id}/{isLiked}', 'site\cetcc\BlogController@liked')->middleware(['injectFlgPage:blog']);
+
 Route::get('/box_blog', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:box_blog']);
 Route::get('/single-box-details/{id}', 'site\cetcc\CourseController@courseDetails')->middleware(['injectFlgPage:single-box-details']);
 Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
@@ -58,12 +64,10 @@ Route::get('register', 'site\cetcc\RegisterController@index')->name('register')-
 Route::post('register', 'site\cetcc\RegisterController@store');
 // End Site
 
+
+
 Route::get('/article', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:article']);
-
-Route::get('/blog/{id}/{title?}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:blog']);
 Route::get('/article/{id}/{title?}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:article']);
-
-Route::get('/blog/liked/{id}/{isLiked}', 'site\cetcc\BlogController@liked')->middleware(['injectFlgPage:blog']);
 Route::post('/comment', 'site\cetcc\CommentController@post')->middleware(['injectFlgPage:comment']);
 Route::get('/comment/blog/{blogId}', 'site\cetcc\CommentController@getByBlog')->middleware(['injectFlgPage:comment']);
 Route::post('/fetchComment', 'site\cetcc\CommentController@fetchComment')->middleware(['injectFlgPage:comment']);
