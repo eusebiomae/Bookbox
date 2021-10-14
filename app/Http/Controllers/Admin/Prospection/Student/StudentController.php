@@ -83,7 +83,7 @@ class StudentController extends BaseMethodController {
 		$dataTableFinish->opts['ajax']['data']['tab'] = 'finish';
 
 		$dataTableFree->data =
-		$dataTableActive->data =
+		$dataTableActive->data = [];
 		$dataTableBlocked->data =
 		$dataTableFinish->data = [];
 
@@ -572,7 +572,7 @@ class StudentController extends BaseMethodController {
 
 	function viewContract(Request $request, $id) {
 		return Storage::download(OrderModel::find($id)->contract);
-		// return view('student_area.course.contract')->with('payload', OrderModel::find($id));
+		return view('student_area.course.contract')->with('payload', OrderModel::find($id));
 	}
 
 	function generateTransaction(Request $request) {
