@@ -31,7 +31,7 @@ class BlogController extends _Controller
 
 		$blog = BlogModel::find($id);
 
-		// return $flgPage;
+		// return $blog;
 
 		return view ('site/bookbox/pages/blog_post_details')
 		->with('flgPage', $flgPage)

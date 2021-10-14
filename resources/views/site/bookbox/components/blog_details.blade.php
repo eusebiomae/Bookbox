@@ -30,13 +30,13 @@
 <section class="section section-xl bg-default text-md-left">
 	<div class="container">
 		<div class="row row-50 row-md-60">
-			<div class="col-lg-8 col-xl-9">
+			<div class="col-lg-12 col-xl-12">
 				<div class="inset-xl-right-100">
 					<div class="row row-50 row-md-60 row-lg-80">
-						<div class="col-12">
+						<div class="col-sm-12 col-md-12 col-xl-12">
 							<article class="post post-modern-1 box-xxl">
 								<div class="post-modern-panel">
-									<div>{{$blog->blog_type}}</div>
+									<div>{{$blog->status}}</div>
 									<div>
 										<time class="post-modern-time" datetime="2020-09-08">{{$blog->scheduling_date}}</time>
 									</div>
@@ -44,7 +44,7 @@
 								<h3 class="post-modern-title">{{$blog->title_pt}}</h3>
 								<div class="post-modern-figure"><img src="{{$blog->image}}" alt="" width="800" height="394"/>
 								</div>
-								<p class="post-modern-text">{{!! $blog->text_pt !!}}</p>
+								<p class="post-modern-text">{!! $blog->text_pt !!}</p>
 							</article>
 							<!-- Quote Classic-->
 							<article class="quote-classic quote-classic-2">
@@ -54,17 +54,14 @@
 							</article>
 							<div class="single-post-bottom-panel">
 								<div class="group-sm group-justify">
-									{{-- <div>
-										<div class="group-sm group-tags"><a class="link-tag" href="#">Fruits</a><a class="link-tag" href="#">Vegetables</a><a class="link-tag" href="#">Drinks</a></div>
-									</div> --}}
 									<div>
 										<div class="group-xs group-middle"><span class="list-social-title">Compartilhar em: </span>
 											<div>
 												<ul class="list-inline list-social list-inline-sm">
-													<li><a class="icon mdi mdi-facebook" href="#"></a></li>
-													<li><a class="icon mdi mdi-twitter" href="#"></a></li>
+													<li><a class="icon mdi mdi-facebook" data-size="small" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsite.bookbox.com.br%2Fblog_post_details%2Fid&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></li>
+													{{-- <li><a class="icon mdi mdi-twitter" href="#"></a></li>
 													<li><a class="icon mdi mdi-instagram" href="#"></a></li>
-													<li><a class="icon mdi mdi-google-plus" href="#"></a></li>
+													<li><a class="icon mdi mdi-google-plus" href="#"></a></li> --}}
 												</ul>
 											</div>
 										</div>
@@ -79,3 +76,5 @@
 	</div>
 </section>
 @endforeach
+
+

@@ -44,7 +44,7 @@ Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->mi
 
 Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
 
-Route::get('/blog_post_details/{id}/{title_pt?}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:blog_post']);
+Route::get('/blog_post_details/{id}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:blog_details']);
 
 Route::get('/blog_post/liked/{id}/{isLiked}', 'site\cetcc\BlogController@liked')->middleware(['injectFlgPage:blog']);
 

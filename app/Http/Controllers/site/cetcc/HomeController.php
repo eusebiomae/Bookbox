@@ -5,6 +5,7 @@ namespace App\Http\Controllers\site\cetcc;
 use Illuminate\Http\Request;
 use App\Model\api\Configuration\ContentPageModel;
 use App\Model\api\Prospection\CourseModel;
+use App\Model\api\SchoolInformationModel;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends _Controller
@@ -18,6 +19,8 @@ class HomeController extends _Controller
 
 		$product = CourseModel::where('course_category_id')->get();
 
+		$schoolInformation = SchoolInformationModel::get();
+
 		$products = CourseModel::where('course_category_id', 2)->get();
 
 		$editions = CourseModel::where('course_category_id', 1)->orderBy('created_at', 'asc')->limit(3)->get();
@@ -27,6 +30,7 @@ class HomeController extends _Controller
 			->with('flgPage', $flgPage)
 			->with('pageComponents', $pageComponents)
 			->with('product', $product)
+			->with('schoolInformation', $schoolInformation)
 			->with('products', $products)
 			->with('editions', $editions);
 	}

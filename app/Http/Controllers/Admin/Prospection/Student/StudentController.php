@@ -169,7 +169,7 @@ class StudentController extends BaseMethodController {
 			'dataTable' => $dataTable,
 			'dataTableF' => $dataTableF,
 		]);
-			// return parent::list($request)->with('dataTable', $dataTable);
+			return parent::list($request)->with('dataTable', $dataTable);
 
 
 		// ---------   Código antigo   -----------
@@ -350,9 +350,9 @@ class StudentController extends BaseMethodController {
 			}
 		}
 
-		// if (!is_null($orderId)) {
-		// 	CronOrderBlocked::run([ $orderId ]);
-		// }
+		if (!is_null($orderId)) {
+			CronOrderBlocked::run([ $orderId ]);
+		}
 
 		return redirect()->back();
 	}

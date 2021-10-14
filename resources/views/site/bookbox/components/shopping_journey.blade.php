@@ -84,6 +84,14 @@
 									<label>Nº*</label>
 									<input type="text" v-model="orderData.address.number" class="form-control required" maxlength="128">
 								</div>
+								<div class="col-md-4 form-group">
+									<label>Telefone*</label>
+									<input type="text" v-model="orderData.address.phone" class="form-control required" maxlength="128">
+								</div>
+								<div class="col-md-4 form-group">
+									<label>Celular*</label>
+									<input type="text" v-model="orderData.address.cellphone" class="form-control required" maxlength="128">
+								</div>
 							</div>
 							{{-- <button type="button" @click="calculadorFrete">Calcular Frete</button> --}}
 							<div class="col-md-12 text-right">
