@@ -667,7 +667,7 @@ class StudentController extends BaseMethodController {
 			'student',
 			'course.courseCategoryType',
 			'course.courseCategory',
-			// 'course.courseSubcategory',
+			'course.courseSubcategory',
 			'class',
 			'responsible',
 		])

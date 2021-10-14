@@ -36,7 +36,7 @@
 						<div class="col-sm-12 col-md-12 col-xl-12">
 							<article class="post post-modern-1 box-xxl">
 								<div class="post-modern-panel">
-									<div>{{$blog->status}}</div>
+									<div>{{$blog->category}}</div>
 									<div>
 										<time class="post-modern-time" datetime="2020-09-08">{{$blog->scheduling_date}}</time>
 									</div>
