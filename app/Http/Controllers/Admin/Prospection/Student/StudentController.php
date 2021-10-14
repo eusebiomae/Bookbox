@@ -82,9 +82,9 @@ class StudentController extends BaseMethodController {
 		$dataTableBlocked->opts['ajax']['data']['tab'] = 'blocked';
 		$dataTableFinish->opts['ajax']['data']['tab'] = 'finish';
 
-		$dataTableFree->data =
+		$dataTableFree->data = [];
 		$dataTableActive->data = [];
-		$dataTableBlocked->data =
+		$dataTableBlocked->data = [];
 		$dataTableFinish->data = [];
 
 		$dataTableActive->header =
@@ -667,7 +667,7 @@ class StudentController extends BaseMethodController {
 			'student',
 			'course.courseCategoryType',
 			'course.courseCategory',
-			'course.courseSubcategory',
+			// 'course.courseSubcategory',
 			'class',
 			'responsible',
 		])
