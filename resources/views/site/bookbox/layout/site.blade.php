@@ -128,8 +128,6 @@
 										<ul class="rd-navbar-nav">
 											<li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
 											</li>
-											<li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
-											</li>
 											<li class="rd-nav-item"><a href="/#whats_in" class="rd-nav-link">O Que Vem No Box</a>
 											</li>
 											<li class="rd-nav-item"><a class="rd-nav-link"
@@ -137,6 +135,8 @@
 											</li>
 											<li class="rd-nav-item"><a class="rd-nav-link"
 												href="/#boxes" >Planos</a>
+												<li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
+												</li>
 											</li>
 											{{-- <li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
 											</li> --}}

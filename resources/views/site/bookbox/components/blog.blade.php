@@ -50,8 +50,8 @@
 					<h5 class="post-classic-title">{{$blog->title_pt}}</h5>
 					<p class="post-classic-text">{{$blog->subtitle_pt}}</p>
 
-					<a class="entry-more" href="blog_post_details/{{$blog->id}}"><i class="fa fa-plus"></i>
-						<span>Ler mais</span>
+					<a class="entry-more" href="blog_post_details/{{$blog->id}}"><br/>
+						<i class="fa fa-plus" style="margin: 5px;"></i><span>Ler mais</span>
 					</a>
 				</div>
 			</article>
