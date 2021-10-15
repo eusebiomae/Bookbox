@@ -64,11 +64,11 @@
 													<li><a title="Facebook" class="icon mdi mdi-facebook" href="" id="facebook-share-btt" rel="nofollow" target="_blank" class="facebook-share-button"></a></li>
 													<li><a title="Twitter" class="icon mdi mdi-twitter" href="" id="twitter-share-btt" rel="nofollow"
 														target="_blank" class="twitter-share-button"></a></li>
-														<li><a title="E-mail" class="icon mdi mdi-email" href="" id="mail-share-btt" rel="nofollow" target="_blank" class="mail-share-button"></a></li>
+														{{-- <li><a title="E-mail" class="icon mdi mdi-email" href="" id="mail-share-btt" rel="nofollow" target="_blank" class="mail-share-button"></a></li> --}}
 														<li><a title="Whatsapp" class="icon mdi mdi-whatsapp" href="" id="whatsapp-share-btt" rel="nofollow" target="_blank"></a></li>
 														{{-- <li><a class="icon mdi mdi-linkedin" href="" id="linkedin-share-btt" rel="nofollow" target="_blank" class="linkedin-share-button"></a></li> --}}
 														<li><a title="Telegram" class="icon mdi mdi-telegram" href="" id="telegram-share-btt" rel="nofollow" target="_blank" class="telegram-share-button"></a></li>
-														<li><a title="Pinterest" class="icon mdi mdi-pinterest" href="" id="pinterest-share-btt" rel="nofollow" target="_blank" class="pinterest-share-button"></a></li>
+														{{-- <li><a title="Pinterest" class="icon mdi mdi-pinterest" href="" id="pinterest-share-btt" rel="nofollow" target="_blank" class="pinterest-share-button"></a></li> --}}
 														{{-- <li><a class="icon mdi mdi-google-plus" href="" id="google-plus-share-btt" rel="nofollow" target="_blank" class="google-plus-share-button"></a></li> --}}
 													</ul>
 												</div>
