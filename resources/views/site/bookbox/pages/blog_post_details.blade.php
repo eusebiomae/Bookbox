@@ -10,7 +10,7 @@
 	{{-- SECTION about --}}
 	@if(isset($pageComponents))
 			@foreach ($pageComponents->contentSection as $contentSection)
-				@include("site.bookbox.components.{$contentSection->component}", [ 'pageData' => $contentSection ])
+				@include("site.components.{$contentSection->component}", [ 'pageData' => $contentSection ])
 			@endforeach
 	@endif
 
