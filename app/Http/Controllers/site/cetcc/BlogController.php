@@ -38,4 +38,38 @@ class BlogController extends _Controller
 		->with('pageComponents', $pageComponents)
 		->with('blog', $blog);
 	}
+
+	public function blog(Request $request, $id)
+	{
+			$courseModel = CourseModel::with(['courseCategory', 'courseCategoryType', 'courseSubcategory'])->find($id);
+			//$courseModel = CourseModel::where('id', $id)->first();
+
+			$flgPage = $request->get('flgPage');
+			$pageComponents = ContentPageModel::getByComponent($flgPage);
+
+			$features = FeatureModel::select('id', 'title', 'icon', 'description', 'content_page_id')->whereHas('contentPage', function ($query) use ($flgPage) {
+		$query->where('flg_page', $flgPage);
+			})->get();
+
+			$banner = SlideModel::whereHas('contentPage', function ($query) use ($flgPage) {
+					$query->where('flg_page', $flgPage);
+			})->get();
+
+			foreach ($pageComponents->contentSection as $section) {
+					if ($section->component == 'blog') {
+							$section->content[] = $courseModel;
+							break;
+					}
+			}
+
+		 $banner[0]->title_pt = $courseModel->title_pt;
+
+			return view('site/pages/default')
+			->with('banner', $banner)
+			->with('course', $courseModel)
+			->with('features', $features)
+			->with('pageComponents', $pageComponents);
+
+	}
+
 }
