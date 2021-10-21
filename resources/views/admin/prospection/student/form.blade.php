@@ -52,13 +52,13 @@
 										<form name="formOrder" method="post" action="/admin/prospection/student/save" enctype="multipart/form-data">
 											<div class="row">
 												<div class="col-sm-12">
-													<h3><b>Nome:</b> {{ getValueByColumn($payload, 'student.name') }}</h3>
+													<h3><b>Nome:</b> {{ getValueByColumn($payload, 'name') }}</h3>
 												</div>
 
 												<div class="col-sm-6">
-													<b>CPF:</b> {{ getValueByColumn($payload, 'student.cpf') }} <br />
-													<b>E-mail:</b> {{ getValueByColumn($payload, 'student.email') }} <br />
-													<b>Cel:</b> {{ getValueByColumn($payload, 'student.cell_phone') }} <br />
+													<b>CPF:</b> {{ getValueByColumn($payload, 'cpf') }} <br />
+													<b>E-mail:</b> {{ getValueByColumn($payload, 'email') }} <br />
+													<b>Cel:</b> {{ getValueByColumn($payload, 'cell_phone') }} <br />
 
 													<div>
 														<label class="m-t-xs control-label">Status:</label>
