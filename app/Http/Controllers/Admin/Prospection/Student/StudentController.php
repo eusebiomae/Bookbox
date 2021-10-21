@@ -55,10 +55,10 @@ class StudentController extends BaseMethodController {
 			$dataTableBlocked = new \stdClass();
 			$dataTableFinish = new \stdClass();
 
-			return $dataTableFree->data = StudentModel::whereHas('order', function($query) {
+			$dataTableFree->data = StudentModel::whereHas('order', function($query) {
 				$query->where('status', 'AP');
 			})->get();
-			$dataTableActive->data = StudentModel::whereHas('order', function($query) {
+			return $dataTableActive->data = StudentModel::whereHas('order', function($query) {
 				$query->where('status', 'AP');
 			})->get();
 			$dataTableBlocked->data = StudentModel::whereHas('order', function($query) {
