@@ -13,7 +13,7 @@
 		<tbody>
 			@foreach($dataTable->data as $data)
 			<tr>
-				@foreach($dataTable->header as $header)
+				{{-- @foreach($dataTable->header as $header) --}}
 				<td>{{ getValueByColumn($data, 'id') }}</td>
 				<td>{{ getValueByColumn($data, 'course.courseCategoryType.title') }}</td>
 				<td>{{ getValueByColumn($data, 'course.courseCategory.description_pt') }}</td>
@@ -21,7 +21,7 @@
 				<td>{{ getValueByColumn($data, 'course.title_pt') }}</td>
 				<td>{{ getValueByColumn($data, 'class.name') }}</td>
 				<td>{{ getValueByColumn($data, 'created_at') }}</td>
-				@endforeach
+				{{-- @endforeach --}}
 
 				<td class="center">
 					@if($data->status =='Pago')
