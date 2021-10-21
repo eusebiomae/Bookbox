@@ -87,9 +87,39 @@ class StudentController extends BaseMethodController {
 			$dataTableBlocked->data = [];
 			$dataTableFinish->data = [];
 
-			$dataTableActive->header =
-			$dataTableFinish->header =
-			$dataTableBlocked->header =
+			$dataTableActive->header = [
+				(object) [ 'title' => 'ID', 'data' => 'id', ],
+				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'statusIcon', ],
+				(object) [ 'title' => 'Nome', 'data' => 'name', ],
+				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
+				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
+				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
+				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
+				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
+				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
+			];
+			$dataTableFinish->header = [
+				(object) [ 'title' => 'ID', 'data' => 'id', ],
+				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'statusIcon', ],
+				(object) [ 'title' => 'Nome', 'data' => 'name', ],
+				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
+				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
+				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
+				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
+				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
+				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
+			];
+			$dataTableBlocked->header = [
+				(object) [ 'title' => 'ID', 'data' => 'id', ],
+				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'statusIcon', ],
+				(object) [ 'title' => 'Nome', 'data' => 'name', ],
+				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
+				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
+				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
+				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
+				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
+				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
+			];
 			$dataTableFree->header = [
 				(object) [ 'title' => 'ID', 'data' => 'id', ],
 				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'statusIcon', ],
