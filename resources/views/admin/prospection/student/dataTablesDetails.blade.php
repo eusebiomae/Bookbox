@@ -14,12 +14,13 @@
 			@foreach($dataTable->data as $data)
 			<tr>
 				@foreach($dataTable->header as $header)
-					<td
-						data-edit-row-key="{{ $header->column }}"
-						class="{{ isset($dataTable->classColumn) && isset($dataTable->classColumn[$header->column]) ? $dataTable->classColumn[$header->column] : null }}"
-					>
-						{!! getValueByColumn($data, $header->column) !!}
-					</td>
+				<td>{{ getValueByColumn($data, 'id') }}</td>
+				<td>{{ getValueByColumn($data, 'course.courseCategoryType.title') }}</td>
+				<td>{{ getValueByColumn($data, 'course.courseCategory.description_pt') }}</td>
+				<td>{{ getValueByColumn($data, 'course.courseSubcategory.description_pt') }}</td>
+				<td>{{ getValueByColumn($data, 'course.title_pt') }}</td>
+				<td>{{ getValueByColumn($data, 'class.name') }}</td>
+				<td>{{ getValueByColumn($data, 'created_at') }}</td>
 				@endforeach
 
 				<td class="center">
