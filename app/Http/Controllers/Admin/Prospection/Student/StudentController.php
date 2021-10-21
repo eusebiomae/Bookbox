@@ -55,6 +55,19 @@ class StudentController extends BaseMethodController {
 			$dataTableBlocked = new \stdClass();
 			$dataTableFinish = new \stdClass();
 
+			$dataTableFree->data = StudentModel::whereHas('order', function($query) {
+				$query->where('status', 'AP');
+			})->get();
+			$dataTableActive->data = StudentModel::whereHas('order', function($query) {
+				$query->where('status', 'AP');
+			})->get();
+			$dataTableBlocked->data = StudentModel::whereHas('order', function($query) {
+				$query->where('status', 'AP');
+			})->get();
+			$dataTableFinish->data = StudentModel::whereHas('order', function($query) {
+				$query->where('status', 'AP');
+			})->get();
+
 			$dataTableFree->id = 'free';
 			$dataTableActive->id = 'active';
 			$dataTableBlocked->id = 'blocked';
@@ -131,6 +144,11 @@ class StudentController extends BaseMethodController {
 				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
 			];
+
+			$this->config->toView['dataTable'] = $dataTableFree;
+			$this->config->toView['dataTable'] = $dataTableActive;
+			$this->config->toView['dataTable'] = $dataTableBlocked;
+			$this->config->toView['dataTable'] = $dataTableFinish;
 
 			return parent::list($request)->with([
 				'dataTableFree' => $dataTableFree,
