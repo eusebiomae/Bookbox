@@ -107,7 +107,7 @@ class StudentController extends BaseMethodController {
 				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
 				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
-				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
+				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
 			];
@@ -118,7 +118,7 @@ class StudentController extends BaseMethodController {
 				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
 				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
-				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
+				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
 			];
@@ -129,7 +129,7 @@ class StudentController extends BaseMethodController {
 				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
 				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
-				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
+				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
 			];
@@ -140,7 +140,7 @@ class StudentController extends BaseMethodController {
 				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
 				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
-				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
+				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
 			];

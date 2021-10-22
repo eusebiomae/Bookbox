@@ -112,4 +112,14 @@ class StudentModel extends Authenticatable {
 	public function studentSocioeconomic() {
 		return $this->belongsTo('\App\Model\api\StudentSocioeconomicModel', 'id', 'student_id');
 	}
+
+	public function statusIcon() {
+		return $this->belongsTo('\App\Model\api\OrderModel', 'id', 'student_id');
+	}
+	public function class() {
+		return $this->belongsTo('\App\Model\api\ClassModel', 'id', 'name');
+	}
+	// public function responsible() {
+	// 	return $this->belongsTo('\App\Model\api\ClassModel', 'id', 'name');
+	// }
 }
