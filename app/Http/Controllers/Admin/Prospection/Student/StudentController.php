@@ -108,8 +108,8 @@ class StudentController extends BaseMethodController {
 			$dataTableActive->header = [
 				(object) [ 'title' => 'ID', 'data' => 'id', ],
 				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'statusIcon', ],
-				(object) [ 'title' => 'Nome', 'data' => 'name', ],
-				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
+				(object) [ 'title' => 'Nome', 'data' => 'student.name', ],
+				(object) [ 'title' => 'CPF', 'data' => 'student.cpf', ],
 				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
 				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
@@ -119,8 +119,8 @@ class StudentController extends BaseMethodController {
 			$dataTableFinish->header = [
 				(object) [ 'title' => 'ID', 'data' => 'id', ],
 				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'statusIcon', ],
-				(object) [ 'title' => 'Nome', 'data' => 'name', ],
-				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
+				(object) [ 'title' => 'Nome', 'data' => 'student.name', ],
+				(object) [ 'title' => 'CPF', 'data' => 'student.cpf', ],
 				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
 				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
@@ -130,8 +130,8 @@ class StudentController extends BaseMethodController {
 			$dataTableBlocked->header = [
 				(object) [ 'title' => 'ID', 'data' => 'id', ],
 				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'statusIcon', ],
-				(object) [ 'title' => 'Nome', 'data' => 'name', ],
-				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
+				(object) [ 'title' => 'Nome', 'data' => 'student.name', ],
+				(object) [ 'title' => 'CPF', 'data' => 'student.cpf', ],
 				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
 				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
@@ -141,8 +141,8 @@ class StudentController extends BaseMethodController {
 			$dataTableFree->header = [
 				(object) [ 'title' => 'ID', 'data' => 'id', ],
 				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'statusIcon', ],
-				(object) [ 'title' => 'Nome', 'data' => 'name', ],
-				(object) [ 'title' => 'CPF', 'data' => 'cpf', ],
+				(object) [ 'title' => 'Nome', 'data' => 'student.name', ],
+				(object) [ 'title' => 'CPF', 'data' => 'student.cpf', ],
 				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
 				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
