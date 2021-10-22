@@ -200,7 +200,7 @@ class StudentController extends BaseMethodController {
 					[ 'title' => 'Celular', 'data' => 'student.cell_phone', ],
 					[ 'title' => 'Data', 'width' => '100px', 'data' => 'supervision.date', 'data-order' => 'createdDate' ],
 					[ 'title' => 'Categoria', 'data' => 'supervision.course_category.description_pt', 'data-order' => 'createdDate' ],
-					// [ 'title' => 'Turma', 'data' => 'className',],
+					[ 'title' => 'Turma', 'data' => 'className',],
 					[ 'title' => 'Valor da Fatura', 'width' => '120px', 'data' => 'value', ],
 					// [ 'title' => 'E-mail', 'data' => 'student.email', ],
 					// [ 'title' => 'Código', 'width' => '100px', 'data' => 'code', ],
