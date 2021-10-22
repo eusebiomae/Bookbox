@@ -190,7 +190,7 @@ class StudentController extends BaseMethodController {
 				$dataTable->data = $dataTable->data->where('order.status', '!=' ,'FI')->get();
 				$dataTableF->data = $dataTableF->data->where('order.status', 'FI')->get();
 
-				// return json_encode([$dataTable->data, $dataTableF->data]);
+				return json_encode([$dataTable->data, $dataTableF->data]);
 
 				$dataTable->header = $dataTableF->header = [
 					[ 'title' => '#', 'className' => 'center', 'data' => 'statusIcon', ],
