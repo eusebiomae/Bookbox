@@ -15,6 +15,8 @@
 
   $(document).ready(function() {
 		var appDataTable = {!! isset($dataTable) ? json_encode($dataTable) : 'null' !!}
+		console.log(appDataTable)
+
 		if (appDataTable && appDataTable.data) {
 			var opts = {
 				responsive: true,
