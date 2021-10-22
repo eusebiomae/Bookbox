@@ -55,18 +55,23 @@ class StudentController extends BaseMethodController {
 			$dataTableBlocked = new \stdClass();
 			$dataTableFinish = new \stdClass();
 
-			$dataTableFree->data = StudentModel::whereHas('order', function($query) {
-				$query->where('status', 'AP');
-			})->get();
-			$dataTableActive->data = StudentModel::whereHas('order', function($query) {
-				$query->where('status', 'AP');
-			})->get();
-			$dataTableBlocked->data = StudentModel::whereHas('order', function($query) {
-				$query->where('status', 'AP');
-			})->get();
-			$dataTableFinish->data = StudentModel::whereHas('order', function($query) {
-				$query->where('status', 'AP');
-			})->get();
+			$dataTableFree->data = OrderModel::with('student', 'class', 'responsible')->where('status', 'AP')->get();
+
+			$dataTableActive->data = OrderModel::with('student', 'class', 'responsible')->where('status', 'AP')->get();
+
+			$dataTableBlocked->data = OrderModel::with('student', 'class', 'responsible')->where('status', 'AP')->get();
+
+			$dataTableFinish->data = OrderModel::with('student', 'class', 'responsible')->where('status', 'AP')->get();
+
+			// $dataTableActive->data = OrderModel::whereHas('order', function($query) {
+			// 	$query->where('status', 'AP');
+			// })->get();
+			// $dataTableBlocked->data = OrderModel::whereHas('order', function($query) {
+			// 	$query->where('status', 'AP');
+			// })->get();
+			// $dataTableFinish->data = OrderModel::whereHas('order', function($query) {
+			// 	$query->where('status', 'AP');
+			// })->get();
 
 			$dataTableFree->id = 'free';
 			$dataTableActive->id = 'active';
