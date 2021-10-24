@@ -52,7 +52,7 @@ class StudentController extends BaseMethodController {
 
 			$dataTable = new \stdClass();
 
-			$dataTable->data = OrderModel::whereHas('order', function($query) {
+			$dataTable->data = StudentModel::whereHas('order', function($query) {
 				$query->where('status', 'AP');
 			})->get();
 
