@@ -18,12 +18,12 @@ class OrderModel extends Model {
 		'status',
 		'order_id',
 		'student_id',
-		'course_id',
 		'class_id',
+		'responsible_id',
+		'course_id',
 		'course_form_payment_id',
 		'supervision_id',
 		'form_payment_id',
-		'responsible_id',
 		'bank_id',
 		'course_discount_id',
 		'company_id',
@@ -243,7 +243,7 @@ class OrderModel extends Model {
 	}
 
 	public function student() {
-		return $this->belongsTo('\App\Model\api\StudentModel');
+		return $this->belongsTo('\App\Model\api\StudentModel', 'id', 'order_id');
 	}
 
 	public function courseFormPayment() {
