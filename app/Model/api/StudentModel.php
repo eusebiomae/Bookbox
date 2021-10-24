@@ -29,6 +29,7 @@ class StudentModel extends Authenticatable {
 		'address',
 		'city',
 		'state_id',
+		'order_id',
 		'formation',
 		'tcc_experience',
 		'rg',

@@ -103,7 +103,7 @@ class StudentController extends BaseMethodController {
 				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'order.statusIcon', ],
 				(object) [ 'title' => 'Nome', 'data' => 'student.name', ],
 				(object) [ 'title' => 'CPF', 'data' => 'student.cpf', ],
-				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
+				// (object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'order.created_at', 'data-order' => 'createdDate' ],
 				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
 				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
