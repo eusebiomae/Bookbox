@@ -50,87 +50,46 @@ class StudentController extends BaseMethodController {
 			$this->config->toView['title_page'] = 'Listar';
 			$this->config->toView['url_page_action'] = '';
 
-			$dataTableFree = new \stdClass();
-			$dataTableActive = new \stdClass();
-			$dataTableBlocked = new \stdClass();
-			$dataTableFinish = new \stdClass();
+			$dataTable = new \stdClass();
 
-			$dataTableFree->data = OrderModel::with('student', 'class', 'responsible')->where('status', 'AP')->get();
+			$dataTable->data = OrderModel::whereHas('order', function($query) {
+				$query->where('status', 'AP');
+			})->get();
 
-			$dataTableActive->data = OrderModel::with('student', 'class', 'responsible')->where('status', 'AP')->get();
-
-			$dataTableBlocked->data = OrderModel::with('student', 'class', 'responsible')->where('status', 'AP')->get();
-
-			$dataTableFinish->data = OrderModel::with('student', 'class', 'responsible')->where('status', 'AP')->get();
-
-			// $dataTableActive->data = OrderModel::whereHas('order', function($query) {
-			// 	$query->where('status', 'AP');
-			// })->get();
-			// $dataTableBlocked->data = OrderModel::whereHas('order', function($query) {
-			// 	$query->where('status', 'AP');
-			// })->get();
-			// $dataTableFinish->data = OrderModel::whereHas('order', function($query) {
-			// 	$query->where('status', 'AP');
-			// })->get();
-
-			$dataTableFree->id = 'free';
-			$dataTableActive->id = 'active';
-			$dataTableBlocked->id = 'blocked';
-			$dataTableFinish->id = 'finish';
-
-			$dataTableFree->opts =
-			$dataTableActive->opts =
-			$dataTableBlocked->opts =
-			$dataTableFinish->opts = [
-				'order' => [
-					[ 5, 'desc' ],
+			$dataTable->header = [
+				(object) [
+					'label' => 'ID',
+					'column' => 'id',
 				],
-				'processing' => true,
-				'serverSide' => true,
-				'searchDelay' => 1000,
-				'ajax' => [
-					'method' => 'post',
-					'url' => '/admin/prospection/student/getListAjax',
-					'data' => [],
+				(object) [
+					'label' => 'Nome',
+					'column' => 'name',
+				],
+				(object) [
+					'label' => 'CPF',
+					'column' => 'cpf',
+				],
+				(object) [
+					'label' => 'E-mail',
+					'column' => 'email',
+				],
+				(object) [
+					'label' => 'Telefone',
+					'column' => 'phone',
+				],
+				(object) [
+					'label' => 'WhatsApp',
+					'column' => 'cell_phone',
+				],
+				(object) [
+					'label' => 'Cidade',
+					'column' => 'city',
 				],
 			];
 
-			$dataTableFree->opts['ajax']['data']['tab'] = 'free';
-			$dataTableActive->opts['ajax']['data']['tab'] = 'active';
-			$dataTableBlocked->opts['ajax']['data']['tab'] = 'blocked';
-			$dataTableFinish->opts['ajax']['data']['tab'] = 'finish';
+			$this->config->toView['dataTable'] = $dataTable;
 
-			// $dataTableFree->data = [];
-			// $dataTableActive->data = [];
-			// $dataTableBlocked->data = [];
-			// $dataTableFinish->data = [];
-
-			$dataTableActive->header =
-			$dataTableFinish->header =
-			$dataTableBlocked->header =
-			$dataTableFree->header = [
-				(object) [ 'title' => 'ID', 'data' => 'student.id', ],
-				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'order.statusIcon', ],
-				(object) [ 'title' => 'Nome', 'data' => 'student.name', ],
-				(object) [ 'title' => 'CPF', 'data' => 'student.cpf', ],
-				(object) [ 'title' => 'Turma', 'data' => 'class.name', ],
-				(object) [ 'title' => 'Data', 'data' => 'order.created_at', 'data-order' => 'createdDate' ],
-				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
-				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
-				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
-			];
-
-			$this->config->toView['dataTable'] = $dataTableFree;
-			$this->config->toView['dataTable'] = $dataTableActive;
-			$this->config->toView['dataTable'] = $dataTableBlocked;
-			$this->config->toView['dataTable'] = $dataTableFinish;
-
-			return parent::list($request)->with([
-				'dataTableFree' => $dataTableFree,
-				'dataTableActive' => $dataTableActive,
-				'dataTableBlocked' => $dataTableBlocked,
-				'dataTableFinish' => $dataTableFinish,
-			]);
+			return parent::list($request);
 		}
 
 		public function listSupervision(Request $request) {
@@ -470,7 +429,7 @@ class StudentController extends BaseMethodController {
 																	$htmlContract = '<html>
 																	<head>
 																	<style>
-																	@page{
+@page{
 																		margin: 125px 25px;
 																	}
 

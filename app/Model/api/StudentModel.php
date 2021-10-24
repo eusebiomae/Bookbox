@@ -119,7 +119,7 @@ class StudentModel extends Authenticatable {
 	public function class() {
 		return $this->belongsTo('\App\Model\api\ClassModel', 'id', 'name');
 	}
-	// public function responsible() {
-	// 	return $this->belongsTo('\App\Model\api\ClassModel', 'id', 'name');
-	// }
+	public function responsible() {
+		return $this->belongsTo('\App\Model\api\ClassModel', 'id', 'name');
+	}
 }
