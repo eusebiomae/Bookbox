@@ -55,13 +55,13 @@ class StudentController extends BaseMethodController {
 			$dataTableBlocked = new \stdClass();
 			$dataTableFinish = new \stdClass();
 
-			$dataTableFree->data = OrderModel::with('student', 'responsible')->where('status', 'AP')->get();
+			$dataTableFree->data = OrderModel::with('student')->where('status', 'AP')->get();
 
-			$dataTableActive->data = OrderModel::with('student', 'responsible')->where('status', 'AP')->get();
+			$dataTableActive->data = OrderModel::with('student')->where('status', 'AP')->get();
 
-			$dataTableBlocked->data = OrderModel::with('student', 'responsible')->where('status', 'AP')->get();
+			$dataTableBlocked->data = OrderModel::with('student')->where('status', 'AP')->get();
 
-			$dataTableFinish->data = OrderModel::with('student', 'responsible')->where('status', 'AP')->get();
+			$dataTableFinish->data = OrderModel::with('student')->where('status', 'AP')->get();
 
 			$dataTableFree->id = 'free';
 			$dataTableActive->id = 'active';
@@ -106,7 +106,7 @@ class StudentController extends BaseMethodController {
 				(object) [ 'title' => 'Forma de Pagamento', 'data' => 'form_payment', ],
 				// (object) [ 'title' => 'Turma', 'data' => 'class.name', ],
 				(object) [ 'title' => 'Data', 'data' => 'order.created_at', 'data-order' => 'createdDate' ],
-				(object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
+				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
 				// (object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
 				// (object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
 			];
