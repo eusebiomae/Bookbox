@@ -8,7 +8,7 @@
 							<!-- Product-->
 							<article class="product">
 								<div class="product-body">
-									<h5 class="product-title"><a href="single-product.html">{{$item->title_pt}}</a></h5>
+									<h5 class="product-title"><a href="/signature/{{ $product['id'] }}">{{$item->title_pt}}</a></h5>
 									<div class="product-figure-box"><img src="{{$item->image}}" alt="" />
 									</div>
 

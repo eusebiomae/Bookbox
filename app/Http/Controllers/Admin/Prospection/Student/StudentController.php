@@ -55,13 +55,13 @@ class StudentController extends BaseMethodController {
 			$dataTableBlocked = new \stdClass();
 			$dataTableFinish = new \stdClass();
 
-			$dataTableFree->data = OrderModel::with('student')->where('status', 'AP')->get();
+			$dataTableFree->data = OrderModel::with('student')->where('status', 'PE')->get();
 
 			$dataTableActive->data = OrderModel::with('student')->where('status', 'AP')->get();
 
-			$dataTableBlocked->data = OrderModel::with('student')->where('status', 'AP')->get();
+			$dataTableBlocked->data = OrderModel::with('student')->where('status', 'BL')->get();
 
-			$dataTableFinish->data = OrderModel::with('student')->where('status', 'AP')->get();
+			$dataTableFinish->data = OrderModel::with('student')->where('status', 'LC')->get();
 
 			$dataTableFree->id = 'free';
 			$dataTableActive->id = 'active';
@@ -74,14 +74,6 @@ class StudentController extends BaseMethodController {
 			$dataTableFinish->opts = [
 				'order' => [
 					[ 5, 'desc' ],
-				],
-				'processing' => true,
-				'serverSide' => true,
-				'searchDelay' => 1000,
-				'ajax' => [
-					'method' => 'post',
-					'url' => '/admin/prospection/student/getListAjax',
-					'data' => [],
 				],
 			];
 
@@ -99,16 +91,16 @@ class StudentController extends BaseMethodController {
 			$dataTableFinish->header =
 			$dataTableBlocked->header =
 			$dataTableFree->header = [
-				(object) [ 'title' => 'ID', 'data' => 'student.id', ],
-				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'order.statusIcon', ],
+				(object) [ 'title' => 'ID', 'data' => 'id', ],
+				(object) [ 'title' => 'Status', 'className' => 'center', 'data' => 'statusIcon', ],
 				(object) [ 'title' => 'Nome', 'data' => 'student.name', ],
 				(object) [ 'title' => 'CPF', 'data' => 'student.cpf', ],
 				(object) [ 'title' => 'Forma de Pagamento', 'data' => 'form_payment', ],
 				// (object) [ 'title' => 'Turma', 'data' => 'class.name', ],
-				(object) [ 'title' => 'Data', 'data' => 'order.created_at', 'data-order' => 'createdDate' ],
+				(object) [ 'title' => 'Data', 'data' => 'created_at', 'data-order' => 'createdDate' ],
 				// (object) [ 'title' => 'Responsável da Venda', 'data' => 'responsible.name', ],
-				// (object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
-				// (object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
+				(object) [ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/prospection/student' ],
+				(object) [ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/prospection/student' ],
 			];
 
 			$this->config->toView['dataTable'] = $dataTableFree;

@@ -243,7 +243,7 @@ class OrderModel extends Model {
 	}
 
 	public function student() {
-		return $this->belongsTo('\App\Model\api\StudentModel', 'id', 'order_id');
+		return $this->belongsTo('\App\Model\api\StudentModel', 'student_id', 'id');
 	}
 
 	public function courseFormPayment() {

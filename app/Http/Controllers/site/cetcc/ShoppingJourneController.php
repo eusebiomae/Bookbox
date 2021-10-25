@@ -47,6 +47,7 @@ class ShoppingJourneController extends _Controller
 	{
 		$flgPage = $request->get('flgPage');
 		$pageComponents = ContentPageModel::getByComponent($flgPage);
+		$products = CourseModel::where('course_category_id', 2)->get();
 
 		$product = null;
 		if ($request->has('product')) {
@@ -60,6 +61,7 @@ class ShoppingJourneController extends _Controller
 		return view('site/bookbox/pages/default')
 			->with('flgPage', $flgPage)
 			->with('pageComponents', $pageComponents)
+			->with('products', $products)
 			->with('product', $product);
 	}
 

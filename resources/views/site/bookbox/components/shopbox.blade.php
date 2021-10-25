@@ -42,7 +42,7 @@
 							<div class="product-body">
 								<div class="product-figure-box"><img src="{{$product->img}}" alt="" style="width: 190px;"/>
 								</div>
-								<h5 class="product-title"><a href="single-product.html">{{$product->title_pt}}</a></h5>
+								<h5 class="product-title">{{$product->title_pt}}</h5>
 
 								<div class="product-price-wrap">
 									<div class="product-price">{{$product->subtitle_pt}}</div>

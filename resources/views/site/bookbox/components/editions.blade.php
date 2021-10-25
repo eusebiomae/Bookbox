@@ -23,9 +23,9 @@
 							<!-- Product-->
 							<article class="product">
 								<div class="product-body">
-									<div class="product-figure-box"><img src="{{$edition->img}}" alt=""/>
+									<div class="product-figure-box"><a href="/box_blog"><img src="{{$edition->img}}" alt=""/></a>
 									</div>
-									<h5 class="product-title"><a href="single-product.html">{{$edition->title_pt}}</a></h5>
+									<h5 class="product-title"><a href="/box_blog">{{$edition->title_pt}}</a></h5>
 
 									<div class="product-price-wrap">
 										<div class="product-price">{{$edition->subtitle_pt}}</div>

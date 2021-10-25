@@ -350,7 +350,7 @@
 					<article class="team-modern box-sm wow slideInUp" data-wow-delay=".3s">
 							<a class="team-modern-figure" href="#"><img src="{{ url ('assets/images/site/perfil/Vanessa.png')}}" alt="" style="width: 150px" /></a>
 							<h5 class="team-modern-name"><a href="#">Vanessa Dias</a></h5>
-							<p class="team-modern-text">Peronal Traine</p>
+							<p class="team-modern-text">Personal Trainer</p>
 							{{-- <ul class="list-inline team-modern-list-social list-social-2 list-inline-sm">
 									<li>
 											<a class="icon mdi mdi-facebook" href="#"></a>
