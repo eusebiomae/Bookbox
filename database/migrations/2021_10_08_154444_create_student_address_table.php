@@ -24,6 +24,8 @@ class CreateStudentAddressTable extends Migration
 			$table->string('neighborhood', 128)->nullable();
 			$table->string('street', 128)->nullable();
 			$table->string('number', 128)->nullable();
+			$table->string('phone', 32)->nullable();
+			$table->string('cellphone', 32)->nullable();
 
 			$table->integer('created_by')->nullable();
 			$table->integer('updated_by')->nullable();

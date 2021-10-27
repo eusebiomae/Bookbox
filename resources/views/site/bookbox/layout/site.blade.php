@@ -77,7 +77,7 @@
 
 </head>
 
-<body>
+<body id="AppGP">
 	<div class="preloader">
 		<div class="preloader-body">
 			<div class="cssload-bell">
@@ -130,8 +130,7 @@
 						<!-- RD Navbar Panel-->
 						<div class="rd-navbar-panel">
 							<!-- RD Navbar Toggle-->
-							<button class="rd-navbar-toggle"
-							data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+							<button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
 							<!-- RD Navbar Brand-->
 							<div class="rd-navbar-brand">
 								<!--Brand-->
@@ -141,80 +140,19 @@
 									{{-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> --}}
 								</div>
 							</div>
-							<div class="rd-navbar-aside-element">
-								<!-- RD Navbar Basket-->
-								<div class="rd-navbar-basket-wrap">
-									<button class="rd-navbar-basket fl-bigmug-line-shopping202" data-rd-navbar-toggle=".cart-inline" style="color: black"><span>2</span></button>
-									<div class="cart-inline">
-										<div class="cart-inline-header">
-											<h5 class="cart-inline-title">In cart:<span> 2</span> Products</h5>
-											<h6 class="cart-inline-title">Total price:<span> $42</span></h6>
-										</div>
-										<div class="cart-inline-body">
-											<div class="cart-inline-item">
-												<div class="unit unit-spacing-sm align-items-center">
-													<div class="unit-left">
-														<a class="cart-inline-figure" href="single-product.html"><img src="images/product-mini-1-106x104.jpg" alt="" width="106" height="104" /></a>
-													</div>
-													<div class="unit-body">
-														<h6 class="cart-inline-name"><a href="single-product.html">Forest Berry</a></h6>
-														<div>
-															<div class="group-xs group-middle">
-																<div class="table-cart-stepper">
-																	<input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000" />
-																</div>
-																<h6 class="cart-inline-title">$18.00</h6>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="cart-inline-item">
-												<div class="unit unit-spacing-sm align-items-center">
-													<div class="unit-left">
-														<a class="cart-inline-figure" href="single-product.html"><img src="images/product-mini-2-106x104.jpg" alt="" width="106" height="104" /></a>
-													</div>
-													<div class="unit-body">
-														<h6 class="cart-inline-name"><a href="single-product.html">Carrots</a></h6>
-														<div>
-															<div class="group-xs group-middle">
-																<div class="table-cart-stepper">
-																	<input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000" />
-																</div>
-																<h6 class="cart-inline-title">$24.00</h6>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="cart-inline-footer">
-											<div class="group-sm"><a class="button button-default-outline-2 button-zakaria"  href="/signature/{{ $product['id'] }}">Comprar</a><a class="button button-primary button-zakaria" href="#">Checkout</a></div>
-										</div>
-									</div>
-								</div>
-								{{-- <div class="rd-navbar-fixed-element-2 select-inline"><a class="rd-nav-link" href="login.html">Login</a>
-								</div> --}}
-							</div>
+							@include('site.bookbox.components.dropdownCart')
 						</div>
+
 						<div class="rd-navbar-main-outer" style="background-color: #8571a2;">
 							<div class="rd-navbar-main">
 								<div class="rd-navbar-nav-wrap">
 									<ul class="rd-navbar-nav">
-										<li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
-										</li>
-										<li class="rd-nav-item"><a href="/#whats_in" class="rd-nav-link">O Que Vem No
-											Box</a>
-										</li>
-										<li class="rd-nav-item"><a class="rd-nav-link" href="/#how_works">Como
-											Funciona</a>
-										</li>
-										<li class="rd-nav-item"><a class="rd-nav-link" href="/#boxes">Planos</a>
-											<li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a>
-											</li>
-										</li>
-										<li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a>
-										</li>
+										<li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a></li>
+										<li class="rd-nav-item"><a href="/#whats_in" class="rd-nav-link">O Que Vem No Box</a></li>
+										<li class="rd-nav-item"><a class="rd-nav-link" href="/#how_works">Como Funciona</a></li>
+										<li class="rd-nav-item"><a class="rd-nav-link" href="/#boxes">Planos</a></li>
+										<li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a></li>
+										<li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a></li>
 										{{-- <li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
 											nós</a>
 										</li> --}}
@@ -224,9 +162,8 @@
 										{{-- <li class="rd-nav-item"><a class="rd-nav-link"
 											href="/privacy-policy">Termos e Condições</a>
 										</li> --}}
-										<li class="rd-nav-item"><a
-											class="rd-nav-link button button-lg button-shadow-4 button-secondary-3 button-zakaria"
-											href="/pricing-list" target="blank" style="color: #fff;">Assine já</a>
+										<li class="rd-nav-item">
+											<a class="rd-nav-link button button-lg button-shadow-4 button-secondary-3 button-zakaria" href="/pricing-list" target="blank" style="color: #fff;">Assine já</a>
 										</li>
 									</ul>
 								</div>
@@ -244,6 +181,15 @@
 		<script src="{{ url('js/gp-ays.js') }}"></script>
 
 		@include('site.bookbox.layout.footer')
+
+		<script src="https://unpkg.com/vue@next"></script>
+		<script src="https://unpkg.com/vuex@4"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script>
+			// AppGP
+		</script>
+
 		@yield('scripts')
 	</body>
 

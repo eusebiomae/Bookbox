@@ -9,6 +9,7 @@
 						<div ref="tabsShoppingJourney" class="nav nav-tabs">
 							<button class="nav-item nav-link active" @click="selectNavTab('login')" data-select-tab="login" v-if="!student.id">Login</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('delivery')" data-select-tab="delivery">Entrega</button>
+							<button class="nav-item nav-link disabled" @click="selectNavTab('shoppingCart')" data-select-tab="shoppingCart" v-if="!product">Carrinho</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('payment')" data-select-tab="payment">Pagamento</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('finalization')" data-select-tab="finalization">Finalização</button>
 						</div>
@@ -99,14 +100,52 @@
 							</div>
 						</div>
 
+						<div class="tab-pane fade show" data-select-tab="shoppingCart">
+							<div class="">
+								<div class="cart-inline-header">
+									<h5 class="cart-inline-title">Há <span> @{{amountItens}}</span> produtos carrinho</h5>
+									<h6 class="cart-inline-title">Valor Total:<span> $@{{priceTotal}}</span></h6>
+								</div>
+								<div class="cart-inline-body">
+									<div class="cart-inline-item border" v-for="(data, idProduct) in shoppingCart">
+										<div class="unit unit-spacing-sm align-items-center">
+											<div class="unit-left">
+												<span class="cart-inline-figure"><img :src="data.item.img" alt="" width="106" height="104" /></span>
+											</div>
+											<div class="unit-body">
+												<h6 class="cart-inline-name">@{{ data.item.title_pt }}</h6>
+
+												<div class="group-xs group-middle align-items-center">
+													<div class="cart-inline-title">Qtd: @{{ data.amount }}</div>
+													<div class="cart-inline-title">R$ @{{ itemPriceMain(idProduct) }}</div>
+													<div class="cart-inline-title">Total: R$ @{{ itemPriceMainTotal(idProduct) }}</div>
+												</div>
+											</div>
+										</div>
+										<div class="unit-spacing-sm">
+											<button type="button" class="" @click="incDecAmount(idProduct, -1)">-</button>
+											<button type="button" class="" @click="removeItem(idProduct)">Remover</button>
+											<button type="button" class="" @click="incDecAmount(idProduct, 1)">+</button>
+										</div>
+									</div>
+								</div>
+								<div class="cart-inline-footer">
+									<div class="group-sm text-right">
+										<button class="btn" @click="selectNavTab('payment', 1)">Confirmar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<div class="tab-pane fade show" data-select-tab="payment">
-							<div class="row">
+							<div class="row" v-if="product">
 								<div class="col-md-4 form-group">
 									<label>Forma de Pagamento</label>
 									<select class="form-control m-b" v-model="orderData.formPayment">
 										<option v-for="(option, indx) in formPayment" :value="option.value">@{{ option.label }}</option>
 									</select>
 								</div>
+
 								<div class="col-md-4 form-group" v-if="formPayment[orderData.formPayment] && formPayment[orderData.formPayment].values">
 									<label>Parcelas</label>
 									<select class="form-control m-b" v-model="formPaymentOpts">
@@ -115,6 +154,7 @@
 										</option>
 									</select>
 								</div>
+
 								<div class="col-md-12 form-group">
 									<label>E-mail*</label>
 									<input type="email" v-model="orderData.email" class="form-control required">
@@ -132,6 +172,7 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="col-md-12" v-if="orderData.formPayment == 'creditCard'">
 									<div class="row mt-5">
 										<div class="col-md-4">
@@ -155,8 +196,7 @@
 										<div class="col-md-2">
 											<div class="form-group">
 												<label>Validade*</label>
-												<input type="text" v-model="orderData.shelf_life" placeholder=""
-													class="form-control required mask-creditcard-shelf_life">
+												<input type="text" v-model="orderData.shelf_life" placeholder="" class="form-control required mask-creditcard-shelf_life">
 											</div>
 										</div>
 									</div>
@@ -209,6 +249,9 @@
 									<button v-if="!wasRequest" class="btn" @click="confirmOrder">Confirmar</button>
 								</div>
 							</div>
+							<div v-else>
+								123456
+							</div>
 						</div>
 
 						<div class="tab-pane fade show" data-select-tab="finalization">
@@ -244,15 +287,13 @@
 
 @section('scripts')
 @parent
-<script src="https://unpkg.com/vue@next"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 	var appShoppingJourney = Vue.createApp({
 		data: function() {
 			return {
+				shoppingCart: boxCartStore.state.shoppingCart,
 				student: @json(Auth::guard('studentArea')->user() ?? new stdClass),
-				product: @json($product),
+				product: @json($product ?? null),
 				orderData: {
 					formPayment: 'bankSlip',
 					address: {},
@@ -271,6 +312,26 @@
 				allCity: [],
 			}
 		},
+		computed: {
+			amountItens: function() {
+				return Object.keys(boxCartStore.state.shoppingCart).length
+			},
+			priceTotal: function() {
+				let priceTotal = 0
+
+				for (const key in boxCartStore.state.shoppingCart) {
+					if (Object.hasOwnProperty.call(boxCartStore.state.shoppingCart, key)) {
+						const payload = boxCartStore.state.shoppingCart[key]
+
+						if (payload.item.form_payment[0]?.course_form_payment[0]?.full_value) {
+							priceTotal += payload.amount * payload.item.form_payment[0].course_form_payment[0].full_value
+						}
+					}
+				}
+
+				return priceTotal
+			},
+		},
 		methods: {
 			nextLogin: function() {
 				if (!this.formLogin.showPassword && !this.formLogin.showFormCreate) {
@@ -286,8 +347,8 @@
 				showPreloader()
 
 				return axios({
-					url: '/confirm_email',
 					method: 'post',
+					url: '/confirm_email',
 					data: {
 						email: this.student.email,
 					},
@@ -320,8 +381,8 @@
 			},
 			newStudent: function() {
 				return axios({
-					url: '/api/save',
 					method: 'post',
+					url: '/api/save',
 					headers: {
 						method: 'student'
 					},
@@ -343,8 +404,8 @@
 				showPreloader()
 
 				return axios({
-					url: '/login',
 					method: 'post',
+					url: '/login',
 					data: {
 						email: this.student.email,
 						password: this.student.password,
@@ -378,6 +439,22 @@
 				this.$refs.tabsContentShoppingJourney.querySelectorAll('[data-select-tab]').forEach(elemTab => elemTab.classList.remove('active'))
 				tabTarget.classList.add('active')
 				this.$refs.tabsContentShoppingJourney.querySelector('[data-select-tab="'+ targetKey +'"]').classList.add('active')
+
+				switch (targetKey) {
+					case 'delivery':
+						this.getDelivery().then(data => {
+							if (data) {
+								this.orderData.address = data
+								this.getCity(data.state_id)
+							}
+						})
+					break
+					case 'payment':
+						if (!this.product) {
+							this.renderFormPaymentShoppingCart()
+						}
+					break
+				}
 			},
 			confirmOrder: function() {
 				if (!this.formPaymentOpts.form_payment_id) {
@@ -498,18 +575,36 @@
 					})
 				}
 			},
+			getDelivery: function() {
+				return axios({
+					method: 'get',
+					url: '/api/get',
+					headers: {
+						method: 'address'
+					},
+					params: {
+						studentId: this.student.id,
+					},
+				}).then(resp => {
+					return resp.data
+				})
+			},
 			saveDelivery: function() {
 				this.orderData.address.student_id = this.orderData.student_id
 				return axios({
 					url: '/api/save',
 					method: 'post',
 					headers: {
-						method: 'delivery'
+						method: 'address'
 					},
 					data: this.orderData.address,
 				}).then(resp => {
 					if (resp.data) {
-						this.selectNavTab('payment', 1)
+						if (this.product) {
+							this.selectNavTab('payment', 1)
+						} else {
+							this.selectNavTab('shoppingCart', 1)
+						}
 
 						this.orderData.student_address_id = resp.data.id
 					}
@@ -518,6 +613,52 @@
 				})
 			},
 			numberWithCommas: numberWithCommas,
+			incDecAmount: function(idx, incDec) {
+				boxCartStore.commit('incDecAmount', { idx: idx, incDec: incDec })
+			},
+			removeItem: function(idx) {
+				boxCartStore.commit('removeItem', idx)
+			},
+			itemPriceMain: function(idx) {
+				const payload = boxCartStore.state.shoppingCart[idx]
+
+				return payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0
+			},
+			itemPriceMainTotal: function(idx) {
+				const payload = boxCartStore.state.shoppingCart[idx]
+
+				return payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0)
+			},
+			renderFormPaymentShoppingCart: function() {
+				const shoppingCart = boxCartStore.state.shoppingCart
+
+				const formPaymentCart = {}
+
+				for (let key in shoppingCart) {
+					const itemCart = shoppingCart[key]
+
+					for (let i = 0; i < itemCart.item.form_payment.length; i++) {
+						const formPayment = itemCart.item.form_payment[i]
+
+						if (!Object.hasOwnProperty.call(formPaymentCart, formPayment.id)) {
+							formPaymentCart[formPayment.id] = {}
+						}
+
+						for (let j = 0; j < formPayment.course_form_payment.length; j++) {
+							const courseFormPayment = formPayment.course_form_payment[j]
+
+							if (!Object.hasOwnProperty.call(formPaymentCart[formPayment.id], courseFormPayment.parcel)) {
+								formPaymentCart[formPayment.id][courseFormPayment.parcel] = []
+							}
+
+							formPaymentCart[formPayment.id][courseFormPayment.parcel].push(courseFormPayment)
+						}
+
+					}
+				}
+
+				console.log(JSON.stringify(formPaymentCart, null, 2))
+			},
 		},
 		mounted: function() {
 			if (this.product) {
@@ -532,6 +673,8 @@
 			}
 
 			this.getState().then(allState => this.allState = allState)
+
+			this.selectNavTab('payment', 1)
 		},
 	}).mount('#shoppingJourney')
 </script>

@@ -1,5 +1,5 @@
 @foreach ($pageData->content as $item)
-<section class="section section-xxl swiper-slide-shopbox bg-default text-md-left">
+<section id="appBoxShop" class="section section-xxl swiper-slide-shopbox bg-default text-md-left">
 	<div class="container">
 		<div class="row row-30 row-lg-50">
 			<div class="col-lg-2 col-xl-2">
@@ -33,7 +33,7 @@
 										<div class="thumbnail-classic-price"></div>
 										<div class="thumbnail-classic-button-wrap">
 												<div class="thumbnail-classic-button">
-													<a class="button button-primary button-zakaria fl-bigmug-line-shopping202" href="/signature/{{ $product['id'] }}" title="Eu quero"></a>
+													<button class="button button-primary button-zakaria fl-bigmug-line-shopping202" @click="addBoxCard({{ $product['id'] }})" title="Eu quero"></button>
 												</div>
 										</div>
 								</div>
@@ -50,12 +50,9 @@
 							</div>
 
 							@if ($product->course_category_id == 1)
-
 								<span class="product-badge product-badge-sale">Venda</span>
-
 							@else
-							 	<span class="product-badge product-badge-sale" style="background: #ec7f6e">Box</span>
-
+								<span class="product-badge product-badge-sale" style="background: #ec7f6e">Box</span>
 							@endif
 						</article>
 					</div>
@@ -67,3 +64,15 @@
 </section>
 @endforeach
 
+@section('scripts')
+	@parent
+	<script>
+		Vue.createApp({
+			methods: {
+				addBoxCard(idProduct) {
+					boxCartStore.dispatch('add', idProduct)
+				},
+			},
+		}).mount('#appBoxShop')
+	</script>
+@endsection

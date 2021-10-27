@@ -16,16 +16,10 @@ class ShoppingJourneController extends _Controller
 		$flgPage = $request->get('flgPage');
 
 		$pageComponents = ContentPageModel::getByComponent($flgPage);
-		$products = CourseModel::get();
-		$courseCategories = CourseModel::get();
 
-				// return $pageComponents;
-				// return $products;
 		return view('site/bookbox/pages/default')
 			->with('flgPage', $flgPage)
-			->with('pageComponents', $pageComponents)
-			->with('courseCategories', $courseCategories)
-			->with('products', $products);
+			->with('pageComponents', $pageComponents);
 	}
 
 	public function pricing(Request $request)

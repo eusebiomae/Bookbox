@@ -20,6 +20,8 @@ class StudentAddressModel extends Model {
 		'neighborhood',
 		'street',
 		'number',
+		'phone',
+		'cellphone',
 
 		'created_by',
 		'updated_by',

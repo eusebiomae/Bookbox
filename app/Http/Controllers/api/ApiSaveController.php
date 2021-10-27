@@ -146,7 +146,7 @@ class ApiSaveController extends Controller {
 		return $studentModel;
 	}
 
-	public function delivery(Request $request) {
+	public function address(Request $request) {
 		if (!$request->has('student_id')) {
 			return null;
 		}

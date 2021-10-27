@@ -48,7 +48,7 @@ Route::get('/blog_post_details/{id}', 'site\cetcc\BlogController@getPost')->midd
 
 Route::get('/blog_post/liked/{id}/{isLiked}', 'site\cetcc\BlogController@liked')->middleware(['injectFlgPage:blog']);
 
-Route::get('/box_blog', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:box_blog']);
+Route::get('/box_blog', 'site\cetcc\ShopBoxController@index')->middleware(['injectFlgPage:box_blog']);
 Route::get('/single-box-details/{id}', 'site\cetcc\CourseController@courseDetails')->middleware(['injectFlgPage:single-box-details']);
 Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
 Route::get('/privacy-policy', 'site\cetcc\PrivacyController@index')->middleware(['injectFlgPage:privacy-policy']);
