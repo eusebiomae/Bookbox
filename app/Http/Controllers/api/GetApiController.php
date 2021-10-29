@@ -35,11 +35,13 @@ class GetApiController extends Controller {
 			'formPayment' => function($query) use ($id) {
 				$query
 				->select(['form_payment.id', 'form_payment.description', 'form_payment.flg_type', 'form_payment.flg_web'])
+				->groupBy('form_payment.id')
 				->with([
 					'courseFormPayment' => function($query) use ($id) {
 						$query
 						->select(['id', 'class_id', 'course_id', 'form_payment_id', 'parcel', 'value', 'full_value', 'course_subcategory_id', 'flg_main'])
-						->where('course_id', $id);
+						->where('course_id', $id)
+						->orderBy('parcel');
 					},
 				]);
 			},

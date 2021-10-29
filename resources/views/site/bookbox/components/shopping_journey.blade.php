@@ -142,14 +142,14 @@
 								<div class="col-md-4 form-group">
 									<label>Forma de Pagamento</label>
 									<select class="form-control m-b" v-model="orderData.formPayment">
-										<option v-for="(option, indx) in formPayment" :value="option.value">@{{ option.label }}</option>
+										<option v-for="(option) in formPayment" :value="option.value">@{{ option.label }}</option>
 									</select>
 								</div>
 
 								<div class="col-md-4 form-group" v-if="formPayment[orderData.formPayment] && formPayment[orderData.formPayment].values">
 									<label>Parcelas</label>
 									<select class="form-control m-b" v-model="formPaymentOpts">
-										<option v-for="(option, indx) in formPayment[orderData.formPayment].values" :value="option">
+										<option v-for="(option) in formPayment[orderData.formPayment].values" :value="option">
 											@{{ option.parcel }} x @{{ numberWithCommas(option.value, 2) }} (@{{ numberWithCommas(option.full_value, 2) }})
 										</option>
 									</select>
@@ -249,8 +249,112 @@
 									<button v-if="!wasRequest" class="btn" @click="confirmOrder">Confirmar</button>
 								</div>
 							</div>
-							<div v-else>
-								123456
+							<div class="row" v-else>
+								<div class="col-md-4 form-group">
+									<label>Forma de Pagamento</label>
+									<select class="form-control m-b" v-model="orderData.form_payment_id" @change="orderData.formPayment = formPaymentCart[orderData.form_payment_id].formPayment.flg_type">
+										<option v-for="(option, indx) in formPaymentCart" :value="option.formPayment.id">@{{ option.formPayment.description }}</option>
+									</select>
+								</div>
+
+								<div class="col-md-4 form-group" v-if="formPaymentCart[orderData.form_payment_id]">
+									<label>Parcelas</label>
+									<select class="form-control m-b" v-model="formPaymentOpts">
+										<option v-for="option in formPaymentCart[orderData.form_payment_id].parcels" :value="option">
+											@{{ option.parcel }} x @{{ numberWithCommas(option.value, 2) }} (@{{ numberWithCommas(option.full_value, 2) }})
+										</option>
+									</select>
+								</div>
+
+								<div class="col-md-12 form-group">
+									<label>E-mail*</label>
+									<input type="email" v-model="orderData.email" class="form-control required">
+								</div>
+
+								<div class="col-md-12" v-if="orderData.formPayment == 'bankSlip'">
+									<div class="row mt-5">
+										<div class="col-md-6 form-group">
+											<label>Nome do Titular*</label>
+											<input type="text" v-model="orderData.cardholder" class="form-control required">
+										</div>
+										<div class="col-md-6 form-group">
+											<label>CPF do Titular*</label>
+											<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-12" v-if="orderData.formPayment == 'creditCard'">
+									<div class="row mt-5">
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Nome do Titular*</label>
+												<input type="text" v-model="orderData.cardholder" class="form-control required">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Nº do Cartão*</label>
+												<input type="text" v-model="orderData.number_card" class="form-control required">
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="form-group">
+												<label>Cod. de Seg.*</label>
+												<input type="text" v-model="orderData.security_code" class="form-control required">
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="form-group">
+												<label>Validade*</label>
+												<input type="text" v-model="orderData.shelf_life" placeholder="" class="form-control required mask-creditcard-shelf_life">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>CPF do Titular*</label>
+												<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Data de Nascimento*</label>
+												<div class="input-group date">
+													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+													<input type="text" v-model="orderData.birth_date" class="form-control required" readonly>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Telefone*</label>
+												<input type="text" v-model="orderData.phone" class="form-control required mask-cellphone">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>E-mail do Titular*</label>
+												<input type="text" v-model="orderData.holder_email" class="form-control required">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>CEP*</label>
+												<input type="text" v-model="orderData.zip_code" class="form-control required mask-cep">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Nº*</label>
+												<input type="text" v-model="orderData.address_number" class="form-control required">
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -301,6 +405,7 @@
 				tabSelected: 'payment',
 				formPayment: {},
 				formPaymentOpts: {},
+				formPaymentCart: {},
 				orderPayments: {},
 				showError: [],
 				wasRequest: false,
@@ -630,34 +735,88 @@
 				return payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0)
 			},
 			renderFormPaymentShoppingCart: function() {
-				const shoppingCart = boxCartStore.state.shoppingCart
-
+				const shoppingCart = JSON.parse(JSON.stringify(boxCartStore.state.shoppingCart))
 				const formPaymentCart = {}
+				let amountItens = 0
+				let formPaymentOpts = {}
 
 				for (let key in shoppingCart) {
+					amountItens++
 					const itemCart = shoppingCart[key]
 
 					for (let i = 0; i < itemCart.item.form_payment.length; i++) {
 						const formPayment = itemCart.item.form_payment[i]
 
 						if (!Object.hasOwnProperty.call(formPaymentCart, formPayment.id)) {
-							formPaymentCart[formPayment.id] = {}
+							formPaymentCart[formPayment.id] = {
+								formPayment: {
+									id: formPayment.id,
+									description: formPayment.description,
+									flg_type: formPayment.flg_type,
+								},
+								parcels: {},
+							}
 						}
 
 						for (let j = 0; j < formPayment.course_form_payment.length; j++) {
 							const courseFormPayment = formPayment.course_form_payment[j]
 
-							if (!Object.hasOwnProperty.call(formPaymentCart[formPayment.id], courseFormPayment.parcel)) {
-								formPaymentCart[formPayment.id][courseFormPayment.parcel] = []
+							courseFormPayment.value *= itemCart.amount
+							courseFormPayment.full_value *= itemCart.amount
+
+							if (!Object.hasOwnProperty.call(formPaymentCart[formPayment.id].parcels, courseFormPayment.parcel)) {
+								formPaymentCart[formPayment.id].parcels[courseFormPayment.parcel] = []
 							}
 
-							formPaymentCart[formPayment.id][courseFormPayment.parcel].push(courseFormPayment)
+							formPaymentCart[formPayment.id].parcels[courseFormPayment.parcel].push(courseFormPayment)
 						}
-
 					}
 				}
 
-				console.log(JSON.stringify(formPaymentCart, null, 2))
+				for (const idFormPayment in formPaymentCart) {
+					if (Object.hasOwnProperty.call(formPaymentCart, idFormPayment)) {
+						const formPaymentParcel = formPaymentCart[idFormPayment]
+						for (const keyParcel in formPaymentParcel.parcels) {
+							if (Object.hasOwnProperty.call(formPaymentParcel.parcels, keyParcel)) {
+								const parcels = formPaymentParcel.parcels[keyParcel]
+								if (amountItens == parcels.length) {
+									if (!Object.hasOwnProperty.call(formPaymentOpts, idFormPayment)) {
+										formPaymentOpts[idFormPayment] = {
+											formPayment: formPaymentParcel.formPayment,
+											parcels: {},
+										}
+									}
+
+									for (let i = 0; i < parcels.length; i++) {
+										const parcel = parcels[i]
+
+										if (!Object.hasOwnProperty.call(formPaymentOpts[idFormPayment].parcels, keyParcel)) {
+											formPaymentOpts[idFormPayment].parcels[keyParcel] = {
+												form_payment_id: parcel.form_payment_id,
+												parcel: parcel.parcel,
+												value: 0,
+												full_value: 0,
+											}
+										}
+
+										formPaymentOpts[idFormPayment].parcels[keyParcel].value += +parcel.value
+										formPaymentOpts[idFormPayment].parcels[keyParcel].full_value += +parcel.full_value
+									}
+								}
+							}
+						}
+					}
+				}
+
+				const formPaymentIds = Object.keys(formPaymentOpts)
+				if (formPaymentIds.length) {
+					this.orderData.form_payment_id = formPaymentOpts[formPaymentIds[0]].formPayment.id
+					this.orderData.formPayment = formPaymentOpts[formPaymentIds[0]].formPayment.flg_type
+				}
+
+				console.log(JSON.stringify(formPaymentOpts, null, 2));
+
+				this.formPaymentCart = formPaymentOpts
 			},
 		},
 		mounted: function() {

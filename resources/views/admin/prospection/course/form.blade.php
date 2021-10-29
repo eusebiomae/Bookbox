@@ -1067,18 +1067,20 @@
 
 		var selectElem = tmplTeacher.querySelector('[name$="[team_id]"]')
 
-		populateSelectBox({
-			list: APP.scope.listSelectBox.team,
-			target: selectElem,
-			columnValue: "id",
-			columnLabel: "name",
-			selectBy: [ data.team_id ],
-			emptyOption: {
-				label: "Selecione..."
-			}
-		});
+		if (selectElem) {
+			populateSelectBox({
+				list: APP.scope.listSelectBox.team,
+				target: selectElem,
+				columnValue: "id",
+				columnLabel: "name",
+				selectBy: [ data.team_id ],
+				emptyOption: {
+					label: "Selecione..."
+				}
+			});
 
-		$(selectElem).select2();
+			$(selectElem).select2();
+		}
 	}
 
 	function newBonusCourse(data, checked) {
@@ -1233,7 +1235,7 @@
 					});
 				} */
 
-				if (APP.scope.listSelectBox.team) {
+				if (APP.scope.listSelectBox.team && document.forms.formCourse.team_id) {
 					populateSelectBox({
 						list: APP.scope.listSelectBox.team,
 						target: document.forms.formCourse.team_id,
@@ -1246,7 +1248,7 @@
 					});
 				}
 
-				if (APP.scope.listSelectBox.courseCategoryType) {
+				if (APP.scope.listSelectBox.courseCategoryType && document.forms.formCourse.course_category_type_id) {
 					populateSelectBox({
 						list: APP.scope.listSelectBox.courseCategoryType,
 						target: document.forms.formCourse.course_category_type_id,
@@ -1259,7 +1261,7 @@
 					});
 				}
 
-				if (APP.scope.listSelectBox.courseSubcategory) {
+				if (APP.scope.listSelectBox.courseSubcategory && document.forms.formCourse.course_subcategory_id) {
 					populateSelectBox({
 						list: APP.scope.listSelectBox.courseSubcategory,
 						target: document.forms.formCourse.course_subcategory_id,
@@ -1272,7 +1274,7 @@
 					});
 				}
 
-				if (APP.scope.listSelectBox.bonusCourse) {
+				if (APP.scope.listSelectBox.bonusCourse && document.getElementById('bonusCourse')) {
 					document.getElementById('bonusCourse').innerHTML = ''
 
 					APP.scope.listSelectBox.bonusCourse.forEach(function(item) {
@@ -1291,7 +1293,7 @@
 					})
 				}
 
-				if (APP.scope.listSelectBox.includedItems) {
+				if (APP.scope.listSelectBox.includedItems && document.getElementById('includedItems')) {
 					document.getElementById('includedItems').innerHTML = ''
 
 					APP.scope.listSelectBox.includedItems.forEach(function(item) {
@@ -1310,7 +1312,7 @@
 					})
 				}
 
-				if (APP.scope.listSelectBox.contact) {
+				if (APP.scope.listSelectBox.contact && document.forms.formCourse['contact_course[]']) {
 					populateSelectBox({
 						list: APP.scope.listSelectBox.contact,
 						target: document.forms.formCourse['contact_course[]'],
