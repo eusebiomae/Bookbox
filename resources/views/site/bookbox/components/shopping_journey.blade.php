@@ -244,15 +244,11 @@
 										</div>
 									</div>
 								</div>
-
-								<div class="col-md-12 text-right">
-									<button v-if="!wasRequest" class="btn" @click="confirmOrder">Confirmar</button>
-								</div>
 							</div>
 							<div class="row" v-else>
 								<div class="col-md-4 form-group">
 									<label>Forma de Pagamento</label>
-									<select class="form-control m-b" v-model="orderData.form_payment_id" @change="orderData.formPayment = formPaymentCart[orderData.form_payment_id].formPayment.flg_type">
+									<select class="form-control m-b" v-model="orderData.form_payment_id" @change="onChangeformPaymentCart">
 										<option v-for="(option, indx) in formPaymentCart" :value="option.formPayment.id">@{{ option.formPayment.description }}</option>
 									</select>
 								</div>
@@ -355,6 +351,10 @@
 										</div>
 									</div>
 								</div>
+							</div>
+
+							<div class="col-md-12 text-right">
+								<button v-if="!wasRequest" class="btn" @click="confirmOrder">Confirmar</button>
 							</div>
 						</div>
 
@@ -566,11 +566,28 @@
 					return
 				}
 
+				if (!this.product) {
+					this.orderData.shoppingCart = []
+
+					for (const idItem in this.shoppingCart) {
+						if (Object.hasOwnProperty.call(this.shoppingCart, idItem)) {
+							const itemCart = this.shoppingCart[idItem];
+
+							this.orderData.shoppingCart.push({
+								item_id: idItem,
+								amount: itemCart.amount,
+							})
+						}
+					}
+				}
+
+				const data = Object.assign({}, this.orderData, this.formPaymentOpts)
+
 				showPreloader()
 				axios({
 					url: '/confirm_payment',
 					method: 'post',
-					data: Object.assign({}, this.orderData, this.formPaymentOpts),
+					data: data,
 				}).then(resp => {
 					hidePreloader()
 					if (resp.data.payments) {
@@ -814,9 +831,15 @@
 					this.orderData.formPayment = formPaymentOpts[formPaymentIds[0]].formPayment.flg_type
 				}
 
-				console.log(JSON.stringify(formPaymentOpts, null, 2));
-
 				this.formPaymentCart = formPaymentOpts
+				this.onChangeformPaymentCart()
+			},
+			onChangeformPayment: function() {
+			},
+			onChangeformPaymentCart: function() {
+				this.orderData.formPayment = this.formPaymentCart[this.orderData.form_payment_id].formPayment.flg_type
+
+				this.formPaymentOpts = Object.values(this.formPaymentCart[this.orderData.form_payment_id].parcels)[0]
 			},
 		},
 		mounted: function() {

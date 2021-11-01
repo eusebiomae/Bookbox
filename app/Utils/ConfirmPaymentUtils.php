@@ -8,6 +8,7 @@ use App\Model\api\CourseFormPaymentModel;
 use App\Model\api\CourseSupervisionModel;
 use App\Model\api\ErrorAsaasModel;
 use App\Model\api\FormPaymentModel;
+use App\Model\api\OrderItemModel;
 use App\Model\api\OrderModel;
 use App\Model\api\OrderParcelModel;
 use App\Model\api\ScholarshipStudentModel;
@@ -36,12 +37,18 @@ class ConfirmPaymentUtils {
 	public function makeStudentOrder($payload) {
 		$this->getAsaasCustomerCode($payload);
 
-		// $payload['asaas_type'] = 'payments';
-		$payload['asaas_type'] = 'subscriptions';
+		$hasShoppingCart = isset($payload['shoppingCart']) && count($payload['shoppingCart']);
+
+		if ($hasShoppingCart) {
+			$payload['asaas_type'] = 'payments';
+		} else {
+			$payload['asaas_type'] = 'subscriptions';
+		}
 
 		$payload['flg_free'] = false;
 
 		$payload['form_payment'] = $payload['formPayment'];
+
 		if (isset($payload['course_form_payment_id']) && !empty($payload['course_form_payment_id'])) {
 			$this->setByCourseFormPayment($payload);
 		}
@@ -104,10 +111,27 @@ class ConfirmPaymentUtils {
 			(new StudentClassControlUtils)->generateByOrder($order->id);
 		}
 
+		if ($hasShoppingCart) {
+			OrderItemModel::where('order_id', $order->id)->forceDelete();
+			foreach ($payload['shoppingCart'] as $shoppingCart) {
+				$orderItemModel = new OrderItemModel;
+
+				$orderItemModel->fill([
+					'order_id' => $order->id,
+					'item_id' => $shoppingCart['item_id'],
+					'amount' => $shoppingCart['amount'],
+				])->save();
+			}
+		}
+
 		$msg = '';
 
 		if ($order->form_payment == 'bankSlip' && $order->asaas_type == 'subscriptions') {
 			$msg = 'Boleto enviado por e-mail';
+		} else {
+			if ($order->form_payment == 'bankSlip' && $payments->bankSlipUrl) {
+				$msg = "<a href='{$payments->bankSlipUrl}' target='_blank'>Click aqui para acessar o Boleto</a>";
+			}
 		}
 
 		return [
@@ -556,6 +580,7 @@ class ConfirmPaymentUtils {
 
 		$optArray = [
 			CURLOPT_URL => $this->company->asaas_url . $options['path'],
+			CURLOPT_SSL_VERIFYPEER => false,
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => '',
 			CURLOPT_MAXREDIRS => 10,

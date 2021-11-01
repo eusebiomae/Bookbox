@@ -12,7 +12,6 @@ use App\Model\api\FormPaymentModel;
 use App\Model\api\Prospection\CourseModel;
 use App\Model\api\Prospection\CourseCategoryModel;
 use App\Model\api\Prospection\CourseCategoryTypeModel;
-use App\Model\api\Prospection\CourseSubcategoryModel;
 use App\Model\api\Configuration\FunctionModel;
 use App\Model\api\Configuration\GraduationModel;
 use App\Model\api\Configuration\OfficeModel;
@@ -31,7 +30,6 @@ use App\Model\api\Prospection\ContentCourseModel;
 use App\Model\api\Prospection\IncludedItemsModel;
 use App\Model\api\TeamModel;
 use App\Model\api\UserModel;
-use File;
 
 class CourseController extends BaseMethodController {
 
@@ -250,7 +248,7 @@ class CourseController extends BaseMethodController {
 
 		$formPayment = $request->get('formPayment');
 		if (!empty($formPayment)) {
-			$courseFormPayment = [];
+			$courseFormPaymentIds = [];
 
 			foreach ($formPayment as $key => &$value) {
 				if (empty($value['form_payment_id'])) {
@@ -258,14 +256,24 @@ class CourseController extends BaseMethodController {
 					continue;
 				}
 
+				$value['course_id'] = $save->data->id;
+
 				if (empty($value['id'])) {
 					unset($value['id']);
+
+					$courseFormPaymentModel = new CourseFormPaymentModel;
+				} else {
+					$courseFormPaymentModel = CourseFormPaymentModel::find($value['id']);
 				}
 
-				$courseFormPayment[] = (new CourseFormPaymentModel($value))->toArray();
+				$courseFormPaymentModel->fill($value)->save();
+
+				$courseFormPaymentIds[] = $courseFormPaymentModel->id;
 			}
 
-			$save->data->formPayment()->sync($courseFormPayment);
+			if (count($courseFormPaymentIds)) {
+				CourseFormPaymentModel::where('course_id', $save->data->id)->whereNotIn('id', $courseFormPaymentIds)->delete();
+			}
 		}
 
 		$courseOtherInfType = [];
