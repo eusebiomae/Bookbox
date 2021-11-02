@@ -51,6 +51,7 @@
 								<li><a data-toggle="tab" href="#tab-inative">Inativos</a></li>
 							@endif
 						</ul>
+
 						<div class="tab-content">
 
 							<div id="tab-free" class="tab-pane">

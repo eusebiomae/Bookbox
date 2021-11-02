@@ -13,8 +13,8 @@ class StateModel extends Model {
 	protected $table = 'state';
 
 	public $fillable = [
-		'description',
-		'abbreviation',
+		'name',
+		'initials',
 		'created_by',
 		'updated_by',
 		'deleted_by',

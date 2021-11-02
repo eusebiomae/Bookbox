@@ -18,15 +18,16 @@ class OrderModel extends Model {
 		'status',
 		'order_id',
 		'student_id',
-		'course_id',
 		'class_id',
+		'responsible_id',
+		'course_id',
 		'course_form_payment_id',
 		'supervision_id',
 		'form_payment_id',
-		'responsible_id',
 		'bank_id',
 		'course_discount_id',
 		'company_id',
+		'student_address_id',
 
 		'form_payment',
 		'due_date',
@@ -53,6 +54,8 @@ class OrderModel extends Model {
 		'contract',
 		'asaas_payments_code',
 		'asaas_customers_code',
+		'asaas_token',
+		'asaas_type',
 		'asaas_json',
 
 		'imported',
@@ -131,6 +134,10 @@ class OrderModel extends Model {
 		$this->attributes['security_code'] = empty($val) ? null : Crypt::encrypt($val);
 	}
 
+	public function setAsaasTokenAttribute($val) {
+		$this->attributes['asaas_token'] = empty($val) ? null : Crypt::encrypt($val);
+	}
+
 	public function setShelfLifeAttribute($val) {
 		$this->attributes['shelf_life'] = empty($val) ? null : Crypt::encrypt($val);
 	}
@@ -165,6 +172,10 @@ class OrderModel extends Model {
 	}
 
 	public function getShelfLifeAttribute($val) {
+		return empty($val) ? null : Crypt::decrypt($val);
+	}
+
+	public function getAsaasTokenAttribute($val) {
 		return empty($val) ? null : Crypt::decrypt($val);
 	}
 
@@ -232,7 +243,7 @@ class OrderModel extends Model {
 	}
 
 	public function student() {
-		return $this->belongsTo('\App\Model\api\StudentModel');
+		return $this->belongsTo('\App\Model\api\StudentModel', 'student_id', 'id');
 	}
 
 	public function courseFormPayment() {

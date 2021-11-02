@@ -56,7 +56,7 @@ class CourseSupervisionController extends BaseMethodController {
 			[ 'title' => 'Data', 'data' => 'date', ],
 			[ 'title' => 'Categoria', 'data' => 'course_category.description_pt', ],
 			[ 'title' => 'Aluno', 'data' => 'value_3', 'className' => 'mask-money', ],
-			[ 'title' => 'Ex-alunos do CETCC', 'data' => 'value_1', 'className' => 'mask-money', ],
+			[ 'title' => 'Ex-alunos', 'data' => 'value_1', 'className' => 'mask-money', ],
 			[ 'title' => 'Avulsos', 'data' => 'value_2', 'className' => 'mask-money', ],
 			[ 'title' => '', 'className' => 'center', 'btnUpd' => '/admin/course_supervision' ],
 			[ 'title' => '', 'className' => 'center', 'btnDel' => '/admin/course_supervision' ],

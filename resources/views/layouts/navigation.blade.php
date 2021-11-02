@@ -5,8 +5,13 @@
 			<li class="nav-header">
 				<div class="dropdown profile-element">
 					<span>
-						<a href="{{ url('/student_area/') }}">
-							<img alt="image" class="img" src="{!! asset(Session::get('company')->image ?? '') !!}" />
+						<a href="{{ url('/admin/') }}">
+							@if (isset(Session::get('company')->image))
+							<img alt="image" class="" src="{!! asset(Session::get('company')->image) !!}" style="width: 100%;" />
+							@else
+							<img alt="image" class="img-circle" src="assets/images/site/Logo Negativo.png" style="width: 100%;" />
+
+							@endif
 						</a>
 					</span>
 					<a data-toggle="dropdown" class="dropdown-toggle" href="{{ url('/student_area/') }}">
@@ -17,7 +22,7 @@
 				</div>
 
 				<div class="logo-element">
-					CETCC
+					<img alt="image" class="img-circle" src="assets/images/site/LogoMini Negativo Roxo.png" style="width: 100%;" />
 				</div>
 			</li>
 

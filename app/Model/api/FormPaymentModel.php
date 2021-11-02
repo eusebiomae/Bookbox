@@ -36,6 +36,10 @@ class FormPaymentModel extends Model
 		return $this->hasMany('\App\Model\api\Financial\BankAccountModel', 'form_payment_id');
 	}
 
+	public function courseFormPayment() {
+		return $this->hasMany('\App\Model\api\CourseFormPaymentModel', 'form_payment_id');
+	}
+
 	protected function getLabelFlgWebAttribute() {
 		return $this->attributes['flg_web'] == 1  ? 'Sim' : 'Não';
 	}

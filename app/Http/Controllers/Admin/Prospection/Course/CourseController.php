@@ -12,7 +12,6 @@ use App\Model\api\FormPaymentModel;
 use App\Model\api\Prospection\CourseModel;
 use App\Model\api\Prospection\CourseCategoryModel;
 use App\Model\api\Prospection\CourseCategoryTypeModel;
-use App\Model\api\Prospection\CourseSubcategoryModel;
 use App\Model\api\Configuration\FunctionModel;
 use App\Model\api\Configuration\GraduationModel;
 use App\Model\api\Configuration\OfficeModel;
@@ -31,7 +30,6 @@ use App\Model\api\Prospection\ContentCourseModel;
 use App\Model\api\Prospection\IncludedItemsModel;
 use App\Model\api\TeamModel;
 use App\Model\api\UserModel;
-use File;
 
 class CourseController extends BaseMethodController {
 
@@ -62,7 +60,7 @@ class CourseController extends BaseMethodController {
 		$list->place = PlaceModel::orderBy('description')->get();
 		$list->team = TeamModel::orderBy('name')->get();
 		$list->courseCategoryType = CourseCategoryTypeModel::orderBy('title')->get();
-		$list->courseSubcategory = CourseSubcategoryModel::orderBy('description_pt')->get();
+		// $list->courseSubcategory = CourseSubcategoryModel::orderBy('description_pt')->get();
 		$list->formPayment = FormPaymentModel::orderBy('description')->get();
 		$list->bonusCourse = BonusCourseModel::orderBy('title_pt')->get();
 		$list->includedItems = IncludedItemsModel::orderBy('title_pt')->get();
@@ -97,7 +95,7 @@ class CourseController extends BaseMethodController {
 		$dataTable->data = CourseModel::withTrashed()
 			->with('courseCategory')
 			->with('courseCategoryType')
-			->with('courseSubcategory')
+			// ->with('courseSubcategory')
 			->get();
 
 		$dataTable->header = [
@@ -105,18 +103,18 @@ class CourseController extends BaseMethodController {
 				'label' => 'ID',
 				'column' => 'id',
 			],
-			(object) [
-				'label' => 'Tipo',
-				'column' => 'courseCategoryType.title',
-			],
-			(object) [
-				'label' => 'Categoria',
-				'column' => 'courseCategory.description_pt',
-			],
-			(object) [
-				'label' => 'Subcategoria',
-				'column' => 'courseSubcategory.description_pt',
-			],
+			// (object) [
+			// 	'label' => 'Tipo',
+			// 	'column' => 'courseCategoryType.title',
+			// ],
+			// (object) [
+			// 	'label' => 'Categoria',
+			// 	'column' => 'courseCategory.description_pt',
+			// ],
+			// (object) [
+			// 	'label' => 'Subcategoria',
+			// 	'column' => 'courseSubcategory.description_pt',
+			// ],
 			(object) [
 				'label' => 'Titulo',
 				'column' => 'title_pt',
@@ -133,8 +131,8 @@ class CourseController extends BaseMethodController {
 		$this->config->fileView = 'form';
 		$this->config->toView['title_page'] = 'Inserir';
 		$this->config->toView['url_page_action'] = '/insert';
-		$this->config->toView['title'] = 'Ficha cadastral do Aluno';
-		$this->config->toView['subtitle'] = 'Cadastre todas as informações referente ao aluno em um único lugar.';
+		$this->config->toView['title'] = 'Ficha cadastral do Produto';
+		$this->config->toView['subtitle'] = 'Cadastre todas as informações referente ao Produto em um único lugar.';
 
 		return parent::insert($request)
 		->with('listSelectBox', $this->getListSelectBox())
@@ -152,8 +150,8 @@ class CourseController extends BaseMethodController {
 		$this->config->fileView = 'form';
 		$this->config->toView['title_page'] = 'Editar';
 		$this->config->toView['url_page_action'] = '/update';
-		$this->config->toView['title'] = 'Ficha de edição do Aluno';
-		$this->config->toView['subtitle'] = 'Edite todas as informações referente ao aluno em um único lugar.';
+		$this->config->toView['title'] = 'Ficha de edição do Produto';
+		$this->config->toView['subtitle'] = 'Edite todas as informações referente ao Produto em um único lugar.';
 
 		$listSelectBox = $this->getListSelectBox();
 
@@ -225,37 +223,58 @@ class CourseController extends BaseMethodController {
 			$request['school_clinic'] = null;
 		}
 
+		if (!$request->get('formPayment')) {
+			$request['full_value'] = null;
+		}
+
 		// return $request;
+		// return $request->get('full_value');
 		// return toNumberFormat($request->get('fine_value'));
 
 		$save = parent::save($request);
 
-		if (empty($request->get('id'))) {
-			$courseFormPayment = CourseFormPaymentModel::whereNull('course_id')->where('course_subcategory_id',  $request->get('course_subcategory_id'))->get()->toArray();
+		// cetcc
+		// if (empty($request->get('id'))) {
+		// 	$courseFormPayment = CourseFormPaymentModel::whereNull('course_id')->where('course_subcategory_id',  $request->get('course_subcategory_id'))->get()->toArray();
 
-			foreach ($courseFormPayment as &$value) {
-				$value['date'] = formatDateEng($value['date']);
+		// 	foreach ($courseFormPayment as &$value) {
+		// 		$value['date'] = formatDateEng($value['date']);
 
-				unset($value['id'], $value['course_id']);
+		// 		unset($value['id'], $value['course_id']);
+		// 	}
+
+		// 	$save->data->formPayment()->sync($courseFormPayment);
+		// }
+
+		$formPayment = $request->get('formPayment');
+		if (!empty($formPayment)) {
+			$courseFormPaymentIds = [];
+
+			foreach ($formPayment as $key => &$value) {
+				if (empty($value['form_payment_id'])) {
+					unset($formPayment[$key]);
+					continue;
+				}
+
+				$value['course_id'] = $save->data->id;
+
+				if (empty($value['id'])) {
+					unset($value['id']);
+
+					$courseFormPaymentModel = new CourseFormPaymentModel;
+				} else {
+					$courseFormPaymentModel = CourseFormPaymentModel::find($value['id']);
+				}
+
+				$courseFormPaymentModel->fill($value)->save();
+
+				$courseFormPaymentIds[] = $courseFormPaymentModel->id;
 			}
 
-			$save->data->formPayment()->sync($courseFormPayment);
+			if (count($courseFormPaymentIds)) {
+				CourseFormPaymentModel::where('course_id', $save->data->id)->whereNotIn('id', $courseFormPaymentIds)->delete();
+			}
 		}
-		// $formPayment = $request->get('formPayment');
-		// if (!empty($formPayment)) {
-		// 	foreach ($formPayment as $key => &$value) {
-		// 		if (empty($value['form_payment_id'])) {
-		// 			unset($formPayment[$key]);
-		// 			continue;
-		// 		}
-
-		// 		if (empty($value['id'])) {
-		// 			unset($value['id']);
-		// 		}
-
-		// 		$value = (new CourseFormPaymentModel($value))->toArray();
-		// 	}
-		// }
 
 		$courseOtherInfType = [];
 		if ($request->get('course_other_inf')) {

@@ -41,6 +41,14 @@ Route::post('saveLead', 'api\LeadController@save');
 // 	return count($leads);
 // });
 
+Route::get('get', function(Request $request) {
+	return (new App\Http\Controllers\api\GetApiController)->{$request->header('method')}($request);
+});
+
+Route::get('state', 'api\GetApiController@state');
+Route::get('city', 'api\GetApiController@city');
+Route::get('product/{id}', 'api\GetApiController@product');
+
 Route::group(['prefix' => 'validate'], function() {
 	Route::post('cpf', 'api\ValidateController@cpf');
 	Route::post('cpf_exist', 'api\ValidateController@cpfExist');

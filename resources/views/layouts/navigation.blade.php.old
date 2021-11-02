@@ -16,9 +16,7 @@
 					</a>
 				</div>
 
-				<div class="logo-element">
-					CETCC
-				</div>
+				<div class="logo-element"></div>
 			</li>
 
 			<li class="{{ isActiveRoute('admin.dashboard') }}">

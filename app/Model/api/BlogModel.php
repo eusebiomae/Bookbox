@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 use App\Traits\Updater;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class BlogModel extends Model {
 	use SoftDeletes;
@@ -95,6 +96,10 @@ class BlogModel extends Model {
 			->orderBy('created_at', 'desc')
 			->take($opts['count'])
 			->get();
+	}
+
+	public function getImageAttribute($value) {
+		return empty($value) ? null : Storage::url("blog/{$value}");
 	}
 
 	static public function getPopularTags() {

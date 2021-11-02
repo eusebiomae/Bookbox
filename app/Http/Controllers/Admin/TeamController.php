@@ -55,20 +55,20 @@ class TeamController extends BaseMethodController {
 				'label' => 'Nome',
 				'column' => 'name',
 			],
-			(object) [
-				'label' => 'Graduação',
-				'column' => 'graduation.description_pt',
-			],
+			// (object) [
+			// 	'label' => 'Graduação',
+			// 	'column' => 'graduation.description_pt',
+			// ],
+			// (object) [
+			// 	'label' => 'Função',
+			// 	'column' => 'function.description_pt',
+			// ],
+			// (object) [
+			// 	'label' => 'Cargo',
+			// 	'column' => 'office.description_pt',
+			// ],
 			(object) [
 				'label' => 'Função',
-				'column' => 'function.description_pt',
-			],
-			(object) [
-				'label' => 'Cargo',
-				'column' => 'office.description_pt',
-			],
-			(object) [
-				'label' => 'crp',
 				'column' => 'crp',
 			],
 		];

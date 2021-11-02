@@ -43,6 +43,10 @@ class ContentSectionController extends BaseMethodController {
 				'label' => 'Descrição pt',
 				'column' => 'description_pt',
 			],
+			(object) [
+				'label' => 'Flag do Componente',
+				'column' => 'component',
+			],
 		];
 
 		$this->config->toView['dataTable'] = $dataTable;

@@ -43,15 +43,15 @@
 
 							<div class="tabs-container">
 								<ul class="nav nav-tabs">
-									<li class="active"><a data-toggle="tab" href="#tab-1">Dados do Curso</a></li>
-									<li><a class="" data-toggle="tab" href="#tab-2">Vantagens</a></li>
-									{{-- <li><a class="" data-toggle="tab" href="#tab-3">Valores</a></li> --}}
-									<li><a class="" data-toggle="tab" href="#tab-4">Professores</a></li>
+									<li class="active"><a data-toggle="tab" href="#tab-1">Dados do Produto</a></li>
+									{{-- <li><a class="" data-toggle="tab" href="#tab-2">Vantagens</a></li> --}}
+									<li><a class="" data-toggle="tab" href="#tab-3">Valores</a></li>
+									{{-- <li><a class="" data-toggle="tab" href="#tab-4">Professores</a></li> --}}
 									{{-- <li><a class="" data-toggle="tab" href="#tab-5">Módulos</a></li> --}}
 									<li><a class="" data-toggle="tab" href="#tab-6">Itens Inclusos</a></li>
-									<li><a class="" data-toggle="tab" href="#tab-additional">Adicionais</a></li>
-									<li><a class="" data-toggle="tab" href="#tab-discount">Cupom de desconto</a></li>
-									<li><a class="" data-toggle="tab" href="#tab-class">Turmas</a></li>
+									{{-- <li><a class="" data-toggle="tab" href="#tab-additional">Adicionais</a></li> --}}
+									{{-- <li><a class="" data-toggle="tab" href="#tab-discount">Cupom de desconto</a></li> --}}
+									{{-- <li><a class="" data-toggle="tab" href="#tab-class">Turmas</a></li> --}}
 								</ul>
 								<form name="formCourse" method="post" action="{{ url($urlAction) }}" class="form-horizontal" enctype="multipart/form-data">
 									{{ csrf_field() }}
@@ -63,31 +63,31 @@
 												<div class="col-lg-12 animated fadeInLeft">
 													<div class="form-group">
 
-														@if ($fieldPageConfig->show('course_category_type_id'))
+														{{-- @if ($fieldPageConfig->show('course_category_type_id'))
 														<div class="col-sm-4">
-															<label class="control-label">Tipo Categoria</label>
+															<label class="control-label">Tipo de Produto</label>
 															<select class="form-control" name="course_category_type_id" required {!! $fieldPageConfig->attr('course_category_type_id') !!}></select>
 														</div>
-														@endif
+														@endif --}}
 
 														@if ($fieldPageConfig->show('course_category_id'))
 														<div class="col-sm-4">
-															<label class="control-label">Categoria</label>
+															<label class="control-label">Categoria de Produto</label>
 															<div class="gp-block-ruby">
 																<select name="course_category_id" class="select2_demo_1 form-control" required onchange="onChangeCourseCategory(this.value, event)" {!! $fieldPageConfig->attr('course_category_id') !!}></select>
-																{{-- <button type="button" class="m-l-xs btn gp-btn-green " data-target="#courseCategoryModel" title="Nova opção" onclick="openModalNewItemSelect(event, 'course_category_id')">
+																<button type="button" class="m-l-xs btn gp-btn-green " data-target="#courseCategoryModel" title="Nova opção" onclick="openModalNewItemSelect(event, 'course_category_id')">
 																	<i class="fa fa-plus"></i>
-																</button> --}}
+																</button>
 															</div>
 														</div>
 														@endif
 
-														@if ($fieldPageConfig->show('course_subcategory_id'))
+														{{-- @if ($fieldPageConfig->show('course_subcategory_id'))
 														<div class="col-sm-4">
 															<label class="control-label">Subcategoria</label>
 															<select name="course_subcategory_id" class="select2_demo_1 form-control" required {!! $fieldPageConfig->attr('course_subcategory_id') !!}></select>
 														</div>
-														@endif
+														@endif --}}
 
 
 														{{--
@@ -149,6 +149,14 @@
 														@endif
 
 
+														{{-- @if ($fieldPageConfig->show('full_value'))
+														<div class="col-sm-4">
+															<label class=" control-label">Valor Total (Em Reais)</label>
+															<input type="number" id="full_value" name="full_value" class="form-control" required {!! $fieldPageConfig->attr('full_value') !!} />
+														</div>
+														@endif --}}
+
+
 														{{-- @if ($fieldPageConfig->show('subtitle_en'))
 														<div class="col-sm-12">
 															<label class=" control-label">Subtítulo EN</label>
@@ -182,7 +190,7 @@
 														</div>
 														@endif--}}
 
-														@if ($fieldPageConfig->show('hours_load'))
+														{{-- @if ($fieldPageConfig->show('hours_load'))
 														<div class="col-sm-4">
 															<label class=" control-label">Carga Horária (Em Horas)</label>
 															<input type="number" id="hours_load" name="hours_load" class="form-control" required {!! $fieldPageConfig->attr('hours_load') !!} />
@@ -208,7 +216,7 @@
 															<label class=" control-label">Quantidade de Módulos</label>
 															<input type="text" name="number_modules" class="form-control" required {!! $fieldPageConfig->attr('number_modules') !!} />
 														</div>
-														@endif
+														@endif --}}
 
 														{{-- @if ($fieldPageConfig->show('place_id'))
 														<div class="col-sm-4">
@@ -217,7 +225,7 @@
 														</div>
 														@endif--}}
 
-														@if ($fieldPageConfig->show('certified'))
+														{{-- @if ($fieldPageConfig->show('certified'))
 														<div class="col-sm-4">
 															<label class="control-label">Certificado</label>
 															<input type="text" id="certified" name="certified" class="form-control" maxlength="512" placeholder="MEC e CFP" {!! $fieldPageConfig->attr('certified') !!} />
@@ -250,9 +258,9 @@
 															<label class="control-label">Horas de Supervisão monitorada</label>
 															<input type="text" name="hours_monitored_supervision" class="form-control" maxlength="11" {!! $fieldPageConfig->attr('hours_monitored_supervision') !!} />
 														</div>
-														@endif
+														@endif --}}
 
-														@if ($fieldPageConfig->show('contact_course[]'))
+														{{-- @if ($fieldPageConfig->show('contact_course[]'))
 														<div class="col-sm-6">
 															<label class="control-label">Contato(s)</label>
 															<select name="contact_course[]" data-placeholder="Selecionar..." class="chosen-select" multiple value="" {!! $fieldPageConfig->attr('contact_course[]') !!} ></select>
@@ -264,10 +272,10 @@
 															<label class="control-label">Chamada Para Ação <small>(CTA)</small></label>
 															<input type="text" id="cta" name="cta" class="form-control" maxlenght = "15" placeholder="Ex. Últimas Vendas" {!! $fieldPageConfig->attr('cta') !!} />
 														</div>
-														@endif
+														@endif --}}
 													</div>
 
-													@if ($fieldPageConfig->show('course_other_inf[]'))
+													{{-- @if ($fieldPageConfig->show('course_other_inf[]'))
 													<div class="row">
 														@foreach ($listSelectBox->otherInfType as $otherInfType)
 															<div class="col-sm-6">
@@ -281,7 +289,7 @@
 															</div>
 														@endforeach
 													</div>
-													@endif
+													@endif --}}
 
 														{{-- @if ($fieldPageConfig->show('show_web'))
 													<div class="col-sm-5" style="padding-top: 25px">
@@ -290,7 +298,7 @@
 													</div>
 													@endif--}}
 
-													@if ($fieldPageConfig->show('show_home'))
+													{{-- @if ($fieldPageConfig->show('show_home'))
 													<div class="col-sm-3" style="padding-top: 25px">
 														<label class="control-label">Destaque Home:</label>
 														<input type="checkbox" id="show_home" name="show_home" class="js-switch" value="1" {!! $fieldPageConfig->attr('show_web') !!} />
@@ -323,7 +331,7 @@
 														<label class="control-label">Informações Complementares</label>
 														<input type="text" name="additional_information" class="form-control" maxlength="50" placeholder = "Algo que queira colocar a mais nos cards de curso..." {!! $fieldPageConfig->attr('additional_information') !!} />
 													</div>
-													@endif
+													@endif --}}
 
 													{{-- <div class="col-sm-5" style="padding-top: 25px">
 														<label class="control-label">Mostrar no Site</label>
@@ -389,14 +397,14 @@
 
 										</div>
 
-										<div id="tab-2" class="tab-pane">
+										{{-- <div id="tab-2" class="tab-pane">
 											<div class="panel-body">
 												<div class="wrapper wrapper-content animated fadeInRight">
 													<button type="button" class="m-l-xs btn gp-btn-green " data-toggle="modal" data-target="#bonusCourseModel" title="Nova opção"><i class="fa fa-plus"></i></button>
 													<div id="bonusCourse"></div>
 												</div>
 											</div>
-										</div>
+										</div> --}}
 
 										<div id="tab-3" class="tab-pane">
 											<div class="panel-body">
@@ -414,12 +422,12 @@
 													</div>
 
 													<div id="formPayment"></div>
-													{{-- <div class="form-group">
+													<div class="form-group">
 														<label class="control-label">
 															Valor padrão do curso
 															<input type="checkbox" name="course_default_value" class="form-control" value="1" {{ isset($courseDefaultValue) ? 'checked' : '' }} />
 														</label>
-													</div> --}}
+													</div>
 												</div>
 											</div>
 										</div>
@@ -1059,18 +1067,20 @@
 
 		var selectElem = tmplTeacher.querySelector('[name$="[team_id]"]')
 
-		populateSelectBox({
-			list: APP.scope.listSelectBox.team,
-			target: selectElem,
-			columnValue: "id",
-			columnLabel: "name",
-			selectBy: [ data.team_id ],
-			emptyOption: {
-				label: "Selecione..."
-			}
-		});
+		if (selectElem) {
+			populateSelectBox({
+				list: APP.scope.listSelectBox.team,
+				target: selectElem,
+				columnValue: "id",
+				columnLabel: "name",
+				selectBy: [ data.team_id ],
+				emptyOption: {
+					label: "Selecione..."
+				}
+			});
 
-		$(selectElem).select2();
+			$(selectElem).select2();
+		}
 	}
 
 	function newBonusCourse(data, checked) {
@@ -1225,7 +1235,7 @@
 					});
 				} */
 
-				if (APP.scope.listSelectBox.team) {
+				if (APP.scope.listSelectBox.team && document.forms.formCourse.team_id) {
 					populateSelectBox({
 						list: APP.scope.listSelectBox.team,
 						target: document.forms.formCourse.team_id,
@@ -1238,7 +1248,7 @@
 					});
 				}
 
-				if (APP.scope.listSelectBox.courseCategoryType) {
+				if (APP.scope.listSelectBox.courseCategoryType && document.forms.formCourse.course_category_type_id) {
 					populateSelectBox({
 						list: APP.scope.listSelectBox.courseCategoryType,
 						target: document.forms.formCourse.course_category_type_id,
@@ -1251,7 +1261,7 @@
 					});
 				}
 
-				if (APP.scope.listSelectBox.courseSubcategory) {
+				if (APP.scope.listSelectBox.courseSubcategory && document.forms.formCourse.course_subcategory_id) {
 					populateSelectBox({
 						list: APP.scope.listSelectBox.courseSubcategory,
 						target: document.forms.formCourse.course_subcategory_id,
@@ -1264,7 +1274,7 @@
 					});
 				}
 
-				if (APP.scope.listSelectBox.bonusCourse) {
+				if (APP.scope.listSelectBox.bonusCourse && document.getElementById('bonusCourse')) {
 					document.getElementById('bonusCourse').innerHTML = ''
 
 					APP.scope.listSelectBox.bonusCourse.forEach(function(item) {
@@ -1283,7 +1293,7 @@
 					})
 				}
 
-				if (APP.scope.listSelectBox.includedItems) {
+				if (APP.scope.listSelectBox.includedItems && document.getElementById('includedItems')) {
 					document.getElementById('includedItems').innerHTML = ''
 
 					APP.scope.listSelectBox.includedItems.forEach(function(item) {
@@ -1302,7 +1312,7 @@
 					})
 				}
 
-				if (APP.scope.listSelectBox.contact) {
+				if (APP.scope.listSelectBox.contact && document.forms.formCourse['contact_course[]']) {
 					populateSelectBox({
 						list: APP.scope.listSelectBox.contact,
 						target: document.forms.formCourse['contact_course[]'],

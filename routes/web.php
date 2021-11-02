@@ -19,7 +19,6 @@ Route::get('/', 'site\cetcc\HomeController@index')->middleware(['injectFlgPage:h
 
 Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
 Route::post('/contact/save', 'site\cetcc\ContactController@save')->middleware(['injectFlgPage:contact']);
-Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
 Route::get('/supervision', 'site\cetcc\SupervisionController@index')->middleware(['injectFlgPage:supervision']);
 
 Route::get('/teacher', 'site\cetcc\TeacherController@index')->middleware(['injectFlgPage:teacher']);
@@ -38,26 +37,39 @@ Route::get('/add_patient', 'site\cetcc\PatientController@add')->middleware(['inj
 Route::post('/add_patient/save', 'site\cetcc\PatientController@save')->middleware(['injectFlgPage:add_patient']);
 Route::get('/doc', 'site\cetcc\DocController@index')->middleware(['injectFlgPage:doc']);
 Route::get('/recommendation', 'site\cetcc\RecommendationController@index')->middleware(['injectFlgPage:recommendation']);
+
+// Site
 Route::get('/faq', 'site\cetcc\FaqController@index')->middleware(['injectFlgPage:faq']);
 Route::get('/shopping_journey', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:shopping_journey']);
 
-
-// Site
 Route::get('/blog_post', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:blog_post']);
-Route::get('/box_blog', 'site\cetcc\ShoppingJourneController@index')->middleware(['injectFlgPage:box_blog']);
-Route::get('/single-product/{id}', 'site\cetcc\CourseController@courseDetails')->middleware(['injectFlgPage:single-product']);
+
+Route::get('/blog_post_details/{id}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:blog_details']);
+
+Route::get('/blog_post/liked/{id}/{isLiked}', 'site\cetcc\BlogController@liked')->middleware(['injectFlgPage:blog']);
+
+Route::get('/box_blog', 'site\cetcc\ShopBoxController@index')->middleware(['injectFlgPage:box_blog']);
+Route::get('/single-box-details/{id}', 'site\cetcc\CourseController@courseDetails')->middleware(['injectFlgPage:single-box-details']);
 Route::get('/contact', 'site\cetcc\ContactController@index')->middleware(['injectFlgPage:contact']);
 Route::get('/privacy-policy', 'site\cetcc\PrivacyController@index')->middleware(['injectFlgPage:privacy-policy']);
+Route::get('/about', 'site\cetcc\AboutController@index')->middleware(['injectFlgPage:about']);
+Route::get('/pricing-list', 'site\cetcc\ShoppingJourneController@pricing')->middleware(['injectFlgPage:pricing-list']);
+
+Route::get('/signature', 'site\cetcc\ShoppingJourneController@signature')->middleware(['injectFlgPage:signature']);
+
+Route::post('confirm_payment', 'StudentArea\ConfirmPaymentController@confirmPayment');
+Route::post('confirm_email', 'StudentArea\ConfirmPaymentController@confirmEmail');
+Route::post('login', 'site\cetcc\ShoppingJourneController@login');
+Route::post('reset_password', 'site\cetcc\ShoppingJourneController@resetPassword');
+Route::get('login', 'site\cetcc\LoginController@index')->name('login')->middleware(['injectFlgPage:login']);
+Route::get('register', 'site\cetcc\RegisterController@index')->name('register')->middleware(['injectFlgPage:register']);
+Route::post('register', 'site\cetcc\RegisterController@store');
 // End Site
 
 
 
 Route::get('/article', 'site\cetcc\BlogController@index')->middleware(['injectFlgPage:article']);
-
-Route::get('/blog/{id}/{title?}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:blog']);
 Route::get('/article/{id}/{title?}', 'site\cetcc\BlogController@getPost')->middleware(['injectFlgPage:article']);
-
-Route::get('/blog/liked/{id}/{isLiked}', 'site\cetcc\BlogController@liked')->middleware(['injectFlgPage:blog']);
 Route::post('/comment', 'site\cetcc\CommentController@post')->middleware(['injectFlgPage:comment']);
 Route::get('/comment/blog/{blogId}', 'site\cetcc\CommentController@getByBlog')->middleware(['injectFlgPage:comment']);
 Route::post('/fetchComment', 'site\cetcc\CommentController@fetchComment')->middleware(['injectFlgPage:comment']);
@@ -80,8 +92,8 @@ Route::get('resetPassword/{code}', function(Request $request, $code) {
 	preg_match('/^(\w+)\-.+/', $code, $match);
 
 	switch ($match[1]) {
-		case 'studentArea':
-			return view('student_area.login.login')->with('resetPasswordCode', $code);
+		case 'subscriberArea':
+			return view('site.bookbox.pages.resetPassword')->with('resetPasswordCode', $code);
 		break;
 	}
 
