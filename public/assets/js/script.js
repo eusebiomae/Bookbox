@@ -753,7 +753,9 @@
          */
         function setRealPrevious(swiper) {
             var element = swiper.$wrapperEl[0].children[swiper.activeIndex];
-            swiper.realPrevious = Array.prototype.indexOf.call(element.parentNode.children, element);
+            if (element) {
+                swiper.realPrevious = Array.prototype.indexOf.call(element.parentNode.children, element);
+            }
         }
 
         /* TEMPO DE BANNER E OUTRAS FUNCIONALIDADES */
@@ -881,16 +883,22 @@
             };
 
             initializeAnimation(swiper.$wrapperEl[0].querySelectorAll('[data-caption-animate]'));
-            finalizeAnimation(swiper.$wrapperEl[0].children[swiper.activeIndex].querySelectorAll('[data-caption-animate]'));
+            var swiperElemActive = swiper.$wrapperEl[0].children[swiper.activeIndex]
+
+            swiperElemActive && finalizeAnimation(swiperElemActive.querySelectorAll('[data-caption-animate]'));
 
             if (swiper.params.caption.animationEvent === 'slideChangeTransitionEnd') {
                 swiper.on(swiper.params.caption.animationEvent, function() {
-                    initializeAnimation(swiper.$wrapperEl[0].children[swiper.previousIndex].querySelectorAll('[data-caption-animate]'));
-                    finalizeAnimation(swiper.$wrapperEl[0].children[swiper.activeIndex].querySelectorAll('[data-caption-animate]'));
+                    var swiperElemPrevious = swiper.$wrapperEl[0].children[swiper.previousIndex]
+                    swiperElemPrevious && initializeAnimation(swiperElemPrevious.querySelectorAll('[data-caption-animate]'));
+
+                    var swiperElemActive = swiper.$wrapperEl[0].children[swiper.activeIndex]
+                    swiperElemActive && finalizeAnimation(swiperElemActive.querySelectorAll('[data-caption-animate]'));
                 });
             } else {
                 swiper.on('slideChangeTransitionEnd', function() {
-                    initializeAnimation(swiper.$wrapperEl[0].children[swiper.previousIndex].querySelectorAll('[data-caption-animate]'));
+                    var swiperElemPrevious = swiper.$wrapperEl[0].children[swiper.previousIndex]
+                    swiperElemPrevious && initializeAnimation(swiperElemPrevious.querySelectorAll('[data-caption-animate]'));
                 });
 
                 swiper.on(swiper.params.caption.animationEvent, function() {

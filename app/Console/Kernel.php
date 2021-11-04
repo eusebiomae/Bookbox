@@ -23,15 +23,13 @@ class Kernel extends ConsoleKernel {
 	*/
 	protected function schedule(Schedule $schedule) {
 		// $schedule->command('inspire')->hourly();
-
-		$schedule->call(function () { \App\Console\Jobs\CronOrderBlocked::run(); })->cron('1 0 * * *');
+		// $schedule->call(function () { \App\Console\Jobs\CronOrderBlocked::run(); })->cron('1 0 * * *');
 		// $schedule->call(function () { \App\Console\Jobs\CronScholarship::run(); })->cron('5 0 * * *');
-		$schedule->call(function () { \App\Utils\StudentClassControlUtils::cronValidDate(); })->cron('15 0 * * *');
-		$schedule->call(function () { \App\Console\Jobs\CronBlogScheduling::run(); })->daily();
-		$schedule->call(function () { \App\Console\Jobs\CronSupervision::run(); })->daily();
-		$schedule->call(function () { \App\Console\Jobs\CronAsaasPayments::run(); })->hourly();
-		$schedule->call(function () { \App\Console\Jobs\CronAsaasPayments::scholarship(); })->hourly();
-
+		// $schedule->call(function () { \App\Utils\StudentClassControlUtils::cronValidDate(); })->cron('15 0 * * *');
+		// $schedule->call(function () { \App\Console\Jobs\CronBlogScheduling::run(); })->daily();
+		// $schedule->call(function () { \App\Console\Jobs\CronSupervision::run(); })->daily();
+		// $schedule->call(function () { \App\Console\Jobs\CronAsaasPayments::run(); })->hourly();
+		// $schedule->call(function () { \App\Console\Jobs\CronAsaasPayments::scholarship(); })->hourly();
 	}
 
 	/**

@@ -73,6 +73,13 @@
 					delete state.shoppingCart[idx]
 					this.commit('saveShoppingCart')
 				},
+				clear: function(state) {
+					for (const key in state.shoppingCart) {
+						if (Object.hasOwnProperty.call(state.shoppingCart, key)) {
+							this.commit('removeItem', key)
+						}
+					}
+				},
 			},
 			actions: {
 				add: function(context, idProduct) {
@@ -139,12 +146,12 @@
 				itemPriceMain: function(idx) {
 					const payload = boxCartStore.state.shoppingCart[idx]
 
-					return payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0
+					return payload ? payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0 : 0
 				},
 				itemPriceMainTotal: function(idx) {
 					const payload = boxCartStore.state.shoppingCart[idx]
 
-					return payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0)
+					return payload ? payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0) : 0
 				},
 			},
 		}).mount('#appBoxDropdownCart')

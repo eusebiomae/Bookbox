@@ -50,9 +50,9 @@ class OrderParcelModel extends Model {
 		$this->attributes['bank_id'] = empty($val) ? null : $val;
 	}
 
-	public function setValuePaidAttribute($val) {
-		$this->attributes['value_paid'] = empty($val) ? null : toNumberFormat($val);
-	}
+	// public function setValuePaidAttribute($val) {
+	// 	$this->attributes['value_paid'] = empty($val) ? null : toNumberFormat($val);
+	// }
 
 	public function setValueCheckAttribute($val) {
 		$this->attributes['value_check'] = empty($val) ? null : toNumberFormat($val);

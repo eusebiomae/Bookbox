@@ -186,8 +186,10 @@
 		<script src="https://unpkg.com/vuex@4"></script>
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://cdn.jsdelivr.net/npm/v-mask/dist/v-mask.min.js"></script>
 		<script>
 			// AppGP
+			// Vue.withDirectives('mask', VueMask.VueMaskDirective)
 		</script>
 
 		@yield('scripts')

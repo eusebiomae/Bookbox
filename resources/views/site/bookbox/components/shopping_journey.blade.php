@@ -8,8 +8,8 @@
 					<nav>
 						<div ref="tabsShoppingJourney" class="nav nav-tabs">
 							<button class="nav-item nav-link active" @click="selectNavTab('login')" data-select-tab="login" v-if="!student.id">Login</button>
-							<button class="nav-item nav-link disabled" @click="selectNavTab('delivery')" data-select-tab="delivery">Entrega</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('shoppingCart')" data-select-tab="shoppingCart" v-if="!product">Carrinho</button>
+							<button class="nav-item nav-link disabled" @click="selectNavTab('delivery')" data-select-tab="delivery">Entrega</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('payment')" data-select-tab="payment">Pagamento</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('finalization')" data-select-tab="finalization">Finalização</button>
 						</div>
@@ -59,7 +59,7 @@
 							<div class="row">
 								<div class="col-md-4 form-group">
 									<label>CEP*</label>
-									<input type="text" v-model="orderData.address.zip_code" class="form-control required" maxlength="8" @blur="getZipCode(orderData.address)">
+									<input type="text" v-model="orderData.address.zip_code" v-mask="'#####-###'" class="form-control required" @blur="getZipCode(orderData.address)">
 								</div>
 								<div class="col-md-4 form-group">
 									<label>Estado*</label>
@@ -87,11 +87,11 @@
 								</div>
 								<div class="col-md-4 form-group">
 									<label>Telefone*</label>
-									<input type="text" v-model="orderData.address.phone" class="form-control required" maxlength="128">
+									<input type="text" v-model="orderData.address.phone" v-mask="'(##) ####-####'" class="form-control required" maxlength="128">
 								</div>
 								<div class="col-md-4 form-group">
 									<label>Celular*</label>
-									<input type="text" v-model="orderData.address.cellphone" class="form-control required" maxlength="128">
+									<input type="text" v-model="orderData.address.cellphone" v-mask="'(##) # ####-####'" class="form-control required" maxlength="128">
 								</div>
 							</div>
 							{{-- <button type="button" @click="calculadorFrete">Calcular Frete</button> --}}
@@ -131,7 +131,7 @@
 								</div>
 								<div class="cart-inline-footer">
 									<div class="group-sm text-right">
-										<button class="btn" @click="selectNavTab('payment', 1)">Confirmar</button>
+										<button class="btn" @click="selectNavTab('delivery', 1)">Confirmar</button>
 									</div>
 								</div>
 							</div>
@@ -168,7 +168,7 @@
 										</div>
 										<div class="col-md-6 form-group">
 											<label>CPF do Titular*</label>
-											<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+											<input type="text" v-model="orderData.cpf" v-mask="'###.###.###-##'"  class="form-control required">
 										</div>
 									</div>
 								</div>
@@ -196,7 +196,7 @@
 										<div class="col-md-2">
 											<div class="form-group">
 												<label>Validade*</label>
-												<input type="text" v-model="orderData.shelf_life" placeholder="" class="form-control required mask-creditcard-shelf_life">
+												<input type="text" v-model="orderData.shelf_life" v-mask="'##/##'" placeholder="MM/AA" class="form-control required">
 											</div>
 										</div>
 									</div>
@@ -204,7 +204,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>CPF do Titular*</label>
-												<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+												<input type="text" v-model="orderData.cpf" v-mask="'###.###.###-##'" class="form-control required">
 											</div>
 										</div>
 										<div class="col-md-4">
@@ -212,14 +212,14 @@
 												<label>Data de Nascimento*</label>
 												<div class="input-group date">
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-													<input type="text" v-model="orderData.birth_date" class="form-control required" readonly>
+													<input type="text" v-model="orderData.birth_date" v-mask="'##/##/####'" placeholder="DD/MM/AAAA" class="form-control required" >
 												</div>
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Telefone*</label>
-												<input type="text" v-model="orderData.phone" class="form-control required mask-cellphone">
+												<input type="text" v-model="orderData.phone" v-mask="'(##) # ####-####'"  class="form-control required">
 											</div>
 										</div>
 									</div>
@@ -233,7 +233,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>CEP*</label>
-												<input type="text" v-model="orderData.zip_code" class="form-control required mask-cep">
+												<input type="text" v-model="orderData.zip_code" v-mask="'#####-###'" class="form-control required">
 											</div>
 										</div>
 										<div class="col-md-4">
@@ -275,7 +275,7 @@
 										</div>
 										<div class="col-md-6 form-group">
 											<label>CPF do Titular*</label>
-											<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+											<input type="text" v-model="orderData.cpf" v-mask="'###.###.###-##'" class="form-control required mask-cpf">
 										</div>
 									</div>
 								</div>
@@ -297,13 +297,13 @@
 										<div class="col-md-2">
 											<div class="form-group">
 												<label>Cod. de Seg.*</label>
-												<input type="text" v-model="orderData.security_code" class="form-control required">
+												<input type="text" v-model="orderData.security_code" v-mask="'###'" class="form-control required">
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group">
 												<label>Validade*</label>
-												<input type="text" v-model="orderData.shelf_life" placeholder="" class="form-control required mask-creditcard-shelf_life">
+												<input type="tel" v-model="orderData.shelf_life" v-mask="'##/##'" placeholder="MM/AA" class="form-control required">
 											</div>
 										</div>
 									</div>
@@ -311,7 +311,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>CPF do Titular*</label>
-												<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+												<input type="text" v-model="orderData.cpf" v-mask="'###.###.###-##'" class="form-control required mask-cpf">
 											</div>
 										</div>
 										<div class="col-md-4">
@@ -319,14 +319,14 @@
 												<label>Data de Nascimento*</label>
 												<div class="input-group date">
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-													<input type="text" v-model="orderData.birth_date" class="form-control required" readonly>
+													<input type="text" v-model="orderData.birth_date" v-mask="'##/##/####'" placeholder="DD/MM/AAAA" class="form-control required">
 												</div>
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Telefone*</label>
-												<input type="text" v-model="orderData.phone" class="form-control required mask-cellphone">
+												<input type="text" v-model="orderData.phone" v-mask="'(##) # ####-####'" class="form-control required mask-cellphone">
 											</div>
 										</div>
 									</div>
@@ -340,7 +340,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>CEP*</label>
-												<input type="text" v-model="orderData.zip_code" class="form-control required mask-cep">
+												<input type="text" v-model="orderData.zip_code" v-mask="'#####-###'" class="form-control required">
 											</div>
 										</div>
 										<div class="col-md-4">
@@ -581,6 +581,8 @@
 					}
 				}
 
+				this.orderData.number_parcel = this.formPaymentOpts.parcel
+
 				const data = Object.assign({}, this.orderData, this.formPaymentOpts)
 
 				showPreloader()
@@ -594,6 +596,8 @@
 						this.orderPayments = resp.data
 
 						this.selectNavTab('finalization', 1)
+						this.showError = []
+						boxCartStore.commit('clear')
 					} else {
 						this.showError = resp.data.showError ? resp.data.showError.errors : []
 					}
@@ -672,7 +676,7 @@
 				})
 			},
 			getZipCode: function(address) {
-				if (address.zip_code && address.zip_code.length == 8) {
+				if (address.zip_code && address.zip_code.length == 9) {
 					return axios({
 						url: 'https://viacep.com.br/ws/'+ address.zip_code +'/json',
 						method: 'get',
@@ -722,11 +726,7 @@
 					data: this.orderData.address,
 				}).then(resp => {
 					if (resp.data) {
-						if (this.product) {
-							this.selectNavTab('payment', 1)
-						} else {
-							this.selectNavTab('shoppingCart', 1)
-						}
+						this.selectNavTab('payment', 1)
 
 						this.orderData.student_address_id = resp.data.id
 					}
@@ -744,12 +744,12 @@
 			itemPriceMain: function(idx) {
 				const payload = boxCartStore.state.shoppingCart[idx]
 
-				return payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0
+				return payload?.item?.form_payment[0]?.course_form_payment[0]?.full_value ?? 0
 			},
 			itemPriceMainTotal: function(idx) {
 				const payload = boxCartStore.state.shoppingCart[idx]
 
-				return payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0)
+				return payload ? payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0) : 0
 			},
 			renderFormPaymentShoppingCart: function() {
 				const shoppingCart = JSON.parse(JSON.stringify(boxCartStore.state.shoppingCart))
@@ -851,13 +851,22 @@
 				this.orderData.student_id = this.student.id
 				this.orderData.email = this.student.email
 				this.orderData.cardholder = this.student.name
-				this.selectNavTab('delivery', 1)
+				if (this.product) {
+					this.selectNavTab('delivery', 1)
+				} else {
+					this.selectNavTab('shoppingCart', 1)
+				}
 			}
 
 			this.getState().then(allState => this.allState = allState)
 
-			this.selectNavTab('payment', 1)
 		},
-	}).mount('#shoppingJourney')
+	})
+	.directive('mask', {
+		beforeMount: VueMask.VueMaskDirective.bind,
+		updated: VueMask.VueMaskDirective.componentUpdated,
+		unmounted: VueMask.VueMaskDirective.unbind
+	})
+	.mount('#shoppingJourney')
 </script>
 @endsection
