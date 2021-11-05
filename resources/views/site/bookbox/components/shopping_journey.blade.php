@@ -50,7 +50,7 @@
 								</div>
 
 								<div class="col-md-12 text-right">
-									<button class="btn" @click="nextLogin">Avançar</button>
+									<button class="btn btn-primary" @click="nextLogin">Avançar</button>
 								</div>
 							</div>
 						</div>
@@ -96,7 +96,7 @@
 							</div>
 							{{-- <button type="button" @click="calculadorFrete">Calcular Frete</button> --}}
 							<div class="col-md-12 text-right">
-								<button class="btn" @click="saveDelivery">Avançar</button>
+								<button class="btn btn-primary" @click="saveDelivery">Avançar</button>
 							</div>
 						</div>
 
@@ -104,28 +104,37 @@
 							<div class="">
 								<div class="cart-inline-header">
 									<h5 class="cart-inline-title">Há <span> @{{amountItens}}</span> produtos carrinho</h5>
-									<h6 class="cart-inline-title">Valor Total:<span> $@{{priceTotal}}</span></h6>
+									<h6 class="cart-inline-title" style="color: #76aa6f">Valor Total:<span> $@{{priceTotal}}</span></h6>
 								</div>
 								<div class="cart-inline-body">
 									<div class="cart-inline-item border" v-for="(data, idProduct) in shoppingCart">
 										<div class="unit unit-spacing-sm align-items-center">
-											<ul class="unit-left">
-												<span class="cart-inline-figure"><img :src="data.item.img" alt="" style="max-width: 225px; margin: 25px;" /></span>
-											</ul>
-											<div class="unit-body">
-												<h6 class="cart-inline-name align-items-start">@{{ data.item.title_pt }}</h6>
+											<div class="col-md-12">
+												<div class="media align-items-center">
+													<ul class="flex-column align-items-start col-md-4">
+														<span class="cart-inline-figure"><img :src="data.item.img" alt="" style="max-width: 225px; margin: 25px;" /></span>
+													</ul>
 
-												<ul class="group-xs group-middle align-items-start">
-													<div class="cart-inline-title">Qtd: @{{ data.amount }}</div>
-													<div class="cart-inline-title">R$ @{{ itemPriceMain(idProduct) }}</div>
-													<div class="cart-inline-title">Total: R$ @{{ itemPriceMainTotal(idProduct) }}</div>
-												</ul>
+													<ul class="flex-column align-items-start item col-md-4">
+														<h6 class="mb-0 font-weight-bold" style="margin-left: 40px; margin-top: 20px;">
+															@{{ data.item.title_pt }}
+														</h6>
+													</ul>
 
-												<ul class="unit-spacing-sm">
-													<button type="button" class="btn btn-secondary" @click="incDecAmount(idProduct, -1)">-</button>
-													<button type="button" class="btn btn-secondary" @click="removeItem(idProduct)">Remover</button>
-													<button type="button" class="btn btn-primary" @click="incDecAmount(idProduct, 1)">+</button>
-												</ul>
+													<ul class="flex-column align-items-start col-md-4">
+														<label for="" class=""> </label>
+														<div class="input-group mb-3">
+															<div class="cart-inline-title" style="margin: 5px;">Qtd: @{{ data.amount }} - Preço:</div>
+															<div class="cart-inline-title" style="margin: 5px;">R$ @{{ itemPriceMain(idProduct) }} = </div>
+															<div class="cart-inline-title" style="margin: 5px; color: #000">Total: R$ @{{ itemPriceMainTotal(idProduct) }}</div>
+														</div>
+														<div class="unit-spacing-sm">
+															<button type="button" class="btn btn-secondary" @click="incDecAmount(idProduct, -1)">-</button>
+															<button type="button" class="btn btn-secondary" @click="removeItem(idProduct)">Remover</button>
+															<button type="button" class="btn btn-primary" @click="incDecAmount(idProduct, 1)">+</button>
+														</div>
+													</ul>
+												</div>
 											</div>
 										</div>
 										{{-- <div class="unit-spacing-sm">
@@ -137,7 +146,7 @@
 								</div>
 								<div class="cart-inline-footer">
 									<div class="group-sm text-right">
-										<button class="btn" @click="selectNavTab('delivery', 1)">Confirmar</button>
+										<button class="btn btn-primary" @click="selectNavTab('delivery', 1)">Confirmar</button>
 									</div>
 								</div>
 							</div>
@@ -360,7 +369,7 @@
 							</div>
 
 							<div class="col-md-12 text-right">
-								<button v-if="!wasRequest" class="btn" @click="confirmOrder">Confirmar</button>
+								<button v-if="!wasRequest" class="btn btn-primary" @click="confirmOrder">Confirmar</button>
 							</div>
 						</div>
 
