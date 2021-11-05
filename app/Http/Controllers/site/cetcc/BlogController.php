@@ -5,6 +5,8 @@ namespace App\Http\Controllers\site\cetcc;
 use App\Model\api\BlogModel;
 use Illuminate\Http\Request;
 use App\Model\api\Configuration\ContentPageModel;
+use App\Model\api\Prospection\CourseModel;
+
 class BlogController extends _Controller
 {
 
