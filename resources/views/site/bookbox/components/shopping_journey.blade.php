@@ -109,24 +109,30 @@
 								<div class="cart-inline-body">
 									<div class="cart-inline-item border" v-for="(data, idProduct) in shoppingCart">
 										<div class="unit unit-spacing-sm align-items-center">
-											<div class="unit-left">
-												<span class="cart-inline-figure"><img :src="data.item.img" alt="" width="106" height="104" /></span>
-											</div>
+											<ul class="unit-left">
+												<span class="cart-inline-figure"><img :src="data.item.img" alt="" style="max-width: 225px; margin: 25px;" /></span>
+											</ul>
 											<div class="unit-body">
-												<h6 class="cart-inline-name">@{{ data.item.title_pt }}</h6>
+												<h6 class="cart-inline-name align-items-start">@{{ data.item.title_pt }}</h6>
 
-												<div class="group-xs group-middle align-items-center">
+												<ul class="group-xs group-middle align-items-start">
 													<div class="cart-inline-title">Qtd: @{{ data.amount }}</div>
 													<div class="cart-inline-title">R$ @{{ itemPriceMain(idProduct) }}</div>
 													<div class="cart-inline-title">Total: R$ @{{ itemPriceMainTotal(idProduct) }}</div>
-												</div>
+												</ul>
+
+												<ul class="unit-spacing-sm">
+													<button type="button" class="btn btn-secondary" @click="incDecAmount(idProduct, -1)">-</button>
+													<button type="button" class="btn btn-secondary" @click="removeItem(idProduct)">Remover</button>
+													<button type="button" class="btn btn-primary" @click="incDecAmount(idProduct, 1)">+</button>
+												</ul>
 											</div>
 										</div>
-										<div class="unit-spacing-sm">
-											<button type="button" class="" @click="incDecAmount(idProduct, -1)">-</button>
-											<button type="button" class="" @click="removeItem(idProduct)">Remover</button>
-											<button type="button" class="" @click="incDecAmount(idProduct, 1)">+</button>
-										</div>
+										{{-- <div class="unit-spacing-sm">
+											<button type="button" class="btn btn-secondary" @click="incDecAmount(idProduct, -1)">-</button>
+											<button type="button" class="btn btn-secondary" @click="removeItem(idProduct)">Remover</button>
+											<button type="button" class="btn btn-primary" @click="incDecAmount(idProduct, 1)">+</button>
+										</div> --}}
 									</div>
 								</div>
 								<div class="cart-inline-footer">

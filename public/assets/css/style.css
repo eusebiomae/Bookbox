@@ -4035,6 +4035,29 @@ hr {
     border-color: #000000;
 }
 
+.btn-secondary {
+    border-radius: 3px;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    transition: .33s;
+}
+
+.btn-secondary,
+.btn-secondary:active,
+.btn-secondary:focus {
+    color: #ffffff;
+    background: rgb(236, 127, 110);
+    border-color: rgb(236, 127, 110);
+}
+
+.btn-secondary:hover {
+    color: #ffffff;
+    background: #000000;
+    border-color: #000000;
+}
+
 
 /*
 * Form styles
