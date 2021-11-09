@@ -20,26 +20,16 @@ class CronAsaasPayments {
 			return CronAsaasPayments::asaasSubscriptions($company, $appConf);
 		}
 
-		// CronAsaasPayments::asaasSubscriptions($companies, $appConf);
-
 		$appConf->fill([
 			'cron_asaas_payments' => \Carbon\Carbon::now(),
 		])->save();
 	}
 
 	static function asaasSubscriptions($company, $appConf) {
-		$date = $appConf->cron_asaas_payments;
-		$currentDate = date('Y-m-d');
-		$offset = 0;
-		$limit = 100;
-		$isRepeat = false;
-		$dataAsaas = [];
-
 		$orderModel = OrderModel::query()
 		->with(['orderParcel'])
 		->whereIn('status', ['PE', 'AP'])
 		->where('asaas_type', 'subscriptions')
-		// ->where('id', 65)
 		->get();
 
 		foreach ($orderModel as $order) {
@@ -57,10 +47,8 @@ class CronAsaasPayments {
 								'asaas_code' => $asaasData->id,
 								'asaas_json' => json_encode($asaasData),
 							])->save();
-							$dataAsaas[] = [ $order->orderParcel[$asaasIndx], $asaasData ];
 						} else {
 							$orderParcel = new OrderParcelModel;
-
 							$orderParcel->fill([
 								'order_id' => $order->id,
 								'form_payment_id' => $order->form_payment_id,
@@ -74,10 +62,7 @@ class CronAsaasPayments {
 								'asaas_code' => $asaasData->id,
 								'asaas_json' => json_encode($asaasData),
 							])->save();
-
-							$dataAsaas[] = [ $orderParcel, $asaasData ];
 						}
-
 					}
 				}
 
@@ -86,7 +71,7 @@ class CronAsaasPayments {
 			}
 		}
 
-		return $dataAsaas;
+		return null;
 	}
 
 }

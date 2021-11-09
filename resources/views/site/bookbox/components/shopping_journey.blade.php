@@ -155,6 +155,19 @@
 						<div class="tab-pane fade show" data-select-tab="payment">
 							<div class="row" v-if="product">
 								<div class="col-md-4 form-group">
+									<label>Cupom de desconto</label>
+									<div class="input-group">
+										<input type="text" v-model="discount.code" class="form-control">
+										<div class="input-group-prepend">
+											<button class="btn btn-primary form-control fl-bigmug-line-checkmark14" @click="getDiscount" ></button>
+										</div>
+									</div>
+									<div v-if="discount.id">
+										Desconto de @{{ numberWithCommas(discount.percentage, 2) }}%
+									</div>
+								</div>
+
+								<div class="col-md-4 form-group">
 									<label>Forma de Pagamento</label>
 									<select class="form-control m-b" v-model="orderData.formPayment">
 										<option v-for="(option) in formPayment" :value="option.value">@{{ option.label }}</option>
@@ -165,9 +178,12 @@
 									<label>Parcelas</label>
 									<select class="form-control m-b" v-model="formPaymentOpts">
 										<option v-for="(option) in formPayment[orderData.formPayment].values" :value="option">
-											@{{ option.parcel }} x @{{ numberWithCommas(option.value, 2) }} (@{{ numberWithCommas(option.full_value, 2) }})
+											@{{ formatFormPaymentParcel(option) }}
 										</option>
 									</select>
+									<div v-if="discount.id">
+										Desconto de R$ @{{ numberWithCommas((formPaymentOpts.full_value || 0) * discount.percentage / 100, 2) }}
+									</div>
 								</div>
 
 								<div class="col-md-12 form-group">
@@ -262,6 +278,19 @@
 							</div>
 							<div class="row" v-else>
 								<div class="col-md-4 form-group">
+									<label>Cupom de desconto</label>
+									<div class="input-group">
+										<input type="text" v-model="discount.code" class="form-control">
+										<div class="input-group-prepend">
+											<button class="btn btn-primary form-control fl-bigmug-line-checkmark14" @click="getDiscount" ></button>
+										</div>
+									</div>
+									<div v-if="discount.id">
+										Desconto de @{{ numberWithCommas(discount.percentage, 2) }}%
+									</div>
+								</div>
+
+								<div class="col-md-4 form-group">
 									<label>Forma de Pagamento</label>
 									<select class="form-control m-b" v-model="orderData.form_payment_id" @change="onChangeformPaymentCart">
 										<option v-for="(option, indx) in formPaymentCart" :value="option.formPayment.id">@{{ option.formPayment.description }}</option>
@@ -272,9 +301,12 @@
 									<label>Parcelas</label>
 									<select class="form-control m-b" v-model="formPaymentOpts">
 										<option v-for="option in formPaymentCart[orderData.form_payment_id].parcels" :value="option">
-											@{{ option.parcel }} x @{{ numberWithCommas(option.value, 2) }} (@{{ numberWithCommas(option.full_value, 2) }})
+											@{{ formatFormPaymentParcel(option) }}
 										</option>
 									</select>
+									<div v-if="discount.id">
+										Desconto de R$ @{{ numberWithCommas(formPaymentOpts.full_value * discount.percentage / 100, 2) }}
+									</div>
 								</div>
 
 								<div class="col-md-12 form-group">
@@ -410,6 +442,9 @@
 	var appShoppingJourney = Vue.createApp({
 		data: function() {
 			return {
+				discount: {
+					code: '',
+				},
 				shoppingCart: boxCartStore.state.shoppingCart,
 				student: @json(Auth::guard('studentArea')->user() ?? new stdClass),
 				product: @json($product ?? null),
@@ -596,6 +631,12 @@
 					}
 				}
 
+				if (this.discount.id) {
+					this.orderData.discount_id = this.discount.id
+					this.orderData.discount_value = this.discount.value
+					this.orderData.discount_percentage = this.discount.percentage
+				}
+
 				this.orderData.number_parcel = this.formPaymentOpts.parcel
 
 				const data = Object.assign({}, this.orderData, this.formPaymentOpts)
@@ -730,6 +771,26 @@
 					return resp.data
 				})
 			},
+			getDiscount: function() {
+				return axios({
+					method: 'get',
+					url: '/api/get',
+					headers: {
+						method: 'discount'
+					},
+					params: {
+						code: this.discount.code,
+					},
+				}).then(resp => {
+					if (resp.data) {
+						this.discount = resp.data
+					} else {
+						this.discount = {}
+					}
+
+					return resp.data
+				})
+			},
 			saveDelivery: function() {
 				this.orderData.address.student_id = this.orderData.student_id
 				return axios({
@@ -855,6 +916,20 @@
 				this.orderData.formPayment = this.formPaymentCart[this.orderData.form_payment_id].formPayment.flg_type
 
 				this.formPaymentOpts = Object.values(this.formPaymentCart[this.orderData.form_payment_id].parcels)[0]
+			},
+			formatFormPaymentParcel: function(parcel) {
+				const optParcel = {
+					parcel: parcel.parcel,
+					value: +parcel.value,
+					full_value: +parcel.full_value,
+				}
+
+				if (this.discount.id) {
+					optParcel.value -= optParcel.value * this.discount.percentage / 100
+					optParcel.full_value -= optParcel.full_value * this.discount.percentage / 100
+				}
+
+				return `${ optParcel.parcel } x ${ numberWithCommas(optParcel.value, 2) } (${ numberWithCommas(optParcel.full_value, 2) })`
 			},
 		},
 		mounted: function() {

@@ -104,6 +104,7 @@ class ConfirmPaymentUtils {
 		$payload['asaas_token'] = $this->company->asaas_token;
 
 		// $payload['orderId'] = 53;
+		// return $payload;
 
 		if (isset($payload['orderId']) && !empty($payload['orderId'])) {
 			$order = OrderModel::find($payload['orderId']);
@@ -412,12 +413,12 @@ class ConfirmPaymentUtils {
 		$asaasData['payload']['installmentValue'] = $model->value;
 		$asaasData['payload']['installmentCount'] = $model->number_parcel;
 
-		// if (!empty($model->discount_percentage)) {
-		// 	$asaasData['payload']['discount'] = [
-		// 		'type' => 'PERCENTAGE',
-		// 		'value' => $model->discount_percentage,
-		// 	];
-		// }
+		if (!empty($model->discount_percentage)) {
+			$asaasData['payload']['discount'] = [
+				'type' => 'PERCENTAGE',
+				'value' => $model->discount_percentage,
+			];
+		}
 
 		$asaas = $this->asaas($asaasData);
 
