@@ -7,11 +7,21 @@
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="icon" href="{{ url('assets/images/site/LogoMini Negativo Roxo.png') }}" type="image/x-icon">
-	<link rel="stylesheet" type="text/css"
-	href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700">
+	{{-- <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bellota&display=swap" rel="stylesheet"> --}}
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+	{{-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet"> --}}
+
+	{{-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700"> --}}
 	<link rel="stylesheet" href="{{ url('assets/css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ url('assets/css/fonts.css') }}">
 	<link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
+	{{-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/orkney" type="text/css"/> --}}
 
 	<style>
 		.ie-panel {
@@ -152,7 +162,7 @@
 										<li class="rd-nav-item"><a class="rd-nav-link" href="/#how_works">Como Funciona</a></li>
 										<li class="rd-nav-item"><a class="rd-nav-link" href="/#boxes">Planos</a></li>
 										<li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a></li>
-										<li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">ShopBox</a></li>
+										<li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">Loja</a></li>
 										{{-- <li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
 											nós</a>
 										</li> --}}

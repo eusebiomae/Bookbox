@@ -1,5 +1,5 @@
 @foreach ($pageData->content as $item)
-<section id="whats_in" class="section section-xxl swiper-slide-pilars background-default">
+<section id="whats_in" class="section section-xxl swiper-slide-pilars background-default" style="margin-top: 95px;">
 	{{-- style="background-image: url('{{$item['image_bg']}}');" --}}
 	<div class="container">
 		<h3 class="text-transform-none wow text-align-center" style="margin-top: -105px;">{{$item->title_pt}}</h3>
