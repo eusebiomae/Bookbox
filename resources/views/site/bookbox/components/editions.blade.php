@@ -23,7 +23,7 @@
 							<!-- Product-->
 							<article class="product">
 								<div class="product-body">
-									<div class="product-figure-box"><a href="/box_blog"><img src="{{$edition->img}}" alt=""/></a>
+									<div class="product-figure-box"><a href="/box_blog"><img src="{{$edition->img}}" alt="" style="border-radius: 150px; max-width: 200px; border-color: #8571a2"/></a>
 									</div>
 									<h5 class="product-title"><a href="/box_blog">{{$edition->title_pt}}</a></h5>
 

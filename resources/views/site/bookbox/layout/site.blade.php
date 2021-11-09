@@ -173,7 +173,7 @@
 											href="/privacy-policy">Termos e Condições</a>
 										</li> --}}
 										<li class="rd-nav-item">
-											<a class="rd-nav-link button button-lg button-shadow-4 button-secondary-3 button-zakaria" href="/pricing-list" target="blank" style="color: #fff;">Assine já</a>
+											<a class="rd-nav-link button button-lg button-shadow-4 button-secondary-3 button-zakaria" href="/pricing-list" target="blank" style="color: #fff;">Assine</a>
 										</li>
 									</ul>
 								</div>

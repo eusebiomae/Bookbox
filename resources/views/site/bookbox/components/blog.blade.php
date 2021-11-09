@@ -1,5 +1,6 @@
 @foreach ($pageData->content as $item)
-<section id="blog" class="section section-xxl swiper-slide-blog" style="background-image: url('{{$item['image_bg']}}');">
+{{-- <section id="banner_home" class="section swiper-container swiper-slider swiper-slider-4" data-loop="false"> --}}
+<section id="blog" class="section swiper-slide-blog" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
 		<!-- Owl Carousel-->
 		<div class="row row-30 row-lg-50">
