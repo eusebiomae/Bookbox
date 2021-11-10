@@ -4,8 +4,8 @@
 	<div class="container">
 		<h3 class="text-transform-none wow text-align-center" style="margin-top: -105px;">{{$item->title_pt}}</h3>
 		<h6 class="text-transform-none wow text-justify">{!! $item['text_pt'] !!}</h6>
-			<div class="row row-30 row-md-60 row-lg-70 justify-content-center align-items-md-center">
-					<div class="col-sm-8 col-md-5 col-xl-6" style="background-color: #9873a8;">
+			<div class="row row-30 row-md-60 row-lg-70 justify-content-center align-items-md-center" style="background-color: #9873a8;">
+					<div class="col-sm-8 col-md-5 col-xl-6" style="margin-top: 45px;">
 							<div class="inset-xl-right-20">
 									<article class="product-creative">
 											<div class="product-figure"><img
@@ -21,7 +21,7 @@
 							</div>
 					</div>
 
-					<div class="col-md-7 col-xl-6" style="background-color: #9873a8;">
+					<div class="col-md-7 col-xl-6" style="margin-top: 45px;">
 							<!-- Bootstrap collapse-->
 							<div class="card-group-custom card-group-corporate" id="accordion1" role="tablist"
 									aria-multiselectable="false">
@@ -97,7 +97,7 @@
 									</article> --}}
 							</div>
 					</div>
-					<h3 class="text-transform-uppercase wow text-align-center wow fadeInRight" data-wow-delay=".3s" style="color: #8571a2;">{{$item->subtitle_pt}}</h3>
+					<h3 class="text-transform-uppercase wow text-align-center wow fadeInRight" data-wow-delay=".3s" style="color: #fff;">{{$item->subtitle_pt}}</h3>
 			</div>
 			<div class="button-wrap" data-caption-animate="fadeInLeft"
 							data-caption-delay="400" style="margin-top: 35px;"><a

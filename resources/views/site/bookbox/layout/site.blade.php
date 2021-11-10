@@ -175,10 +175,6 @@
 										<li class="rd-nav-item">
 											<a class="rd-nav-link button button-lg button-shadow-4 button-secondary-3 button-zakaria" href="/pricing-list" target="blank" style="color: #fff;">Assine</a>
 										</li>
-										<li>
-											<a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202"
-											href="#"><span></span></a>
-										</li>
 									</ul>
 								</div>
 							</div>
