@@ -142,7 +142,7 @@
 							<!-- RD Navbar Toggle-->
 							<button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
 							<!-- RD Navbar Brand-->
-							<div class="rd-navbar-brand">
+								<div class="rd-navbar-brand">
 								<!--Brand-->
 								<a id="logo" class="brand" href="/"><img class="brand-logo-light"
 									src="{{ url('assets/images/site/Logo_saude.png') }}" alt=""
@@ -174,6 +174,10 @@
 										</li> --}}
 										<li class="rd-nav-item">
 											<a class="rd-nav-link button button-lg button-shadow-4 button-secondary-3 button-zakaria" href="/pricing-list" target="blank" style="color: #fff;">Assine</a>
+										</li>
+										<li>
+											<a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202"
+											href="#"><span></span></a>
 										</li>
 									</ul>
 								</div>
