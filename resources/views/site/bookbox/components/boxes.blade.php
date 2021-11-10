@@ -1,7 +1,7 @@
 @foreach ($pageData->content as $item)
 <section id="boxes" class="section section-xxl swiper-slide-pilars" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
-			<h3 class="text-transform-none wow fadeScale">{{$item['title_pt']}}</h3>
+			<h3 class="text-transform-none wow fadeScale" style="font-family:'Lobster Two', cursive; font-size: 45px;">{{$item['title_pt']}}</h3>
 			<h5 class="text-transform-uppercase">{{$item['subtitle_pt']}}</h5>
 			<div class="row row-lg row-30 row-lg-50">
 				@foreach ($products as $product)

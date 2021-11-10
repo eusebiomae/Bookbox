@@ -2,7 +2,7 @@
 <section id="faq" class="section section-xxl swiper-slide-faq" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
 			<div class="col-md-12 col-xl-12">
-					<h3 class="text-transform-none wow text-align-center" style="margin-top: 50px;">{{$item['title_pt']}}</h3>
+					<h3 class="text-transform-none wow text-align-center" style="margin-top: 50px; font-family:'Lobster Two', cursive; font-size: 45px;">{{$item['title_pt']}}</h3>
 					<!-- Bootstrap collapse-->
 					<div class="card-group-custom card-group-corporate" id="accordion1" role="tablist"
 							aria-multiselectable="false">

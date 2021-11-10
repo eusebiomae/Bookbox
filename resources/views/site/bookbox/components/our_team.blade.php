@@ -1,7 +1,7 @@
 @foreach ($pageData->content as $item)
 <section id="our_team" class="section section-xxl swiper-slide-pilars" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
-			<h3 class="text-transform-none wow fadeScale">{{$item['title_pt']}}</h3>
+			<h3 class="text-transform-none wow fadeScale" style="font-family:'Lobster Two', cursive; font-size: 45px;">{{$item['title_pt']}}</h3>
 			<p class="" style="padding: 15px;">{!! $item['text_pt'] !!}</p>
 			<!-- Owl Carousel-->
 			<div class="owl-carousel owl-style-9" data-items="2" data-sm-items="2" data-md-items="3" data-lg-items="6" data-margin="30" data-dots="true" data-mouse-drag="false" style="margin-bottom: -100px">

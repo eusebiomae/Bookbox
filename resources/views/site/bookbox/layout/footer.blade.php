@@ -44,16 +44,20 @@
 							</div>
 					</div>
 
-							<div class="row col-md-12 col sm-12 col-lg-12">
-								<div class="col-sm-6 col-md-6 col-lg-6 wow fadeInRight" data-wow-delay=".1s">
-									<ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
+							<div class="row col-md-12 col sm-12 col-lg-12" style="margin: 15px; margin-top: 0px;">
+
+								<div class="col-sm-3 col-md-3 col-lg-3 wow fadeInRight" data-wow-delay=".1s">
+									{{-- <ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block"> --}}
 										{{-- <li><a href="grid-shop.html">ShopBox</a></li> --}}
 										{{-- <li><a href="blog-list.html">Blog Post</a></li> --}}
-										<li><a href="/about">Sobre Nós</a></li>
-										<li><a href="/privacy-policy">Termos e Condições</a></li>
-										<li><a href="/pricing-list">Assinar</a></li>
+										<div class="unit-body"><a href="/about" style="color: #fff"> - Sobre Nós</a></div><br/>
+										<div class="unit-body"><a href="/privacy-policy" style="color: #fff"> - Termos e Condições</a></div><br/>
+										<div class="unit-body"><a href="/pricing-list" style="color: #fff"> - Assinar</a></div>
 										{{-- <li><a href="#">Contato</a></li> --}}
-									</ul><br/><br/>
+									{{-- </ul> --}}
+								</div>
+
+								<div class="col-sm-3 col-md-3 col-lg-3 wow fadeInRight" data-wow-delay=".1s">
 									<h5 class="footer-modern-title">Formas de pagamento</h5>
 									<div class="row" style="margin-left: 5px;">
 										{{-- <ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block"> --}}
@@ -64,7 +68,7 @@
 									</div>
 								</div>
 
-								<div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
+									<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
 										{{-- <h5 class="footer-modern-title">Credenciais Bookbox: </h5> --}}
 										<ul class="contacts-creative">
 												<li>
@@ -81,12 +85,17 @@
 												</li>
 												<li>
 														<div class="unit unit-spacing-sm flex-column flex-md-row">
-																<div class="unit-left"><p style="color: #fff">Av. Armando Ferrentini, 388 - Paraíso	São Paulo - SP</p>
+																<div class="unit-left">
+																	<p style="color: #fff">Av. Armando Ferrentini, 388</p>
+																	<p style="color: #fff">Paraíso - São Paulo - SP</p>
 																</div>
 																{{-- <div class="unit-body"><a href="mailto:atendimento@bookbox.com.br?subject=Informação sobre a Bookbox" target="_blank">atendimento@bookbox.com.br</a></div> --}}
 														</div>
 												</li>
-										</ul><br/><br/>
+										</ul>
+									</div>
+
+									<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
 										<h5 class="footer-modern-title">Contato: </h5>
 										<ul class="contacts-creative">
 												<li>
@@ -109,6 +118,7 @@
 														</div>
 												</li>
 										</ul>
+									</div>
 								</div>
 							</div>
 

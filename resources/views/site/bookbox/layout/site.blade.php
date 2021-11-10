@@ -124,6 +124,7 @@
 				{{-- <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1"
 				data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div> --}}
 				<div class="rd-navbar-aside-outer">
+
 					<div class="rd-navbar-aside">
 						<div class="rd-navbar-collapse">
 							<ul class="contacts-classic">
@@ -137,6 +138,7 @@
 							<a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202"
 							href="#"><span></span></a>
 						</div>
+
 						<!-- RD Navbar Panel-->
 						<div class="rd-navbar-panel">
 							<!-- RD Navbar Toggle-->
@@ -149,9 +151,10 @@
 									style="display: block; width: 200px; max-height: 200px; margin-left: 75px; text-align: center;" /></a>
 									{{-- <img class="brand-logo-dark" src="images/site/Logo_estilizado.png" alt="" width="157" height="35" /> --}}
 								</div>
-							</div>
-							@include('site.bookbox.components.dropdownCart')
 						</div>
+
+							@include('site.bookbox.components.dropdownCart')
+					</div>
 
 						<div class="rd-navbar-main-outer" style="background-color: #8571a2;">
 							<div class="rd-navbar-main">
@@ -163,18 +166,14 @@
 										<li class="rd-nav-item"><a class="rd-nav-link" href="/#boxes">Planos</a></li>
 										<li class="rd-nav-item"><a href="/blog_post" class="rd-nav-link">Blog</a></li>
 										<li class="rd-nav-item"><a href="/box_blog" class="rd-nav-link">Loja</a></li>
-										{{-- <li class="rd-nav-item"><a class="rd-nav-link" href="/about">Sobre
-											nós</a>
-										</li> --}}
-										{{-- <li class="rd-nav-item"><a class="rd-nav-link"
-											href="/contact">Contato</a>
-										</li> --}}
-										{{-- <li class="rd-nav-item"><a class="rd-nav-link"
-											href="/privacy-policy">Termos e Condições</a>
-										</li> --}}
 										<li class="rd-nav-item">
 											<a class="rd-nav-link button button-lg button-shadow-4 button-secondary-3 button-zakaria" href="/pricing-list" target="blank" style="color: #fff;">Assine</a>
 										</li>
+										{{-- <li class="rd-nav-item">
+											<a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202"
+											href="#"><span></span></a>
+											@include('site.bookbox.components.dropdownCart')
+										</li> --}}
 									</ul>
 								</div>
 							</div>

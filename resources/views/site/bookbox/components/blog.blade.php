@@ -12,12 +12,22 @@
 						<ul class="list-shop-filter">
 							<li>
 								<label class="checkbox-inline">
-									<input name="input-group-radio" value="checkbox-1" type="checkbox">{{$item->category}} Notícias
+									<input name="input-group-radio align-center" value="checkbox-1" type="checkbox">{{$item->category}} Saúde Física
 								</label>
 							</li>
 							<li>
 								<label class="checkbox-inline">
-									<input name="input-group-radio" value="checkbox-2" type="checkbox">{{$item->category}} Blog
+									<input name="input-group-radio" value="checkbox-2" type="checkbox">{{$item->category}} Saúde Mental
+								</label>
+							</li>
+							<li>
+								<label class="checkbox-inline">
+									<input name="input-group-radio" value="checkbox-3" type="checkbox">{{$item->category}} Saúde Emocional
+								</label>
+							</li>
+							<li>
+								<label class="checkbox-inline">
+									<input name="input-group-radio" value="checkbox-4" type="checkbox">{{$item->category}} Saúde Financeira
 								</label>
 							</li>
 						</ul>

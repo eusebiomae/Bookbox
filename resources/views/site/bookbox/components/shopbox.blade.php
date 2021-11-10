@@ -27,6 +27,24 @@
 					<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
 						<!-- Product-->
 						<article class="thumbnail-classic block-1">
+
+
+							@if ($product->course_category_id == 1)
+								<span class="product-badge product-badge-sale">Venda</span>
+							@else
+								<span class="product-badge product-badge-sale" style="background: #ec7f6e">Box</span>
+							@endif
+
+							<div class="product-body">
+								<div class="product-figure-box"><img src="{{$product->img}}" alt="" style="width: 190px;"/>
+								</div>
+								<h5 class="product-title">{{$product->title_pt}}</h5>
+
+								<div class="product-price-wrap">
+									<div class="product-price">{{$product->subtitle_pt}}</div>
+								</div>
+							</div>
+
 							<div class="thumbnail-classic-caption">
 								<div>
 										<h5 class="thumbnail-classic-title text-justify" style="margin-top: 45px; margin-bottom: -25px;">{{$product->description_pt}}</h5>
@@ -39,21 +57,6 @@
 								</div>
 							</div>
 
-							<div class="product-body">
-								<div class="product-figure-box"><img src="{{$product->img}}" alt="" style="width: 190px;"/>
-								</div>
-								<h5 class="product-title">{{$product->title_pt}}</h5>
-
-								<div class="product-price-wrap">
-									<div class="product-price">{{$product->subtitle_pt}}</div>
-								</div>
-							</div>
-
-							@if ($product->course_category_id == 1)
-								<span class="product-badge product-badge-sale">Venda</span>
-							@else
-								<span class="product-badge product-badge-sale" style="background: #ec7f6e">Box</span>
-							@endif
 						</article>
 					</div>
 					@endforeach
