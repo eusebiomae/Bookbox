@@ -1,8 +1,8 @@
-<section id="banner_box" class="section swiper-container swiper-slider swiper-slider-4" data-loop="true">
+<section id="banner_box" class="section swiper-container swiper-slider swiper-slider-4" data-loop="false">
 	<div class="swiper-wrapper context-dark">
 		@foreach ($pageData->content as $item)
 		<div class="swiper-slide swiper-slide-2" data-slide-bg="{{$item['image_bg']}}">
-					<div class="swiper-slide-caption section-md text-sm-left">
+					<div class="swiper-slide-caption section-md text-sm-left"  style="margin-bottom: -90px; margin-top: 25px;">
 							<div class="container">
 								<div class="row">
 									<div class="col-sm-8 col-md-7">
@@ -33,10 +33,10 @@
 
 	</div>
 	<!-- Swiper Pagination-->
-	<div class="swiper-pagination"></div>
 	<!-- Swiper Navigation-->
+	{{-- <div class="swiper-pagination"></div>
 	<div class="swiper-button-prev"></div>
-	<div class="swiper-button-next"></div>
+	<div class="swiper-button-next"></div> --}}
 </section>
 
 

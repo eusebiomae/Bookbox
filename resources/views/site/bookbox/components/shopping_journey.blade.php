@@ -1,6 +1,7 @@
 
 @foreach ($pageData->content as $item)
-<section id="signature" class="section section-xxl swiper-slide-how  text-md-left" style="background-image: url('{{$item['image_bg']}}');">
+<section id="signature" class="section section-xxl swiper-slide-how  text-md-left" style="margin-top: 225px;">
+	{{-- style="background-image: url('{{$item['image_bg']}}');" --}}
 	<div class="card">
 		<div class="card-body">
 			<div id="shoppingJourney" class="row">

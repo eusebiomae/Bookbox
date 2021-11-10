@@ -5,7 +5,7 @@
 		<!-- Owl Carousel-->
 		<div class="row row-30 row-lg-50">
 
-			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" style="padding: 45px;">
 				<div class="aside row row-30 row-md-50 justify-content-md-between">
 					<div class="aside-item col-sm-6 col-md-5 col-lg-12">
 						<h6 class="aside-title">Categorias</h6>
