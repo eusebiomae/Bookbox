@@ -1,5 +1,5 @@
 @foreach ($pageData->content as $item)
-<section id="how_works" class="section section-xxl swiper-slide-how  text-md-left" style="background-image: url('{{$item['image_bg']}}');">
+<section id="how_works" class="section section-xxl swiper-slide-how  text-md-left" style="background-image: url('{{$item['image_bg']}}'); margin-bottom: -250px;">
 	<div class="container">
 		<h3 class="text-transform-none wow" style="text-align: center; margin-top: 90px; margin-bottom: -90px; font-family:'Lobster Two', cursive; font-size: 45px;">{{$item['title_pt']}}</h3>
 		<div class="row row-30 row-md-60 row-lg-70 justify-content-center align-items-md-center">

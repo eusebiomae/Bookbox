@@ -1,9 +1,9 @@
 @foreach ($pageData->content as $item)
-<section id="appBoxShop" class="section section-xxl swiper-slide-shopbox bg-default text-md-left">
+<section id="appBoxShop" class="section section-xxl swiper-slide-shopbox bg-default text-md-left" style="margin-top: -400px;">
 	<div class="container">
 		<div class="row row-30 row-lg-50">
 			<div class="col-lg-2 col-xl-2">
-				<div class="aside row row-30 row-md-50 justify-content-md-between">
+				{{-- <div class="aside row row-30 row-md-50 justify-content-md-between">
 					<div class="aside-item col-sm-6 col-md-5 col-lg-12">
 						<h6 class="aside-title">Categorias</h6>
 						<ul class="list-shop-filter">
@@ -19,7 +19,7 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 			<div class="col-lg-10 col-xl-10">
 				<div class="row row-30 row-lg-50">
@@ -36,7 +36,7 @@
 							@endif
 
 							<div class="product-body">
-								<div class="product-figure-box"><img src="{{$product->img}}" alt="" style="width: 190px;"/>
+								<div class="product-figure-box"><img src="{{$product->img}}" alt="" style="width: 300px;"/>
 								</div>
 								<h5 class="product-title">{{$product->title_pt}}</h5>
 

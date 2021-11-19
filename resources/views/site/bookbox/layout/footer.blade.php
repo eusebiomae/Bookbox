@@ -3,21 +3,21 @@
 @endphp
 {{-- @foreach ($pageData->content as $item) --}}
 <footer class="section footer-modern footer-modern-2">
-	<div class="footer-modern-body section-sm context-dark" style="background-color: #855f9f;">
+	<div class="footer-modern-body section-sm context-dark" style="background-color: #9873a8;">
 			<div class="container">
 				<div class="row col-md-12" style="justify-content: end;">
 					<ul class="list-inline list-social-3 list-inline-sm" style="margin-left: 20px;">
 						<li>
-								<a class="icon mdi mdi-facebook icon-xxs" href="https://www.facebook.com/bookboxsaude/" target="_blank"></a>
+								<a class="icon mdi mdi-facebook icon-xxs" href="https://www.facebook.com/bookboxsaude/" target="_blank" style="color: #fff"></a>
 						</li>
 						<li>
-								<a class="icon mdi mdi-instagram icon-xxs" href="https://www.instagram.com/bookboxsaude/" target="_blank"></a>
+								<a class="icon mdi mdi-instagram icon-xxs" href="https://www.instagram.com/bookboxsaude/" target="_blank" style="color: #fff"></a>
 						</li>
 						<li>
-								<a class="icon mdi mdi-youtube-play icon-xxs" href="https://www.youtube.com/channel/UCh2dbFaDZWrS_Hz5-ZQNYwA" target="_blank"></a>
+								<a class="icon mdi mdi-youtube-play icon-xxs" href="https://www.youtube.com/channel/UCh2dbFaDZWrS_Hz5-ZQNYwA" target="_blank" style="color: #fff"></a>
 						</li>
 						<li>
-								<a class="icon mdi mdi-whatsapp icon-xxs" href="https://api.whatsapp.com/send?phone=5511976816349&text=Vamos%20falar%20sobre%20a%20Bookbox!" target="_blank"></a>
+								<a class="icon mdi mdi-whatsapp icon-xxs" href="https://api.whatsapp.com/send?phone=5511976816349&text=Vamos%20falar%20sobre%20a%20Bookbox!" target="_blank" style="color: #fff"></a>
 						</li>
 					</ul>
 				</div>
@@ -125,7 +125,7 @@
 					</div>
 			</div>
 	</div>
-	<div class="footer-modern-panel text-center" style="background-color: #855f9f">
+	<div class="footer-modern-panel text-center" style="background-color: #9873a8">
 			<div class="container">
 					<p class="rights"><span>&copy;&nbsp; </span><span
 									class="copyright-year"></span><span>&nbsp;</span><span>2021 - Bookbox Saúde - Todos os direitos reservados.</span> <span></span> <span style="margin-right: 75px;"></span>Powered by:<a href="https://gigapixel.com.br/" target="_blank"><img src="{{ url ('assets/images/site/logo_gigapixel.png')}}" style="width: 100%; max-width: 150px; margin-left: 25px;" /></a></p>

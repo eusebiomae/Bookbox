@@ -123,7 +123,7 @@
 				data-xl-stick-up="true" data-xxl-stick-up="true">
 				{{-- <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1"
 				data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div> --}}
-				<div class="rd-navbar-aside-outer">
+				<div class="rd-navbar-aside-outer"  style="background-color: #fff">
 
 					<div class="rd-navbar-aside">
 						<div class="rd-navbar-collapse">
@@ -156,7 +156,7 @@
 							@include('site.bookbox.components.dropdownCart')
 					</div>
 
-						<div class="rd-navbar-main-outer" style="background-color: #8571a2;">
+						<div class="rd-navbar-main-outer" style="background-color: #9873a8;">
 							<div class="rd-navbar-main">
 								<div class="rd-navbar-nav-wrap">
 									<ul class="rd-navbar-nav">

@@ -45,7 +45,7 @@
 						<img src="{{$item['image']}}" alt="" class="img-home-banner" style="display: block; width: 100%; max-height: 150%; margin-top: 100px; margin-bottom: -150px; margin-left: 20px;">
 						</div>
 						<div class="col-sm-8 col-md-7">
-							<h4 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100" style="margin-top: 125px; color: #000; font-family:'Lobster Two', cursive; font-size: 45px;">{{$item['title_pt']}}<br>
+							<h4 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100" style="margin-top: 125px; color: #9873a8; font-family:'Lobster Two', cursive; font-size: 45px;">{{$item['title_pt']}}<br>
 							</h4>
 							<h6 class="swiper-title-2 text-width-large" data-caption-animate="fadeInLeft" data-caption-delay="250" style="text-color: #000;">{!! $item['text_pt'] !!}</h6>
 

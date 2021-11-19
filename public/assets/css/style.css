@@ -13605,11 +13605,12 @@ html.rd-navbar-fixed-linked .page {
 * =====================================================
 */
 
-.rd-navbar-creative.rd-navbar-static .rd-navbar-aside-outer,
+
+/* .rd-navbar-creative.rd-navbar-static .rd-navbar-aside-outer,
 .rd-navbar-creative.rd-navbar-static .rd-navbar-main-outer {
     padding-left: 15px;
     padding-right: 15px;
-}
+} */
 
 .rd-navbar-creative.rd-navbar-static .rd-navbar-main {
     border-width: 1px 0 1px 0;
@@ -20698,6 +20699,8 @@ html#ecwid_html body#ecwid_body .ec-size.ec-size--m .ec-store .details-gallery__
     --color-stop-2: #76aa6f;
 }
 
+
+}
 
 }
 
