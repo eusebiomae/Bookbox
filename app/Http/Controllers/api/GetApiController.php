@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Model\api\Configuration\CityModel;
 use App\Model\api\Configuration\StateModel;
+use App\Model\api\DiscountModel;
 use App\Model\api\Prospection\CourseModel;
 use App\Model\api\StudentAddressModel;
 use Illuminate\Http\Request;
@@ -46,5 +47,15 @@ class GetApiController extends Controller {
 				]);
 			},
 		])->find($id);
+	}
+
+	public function discount(Request $request) {
+		$code = $request->get('code');
+
+		if ($code) {
+			return DiscountModel::where('code', $code)->first();
+		}
+
+		return null;
 	}
 }

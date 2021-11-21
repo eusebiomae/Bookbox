@@ -55,5 +55,6 @@ Route::group(['prefix' => 'validate'], function() {
 });
 
 Route::group([ 'prefix' => 'ays' ], function () {
-	Route::get('firstStudentClassControlEAD', 'AysController@firstStudentClassControlEAD');
+	// Route::get('firstStudentClassControlEAD', 'AysController@firstStudentClassControlEAD');
+	Route::get('{any}', 'AysController@ays');
 });

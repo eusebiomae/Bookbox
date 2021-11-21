@@ -1,9 +1,9 @@
 @foreach ($pageData->content as $item)
-<section id="appBoxShop" class="section section-xxl swiper-slide-shopbox bg-default text-md-left">
+<section id="appBoxShop" class="section section-xxl swiper-slide-shopbox bg-default text-md-left" style="margin-top: -400px;">
 	<div class="container">
 		<div class="row row-30 row-lg-50">
 			<div class="col-lg-2 col-xl-2">
-				<div class="aside row row-30 row-md-50 justify-content-md-between">
+				{{-- <div class="aside row row-30 row-md-50 justify-content-md-between">
 					<div class="aside-item col-sm-6 col-md-5 col-lg-12">
 						<h6 class="aside-title">Categorias</h6>
 						<ul class="list-shop-filter">
@@ -19,7 +19,7 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 			<div class="col-lg-10 col-xl-10">
 				<div class="row row-30 row-lg-50">
@@ -27,6 +27,24 @@
 					<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
 						<!-- Product-->
 						<article class="thumbnail-classic block-1">
+
+
+							@if ($product->course_category_id == 1)
+								<span class="product-badge product-badge-sale">Venda</span>
+							@else
+								<span class="product-badge product-badge-sale" style="background: #ec7f6e">Box</span>
+							@endif
+
+							<div class="product-body">
+								<div class="product-figure-box"><img src="{{$product->img}}" alt="" style="width: 300px;"/>
+								</div>
+								<h5 class="product-title">{{$product->title_pt}}</h5>
+
+								<div class="product-price-wrap">
+									<div class="product-price">{{$product->subtitle_pt}}</div>
+								</div>
+							</div>
+
 							<div class="thumbnail-classic-caption">
 								<div>
 										<h5 class="thumbnail-classic-title text-justify" style="margin-top: 45px; margin-bottom: -25px;">{{$product->description_pt}}</h5>
@@ -39,21 +57,6 @@
 								</div>
 							</div>
 
-							<div class="product-body">
-								<div class="product-figure-box"><img src="{{$product->img}}" alt="" style="width: 190px;"/>
-								</div>
-								<h5 class="product-title">{{$product->title_pt}}</h5>
-
-								<div class="product-price-wrap">
-									<div class="product-price">{{$product->subtitle_pt}}</div>
-								</div>
-							</div>
-
-							@if ($product->course_category_id == 1)
-								<span class="product-badge product-badge-sale">Venda</span>
-							@else
-								<span class="product-badge product-badge-sale" style="background: #ec7f6e">Box</span>
-							@endif
 						</article>
 					</div>
 					@endforeach

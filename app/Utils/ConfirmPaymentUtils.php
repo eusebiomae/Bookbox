@@ -35,6 +35,28 @@ class ConfirmPaymentUtils {
 	}
 
 	public function makeStudentOrder($payload) {
+		if ($payload['formPayment'] == 'creditCard') {
+			if (isset($payload['birth_date']) && preg_match('/(\d{2})\/(\d{2})\/(\d{4})/', $payload['birth_date'], $match)) {
+				if ($match[1] > 31 || $match[2] > 12) {
+					throw new \Exception(json_encode([
+						'showError' => [
+							'errors' => [
+								['description' => 'Data de Nascimento, inválido']
+							],
+						],
+					]), 999);
+				}
+			} else {
+				throw new \Exception(json_encode([
+					'showError' => [
+						'errors' => [
+							['description' => 'Data de Nascimento, obrigatório']
+						],
+					],
+				]), 999);
+			}
+		}
+
 		$this->getAsaasCustomerCode($payload);
 
 		$hasShoppingCart = isset($payload['shoppingCart']) && count($payload['shoppingCart']);
@@ -81,6 +103,9 @@ class ConfirmPaymentUtils {
 
 		$payload['asaas_token'] = $this->company->asaas_token;
 
+		// $payload['orderId'] = 53;
+		// return $payload;
+
 		if (isset($payload['orderId']) && !empty($payload['orderId'])) {
 			$order = OrderModel::find($payload['orderId']);
 
@@ -126,12 +151,14 @@ class ConfirmPaymentUtils {
 
 		$msg = '';
 
-		if ($order->form_payment == 'bankSlip' && $order->asaas_type == 'subscriptions') {
-			$msg = 'Boleto enviado por e-mail';
-		} else {
-			if ($order->form_payment == 'bankSlip' && $payments->bankSlipUrl) {
-				$msg = "<a href='{$payments->bankSlipUrl}' target='_blank'>Click aqui para acessar o Boleto</a>";
-			}
+		if ($order->form_payment == 'creditCard' && $payments->transactionReceiptUrl) {
+			$msg = "<a href='{$payments->transactionReceiptUrl}' target='_blank'>Visualizar comprovante</a>";
+		} else
+		if ($order->form_payment == 'creditCard' && $payments->invoiceUrl) {
+			$msg = 'Aguardando confirmação de pagamento';
+		} else
+		if ($order->form_payment == 'bankSlip' && $payments->bankSlipUrl) {
+			$msg = "<a href='{$payments->bankSlipUrl}' target='_blank'>Click aqui para acessar o Boleto</a>";
 		}
 
 		return [
@@ -331,7 +358,7 @@ class ConfirmPaymentUtils {
 		$asaasData = [
 			'payload' => [
 				'customer' => $model->asaas_customers_code,
-				'description' => "Compra feita em " . $this->company->name,
+				'description' => "Compra feita em {$this->company->name}",
 				'externalReference' => $model->code,
 			],
 		];
@@ -361,7 +388,6 @@ class ConfirmPaymentUtils {
 			}
 
 			$asaasData['payload']['billingType'] = 'CREDIT_CARD';
-
 			$expiryMonthYear = explode('/', $model->shelf_life);
 
 			$asaasData['payload']['creditCard'] = [
@@ -380,18 +406,19 @@ class ConfirmPaymentUtils {
 				'addressNumber' => $model->address_number,
 				'phone' => $model->phone,
 			];
+
 		}
 
 		$asaasData['payload']['value'] = $model->value;
 		$asaasData['payload']['installmentValue'] = $model->value;
 		$asaasData['payload']['installmentCount'] = $model->number_parcel;
 
-		// if (!empty($model->discount_percentage)) {
-		// 	$asaasData['payload']['discount'] = [
-		// 		'type' => 'PERCENTAGE',
-		// 		'value' => $model->discount_percentage,
-		// 	];
-		// }
+		if (!empty($model->discount_percentage)) {
+			$asaasData['payload']['discount'] = [
+				'type' => 'PERCENTAGE',
+				'value' => $model->discount_percentage,
+			];
+		}
 
 		$asaas = $this->asaas($asaasData);
 
@@ -424,7 +451,11 @@ class ConfirmPaymentUtils {
 			])->save();
 
 			if ($model instanceof OrderModel) {
-				$this->orderParcelByAsaas($model, $asaas);
+				$orderParcelByAsaas = $this->orderParcelByAsaas($model, $asaas);
+
+				if ($model->asaas_type == 'subscriptions') {
+					$asaas = $orderParcelByAsaas[0]->asaas_json;
+				}
 			}
 		}
 
@@ -443,7 +474,8 @@ class ConfirmPaymentUtils {
 
 			$n = 1;
 			for ($i = count($installments) - 1; $i > -1; $i--) {
-				$orderParcel = [
+				$orderParcels[$i] = new OrderParcelModel;
+				$orderParcels[$i]->fill([
 					'n' => $n++,
 					'code' => $this->getCode(),
 					'order_id' => $order->id,
@@ -453,10 +485,31 @@ class ConfirmPaymentUtils {
 					'asaas_json' => json_encode($installments[$i]),
 					'form_payment_id' => $order->form_payment_id,
 					'bank_id' => $order->bank_id,
-				];
+				])->save();
+			}
+		} else
+		if ($asaas->object == 'subscription') {
+			$asaas = $this->asaas([
+				'path' => "subscriptions/{$order->asaas_payments_code}/payments",
+			]);
 
-				$orderParcels[$i] = new OrderParcelModel;
-				$orderParcels[$i]->fill($orderParcel)->save();
+			if ($asaas) {
+				foreach ($asaas->data as $asaasIndx => $asaasData) {
+					$orderParcels[$asaasIndx] = new OrderParcelModel;
+					$orderParcels[$asaasIndx]->fill([
+						'order_id' => $order->id,
+						'form_payment_id' => $order->form_payment_id,
+						'code' => $this->getCode(),
+						'due_date' => $asaasData->dueDate,
+						'payday' => $asaasData->paymentDate,
+						'value' => $asaasData->value,
+						'n' => $asaasIndx + 1,
+						'value_paid' => $asaasData->value,
+						'bank_id' => $order->bank_id,
+						'asaas_code' => $asaasData->id,
+						'asaas_json' => json_encode($asaasData),
+					])->save();
+				}
 			}
 		} else {
 			$orderParcels = $this->makeOrderParcel($order);

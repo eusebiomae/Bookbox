@@ -20,7 +20,7 @@ class CreateStudentAddressTable extends Migration
 			$table->foreignId('state_id')->nullable();
 			$table->foreignId('city_id')->nullable();
 
-			$table->string('zip_code', 8)->nullable();
+			$table->string('zip_code', 9)->nullable();
 			$table->string('neighborhood', 128)->nullable();
 			$table->string('street', 128)->nullable();
 			$table->string('number', 128)->nullable();

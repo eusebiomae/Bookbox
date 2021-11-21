@@ -1,6 +1,7 @@
 
 @foreach ($pageData->content as $item)
-<section id="signature" class="section section-xxl swiper-slide-how  text-md-left" style="background-image: url('{{$item['image_bg']}}');">
+<section id="signature" class="section section-xxl swiper-slide-how  text-md-left" style="margin-top: 225px;">
+	{{-- style="background-image: url('{{$item['image_bg']}}');" --}}
 	<div class="card">
 		<div class="card-body">
 			<div id="shoppingJourney" class="row">
@@ -8,8 +9,8 @@
 					<nav>
 						<div ref="tabsShoppingJourney" class="nav nav-tabs">
 							<button class="nav-item nav-link active" @click="selectNavTab('login')" data-select-tab="login" v-if="!student.id">Login</button>
-							<button class="nav-item nav-link disabled" @click="selectNavTab('delivery')" data-select-tab="delivery">Entrega</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('shoppingCart')" data-select-tab="shoppingCart" v-if="!product">Carrinho</button>
+							<button class="nav-item nav-link disabled" @click="selectNavTab('delivery')" data-select-tab="delivery">Entrega</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('payment')" data-select-tab="payment">Pagamento</button>
 							<button class="nav-item nav-link disabled" @click="selectNavTab('finalization')" data-select-tab="finalization">Finalização</button>
 						</div>
@@ -50,7 +51,7 @@
 								</div>
 
 								<div class="col-md-12 text-right">
-									<button class="btn" @click="nextLogin">Avançar</button>
+									<button class="btn btn-primary" @click="nextLogin">Avançar</button>
 								</div>
 							</div>
 						</div>
@@ -59,7 +60,7 @@
 							<div class="row">
 								<div class="col-md-4 form-group">
 									<label>CEP*</label>
-									<input type="text" v-model="orderData.address.zip_code" class="form-control required" maxlength="8" @blur="getZipCode(orderData.address)">
+									<input type="text" v-model="orderData.address.zip_code" v-mask="'#####-###'" class="form-control required" @blur="getZipCode(orderData.address)">
 								</div>
 								<div class="col-md-4 form-group">
 									<label>Estado*</label>
@@ -87,16 +88,16 @@
 								</div>
 								<div class="col-md-4 form-group">
 									<label>Telefone*</label>
-									<input type="text" v-model="orderData.address.phone" class="form-control required" maxlength="128">
+									<input type="text" v-model="orderData.address.phone" v-mask="'(##) ####-####'" class="form-control required" maxlength="128">
 								</div>
 								<div class="col-md-4 form-group">
 									<label>Celular*</label>
-									<input type="text" v-model="orderData.address.cellphone" class="form-control required" maxlength="128">
+									<input type="text" v-model="orderData.address.cellphone" v-mask="'(##) # ####-####'" class="form-control required" maxlength="128">
 								</div>
 							</div>
 							{{-- <button type="button" @click="calculadorFrete">Calcular Frete</button> --}}
 							<div class="col-md-12 text-right">
-								<button class="btn" @click="saveDelivery">Avançar</button>
+								<button class="btn btn-primary" @click="saveDelivery">Avançar</button>
 							</div>
 						</div>
 
@@ -104,34 +105,49 @@
 							<div class="">
 								<div class="cart-inline-header">
 									<h5 class="cart-inline-title">Há <span> @{{amountItens}}</span> produtos carrinho</h5>
-									<h6 class="cart-inline-title">Valor Total:<span> $@{{priceTotal}}</span></h6>
+									<h6 class="cart-inline-title" style="color: #76aa6f">Valor Total:<span> $@{{priceTotal}}</span></h6>
 								</div>
 								<div class="cart-inline-body">
 									<div class="cart-inline-item border" v-for="(data, idProduct) in shoppingCart">
 										<div class="unit unit-spacing-sm align-items-center">
-											<div class="unit-left">
-												<span class="cart-inline-figure"><img :src="data.item.img" alt="" width="106" height="104" /></span>
-											</div>
-											<div class="unit-body">
-												<h6 class="cart-inline-name">@{{ data.item.title_pt }}</h6>
+											<div class="col-md-12">
+												<div class="media align-items-center">
+													<ul class="flex-column align-items-start col-md-4">
+														<span class="cart-inline-figure"><img :src="data.item.img" alt="" style="max-width: 225px; margin: 25px;" /></span>
+													</ul>
 
-												<div class="group-xs group-middle align-items-center">
-													<div class="cart-inline-title">Qtd: @{{ data.amount }}</div>
-													<div class="cart-inline-title">R$ @{{ itemPriceMain(idProduct) }}</div>
-													<div class="cart-inline-title">Total: R$ @{{ itemPriceMainTotal(idProduct) }}</div>
+													<ul class="flex-column align-items-start item col-md-4">
+														<h6 class="mb-0 font-weight-bold" style="margin-left: 40px; margin-top: 20px;">
+															@{{ data.item.title_pt }}
+														</h6>
+													</ul>
+
+													<ul class="flex-column align-items-start col-md-4">
+														<label for="" class=""> </label>
+														<div class="input-group mb-3">
+															<div class="cart-inline-title" style="margin: 5px;">Qtd: @{{ data.amount }} - Preço:</div>
+															<div class="cart-inline-title" style="margin: 5px;">R$ @{{ itemPriceMain(idProduct) }} = </div>
+															<div class="cart-inline-title" style="margin: 5px; color: #000">Total: R$ @{{ itemPriceMainTotal(idProduct) }}</div>
+														</div>
+														<div class="unit-spacing-sm">
+															<button type="button" class="btn btn-secondary" @click="incDecAmount(idProduct, -1)">-</button>
+															<button type="button" class="btn btn-secondary" @click="removeItem(idProduct)">Remover</button>
+															<button type="button" class="btn btn-primary" @click="incDecAmount(idProduct, 1)">+</button>
+														</div>
+													</ul>
 												</div>
 											</div>
 										</div>
-										<div class="unit-spacing-sm">
-											<button type="button" class="" @click="incDecAmount(idProduct, -1)">-</button>
-											<button type="button" class="" @click="removeItem(idProduct)">Remover</button>
-											<button type="button" class="" @click="incDecAmount(idProduct, 1)">+</button>
-										</div>
+										{{-- <div class="unit-spacing-sm">
+											<button type="button" class="btn btn-secondary" @click="incDecAmount(idProduct, -1)">-</button>
+											<button type="button" class="btn btn-secondary" @click="removeItem(idProduct)">Remover</button>
+											<button type="button" class="btn btn-primary" @click="incDecAmount(idProduct, 1)">+</button>
+										</div> --}}
 									</div>
 								</div>
 								<div class="cart-inline-footer">
 									<div class="group-sm text-right">
-										<button class="btn" @click="selectNavTab('payment', 1)">Confirmar</button>
+										<button class="btn btn-primary" @click="selectNavTab('delivery', 1)">Confirmar</button>
 									</div>
 								</div>
 							</div>
@@ -139,6 +155,19 @@
 
 						<div class="tab-pane fade show" data-select-tab="payment">
 							<div class="row" v-if="product">
+								<div class="col-md-4 form-group">
+									<label>Cupom de desconto</label>
+									<div class="input-group">
+										<input type="text" v-model="discount.code" class="form-control">
+										<div class="input-group-prepend">
+											<button class="btn btn-primary form-control fl-bigmug-line-checkmark14" @click="getDiscount" ></button>
+										</div>
+									</div>
+									<div v-if="discount.id">
+										Desconto de @{{ numberWithCommas(discount.percentage, 2) }}%
+									</div>
+								</div>
+
 								<div class="col-md-4 form-group">
 									<label>Forma de Pagamento</label>
 									<select class="form-control m-b" v-model="orderData.formPayment">
@@ -150,9 +179,12 @@
 									<label>Parcelas</label>
 									<select class="form-control m-b" v-model="formPaymentOpts">
 										<option v-for="(option) in formPayment[orderData.formPayment].values" :value="option">
-											@{{ option.parcel }} x @{{ numberWithCommas(option.value, 2) }} (@{{ numberWithCommas(option.full_value, 2) }})
+											@{{ formatFormPaymentParcel(option) }}
 										</option>
 									</select>
+									<div v-if="discount.id">
+										Desconto de R$ @{{ numberWithCommas((formPaymentOpts.full_value || 0) * discount.percentage / 100, 2) }}
+									</div>
 								</div>
 
 								<div class="col-md-12 form-group">
@@ -168,7 +200,7 @@
 										</div>
 										<div class="col-md-6 form-group">
 											<label>CPF do Titular*</label>
-											<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+											<input type="text" v-model="orderData.cpf" v-mask="'###.###.###-##'"  class="form-control required">
 										</div>
 									</div>
 								</div>
@@ -196,7 +228,7 @@
 										<div class="col-md-2">
 											<div class="form-group">
 												<label>Validade*</label>
-												<input type="text" v-model="orderData.shelf_life" placeholder="" class="form-control required mask-creditcard-shelf_life">
+												<input type="text" v-model="orderData.shelf_life" v-mask="'##/##'" placeholder="MM/AA" class="form-control required">
 											</div>
 										</div>
 									</div>
@@ -204,7 +236,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>CPF do Titular*</label>
-												<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+												<input type="text" v-model="orderData.cpf" v-mask="'###.###.###-##'" class="form-control required">
 											</div>
 										</div>
 										<div class="col-md-4">
@@ -212,14 +244,14 @@
 												<label>Data de Nascimento*</label>
 												<div class="input-group date">
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-													<input type="text" v-model="orderData.birth_date" class="form-control required" readonly>
+													<input type="text" v-model="orderData.birth_date" v-mask="'##/##/####'" placeholder="DD/MM/AAAA" class="form-control required" >
 												</div>
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Telefone*</label>
-												<input type="text" v-model="orderData.phone" class="form-control required mask-cellphone">
+												<input type="text" v-model="orderData.phone" v-mask="'(##) # ####-####'"  class="form-control required">
 											</div>
 										</div>
 									</div>
@@ -233,7 +265,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>CEP*</label>
-												<input type="text" v-model="orderData.zip_code" class="form-control required mask-cep">
+												<input type="text" v-model="orderData.zip_code" v-mask="'#####-###'" class="form-control required">
 											</div>
 										</div>
 										<div class="col-md-4">
@@ -247,6 +279,19 @@
 							</div>
 							<div class="row" v-else>
 								<div class="col-md-4 form-group">
+									<label>Cupom de desconto</label>
+									<div class="input-group">
+										<input type="text" v-model="discount.code" class="form-control">
+										<div class="input-group-prepend">
+											<button class="btn btn-primary form-control fl-bigmug-line-checkmark14" @click="getDiscount" ></button>
+										</div>
+									</div>
+									<div v-if="discount.id">
+										Desconto de @{{ numberWithCommas(discount.percentage, 2) }}%
+									</div>
+								</div>
+
+								<div class="col-md-4 form-group">
 									<label>Forma de Pagamento</label>
 									<select class="form-control m-b" v-model="orderData.form_payment_id" @change="onChangeformPaymentCart">
 										<option v-for="(option, indx) in formPaymentCart" :value="option.formPayment.id">@{{ option.formPayment.description }}</option>
@@ -257,9 +302,12 @@
 									<label>Parcelas</label>
 									<select class="form-control m-b" v-model="formPaymentOpts">
 										<option v-for="option in formPaymentCart[orderData.form_payment_id].parcels" :value="option">
-											@{{ option.parcel }} x @{{ numberWithCommas(option.value, 2) }} (@{{ numberWithCommas(option.full_value, 2) }})
+											@{{ formatFormPaymentParcel(option) }}
 										</option>
 									</select>
+									<div v-if="discount.id">
+										Desconto de R$ @{{ numberWithCommas(formPaymentOpts.full_value * discount.percentage / 100, 2) }}
+									</div>
 								</div>
 
 								<div class="col-md-12 form-group">
@@ -275,7 +323,7 @@
 										</div>
 										<div class="col-md-6 form-group">
 											<label>CPF do Titular*</label>
-											<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+											<input type="text" v-model="orderData.cpf" v-mask="'###.###.###-##'" class="form-control required mask-cpf">
 										</div>
 									</div>
 								</div>
@@ -297,13 +345,13 @@
 										<div class="col-md-2">
 											<div class="form-group">
 												<label>Cod. de Seg.*</label>
-												<input type="text" v-model="orderData.security_code" class="form-control required">
+												<input type="text" v-model="orderData.security_code" v-mask="'###'" class="form-control required">
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group">
 												<label>Validade*</label>
-												<input type="text" v-model="orderData.shelf_life" placeholder="" class="form-control required mask-creditcard-shelf_life">
+												<input type="tel" v-model="orderData.shelf_life" v-mask="'##/##'" placeholder="MM/AA" class="form-control required">
 											</div>
 										</div>
 									</div>
@@ -311,7 +359,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>CPF do Titular*</label>
-												<input type="text" v-model="orderData.cpf" class="form-control required mask-cpf">
+												<input type="text" v-model="orderData.cpf" v-mask="'###.###.###-##'" class="form-control required mask-cpf">
 											</div>
 										</div>
 										<div class="col-md-4">
@@ -319,14 +367,14 @@
 												<label>Data de Nascimento*</label>
 												<div class="input-group date">
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-													<input type="text" v-model="orderData.birth_date" class="form-control required" readonly>
+													<input type="text" v-model="orderData.birth_date" v-mask="'##/##/####'" placeholder="DD/MM/AAAA" class="form-control required">
 												</div>
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>Telefone*</label>
-												<input type="text" v-model="orderData.phone" class="form-control required mask-cellphone">
+												<input type="text" v-model="orderData.phone" v-mask="'(##) # ####-####'" class="form-control required mask-cellphone">
 											</div>
 										</div>
 									</div>
@@ -340,7 +388,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label>CEP*</label>
-												<input type="text" v-model="orderData.zip_code" class="form-control required mask-cep">
+												<input type="text" v-model="orderData.zip_code" v-mask="'#####-###'" class="form-control required">
 											</div>
 										</div>
 										<div class="col-md-4">
@@ -354,7 +402,7 @@
 							</div>
 
 							<div class="col-md-12 text-right">
-								<button v-if="!wasRequest" class="btn" @click="confirmOrder">Confirmar</button>
+								<button v-if="!wasRequest" class="btn btn-primary" @click="confirmOrder">Confirmar</button>
 							</div>
 						</div>
 
@@ -395,6 +443,9 @@
 	var appShoppingJourney = Vue.createApp({
 		data: function() {
 			return {
+				discount: {
+					code: '',
+				},
 				shoppingCart: boxCartStore.state.shoppingCart,
 				student: @json(Auth::guard('studentArea')->user() ?? new stdClass),
 				product: @json($product ?? null),
@@ -581,6 +632,14 @@
 					}
 				}
 
+				if (this.discount.id) {
+					this.orderData.discount_id = this.discount.id
+					this.orderData.discount_value = this.discount.value
+					this.orderData.discount_percentage = this.discount.percentage
+				}
+
+				this.orderData.number_parcel = this.formPaymentOpts.parcel
+
 				const data = Object.assign({}, this.orderData, this.formPaymentOpts)
 
 				showPreloader()
@@ -594,6 +653,8 @@
 						this.orderPayments = resp.data
 
 						this.selectNavTab('finalization', 1)
+						this.showError = []
+						boxCartStore.commit('clear')
 					} else {
 						this.showError = resp.data.showError ? resp.data.showError.errors : []
 					}
@@ -672,7 +733,7 @@
 				})
 			},
 			getZipCode: function(address) {
-				if (address.zip_code && address.zip_code.length == 8) {
+				if (address.zip_code && address.zip_code.length == 9) {
 					return axios({
 						url: 'https://viacep.com.br/ws/'+ address.zip_code +'/json',
 						method: 'get',
@@ -711,6 +772,26 @@
 					return resp.data
 				})
 			},
+			getDiscount: function() {
+				return axios({
+					method: 'get',
+					url: '/api/get',
+					headers: {
+						method: 'discount'
+					},
+					params: {
+						code: this.discount.code,
+					},
+				}).then(resp => {
+					if (resp.data) {
+						this.discount = resp.data
+					} else {
+						this.discount = {}
+					}
+
+					return resp.data
+				})
+			},
 			saveDelivery: function() {
 				this.orderData.address.student_id = this.orderData.student_id
 				return axios({
@@ -722,11 +803,7 @@
 					data: this.orderData.address,
 				}).then(resp => {
 					if (resp.data) {
-						if (this.product) {
-							this.selectNavTab('payment', 1)
-						} else {
-							this.selectNavTab('shoppingCart', 1)
-						}
+						this.selectNavTab('payment', 1)
 
 						this.orderData.student_address_id = resp.data.id
 					}
@@ -744,12 +821,12 @@
 			itemPriceMain: function(idx) {
 				const payload = boxCartStore.state.shoppingCart[idx]
 
-				return payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0
+				return payload?.item?.form_payment[0]?.course_form_payment[0]?.full_value ?? 0
 			},
 			itemPriceMainTotal: function(idx) {
 				const payload = boxCartStore.state.shoppingCart[idx]
 
-				return payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0)
+				return payload ? payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0) : 0
 			},
 			renderFormPaymentShoppingCart: function() {
 				const shoppingCart = JSON.parse(JSON.stringify(boxCartStore.state.shoppingCart))
@@ -841,6 +918,20 @@
 
 				this.formPaymentOpts = Object.values(this.formPaymentCart[this.orderData.form_payment_id].parcels)[0]
 			},
+			formatFormPaymentParcel: function(parcel) {
+				const optParcel = {
+					parcel: parcel.parcel,
+					value: +parcel.value,
+					full_value: +parcel.full_value,
+				}
+
+				if (this.discount.id) {
+					optParcel.value -= optParcel.value * this.discount.percentage / 100
+					optParcel.full_value -= optParcel.full_value * this.discount.percentage / 100
+				}
+
+				return `${ optParcel.parcel } x ${ numberWithCommas(optParcel.value, 2) } (${ numberWithCommas(optParcel.full_value, 2) })`
+			},
 		},
 		mounted: function() {
 			if (this.product) {
@@ -851,13 +942,22 @@
 				this.orderData.student_id = this.student.id
 				this.orderData.email = this.student.email
 				this.orderData.cardholder = this.student.name
-				this.selectNavTab('delivery', 1)
+				if (this.product) {
+					this.selectNavTab('delivery', 1)
+				} else {
+					this.selectNavTab('shoppingCart', 1)
+				}
 			}
 
 			this.getState().then(allState => this.allState = allState)
 
-			this.selectNavTab('payment', 1)
 		},
-	}).mount('#shoppingJourney')
+	})
+	.directive('mask', {
+		beforeMount: VueMask.VueMaskDirective.bind,
+		updated: VueMask.VueMaskDirective.componentUpdated,
+		unmounted: VueMask.VueMaskDirective.unbind
+	})
+	.mount('#shoppingJourney')
 </script>
 @endsection

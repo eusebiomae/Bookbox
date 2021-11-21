@@ -8,6 +8,14 @@ use Illuminate\Routing\Controller;
 
 class AysController extends Controller {
 
+	public function ays(Request $request, $any) {
+		return $this->{$any}($request);
+	}
+
+	public function cronAsaasPayments(Request $request) {
+		return \App\Console\Jobs\CronAsaasPayments::run();
+	}
+
 	public function firstStudentClassControlEAD(Request $request) {
 		$orderList = OrderModel::query()
 		->whereHas('course', function($query) {

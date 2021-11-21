@@ -24,3 +24,26 @@ function hidePreloader() {
 	clearTimeout(showPreloader.timer)
 	$('.preloader').addClass('loaded')
 }
+
+function setDatePicker(selector, params) {
+	var opts = {
+		// todayBtn: "linked",
+		keyboardNavigation: true,
+		forceParse: false,
+		calendarWeeks: true,
+		autoclose: true,
+		format: "dd/mm/yyyy",
+		container: "body",
+		language: 'pt-BR',
+	}
+
+	if (params) {
+		Object.assign(opts, params)
+	}
+
+	$(selector).datepicker(opts);
+}
+
+function showDatePicker(selector) {
+	$(selector).datepicker('show');
+}

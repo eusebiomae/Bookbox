@@ -19,6 +19,7 @@ Route::get('password/reset/{token}', 'Auth\AdminResetPasswordController@showRese
 
 Route::group([ 'middleware' => [ 'auth:admin', ] ], function() {
 
+	/*
 	Route::group(['prefix' => 'ays'], function() {
 		Route::get('pass/{pass}', function($pass) { return Hash::make($pass); });
 		// Route::get('cronAsaasPayments', function() { return \App\Console\Jobs\CronAsaasPayments::run(); });
@@ -52,6 +53,7 @@ Route::group([ 'middleware' => [ 'auth:admin', ] ], function() {
 			return $count;
 		});
 	});
+	*/
 
 	Route::group(['prefix' => 'api'], function() {
 		Route::get('student/{id?}', 'Admin\ApiController@student');

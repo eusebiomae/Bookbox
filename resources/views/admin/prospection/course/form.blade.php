@@ -1033,19 +1033,21 @@
 
 		var selectElem = formPayment.querySelector('[name$="[form_payment_id]"]')
 
-		populateSelectBox({
-			list: APP.scope.listSelectBox.formPayment,
-			target: formPayment.querySelector('[name$="[form_payment_id]"]'),
-			columnValue: "id",
-			columnLabel: "description",
-			selectBy: data ? [data.form_payment_id] : null,
-			emptyOption: {
-				label: "Selecione..."
-			}
-		});
+		if (selectElem) {
+			populateSelectBox({
+				list: APP.scope.listSelectBox.formPayment,
+				target: formPayment.querySelector('[name$="[form_payment_id]"]'),
+				columnValue: "id",
+				columnLabel: "description",
+				selectBy: data ? [data.form_payment_id] : null,
+				emptyOption: {
+					label: "Selecione..."
+				}
+			});
 
-		$(selectElem).select2();
-		updateInputMask()
+			$(selectElem).select2();
+			updateInputMask()
+		}
 	}
 
 	function newTeacher(data) {
@@ -1116,23 +1118,27 @@
 		try {
 			var selectElem = tmplModule.querySelector('[name$="[content_course_id]"]')
 
-			populateSelectBox({
-				list: APP.contentCourse,
-				target: selectElem,
-				columnValue: "id",
-				columnLabel: "title_pt",
-				selectBy: [ data.content_course_id ],
-				emptyOption: {
-					label: "Selecione..."
-				}
-			});
+			if (selectElem) {
+				populateSelectBox({
+					list: APP.contentCourse,
+					target: selectElem,
+					columnValue: "id",
+					columnLabel: "title_pt",
+					selectBy: [ data.content_course_id ],
+					emptyOption: {
+						label: "Selecione..."
+					}
+				});
 
-			$(selectElem).select2()
+				$(selectElem).select2()
+			}
 
 			if (data.type) {
 				var elemType = tmplModule.querySelector('[name$="[type]"][value="' + data.type + '"]')
-				elemType.checked = true
-				onChangeModulePresentialOnline(elemType, data.key)
+				if (elemType) {
+					elemType.checked = true
+					onChangeModulePresentialOnline(elemType, data.key)
+				}
 			}
 
 			// if (data.number_of_classes) {
@@ -1209,7 +1215,7 @@
 			}
 
 			if (APP.scope.listSelectBox) {
-				if (APP.scope.listSelectBox.courseCategory) {
+				if (APP.scope.listSelectBox.courseCategory && document.forms.formCourse.course_category_id) {
 					populateSelectBox({
 						list: APP.scope.listSelectBox.courseCategory,
 						target: document.forms.formCourse.course_category_id,

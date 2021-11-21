@@ -1,22 +1,33 @@
 @foreach ($pageData->content as $item)
-<section id="blog" class="section section-xxl swiper-slide-blog" style="background-image: url('{{$item['image_bg']}}');">
+{{-- <section id="banner_home" class="section swiper-container swiper-slider swiper-slider-4" data-loop="false"> --}}
+<section id="blog" class="section swiper-slide-blog" style="background-image: url('{{$item['image_bg']}}');">
 	<div class="container">
 		<!-- Owl Carousel-->
 		<div class="row row-30 row-lg-50">
 
-			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" style="padding: 45px;">
 				<div class="aside row row-30 row-md-50 justify-content-md-between">
 					<div class="aside-item col-sm-6 col-md-5 col-lg-12">
 						<h6 class="aside-title">Categorias</h6>
 						<ul class="list-shop-filter">
 							<li>
 								<label class="checkbox-inline">
-									<input name="input-group-radio" value="checkbox-1" type="checkbox">{{$item->category}} Notícias
+									<input name="input-group-radio align-center" value="checkbox-1" type="checkbox">{{$item->category}} Saúde Física
 								</label>
 							</li>
 							<li>
 								<label class="checkbox-inline">
-									<input name="input-group-radio" value="checkbox-2" type="checkbox">{{$item->category}} Blog
+									<input name="input-group-radio" value="checkbox-2" type="checkbox">{{$item->category}} Saúde Mental
+								</label>
+							</li>
+							<li>
+								<label class="checkbox-inline">
+									<input name="input-group-radio" value="checkbox-3" type="checkbox">{{$item->category}} Saúde Emocional
+								</label>
+							</li>
+							<li>
+								<label class="checkbox-inline">
+									<input name="input-group-radio" value="checkbox-4" type="checkbox">{{$item->category}} Saúde Financeira
 								</label>
 							</li>
 						</ul>

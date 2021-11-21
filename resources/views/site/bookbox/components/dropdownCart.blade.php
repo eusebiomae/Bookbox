@@ -5,15 +5,15 @@
 		<div class="cart-inline">
 			<div class="cart-inline-header">
 				<h5 class="cart-inline-title">Há <span> @{{amountItens}}</span> produtos no carrinho</h5>
-				<h6 class="cart-inline-title">Valor Total:<span> $@{{priceTotal}}</span></h6>
+				<h6 class="cart-inline-title" style="color: #76aa6f">Valor Total:<span> $@{{priceTotal}}</span></h6>
 			</div>
 			<div class="cart-inline-body">
 				<div class="cart-inline-item border pa-2" v-for="(data, idProduct) in shoppingCart">
 					<div class="unit unit-spacing-sm align-items-center">
 						<div class="unit-left">
-							<span class="cart-inline-figure"><img :src="data.item.img" alt="" width="106" height="104" /></span>
+							<span class="cart-inline-figure"><img :src="data.item.img" alt="" style="max-width: 100px; margin: 15px;" /></span>
 						</div>
-						<div class="unit-body">
+						<div class="unit-body" style="text-align: center; margin-top: 15px;">
 							<h6 class="cart-inline-name">@{{ data.item.title_pt }}</h6>
 
 							<div class="group-xs group-middle align-items-center">
@@ -23,10 +23,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="unit-spacing-sm">
-						<button type="button" class="" @click="incDecAmount(idProduct, -1)">-</button>
-						<button type="button" class="" @click="removeItem(idProduct)">Remover</button>
-						<button type="button" class="" @click="incDecAmount(idProduct, 1)">+</button>
+					<div class="unit-spacing-sm" style="margin-top: 25px; margin-bottom: 10px; text-align: center;">
+						<button type="button" class="btn btn-secondary" @click="incDecAmount(idProduct, -1)">-</button>
+						<button type="button" class="btn btn-secondary" @click="removeItem(idProduct)">Remover</button>
+						<button type="button" class="btn btn-primary" @click="incDecAmount(idProduct, 1)">+</button>
 					</div>
 				</div>
 			</div>
@@ -72,6 +72,13 @@
 				removeItem: function(state, idx) {
 					delete state.shoppingCart[idx]
 					this.commit('saveShoppingCart')
+				},
+				clear: function(state) {
+					for (const key in state.shoppingCart) {
+						if (Object.hasOwnProperty.call(state.shoppingCart, key)) {
+							this.commit('removeItem', key)
+						}
+					}
 				},
 			},
 			actions: {
@@ -139,12 +146,12 @@
 				itemPriceMain: function(idx) {
 					const payload = boxCartStore.state.shoppingCart[idx]
 
-					return payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0
+					return payload ? payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0 : 0
 				},
 				itemPriceMainTotal: function(idx) {
 					const payload = boxCartStore.state.shoppingCart[idx]
 
-					return payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0)
+					return payload ? payload.amount * (payload.item.form_payment[0]?.course_form_payment[0]?.full_value ?? 0) : 0
 				},
 			},
 		}).mount('#appBoxDropdownCart')
