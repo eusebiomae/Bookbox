@@ -19,6 +19,7 @@
 							<li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3" data-toggle="tab">Nosso Objetivo</a></li>
 						</ul>
 					</div>
+
 					<!-- Tab panes-->
 					<div class="tab-content">
 						<div class="tab-pane fade show active" id="tabs-1-1">
@@ -37,6 +38,7 @@
 							<a class="button button-lg button-shadow-2 button-primary button-zakaria" href="pricing-list">Assinar Agora</a>
 						</div>
 					</div>
+
 				</div>
 			</div>
 			<div class="col-md-11 col-lg-6 col-xl-7">
